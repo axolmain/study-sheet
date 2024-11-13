@@ -249,15 +249,15 @@ window.Quarto = {
 <section id="what-are-eigenvalues-and-eigenvectors" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="what-are-eigenvalues-and-eigenvectors"><span class="header-section-number">1.1</span> What are Eigenvalues and Eigenvectors?</h2>
 <ul>
-<li><strong>Definitions</strong>: For a matrix $ A $, an eigenvector $ $ satisfies $ A = $, where $ $ is a scalar called the eigenvalue associated with $ $.</li>
-<li><strong>Geometric Interpretation</strong>: Eigenvectors represent directions that are stretched or compressed by the transformation $ A $ without changing direction, while eigenvalues indicate the scaling factor.</li>
+<li><strong>Definitions</strong>: For a matrix <span class="math inline">A</span>, an eigenvector <span class="math inline">\mathbf{v}</span> satisfies <span class="math inline">A\mathbf{v} = \lambda \mathbf{v}</span>, where <span class="math inline">\lambda</span> is a scalar called the eigenvalue associated with <span class="math inline">\mathbf{v}</span>.</li>
+<li><strong>Geometric Interpretation</strong>: Eigenvectors represent directions that are stretched or compressed by the transformation <span class="math inline">A</span> without changing direction, while eigenvalues indicate the scaling factor.</li>
 <li><strong>Importance</strong>: Eigenvalues and eigenvectors are crucial for understanding stability, resonance, and other dynamic behaviors in systems.</li>
 </ul>
 </section>
 <section id="finding-eigenvalues" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="finding-eigenvalues"><span class="header-section-number">1.2</span> Finding Eigenvalues</h2>
 <ul>
-<li><strong>Characteristic Equation</strong>: The eigenvalues of $ A $ are solutions to $ (A - I) = 0 $.</li>
+<li><strong>Characteristic Equation</strong>: The eigenvalues of <span class="math inline">A</span> are solutions to <span class="math inline">\det(A - \lambda I) = 0</span>.</li>
 <li><strong>Properties</strong>: Real eigenvalues indicate scaling, while complex eigenvalues often signify rotations.</li>
 </ul>
 </section>
@@ -277,13 +277,11 @@ window.Quarto = {
 <h1 data-number="3"><span class="header-section-number">3</span> Step-by-Step Examples</h1>
 <section id="matrix-example" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="matrix-example"><span class="header-section-number">3.1</span> 2×2 Matrix Example</h2>
-For $ A =
-<span class="math display">\begin{pmatrix} 4 &amp; 1 \\ 2 &amp; 3 \end{pmatrix}</span>
-<p>$, find the eigenvalues by solving $ (A - I) = 0 $.</p>
+<p>For <span class="math inline">A = \begin{pmatrix} 4 &amp; 1 \\ 2 &amp; 3 \end{pmatrix}</span>, find the eigenvalues by solving <span class="math inline">\det(A - \lambda I) = 0</span>.</p>
 </section>
 <section id="diagonalization" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="diagonalization"><span class="header-section-number">3.2</span> Diagonalization</h2>
-<p>The process of diagonalizing $ A = PDP^{-1} $ when possible. Only matrices with a full set of linearly independent eigenvectors are diagonalizable.</p>
+<p>The process of diagonalizing <span class="math inline">A = PDP^{-1}</span> when possible. Only matrices with a full set of linearly independent eigenvectors are diagonalizable.</p>
 </section>
 </section>
 <section id="interactive-elements" class="level1" data-number="4">
