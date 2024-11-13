@@ -1,0 +1,55 @@
+---
+title: "Linear Independence and Span"
+format:
+  html:
+    toc: true
+    number-sections: true
+---
+
+# Conceptual Overview
+## Linear Independence
+- **Definition**: A set of vectors is linearly independent if no vector in the set can be written as a linear combination of the others. Mathematically, vectors \( \mathbf{v}_1, \mathbf{v}_2, \ldots, \mathbf{v}_n \) are independent if the equation \( c_1\mathbf{v}_1 + c_2\mathbf{v}_2 + \cdots + c_n\mathbf{v}_n = 0 \) only has the trivial solution \( c_1 = c_2 = \cdots = c_n = 0 \).
+- **Importance**: Independence is crucial for defining bases, understanding dimension, and ensuring minimality in spanning sets.
+- **Geometric Interpretation**: In \( \mathbb{R}^3 \), three linearly independent vectors span the entire space, while fewer vectors (e.g., two) only span a subspace (e.g., a plane).
+
+## Span of a Set of Vectors
+- **Definition**: The span of a set of vectors is the collection of all linear combinations of those vectors. If vectors \( \mathbf{v}_1, \mathbf{v}_2, \ldots, \mathbf{v}_n \) span a space \( V \), then any vector in \( V \) can be expressed as \( c_1\mathbf{v}_1 + c_2\mathbf{v}_2 + \cdots + c_n\mathbf{v}_n \) for some scalars \( c_1, c_2, \ldots, c_n \).
+- **Relation to Vector Spaces**: A spanning set that is also linearly independent forms a **basis** for the space, providing both coverage and minimality.
+
+# Common Misconceptions
+- **Confusing Linear Independence with Span**: Students often assume that spanning implies independence, but a spanning set can contain redundant (dependent) vectors.
+- **Interpreting Basis Properties**: Not every spanning set is a basis. A basis must also be linearly independent, meaning it has no "extra" vectors that could be written as combinations of others.
+
+# Worked Examples
+## Basic Examples
+### Testing for Linear Independence
+Consider vectors \( \mathbf{v}_1 = \begin{pmatrix} 1 \\ 2 \end{pmatrix} \) and \( \mathbf{v}_2 = \begin{pmatrix} 2 \\ 4 \end{pmatrix} \).
+To check independence, we solve for scalars \( c_1 \) and \( c_2 \) such that:
+\[
+c_1\mathbf{v}_1 + c_2\mathbf{v}_2 = \mathbf{0}.
+\]
+Substituting values, we get:
+\[
+c_1 \begin{pmatrix} 1 \\ 2 \end{pmatrix} + c_2 \begin{pmatrix} 2 \\ 4 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix},
+\]
+leading to \( c_1 + 2c_2 = 0 \) and \( 2c_1 + 4c_2 = 0 \). These equations imply \( c_1 = -2c_2 \), meaning the only solution is trivial if \( c_1 = c_2 = 0 \), proving the vectors are dependent.
+
+### Finding the Span
+For vectors \( \mathbf{v}_1 = \begin{pmatrix} 1 \\ 0 \end{pmatrix} \) and \( \mathbf{v}_2 = \begin{pmatrix} 0 \\ 1 \end{pmatrix} \), their span is all of \( \mathbb{R}^2 \) since any vector \( \mathbf{x} = \begin{pmatrix} x \\ y \end{pmatrix} \) can be written as \( x\mathbf{v}_1 + y\mathbf{v}_2 \).
+
+## Advanced Examples
+### Basis Selection
+In \( \mathbb{R}^3 \), find a basis for the subspace spanned by \( \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix} \), \( \begin{pmatrix} 2 \\ 4 \\ 6 \end{pmatrix} \), and \( \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} \). Notice that the first two vectors are linearly dependent, so a basis can be \( \left\{ \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}, \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} \right\} \).
+
+# Interactive Elements
+- **Self-Check Questions**: Practice with determining independence and span.
+- **Visualization**: Use visuals of vector span in R²/R³ to show spanning planes and independent directions.
+
+# Connections to Other Topics
+- **Basis and Dimension**: Understanding independence and span is foundational for defining bases.
+- **Eigenvalues and Eigenvectors**: Eigenvectors associated with distinct eigenvalues are linearly independent.
+
+# Summary
+- **Linear Independence**: No vector in the set can be written as a linear combination of others.
+- **Span**: All possible combinations of a set of vectors; if they span the space and are independent, they form a basis.
+- **Key Formula**: Independence implies the number of vectors in a basis is the dimension of the space.

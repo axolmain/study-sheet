@@ -1,0 +1,57 @@
+---
+title: "Matrix Transformations"
+format:
+  html:
+    toc: true
+    number-sections: true
+---
+
+# Conceptual Overview
+## What is a Matrix Transformation?
+- **Definition**: A matrix transformation is a function \( T: \mathbb{R}^n \rightarrow \mathbb{R}^m \) that maps vectors from one space to another through multiplication by a matrix \( A \). If \( A \) is an \( m \times n \) matrix, then \( T(\mathbf{x}) = A\mathbf{x} \) defines the transformation.
+- **Types of Transformations**: Common types include **rotations**, **scalings**, and **shears**. Each type affects the geometric properties of vectors in different ways.
+- **Relation to Linear Maps**: Every matrix transformation is a linear transformation, meaning it satisfies the properties of additivity and scalar multiplication.
+
+# Common Misconceptions
+- **Transformation vs. Operation**: Students often confuse the transformation applied by a matrix with row operations used to simplify the matrix.
+- **Misinterpreting Effects**: A common error is misapplying transformations, such as confusing rotation angles or scaling factors.
+
+# Worked Examples
+## Basic Examples
+### Rotation Matrix
+In \( \mathbb{R}^2 \), a counterclockwise rotation by angle \( \theta \) is given by:
+\[
+R = \begin{pmatrix} \cos \theta & -\sin \theta \\ \sin \theta & \cos \theta \end{pmatrix}.
+\]
+Applying this matrix to \( \mathbf{x} = \begin{pmatrix} 1 \\ 0 \end{pmatrix} \) with \( \theta = 90^\circ \) results in:
+\[
+R \mathbf{x} = \begin{pmatrix} 0 \\ 1 \end{pmatrix},
+\]
+which shows a 90-degree rotation.
+
+### Scaling Transformation
+A scaling matrix in \( \mathbb{R}^2 \) by a factor \( k \) is:
+\[
+S = \begin{pmatrix} k & 0 \\ 0 & k \end{pmatrix}.
+\]
+For \( k = 2 \), applying \( S \) to \( \mathbf{x} = \begin{pmatrix} 1 \\ 1 \end{pmatrix} \) yields \( 2\mathbf{x} = \begin{pmatrix} 2 \\ 2 \end{pmatrix} \).
+
+## Advanced Examples
+### Composition of Transformations
+Consider a transformation that rotates by 45° and then scales by 3. The combined transformation matrix is:
+\[
+T = 3 \times \begin{pmatrix} \cos(45^\circ) & -\sin(45^\circ) \\ \sin(45^\circ) & \cos(45^\circ) \end{pmatrix}.
+\]
+
+# Interactive Elements
+- **Visuals**: Show transformations in R² using rotation, scaling, and shear animations.
+- **Practice Problems**: Include exercises for finding transformed coordinates under given matrices.
+
+# Connections to Other Topics
+- **Eigenvalues and Eigenvectors**: Diagonalizable matrices represent scaling transformations along eigenvectors.
+- **Determinants**: Determinants help interpret the effect of a transformation on area or volume.
+
+# Summary
+- **Matrix Transformations**: Map vectors through operations like rotation and scaling.
+- **Key Properties**: Linear transformations maintain vector space structure.
+- **Example Matrices**: Rotation, scaling, shearing matrices are foundational examples.

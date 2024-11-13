@@ -1,0 +1,50 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - '*.qmd' # Render all .qmd files in the root directory
+    - '!exams/'
+    - '!book/'
+
+website:
+  title: "Study-Sheet: Linear Algebra"
+  sidebar:
+    search: true
+    tools:
+      - icon: quizlet
+        href: https://quizlet.com/explanations/textbook-solutions/linear-algebra-and-its-applications-5th-edition-9780321982384?funnelUUID=06d4ef46-c8b7-4ebd-b80a-08d311a6cdc7
+  navbar:
+    left:
+      - href: index.qmd
+        text: Concept Connections
+      - text: Topics
+        menu:
+          - href: vector_spaces_and_dimensions.qmd
+            text: Vector Spaces and Dimensions
+          - href: null_spaces_col_spaces.qmd
+            text: Null Space and Column Space
+          - href: eigenvalues_eigenvectors.qmd
+            text: Eigenvalues and Eigenvectors
+          - href: linear_independence_and_span.qmd
+            text: Linear Independence and Span
+          - href: matrix_transformations.qmd
+            text: Matrix Transformations
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    page-layout: full
+    toc: true
+    toc-depth: 3
+    toc-location: body
+    number-sections: false
+    html-math-method: katex
+    code-fold: true
+    code-summary: 'Show the code'
+    code-overflow: wrap
+    code-copy: hover
+    code-tools:
+      source: false
+      toggle: true
+      caption: See code

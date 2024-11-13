@@ -1,0 +1,26 @@
+{
+  "index.qmd": {
+    "index.html": "a5d47737"
+  },
+  "about.qmd": {
+    "about.html": "8509adb4"
+  },
+  "vector_spaces_and_dimensions.qmd": {
+    "vector_spaces_and_dimensions.html": "c129c432"
+  },
+  "null_spaces_col_spaces.qmd": {
+    "null_spaces_col_spaces.html": "f11d9fca"
+  },
+  "linear_independce_and_span.qmd": {
+    "linear_independce_and_span.html": "61b43020"
+  },
+  "eigenvalues_eigenvectors.qmd": {
+    "eigenvalues_eigenvectors.html": "bc88dd0c"
+  },
+  "matrix_transformations.qmd": {
+    "matrix_transformations.html": "d409b4c5"
+  },
+  "linear_independence_and_span.qmd": {
+    "linear_independence_and_span.html": "cea689e9"
+  }
+}

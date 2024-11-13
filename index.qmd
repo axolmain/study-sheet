@@ -1,0 +1,139 @@
+---
+title: "Linear Algebra Study Book"
+description: "A comprehensive resource on core concepts, relationships, and theorems in linear algebra."
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    html-math-method: katex
+---
+
+# Linear Algebra: Key Terms and Relationships
+
+## Quick Reference: Equivalent Terms
+
+::: {.callout-note appearance="minimal"}
+## Dimension = Rank = Size
+- Dimension of a vector space = Number of vectors in any basis
+- Rank of a matrix = Number of pivot columns
+- Size of a span = Number of linearly independent vectors
+:::
+
+::: {.callout-note appearance="minimal"}
+## Span = Range = Image
+- Span of vectors = All possible linear combinations
+- Range of a transformation = Output vectors
+- Image of a matrix = Column space
+:::
+
+::: {.callout-note appearance="minimal"}
+## Kernel = Null Space = Solution Space
+- Kernel of transformation = Vectors that map to zero
+- Null space of matrix = Solutions to $A\mathbf{x} = \mathbf{0}$
+- Solution space of homogeneous system = Null space
+:::
+
+## Core Concepts and Their Relationships
+
+### Vector Spaces
+::: {.callout-important}
+A vector space is a set with two operations:
+1. Vector addition
+2. Scalar multiplication
+
+That satisfy certain axioms (closure, associativity, etc.)
+:::
+
+#### Key Relationships:
+- Every vector space has a basis
+- Dimension = Number of vectors in any basis
+- Subspaces inherit properties from parent space
+- $\dim(\text{subspace}) \leq \dim(\text{parent space})$
+
+### Matrices and Their Spaces
+
+::: {.panel-tabset}
+## Row Space
+- Span of row vectors
+- $\dim(\text{row space}) = \text{row rank}$
+- Row operations don't change row space
+
+## Column Space
+- Span of column vectors
+- $\dim(\text{column space}) = \text{column rank}$
+- Image of the matrix transformation
+
+## Null Space
+- Solutions to $A\mathbf{x} = \mathbf{0}$
+- $\dim(\text{null space}) = \text{nullity}$
+- Kernel of the matrix transformation
+:::
+
+#### Important Connections:
+1. Row rank = Column rank = Rank of matrix
+2. Number of pivot columns = Rank
+3. Number of free variables = Nullity
+
+### Fundamental Theorems and Their Implications
+
+::: {.callout-tip}
+## Rank-Nullity Theorem
+For an $m \times n$ matrix:
+$\text{rank} + \text{nullity} = n$ (number of columns)
+
+**Implications:**
+- More columns than rows → guaranteed null space
+- Full column rank → trivial null space
+:::
+
+::: {.callout-tip}
+## Row-Column Rank Theorem
+Row rank = Column rank
+
+**Implications:**
+- Can find rank by counting pivot rows OR pivot columns
+- Maximum rank is min(rows, columns)
+:::
+
+## Visual Summary of Relationships
+
+### Matrix Properties
+```
+dim(row space) ──────┐
+                     ├── all equal ── RANK
+dim(column space) ───┘
+
+RANK + NULLITY = NUMBER OF COLUMNS
+```
+
+### Vector Space Properties
+```
+BASIS ─── consists of ─── LINEARLY INDEPENDENT vectors
+   │                           │
+   └── that ─── SPANS ────────┘
+   │
+   └── number of vectors = DIMENSION
+```
+
+## Common Misconceptions and Clarifications
+
+::: {.callout-warning}
+## Important Distinctions
+1. Linear independence ≠ Spanning
+   - A set can span without being linearly independent
+   - A set can be linearly independent without spanning
+
+2. Rank ≠ Number of Rows/Columns
+   - Rank is ≤ min(rows, columns)
+   - Equal only for full rank matrices
+
+3. Zero vector ≠ Empty set
+   - Zero vector is IN every vector space
+   - Empty set is NOT a vector space
+:::
+
+## Navigation Links
+- [Back to Core Concepts](#core-concepts-and-their-relationships)
+- [Jump to Theorems](#fundamental-theorems-and-their-implications)
+- [See Matrix Spaces](#matrices-and-their-spaces)

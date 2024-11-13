@@ -1,0 +1,240 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Linear Algebra Study Book",
+    "section": "",
+    "text": "Dimension = Rank = Size\n\n\n\n\nDimension of a vector space = Number of vectors in any basis\nRank of a matrix = Number of pivot columns\nSize of a span = Number of linearly independent vectors\n\n\n\n\n\n\n\n\n\nSpan = Range = Image\n\n\n\n\nSpan of vectors = All possible linear combinations\nRange of a transformation = Output vectors\nImage of a matrix = Column space\n\n\n\n\n\n\n\n\n\nKernel = Null Space = Solution Space\n\n\n\n\nKernel of transformation = Vectors that map to zero\nNull space of matrix = Solutions to A\\mathbf{x} = \\mathbf{0}\nSolution space of homogeneous system = Null space\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nA vector space is a set with two operations: 1. Vector addition 2. Scalar multiplication\nThat satisfy certain axioms (closure, associativity, etc.)\n\n\n\n\n\nEvery vector space has a basis\nDimension = Number of vectors in any basis\nSubspaces inherit properties from parent space\n\\dim(\\text{subspace}) \\leq \\dim(\\text{parent space})\n\n\n\n\n\n\nRow SpaceColumn SpaceNull Space\n\n\n\nSpan of row vectors\n\\dim(\\text{row space}) = \\text{row rank}\nRow operations don’t change row space\n\n\n\n\nSpan of column vectors\n\\dim(\\text{column space}) = \\text{column rank}\nImage of the matrix transformation\n\n\n\n\nSolutions to A\\mathbf{x} = \\mathbf{0}\n\\dim(\\text{null space}) = \\text{nullity}\nKernel of the matrix transformation\n\n\n\n\n\n\n\nRow rank = Column rank = Rank of matrix\nNumber of pivot columns = Rank\nNumber of free variables = Nullity\n\n\n\n\n\n\n\n\n\n\n\nRank-Nullity Theorem\n\n\n\nFor an m \\times n matrix: \\text{rank} + \\text{nullity} = n (number of columns)\nImplications: - More columns than rows → guaranteed null space - Full column rank → trivial null space\n\n\n\n\n\n\n\n\nRow-Column Rank Theorem\n\n\n\nRow rank = Column rank\nImplications: - Can find rank by counting pivot rows OR pivot columns - Maximum rank is min(rows, columns)\n\n\n\n\n\n\n\n\ndim(row space) ──────┐\n                     ├── all equal ── RANK\ndim(column space) ───┘\n\nRANK + NULLITY = NUMBER OF COLUMNS\n\n\n\nBASIS ─── consists of ─── LINEARLY INDEPENDENT vectors\n   │                           │\n   └── that ─── SPANS ────────┘\n   │\n   └── number of vectors = DIMENSION\n\n\n\n\n\n\n\n\n\n\nImportant Distinctions\n\n\n\n\nLinear independence ≠ Spanning\n\nA set can span without being linearly independent\nA set can be linearly independent without spanning\n\nRank ≠ Number of Rows/Columns\n\nRank is ≤ min(rows, columns)\nEqual only for full rank matrices\n\nZero vector ≠ Empty set\n\nZero vector is IN every vector space\nEmpty set is NOT a vector space\n\n\n\n\n\n\n\n\nBack to Core Concepts\nJump to Theorems\nSee Matrix Spaces"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "index.html#quick-reference-equivalent-terms",
+    "href": "index.html#quick-reference-equivalent-terms",
+    "title": "Linear Algebra Study Book",
+    "section": "",
+    "text": "Dimension = Rank = Size\n\n\n\n\nDimension of a vector space = Number of vectors in any basis\nRank of a matrix = Number of pivot columns\nSize of a span = Number of linearly independent vectors\n\n\n\n\n\n\n\n\n\nSpan = Range = Image\n\n\n\n\nSpan of vectors = All possible linear combinations\nRange of a transformation = Output vectors\nImage of a matrix = Column space\n\n\n\n\n\n\n\n\n\nKernel = Null Space = Solution Space\n\n\n\n\nKernel of transformation = Vectors that map to zero\nNull space of matrix = Solutions to A\\mathbf{x} = \\mathbf{0}\nSolution space of homogeneous system = Null space"
+  },
+  {
+    "objectID": "index.html#core-concepts-and-their-relationships",
+    "href": "index.html#core-concepts-and-their-relationships",
+    "title": "Linear Algebra Study Book",
+    "section": "",
+    "text": "Important\n\n\n\nA vector space is a set with two operations: 1. Vector addition 2. Scalar multiplication\nThat satisfy certain axioms (closure, associativity, etc.)\n\n\n\n\n\nEvery vector space has a basis\nDimension = Number of vectors in any basis\nSubspaces inherit properties from parent space\n\\dim(\\text{subspace}) \\leq \\dim(\\text{parent space})\n\n\n\n\n\n\nRow SpaceColumn SpaceNull Space\n\n\n\nSpan of row vectors\n\\dim(\\text{row space}) = \\text{row rank}\nRow operations don’t change row space\n\n\n\n\nSpan of column vectors\n\\dim(\\text{column space}) = \\text{column rank}\nImage of the matrix transformation\n\n\n\n\nSolutions to A\\mathbf{x} = \\mathbf{0}\n\\dim(\\text{null space}) = \\text{nullity}\nKernel of the matrix transformation\n\n\n\n\n\n\n\nRow rank = Column rank = Rank of matrix\nNumber of pivot columns = Rank\nNumber of free variables = Nullity\n\n\n\n\n\n\n\n\n\n\n\nRank-Nullity Theorem\n\n\n\nFor an m \\times n matrix: \\text{rank} + \\text{nullity} = n (number of columns)\nImplications: - More columns than rows → guaranteed null space - Full column rank → trivial null space\n\n\n\n\n\n\n\n\nRow-Column Rank Theorem\n\n\n\nRow rank = Column rank\nImplications: - Can find rank by counting pivot rows OR pivot columns - Maximum rank is min(rows, columns)"
+  },
+  {
+    "objectID": "index.html#visual-summary-of-relationships",
+    "href": "index.html#visual-summary-of-relationships",
+    "title": "Linear Algebra Study Book",
+    "section": "",
+    "text": "dim(row space) ──────┐\n                     ├── all equal ── RANK\ndim(column space) ───┘\n\nRANK + NULLITY = NUMBER OF COLUMNS\n\n\n\nBASIS ─── consists of ─── LINEARLY INDEPENDENT vectors\n   │                           │\n   └── that ─── SPANS ────────┘\n   │\n   └── number of vectors = DIMENSION"
+  },
+  {
+    "objectID": "index.html#common-misconceptions-and-clarifications",
+    "href": "index.html#common-misconceptions-and-clarifications",
+    "title": "Linear Algebra Study Book",
+    "section": "",
+    "text": "Important Distinctions\n\n\n\n\nLinear independence ≠ Spanning\n\nA set can span without being linearly independent\nA set can be linearly independent without spanning\n\nRank ≠ Number of Rows/Columns\n\nRank is ≤ min(rows, columns)\nEqual only for full rank matrices\n\nZero vector ≠ Empty set\n\nZero vector is IN every vector space\nEmpty set is NOT a vector space"
+  },
+  {
+    "objectID": "index.html#navigation-links",
+    "href": "index.html#navigation-links",
+    "title": "Linear Algebra Study Book",
+    "section": "",
+    "text": "Back to Core Concepts\nJump to Theorems\nSee Matrix Spaces"
+  },
+  {
+    "objectID": "vector_spaces_and_dimensions.html",
+    "href": "vector_spaces_and_dimensions.html",
+    "title": "Vector Spaces and Dimension",
+    "section": "",
+    "text": "Note\n\n\n\nA vector space V is finite-dimensional if it can be spanned by a finite set of vectors. The dimension of V, denoted \\dim V, is the number of vectors in any basis for V.\n\n\n\n\nThe standard basis for \\mathbb{R}^3 consists of: \n\\begin{bmatrix} 1 \\\\ 0 \\\\ 0 \\end{bmatrix},\n\\begin{bmatrix} 0 \\\\ 1 \\\\ 0 \\end{bmatrix},\n\\begin{bmatrix} 0 \\\\ 0 \\\\ 1 \\end{bmatrix}\n Therefore, \\dim \\mathbb{R}^3 = 3\n\n\n\n\n\nZero vector space: \\dim \\{\\mathbf{0}\\} = 0\nInfinite-dimensional spaces: The space of all polynomials P has no finite basis\n\n\n\n\n\n\n\n\n\n\n\n\nHomogeneous System Form\n\n\n\nA homogeneous system has the form A\\mathbf{x} = \\mathbf{0}\n\n\n\n\n\n\\begin{aligned}\n2x + 3y - z &= 0 \\\\\n4x - 2y + 2z &= 0\n\\end{aligned}\n\nIn matrix form: \n\\begin{bmatrix}\n2 & 3 & -1 \\\\\n4 & -2 & 2\n\\end{bmatrix}\n\\begin{bmatrix}\nx \\\\ y \\\\ z\n\\end{bmatrix}\n= \\begin{bmatrix}\n0 \\\\ 0\n\\end{bmatrix}\n\n\n\n\n\n\n\n\n\n\n\nTheorem 9\n\n\n\nIf a vector space V has a basis \\mathcal{B} = \\{ \\mathbf{b}_1, \\dots, \\mathbf{b}_n \\}, then any set in V containing more than n vectors must be linearly dependent.\n\n\n\n\n\n\n\n\nTheorem 10\n\n\n\nIf a vector space V has a basis of n vectors, then every basis of V must consist of exactly n vectors.\n\n\n\n\n\n\n\n\nTheorem 11\n\n\n\nLet H be a subspace of a finite-dimensional vector space V. Any linearly independent set in H can be expanded, if necessary, to a basis for H. Also, H is finite-dimensional and\n\\dim H \\leq \\dim V\n\n\n\n\n\n\n\n\nThe Basis Theorem (Theorem 12)\n\n\n\nLet V be a p-dimensional vector space, p \\geq 1. Any linearly independent set of exactly p elements in V is automatically a basis for V.\n\n\n\n\n\n\n\n\nSolve the system: \n\\begin{aligned}\nx + y + z &= 0 \\\\\n2x + 2y + 2z &= 0\n\\end{aligned}\n\n\n\n\n\n\n\nSolution\n\n\n\n\nNotice the second equation is a multiple of the first\nSystem reduces to x + y + z = 0\nGeneral solution: \\begin{bmatrix} x \\\\ y \\\\ -(x+y) \\end{bmatrix} for any x, y\nBasis: \\text{span}\\left(\\begin{bmatrix} 1 \\\\ 0 \\\\ -1 \\end{bmatrix}, \\begin{bmatrix} 0 \\\\ 1 \\\\ -1 \\end{bmatrix}\\right)\n\n\n\n\n\n\nFind a basis for the null space of: \nA = \\begin{bmatrix} 1 & 2 & 3 \\\\ 2 & 4 & 6 \\end{bmatrix}\n\n\n\n\n\n\n\nSolution\n\n\n\n\nRow reduce to: \\begin{bmatrix} 1 & 2 & 3 \\\\ 0 & 0 & 0 \\end{bmatrix}\nFree variables: y, z\nExpress x: x = -2y - 3z\nBasis: \\left\\{\\begin{bmatrix} -2 \\\\ 1 \\\\ 0 \\end{bmatrix}, \\begin{bmatrix} -3 \\\\ 0 \\\\ 1 \\end{bmatrix}\\right\\}"
+  },
+  {
+    "objectID": "vector_spaces_and_dimensions.html#homogeneous-systems",
+    "href": "vector_spaces_and_dimensions.html#homogeneous-systems",
+    "title": "Vector Spaces and Dimension",
+    "section": "",
+    "text": "Homogeneous System Form\n\n\n\nA homogeneous system has the form A\\mathbf{x} = \\mathbf{0}\n\n\n\n\n\n\\begin{aligned}\n2x + 3y - z &= 0 \\\\\n4x - 2y + 2z &= 0\n\\end{aligned}\n\nIn matrix form: \n\\begin{bmatrix}\n2 & 3 & -1 \\\\\n4 & -2 & 2\n\\end{bmatrix}\n\\begin{bmatrix}\nx \\\\ y \\\\ z\n\\end{bmatrix}\n= \\begin{bmatrix}\n0 \\\\ 0\n\\end{bmatrix}\n\n\n\n\n\n\n\n\n\n\n\nTheorem 9\n\n\n\nIf a vector space V has a basis \\mathcal{B} = \\{ \\mathbf{b}_1, \\dots, \\mathbf{b}_n \\}, then any set in V containing more than n vectors must be linearly dependent.\n\n\n\n\n\n\n\n\nTheorem 10\n\n\n\nIf a vector space V has a basis of n vectors, then every basis of V must consist of exactly n vectors.\n\n\n\n\n\n\n\n\nTheorem 11\n\n\n\nLet H be a subspace of a finite-dimensional vector space V. Any linearly independent set in H can be expanded, if necessary, to a basis for H. Also, H is finite-dimensional and\n\\dim H \\leq \\dim V\n\n\n\n\n\n\n\n\nThe Basis Theorem (Theorem 12)\n\n\n\nLet V be a p-dimensional vector space, p \\geq 1. Any linearly independent set of exactly p elements in V is automatically a basis for V."
+  },
+  {
+    "objectID": "vector_spaces_and_dimensions.html#practice-problems",
+    "href": "vector_spaces_and_dimensions.html#practice-problems",
+    "title": "Vector Spaces and Dimension",
+    "section": "",
+    "text": "Solve the system: \n\\begin{aligned}\nx + y + z &= 0 \\\\\n2x + 2y + 2z &= 0\n\\end{aligned}\n\n\n\n\n\n\n\nSolution\n\n\n\n\nNotice the second equation is a multiple of the first\nSystem reduces to x + y + z = 0\nGeneral solution: \\begin{bmatrix} x \\\\ y \\\\ -(x+y) \\end{bmatrix} for any x, y\nBasis: \\text{span}\\left(\\begin{bmatrix} 1 \\\\ 0 \\\\ -1 \\end{bmatrix}, \\begin{bmatrix} 0 \\\\ 1 \\\\ -1 \\end{bmatrix}\\right)\n\n\n\n\n\n\nFind a basis for the null space of: \nA = \\begin{bmatrix} 1 & 2 & 3 \\\\ 2 & 4 & 6 \\end{bmatrix}\n\n\n\n\n\n\n\nSolution\n\n\n\n\nRow reduce to: \\begin{bmatrix} 1 & 2 & 3 \\\\ 0 & 0 & 0 \\end{bmatrix}\nFree variables: y, z\nExpress x: x = -2y - 3z\nBasis: \\left\\{\\begin{bmatrix} -2 \\\\ 1 \\\\ 0 \\end{bmatrix}, \\begin{bmatrix} -3 \\\\ 0 \\\\ 1 \\end{bmatrix}\\right\\}"
+  },
+  {
+    "objectID": "null_spaces_col_spaces.html",
+    "href": "null_spaces_col_spaces.html",
+    "title": "Null Space and Column Space",
+    "section": "",
+    "text": "Definition: The null space (or kernel) of a matrix ( A ) is the set of all vectors ( ) such that ( A = ). It represents solutions to the homogeneous equation, meaning all vectors that the matrix transforms to the zero vector.\nProperties:\n\nThe null space is a subspace of ( ^n ) (where ( n ) is the number of columns of ( A )).\nThe dimension of the null space is known as the nullity of ( A ).\n\nGeometric Interpretation: The null space represents directions in the domain that map to zero. For example, if a transformation represented by ( A ) compresses the plane into a line, the null space corresponds to the directions that get “flattened” in that process.\n\n\n\n\n\nDefinition: The column space (or range) of a matrix ( A ) is the span of its column vectors. It represents all possible linear combinations of the columns of ( A ) and, geometrically, the “reach” or “range” of the transformation applied by ( A ).\nProperties:\n\nThe column space is a subspace of ( ^m ) (where ( m ) is the number of rows of ( A )).\nThe dimension of the column space is called the rank of ( A ).\n\nRelation to Linear Transformations: The column space represents the image of the transformation, describing all possible output vectors."
+  },
+  {
+    "objectID": "null_spaces_col_spaces.html#what-is-the-null-space",
+    "href": "null_spaces_col_spaces.html#what-is-the-null-space",
+    "title": "Null Space and Column Space",
+    "section": "",
+    "text": "Definition: The null space (or kernel) of a matrix ( A ) is the set of all vectors ( ) such that ( A = ). It represents solutions to the homogeneous equation, meaning all vectors that the matrix transforms to the zero vector.\nProperties:\n\nThe null space is a subspace of ( ^n ) (where ( n ) is the number of columns of ( A )).\nThe dimension of the null space is known as the nullity of ( A ).\n\nGeometric Interpretation: The null space represents directions in the domain that map to zero. For example, if a transformation represented by ( A ) compresses the plane into a line, the null space corresponds to the directions that get “flattened” in that process."
+  },
+  {
+    "objectID": "null_spaces_col_spaces.html#what-is-the-column-space",
+    "href": "null_spaces_col_spaces.html#what-is-the-column-space",
+    "title": "Null Space and Column Space",
+    "section": "",
+    "text": "Definition: The column space (or range) of a matrix ( A ) is the span of its column vectors. It represents all possible linear combinations of the columns of ( A ) and, geometrically, the “reach” or “range” of the transformation applied by ( A ).\nProperties:\n\nThe column space is a subspace of ( ^m ) (where ( m ) is the number of rows of ( A )).\nThe dimension of the column space is called the rank of ( A ).\n\nRelation to Linear Transformations: The column space represents the image of the transformation, describing all possible output vectors."
+  },
+  {
+    "objectID": "null_spaces_col_spaces.html#basic-examples",
+    "href": "null_spaces_col_spaces.html#basic-examples",
+    "title": "Null Space and Column Space",
+    "section": "3.1 Basic Examples",
+    "text": "3.1 Basic Examples\n\n3.1.1 Finding the Null Space of a 2×2 Matrix\nLet ( A =\n\\begin{pmatrix} 1 & 2 \\\\ 3 & 6 \\end{pmatrix}\n). To find the null space, we solve ( A = ): [\n\\begin{pmatrix} 1 & 2 \\\\ 3 & 6 \\end{pmatrix} \\begin{pmatrix} x_1 \\\\ x_2 \\end{pmatrix}\n=\n\\begin{pmatrix} 0 \\\\ 0 \\end{pmatrix}\n. ] This system reduces to: [ x_1 + 2x_2 = 0. ] Thus, ( x_1 = -2x_2 ), so any solution is a scalar multiple of (\n\\begin{pmatrix} -2 \\\\ 1 \\end{pmatrix}\n). The null space is therefore: [ (A) = {\n\\begin{pmatrix} -2 \\\\ 1 \\end{pmatrix}\n}. ]\n\n\n3.1.2 Finding the Column Space\nThe column space of ( A ) is the span of its columns: [ (A) = {\n\\begin{pmatrix} 1 \\\\ 3 \\end{pmatrix}\n,\n\\begin{pmatrix} 2 \\\\ 6 \\end{pmatrix}\n}. ] Since the second column is a scalar multiple of the first, the column space is just the span of (\n\\begin{pmatrix} 1 \\\\ 3 \\end{pmatrix}\n)."
+  },
+  {
+    "objectID": "null_spaces_col_spaces.html#advanced-examples",
+    "href": "null_spaces_col_spaces.html#advanced-examples",
+    "title": "Null Space and Column Space",
+    "section": "3.2 Advanced Examples",
+    "text": "3.2 Advanced Examples\n\n3.2.1 Real-World Application: Signal Processing\nIn signal processing, the null space is essential in understanding the solutions of systems affected by noise or interference. By projecting signals into the null space, unwanted signals or noise can be minimized."
+  },
+  {
+    "objectID": "matrix_transformations.html",
+    "href": "matrix_transformations.html",
+    "title": "Matrix Transformations",
+    "section": "",
+    "text": "Definition: A matrix transformation is a function ( T: ^n ^m ) that maps vectors from one space to another through multiplication by a matrix ( A ). If ( A ) is an ( m n ) matrix, then ( T() = A ) defines the transformation.\nTypes of Transformations: Common types include rotations, scalings, and shears. Each type affects the geometric properties of vectors in different ways.\nRelation to Linear Maps: Every matrix transformation is a linear transformation, meaning it satisfies the properties of additivity and scalar multiplication."
+  },
+  {
+    "objectID": "matrix_transformations.html#what-is-a-matrix-transformation",
+    "href": "matrix_transformations.html#what-is-a-matrix-transformation",
+    "title": "Matrix Transformations",
+    "section": "",
+    "text": "Definition: A matrix transformation is a function ( T: ^n ^m ) that maps vectors from one space to another through multiplication by a matrix ( A ). If ( A ) is an ( m n ) matrix, then ( T() = A ) defines the transformation.\nTypes of Transformations: Common types include rotations, scalings, and shears. Each type affects the geometric properties of vectors in different ways.\nRelation to Linear Maps: Every matrix transformation is a linear transformation, meaning it satisfies the properties of additivity and scalar multiplication."
+  },
+  {
+    "objectID": "matrix_transformations.html#basic-examples",
+    "href": "matrix_transformations.html#basic-examples",
+    "title": "Matrix Transformations",
+    "section": "3.1 Basic Examples",
+    "text": "3.1 Basic Examples\n\n3.1.1 Rotation Matrix\nIn ( ^2 ), a counterclockwise rotation by angle ( ) is given by: [ R =\n\\begin{pmatrix} \\cos \\theta & -\\sin \\theta \\\\ \\sin \\theta & \\cos \\theta \\end{pmatrix}\n. ] Applying this matrix to ( =\n\\begin{pmatrix} 1 \\\\ 0 \\end{pmatrix}\n) with ( = 90^) results in: [ R =\n\\begin{pmatrix} 0 \\\\ 1 \\end{pmatrix}\n, ] which shows a 90-degree rotation.\n\n\n3.1.2 Scaling Transformation\nA scaling matrix in ( ^2 ) by a factor ( k ) is: [ S =\n\\begin{pmatrix} k & 0 \\\\ 0 & k \\end{pmatrix}\n. ] For ( k = 2 ), applying ( S ) to ( =\n\\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix}\n) yields ( 2 =\n\\begin{pmatrix} 2 \\\\ 2 \\end{pmatrix}\n)."
+  },
+  {
+    "objectID": "matrix_transformations.html#advanced-examples",
+    "href": "matrix_transformations.html#advanced-examples",
+    "title": "Matrix Transformations",
+    "section": "3.2 Advanced Examples",
+    "text": "3.2 Advanced Examples\n\n3.2.1 Composition of Transformations\nConsider a transformation that rotates by 45° and then scales by 3. The combined transformation matrix is: [ T = 3\n\\begin{pmatrix} \\cos(45^\\circ) & -\\sin(45^\\circ) \\\\ \\sin(45^\\circ) & \\cos(45^\\circ) \\end{pmatrix}\n. ]"
+  },
+  {
+    "objectID": "linear_independce_and_span.html",
+    "href": "linear_independce_and_span.html",
+    "title": "Linear Independence and Span",
+    "section": "",
+    "text": "Definition: A set of vectors is linearly independent if no vector in the set can be written as a linear combination of the others. Mathematically, vectors ( _1, _2, , _n ) are independent if the equation ( c_1_1 + c_2_2 + + c_n_n = 0 ) only has the trivial solution ( c_1 = c_2 = = c_n = 0 ).\nImportance: Independence is crucial for defining bases, understanding dimension, and ensuring minimality in spanning sets.\nGeometric Interpretation: In ( ^3 ), three linearly independent vectors span the entire space, while fewer vectors (e.g., two) only span a subspace (e.g., a plane).\n\n\n\n\n\nDefinition: The span of a set of vectors is the collection of all linear combinations of those vectors. If vectors ( _1, _2, , _n ) span a space ( V ), then any vector in ( V ) can be expressed as ( c_1_1 + c_2_2 + + c_n_n ) for some scalars ( c_1, c_2, , c_n ).\nRelation to Vector Spaces: A spanning set that is also linearly independent forms a basis for the space, providing both coverage and minimality."
+  },
+  {
+    "objectID": "linear_independce_and_span.html#linear-independence",
+    "href": "linear_independce_and_span.html#linear-independence",
+    "title": "Linear Independence and Span",
+    "section": "",
+    "text": "Definition: A set of vectors is linearly independent if no vector in the set can be written as a linear combination of the others. Mathematically, vectors ( _1, _2, , _n ) are independent if the equation ( c_1_1 + c_2_2 + + c_n_n = 0 ) only has the trivial solution ( c_1 = c_2 = = c_n = 0 ).\nImportance: Independence is crucial for defining bases, understanding dimension, and ensuring minimality in spanning sets.\nGeometric Interpretation: In ( ^3 ), three linearly independent vectors span the entire space, while fewer vectors (e.g., two) only span a subspace (e.g., a plane)."
+  },
+  {
+    "objectID": "linear_independce_and_span.html#span-of-a-set-of-vectors",
+    "href": "linear_independce_and_span.html#span-of-a-set-of-vectors",
+    "title": "Linear Independence and Span",
+    "section": "",
+    "text": "Definition: The span of a set of vectors is the collection of all linear combinations of those vectors. If vectors ( _1, _2, , _n ) span a space ( V ), then any vector in ( V ) can be expressed as ( c_1_1 + c_2_2 + + c_n_n ) for some scalars ( c_1, c_2, , c_n ).\nRelation to Vector Spaces: A spanning set that is also linearly independent forms a basis for the space, providing both coverage and minimality."
+  },
+  {
+    "objectID": "linear_independce_and_span.html#basic-examples",
+    "href": "linear_independce_and_span.html#basic-examples",
+    "title": "Linear Independence and Span",
+    "section": "3.1 Basic Examples",
+    "text": "3.1 Basic Examples\n\n3.1.1 Testing for Linear Independence\nConsider vectors ( _1 =\n\\begin{pmatrix} 1 \\\\ 2 \\end{pmatrix}\n) and ( _2 =\n\\begin{pmatrix} 2 \\\\ 4 \\end{pmatrix}\n). To check independence, we solve for scalars ( c_1 ) and ( c_2 ) such that: [ c_1_1 + c_2_2 = . ] Substituting values, we get: [ c_1\n\\begin{pmatrix} 1 \\\\ 2 \\end{pmatrix}\n\nc_2\n\\begin{pmatrix} 2 \\\\ 4 \\end{pmatrix}\n=\n\\begin{pmatrix} 0 \\\\ 0 \\end{pmatrix}\n, ] leading to ( c_1 + 2c_2 = 0 ) and ( 2c_1 + 4c_2 = 0 ). These equations imply ( c_1 = -2c_2 ), meaning the only solution is trivial if ( c_1 = c_2 = 0 ), proving the vectors are dependent.\n\n\n\n3.1.2 Finding the Span\nFor vectors ( _1 =\n\\begin{pmatrix} 1 \\\\ 0 \\end{pmatrix}\n) and ( _2 =\n\\begin{pmatrix} 0 \\\\ 1 \\end{pmatrix}\n), their span is all of ( ^2 ) since any vector ( =\n\\begin{pmatrix} x \\\\ y \\end{pmatrix}\n) can be written as ( x_1 + y_2 )."
+  },
+  {
+    "objectID": "linear_independce_and_span.html#advanced-examples",
+    "href": "linear_independce_and_span.html#advanced-examples",
+    "title": "Linear Independence and Span",
+    "section": "3.2 Advanced Examples",
+    "text": "3.2 Advanced Examples\n\n3.2.1 Basis Selection\nIn ( ^3 ), find a basis for the subspace spanned by (\n\\begin{pmatrix} 1 \\\\ 2 \\\\ 3 \\end{pmatrix}\n), (\n\\begin{pmatrix} 2 \\\\ 4 \\\\ 6 \\end{pmatrix}\n), and (\n\\begin{pmatrix} 0 \\\\ 1 \\\\ 0 \\end{pmatrix}\n). Notice that the first two vectors are linearly dependent, so a basis can be ( {\n\\begin{pmatrix} 1 \\\\ 2 \\\\ 3 \\end{pmatrix}\n,\n\\begin{pmatrix} 0 \\\\ 1 \\\\ 0 \\end{pmatrix}\n} )."
+  },
+  {
+    "objectID": "eigenvalues_eigenvectors.html",
+    "href": "eigenvalues_eigenvectors.html",
+    "title": "Eigenvalues and Eigenvectors",
+    "section": "",
+    "text": "Definitions: For a matrix ( A ), an eigenvector ( ) satisfies ( A = ), where ( ) is a scalar called the eigenvalue associated with ( ).\nGeometric Interpretation: Eigenvectors represent directions that are stretched or compressed by the transformation ( A ) without changing direction, while eigenvalues indicate the scaling factor.\nImportance: Eigenvalues and eigenvectors are crucial for understanding stability, resonance, and other dynamic behaviors in systems.\n\n\n\n\n\nCharacteristic Equation: The eigenvalues of ( A ) are solutions to ( (A - I) = 0 ).\nProperties: Real eigenvalues indicate scaling, while complex eigenvalues often signify rotations."
+  },
+  {
+    "objectID": "eigenvalues_eigenvectors.html#what-are-eigenvalues-and-eigenvectors",
+    "href": "eigenvalues_eigenvectors.html#what-are-eigenvalues-and-eigenvectors",
+    "title": "Eigenvalues and Eigenvectors",
+    "section": "",
+    "text": "Definitions: For a matrix ( A ), an eigenvector ( ) satisfies ( A = ), where ( ) is a scalar called the eigenvalue associated with ( ).\nGeometric Interpretation: Eigenvectors represent directions that are stretched or compressed by the transformation ( A ) without changing direction, while eigenvalues indicate the scaling factor.\nImportance: Eigenvalues and eigenvectors are crucial for understanding stability, resonance, and other dynamic behaviors in systems."
+  },
+  {
+    "objectID": "eigenvalues_eigenvectors.html#finding-eigenvalues",
+    "href": "eigenvalues_eigenvectors.html#finding-eigenvalues",
+    "title": "Eigenvalues and Eigenvectors",
+    "section": "",
+    "text": "Characteristic Equation: The eigenvalues of ( A ) are solutions to ( (A - I) = 0 ).\nProperties: Real eigenvalues indicate scaling, while complex eigenvalues often signify rotations."
+  },
+  {
+    "objectID": "eigenvalues_eigenvectors.html#matrix-example",
+    "href": "eigenvalues_eigenvectors.html#matrix-example",
+    "title": "Eigenvalues and Eigenvectors",
+    "section": "3.1 2×2 Matrix Example",
+    "text": "3.1 2×2 Matrix Example\nFor ( A =\n\\begin{pmatrix} 4 & 1 \\\\ 2 & 3 \\end{pmatrix}\n), find the eigenvalues by solving ( (A - I) = 0 )."
+  },
+  {
+    "objectID": "eigenvalues_eigenvectors.html#diagonalization",
+    "href": "eigenvalues_eigenvectors.html#diagonalization",
+    "title": "Eigenvalues and Eigenvectors",
+    "section": "3.2 Diagonalization",
+    "text": "3.2 Diagonalization\nThe process of diagonalizing ( A = PDP^{-1} ) when possible. Only matrices with a full set of linearly independent eigenvectors are diagonalizable."
+  },
+  {
+    "objectID": "linear_independence_and_span.html",
+    "href": "linear_independence_and_span.html",
+    "title": "Linear Independence and Span",
+    "section": "",
+    "text": "Definition: A set of vectors is linearly independent if no vector in the set can be written as a linear combination of the others. Mathematically, vectors ( _1, _2, , _n ) are independent if the equation ( c_1_1 + c_2_2 + + c_n_n = 0 ) only has the trivial solution ( c_1 = c_2 = = c_n = 0 ).\nImportance: Independence is crucial for defining bases, understanding dimension, and ensuring minimality in spanning sets.\nGeometric Interpretation: In ( ^3 ), three linearly independent vectors span the entire space, while fewer vectors (e.g., two) only span a subspace (e.g., a plane).\n\n\n\n\n\nDefinition: The span of a set of vectors is the collection of all linear combinations of those vectors. If vectors ( _1, _2, , _n ) span a space ( V ), then any vector in ( V ) can be expressed as ( c_1_1 + c_2_2 + + c_n_n ) for some scalars ( c_1, c_2, , c_n ).\nRelation to Vector Spaces: A spanning set that is also linearly independent forms a basis for the space, providing both coverage and minimality."
+  },
+  {
+    "objectID": "linear_independence_and_span.html#linear-independence",
+    "href": "linear_independence_and_span.html#linear-independence",
+    "title": "Linear Independence and Span",
+    "section": "",
+    "text": "Definition: A set of vectors is linearly independent if no vector in the set can be written as a linear combination of the others. Mathematically, vectors ( _1, _2, , _n ) are independent if the equation ( c_1_1 + c_2_2 + + c_n_n = 0 ) only has the trivial solution ( c_1 = c_2 = = c_n = 0 ).\nImportance: Independence is crucial for defining bases, understanding dimension, and ensuring minimality in spanning sets.\nGeometric Interpretation: In ( ^3 ), three linearly independent vectors span the entire space, while fewer vectors (e.g., two) only span a subspace (e.g., a plane)."
+  },
+  {
+    "objectID": "linear_independence_and_span.html#span-of-a-set-of-vectors",
+    "href": "linear_independence_and_span.html#span-of-a-set-of-vectors",
+    "title": "Linear Independence and Span",
+    "section": "",
+    "text": "Definition: The span of a set of vectors is the collection of all linear combinations of those vectors. If vectors ( _1, _2, , _n ) span a space ( V ), then any vector in ( V ) can be expressed as ( c_1_1 + c_2_2 + + c_n_n ) for some scalars ( c_1, c_2, , c_n ).\nRelation to Vector Spaces: A spanning set that is also linearly independent forms a basis for the space, providing both coverage and minimality."
+  },
+  {
+    "objectID": "linear_independence_and_span.html#basic-examples",
+    "href": "linear_independence_and_span.html#basic-examples",
+    "title": "Linear Independence and Span",
+    "section": "3.1 Basic Examples",
+    "text": "3.1 Basic Examples\n\n3.1.1 Testing for Linear Independence\nConsider vectors ( _1 =\n\\begin{pmatrix} 1 \\\\ 2 \\end{pmatrix}\n) and ( _2 =\n\\begin{pmatrix} 2 \\\\ 4 \\end{pmatrix}\n). To check independence, we solve for scalars ( c_1 ) and ( c_2 ) such that: [ c_1_1 + c_2_2 = . ] Substituting values, we get: [ c_1\n\\begin{pmatrix} 1 \\\\ 2 \\end{pmatrix}\n\nc_2\n\\begin{pmatrix} 2 \\\\ 4 \\end{pmatrix}\n=\n\\begin{pmatrix} 0 \\\\ 0 \\end{pmatrix}\n, ] leading to ( c_1 + 2c_2 = 0 ) and ( 2c_1 + 4c_2 = 0 ). These equations imply ( c_1 = -2c_2 ), meaning the only solution is trivial if ( c_1 = c_2 = 0 ), proving the vectors are dependent.\n\n\n\n3.1.2 Finding the Span\nFor vectors ( _1 =\n\\begin{pmatrix} 1 \\\\ 0 \\end{pmatrix}\n) and ( _2 =\n\\begin{pmatrix} 0 \\\\ 1 \\end{pmatrix}\n), their span is all of ( ^2 ) since any vector ( =\n\\begin{pmatrix} x \\\\ y \\end{pmatrix}\n) can be written as ( x_1 + y_2 )."
+  },
+  {
+    "objectID": "linear_independence_and_span.html#advanced-examples",
+    "href": "linear_independence_and_span.html#advanced-examples",
+    "title": "Linear Independence and Span",
+    "section": "3.2 Advanced Examples",
+    "text": "3.2 Advanced Examples\n\n3.2.1 Basis Selection\nIn ( ^3 ), find a basis for the subspace spanned by (\n\\begin{pmatrix} 1 \\\\ 2 \\\\ 3 \\end{pmatrix}\n), (\n\\begin{pmatrix} 2 \\\\ 4 \\\\ 6 \\end{pmatrix}\n), and (\n\\begin{pmatrix} 0 \\\\ 1 \\\\ 0 \\end{pmatrix}\n). Notice that the first two vectors are linearly dependent, so a basis can be ( {\n\\begin{pmatrix} 1 \\\\ 2 \\\\ 3 \\end{pmatrix}\n,\n\\begin{pmatrix} 0 \\\\ 1 \\\\ 0 \\end{pmatrix}\n} )."
+  }
+]
