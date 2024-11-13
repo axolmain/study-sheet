@@ -2,9 +2,7 @@ project:
   type: website
   output-dir: docs
   render:
-    - '*.qmd' # Render all .qmd files in the root directory
-    - '!exams/'
-    - '!book/'
+    - '*.qmd'
 
 website:
   title: "Study-Sheet: Linear Algebra"
@@ -29,15 +27,21 @@ website:
             text: Linear Independence and Span
           - href: matrix_transformations.qmd
             text: Matrix Transformations
+          - href: linear_equations.qmd
+            text: Basic Linear equations
+          - href: determinants.qmd
+            text: Determinants
 
 format:
   html:
-    theme: cosmo
+    theme:
+      light: lightly
+      dark: darkly
     css: styles.css
     page-layout: full
     toc: true
     toc-depth: 3
-    toc-location: body
+    toc-location: right
     number-sections: false
     html-math-method: katex
     code-fold: true

@@ -1,59 +1,10 @@
 [
   {
-    "objectID": "vector_spaces_and_dimensions.html",
-    "href": "vector_spaces_and_dimensions.html",
-    "title": "Vector Spaces and Dimension",
-    "section": "",
-    "text": "Note\n\n\n\nA vector space V is finite-dimensional if it can be spanned by a finite set of vectors. The dimension of V, denoted \\dim V, is the number of vectors in any basis for V.\n\n\n\n\nThe standard basis for \\mathbb{R}^3 consists of: \n\\begin{bmatrix} 1 \\\\ 0 \\\\ 0 \\end{bmatrix},\n\\begin{bmatrix} 0 \\\\ 1 \\\\ 0 \\end{bmatrix},\n\\begin{bmatrix} 0 \\\\ 0 \\\\ 1 \\end{bmatrix}\n Therefore, \\dim \\mathbb{R}^3 = 3\n\n\n\n\n\nZero vector space: \\dim \\{\\mathbf{0}\\} = 0\nInfinite-dimensional spaces: The space of all polynomials P has no finite basis\n\n\n\n\n\n\n\n\n\n\n\n\nHomogeneous System Form\n\n\n\nA homogeneous system has the form A\\mathbf{x} = \\mathbf{0}\n\n\n\n\n\n\\begin{aligned}\n2x + 3y - z &= 0 \\\\\n4x - 2y + 2z &= 0\n\\end{aligned}\n\nIn matrix form: \n\\begin{bmatrix}\n2 & 3 & -1 \\\\\n4 & -2 & 2\n\\end{bmatrix}\n\\begin{bmatrix}\nx \\\\ y \\\\ z\n\\end{bmatrix}\n= \\begin{bmatrix}\n0 \\\\ 0\n\\end{bmatrix}\n\n\n\n\n\n\n\n\n\n\n\nTheorem 9\n\n\n\nIf a vector space V has a basis \\mathcal{B} = \\{ \\mathbf{b}_1, \\dots, \\mathbf{b}_n \\}, then any set in V containing more than n vectors must be linearly dependent.\n\n\n\n\n\n\n\n\nTheorem 10\n\n\n\nIf a vector space V has a basis of n vectors, then every basis of V must consist of exactly n vectors.\n\n\n\n\n\n\n\n\nTheorem 11\n\n\n\nLet H be a subspace of a finite-dimensional vector space V. Any linearly independent set in H can be expanded, if necessary, to a basis for H. Also, H is finite-dimensional and\n\\dim H \\leq \\dim V\n\n\n\n\n\n\n\n\nThe Basis Theorem (Theorem 12)\n\n\n\nLet V be a p-dimensional vector space, p \\geq 1. Any linearly independent set of exactly p elements in V is automatically a basis for V.\n\n\n\n\n\n\n\n\nSolve the system: \n\\begin{aligned}\nx + y + z &= 0 \\\\\n2x + 2y + 2z &= 0\n\\end{aligned}\n\n\n\n\n\n\n\nSolution\n\n\n\n\nNotice the second equation is a multiple of the first\nSystem reduces to x + y + z = 0\nGeneral solution: \\begin{bmatrix} x \\\\ y \\\\ -(x+y) \\end{bmatrix} for any x, y\nBasis: \\text{span}\\left(\\begin{bmatrix} 1 \\\\ 0 \\\\ -1 \\end{bmatrix}, \\begin{bmatrix} 0 \\\\ 1 \\\\ -1 \\end{bmatrix}\\right)\n\n\n\n\n\n\nFind a basis for the null space of: \nA = \\begin{bmatrix} 1 & 2 & 3 \\\\ 2 & 4 & 6 \\end{bmatrix}\n\n\n\n\n\n\n\nSolution\n\n\n\n\nRow reduce to: \\begin{bmatrix} 1 & 2 & 3 \\\\ 0 & 0 & 0 \\end{bmatrix}\nFree variables: y, z\nExpress x: x = -2y - 3z\nBasis: \\left\\{\\begin{bmatrix} -2 \\\\ 1 \\\\ 0 \\end{bmatrix}, \\begin{bmatrix} -3 \\\\ 0 \\\\ 1 \\end{bmatrix}\\right\\}"
-  },
-  {
-    "objectID": "vector_spaces_and_dimensions.html#homogeneous-systems",
-    "href": "vector_spaces_and_dimensions.html#homogeneous-systems",
-    "title": "Vector Spaces and Dimension",
-    "section": "",
-    "text": "Homogeneous System Form\n\n\n\nA homogeneous system has the form A\\mathbf{x} = \\mathbf{0}\n\n\n\n\n\n\\begin{aligned}\n2x + 3y - z &= 0 \\\\\n4x - 2y + 2z &= 0\n\\end{aligned}\n\nIn matrix form: \n\\begin{bmatrix}\n2 & 3 & -1 \\\\\n4 & -2 & 2\n\\end{bmatrix}\n\\begin{bmatrix}\nx \\\\ y \\\\ z\n\\end{bmatrix}\n= \\begin{bmatrix}\n0 \\\\ 0\n\\end{bmatrix}\n\n\n\n\n\n\n\n\n\n\n\nTheorem 9\n\n\n\nIf a vector space V has a basis \\mathcal{B} = \\{ \\mathbf{b}_1, \\dots, \\mathbf{b}_n \\}, then any set in V containing more than n vectors must be linearly dependent.\n\n\n\n\n\n\n\n\nTheorem 10\n\n\n\nIf a vector space V has a basis of n vectors, then every basis of V must consist of exactly n vectors.\n\n\n\n\n\n\n\n\nTheorem 11\n\n\n\nLet H be a subspace of a finite-dimensional vector space V. Any linearly independent set in H can be expanded, if necessary, to a basis for H. Also, H is finite-dimensional and\n\\dim H \\leq \\dim V\n\n\n\n\n\n\n\n\nThe Basis Theorem (Theorem 12)\n\n\n\nLet V be a p-dimensional vector space, p \\geq 1. Any linearly independent set of exactly p elements in V is automatically a basis for V."
-  },
-  {
-    "objectID": "vector_spaces_and_dimensions.html#practice-problems",
-    "href": "vector_spaces_and_dimensions.html#practice-problems",
-    "title": "Vector Spaces and Dimension",
-    "section": "",
-    "text": "Solve the system: \n\\begin{aligned}\nx + y + z &= 0 \\\\\n2x + 2y + 2z &= 0\n\\end{aligned}\n\n\n\n\n\n\n\nSolution\n\n\n\n\nNotice the second equation is a multiple of the first\nSystem reduces to x + y + z = 0\nGeneral solution: \\begin{bmatrix} x \\\\ y \\\\ -(x+y) \\end{bmatrix} for any x, y\nBasis: \\text{span}\\left(\\begin{bmatrix} 1 \\\\ 0 \\\\ -1 \\end{bmatrix}, \\begin{bmatrix} 0 \\\\ 1 \\\\ -1 \\end{bmatrix}\\right)\n\n\n\n\n\n\nFind a basis for the null space of: \nA = \\begin{bmatrix} 1 & 2 & 3 \\\\ 2 & 4 & 6 \\end{bmatrix}\n\n\n\n\n\n\n\nSolution\n\n\n\n\nRow reduce to: \\begin{bmatrix} 1 & 2 & 3 \\\\ 0 & 0 & 0 \\end{bmatrix}\nFree variables: y, z\nExpress x: x = -2y - 3z\nBasis: \\left\\{\\begin{bmatrix} -2 \\\\ 1 \\\\ 0 \\end{bmatrix}, \\begin{bmatrix} -3 \\\\ 0 \\\\ 1 \\end{bmatrix}\\right\\}"
-  },
-  {
-    "objectID": "matrix_transformations.html",
-    "href": "matrix_transformations.html",
-    "title": "Matrix Transformations",
-    "section": "",
-    "text": "Definition: A matrix transformation is a function $ T: ^n ^m $ that maps vectors from one space to another through multiplication by a matrix $ A $. If $ A $ is an $ m n $ matrix, then $ T() = A $ defines the transformation.\nTypes of Transformations: Common types include rotations, scalings, and shears. Each type affects the geometric properties of vectors in different ways.\nRelation to Linear Maps: Every matrix transformation is a linear transformation, meaning it satisfies the properties of additivity and scalar multiplication."
-  },
-  {
-    "objectID": "matrix_transformations.html#what-is-a-matrix-transformation",
-    "href": "matrix_transformations.html#what-is-a-matrix-transformation",
-    "title": "Matrix Transformations",
-    "section": "",
-    "text": "Definition: A matrix transformation is a function $ T: ^n ^m $ that maps vectors from one space to another through multiplication by a matrix $ A $. If $ A $ is an $ m n $ matrix, then $ T() = A $ defines the transformation.\nTypes of Transformations: Common types include rotations, scalings, and shears. Each type affects the geometric properties of vectors in different ways.\nRelation to Linear Maps: Every matrix transformation is a linear transformation, meaning it satisfies the properties of additivity and scalar multiplication."
-  },
-  {
-    "objectID": "matrix_transformations.html#basic-examples",
-    "href": "matrix_transformations.html#basic-examples",
-    "title": "Matrix Transformations",
-    "section": "3.1 Basic Examples",
-    "text": "3.1 Basic Examples\n\n3.1.1 Rotation Matrix\nIn $ ^2 $, a counterclockwise rotation by angle $ $ is given by: [ R =\n\\begin{pmatrix} \\cos \\theta & -\\sin \\theta \\\\ \\sin \\theta & \\cos \\theta \\end{pmatrix}\n. ] Applying this matrix to $ =\n\\begin{pmatrix} 1 \\\\ 0 \\end{pmatrix}\n$ with $ = 90^$ results in: [ R =\n\\begin{pmatrix} 0 \\\\ 1 \\end{pmatrix}\n, ] which shows a 90-degree rotation.\n\n\n3.1.2 Scaling Transformation\nA scaling matrix in $ ^2 $ by a factor $ k $ is: [ S =\n\\begin{pmatrix} k & 0 \\\\ 0 & k \\end{pmatrix}\n. ] For $ k = 2 $, applying $ S $ to $ =\n\\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix}\n$ yields $ 2 =\n\\begin{pmatrix} 2 \\\\ 2 \\end{pmatrix}\n$."
-  },
-  {
-    "objectID": "matrix_transformations.html#advanced-examples",
-    "href": "matrix_transformations.html#advanced-examples",
-    "title": "Matrix Transformations",
-    "section": "3.2 Advanced Examples",
-    "text": "3.2 Advanced Examples\n\n3.2.1 Composition of Transformations\nConsider a transformation that rotates by 45° and then scales by 3. The combined transformation matrix is: [ T = 3\n\\begin{pmatrix} \\cos(45^\\circ) & -\\sin(45^\\circ) \\\\ \\sin(45^\\circ) & \\cos(45^\\circ) \\end{pmatrix}\n. ]"
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Linear Algebra Study Book",
     "section": "",
-    "text": "Dimension = Rank = Size\n\n\n\n\nDimension of a vector space = Number of vectors in any basis\nRank of a matrix = Number of pivot columns\nSize of a span = Number of linearly independent vectors\n\n\n\n\n\n\n\n\n\nSpan = Range = Image\n\n\n\n\nSpan of vectors = All possible linear combinations\nRange of a transformation = Output vectors\nImage of a matrix = Column space\n\n\n\n\n\n\n\n\n\nKernel = Null Space = Solution Space\n\n\n\n\nKernel of transformation = Vectors that map to zero\nNull space of matrix = Solutions to A\\mathbf{x} = \\mathbf{0}\nSolution space of homogeneous system = Null space\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nA vector space is a set with two operations: 1. Vector addition 2. Scalar multiplication\nThat satisfy certain axioms (closure, associativity, etc.)\n\n\n\n\n\nEvery vector space has a basis\nDimension = Number of vectors in any basis\nSubspaces inherit properties from parent space\n\\dim(\\text{subspace}) \\leq \\dim(\\text{parent space})\n\n\n\n\n\n\nRow SpaceColumn SpaceNull Space\n\n\n\nSpan of row vectors\n\\dim(\\text{row space}) = \\text{row rank}\nRow operations don’t change row space\n\n\n\n\nSpan of column vectors\n\\dim(\\text{column space}) = \\text{column rank}\nImage of the matrix transformation\n\n\n\n\nSolutions to A\\mathbf{x} = \\mathbf{0}\n\\dim(\\text{null space}) = \\text{nullity}\nKernel of the matrix transformation\n\n\n\n\n\n\n\nRow rank = Column rank = Rank of matrix\nNumber of pivot columns = Rank\nNumber of free variables = Nullity\n\n\n\n\n\n\n\n\n\n\n\nRank-Nullity Theorem\n\n\n\nFor an m \\times n matrix: \\text{rank} + \\text{nullity} = n (number of columns)\nImplications: - More columns than rows → guaranteed null space - Full column rank → trivial null space\n\n\n\n\n\n\n\n\nRow-Column Rank Theorem\n\n\n\nRow rank = Column rank\nImplications: - Can find rank by counting pivot rows OR pivot columns - Maximum rank is min(rows, columns)\n\n\n\n\n\n\n\n\ndim(row space) ──────┐\n                     ├── all equal ── RANK\ndim(column space) ───┘\n\nRANK + NULLITY = NUMBER OF COLUMNS\n\n\n\nBASIS ─── consists of ─── LINEARLY INDEPENDENT vectors\n   │                           │\n   └── that ─── SPANS ────────┘\n   │\n   └── number of vectors = DIMENSION\n\n\n\n\n\n\n\n\n\n\nImportant Distinctions\n\n\n\n\nLinear independence ≠ Spanning\n\nA set can span without being linearly independent\nA set can be linearly independent without spanning\n\nRank ≠ Number of Rows/Columns\n\nRank is ≤ min(rows, columns)\nEqual only for full rank matrices\n\nZero vector ≠ Empty set\n\nZero vector is IN every vector space\nEmpty set is NOT a vector space\n\n\n\n\n\n\n\n\nBack to Core Concepts\nJump to Theorems\nSee Matrix Spaces"
+    "text": "Linear Algebra –&gt; Vector Spaces\n\n\n\n\n\n\ngraph TD\n    A[Linear Algebra] --&gt; B[Vector Spaces]\n\n    B --&gt; B1[Definition]\n    B1 --&gt; B1a[Set with addition and scalar multiplication]\n\n    B --&gt; B2[Vectors]\n    B2 --&gt; B2a[Linear Independence]\n    B2 --&gt; B2b[Linear Dependence]\n    B2 --&gt; B2c[Linear Combinations]\n\n    B --&gt; B3[Basis]\n    B3 --&gt; B3a[Linearly independent set that spans space]\n    B3 --&gt; B3b[Dimension]\n    B3b --&gt; B3b1[Number of vectors in any basis]\n\nstyle A fill:#f9f,stroke:#333,stroke-width:4px\nstyle B fill:#bbf,stroke:#333,stroke-width:2px\n\n\n\n\n\n\n\n\n\nLinear Algebra –&gt; Matrices\n\n\n\n\n\n\ngraph TD\n    A[Linear Algebra] --&gt; C[Matrices]\n    C --&gt; C1[Row Space]\n    C1 --&gt; C1a[Span of row vectors]\n    C1 --&gt; C1b[dim = row rank]\n\n    C --&gt; C2[Column Space]\n    C2 --&gt; C2a[Span of column vectors]\n    C2 --&gt; C2b[dim = column rank]\n\n    C --&gt; C3[Null Space]\n    C3 --&gt; C3a[Solutions to Ax = 0]\n    C3 --&gt; C3b[dim = nullity]\n\n    C --&gt; C4[Pivots]\n    C4 --&gt; C4a[Leading non-zero entries]\n    C4 --&gt; C4b[Number of pivots = rank]\n\nstyle A fill:#f9f,stroke:#333,stroke-width:4px\nstyle C,D fill:#bbf,stroke:#333,stroke-width:2px\n\n\n\n\n\n\n\n\n\nLinear Algebra –&gt; Fundamental Theorems\n\n\n\n\n\n\ngraph TD\n    A[Linear Algebra] --&gt; D[Fundamental Theorems]\n\n    D --&gt; D1[Rank-Nullity Theorem]\n    D1 --&gt; D1a[rank + nullity = number of columns]\n\n    D --&gt; D2[Row-Column Rank]\n    D2 --&gt; D2a[row rank = column rank]\n\n    D --&gt; D3[Basis Theorem]\n    D3 --&gt; D3a[All bases have same size]\n\nstyle A fill:#f9f,stroke:#333,stroke-width:4px\nstyle D fill:#bbf,stroke:#333,stroke-width:2px\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDimension = Rank = Size\n\n\n\n\nDimension of a vector space = Number of vectors in any basis\nRank of a matrix = Number of pivot columns\nSize of a span = Number of linearly independent vectors\n\n\n\n\n\n\n\n\n\nSpan = Range = Image\n\n\n\n\nSpan of vectors = All possible linear combinations\nRange of a transformation = Output vectors\nImage of a matrix = Column space\n\n\n\n\n\n\n\n\n\nKernel = Null Space = Solution Space\n\n\n\n\nKernel of transformation = Vectors that map to zero\nNull space of matrix = Solutions to A\\mathbf{x} = \\mathbf{0}\nSolution space of homogeneous system = Null space\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nA vector space is a set with two operations: 1. Vector addition 2. Scalar multiplication\nThat satisfy certain axioms (closure, associativity, etc.)\n\n\n\n\n\nEvery vector space has a basis\nDimension = Number of vectors in any basis\nSubspaces inherit properties from parent space\n\\dim(\\text{subspace}) \\leq \\dim(\\text{parent space})\n\n\n\n\n\n\nRow SpaceColumn SpaceNull Space\n\n\n\nSpan of row vectors\n\\dim(\\text{row space}) = \\text{row rank}\nRow operations don’t change row space\n\n\n\n\nSpan of column vectors\n\\dim(\\text{column space}) = \\text{column rank}\nImage of the matrix transformation\n\n\n\n\nSolutions to A\\mathbf{x} = \\mathbf{0}\n\\dim(\\text{null space}) = \\text{nullity}\nKernel of the matrix transformation\n\n\n\n\n\n\n\nRow rank = Column rank = Rank of matrix\nNumber of pivot columns = Rank\nNumber of free variables = Nullity\n\n\n\n\n\n\n\n\n\n\n\nRank-Nullity Theorem\n\n\n\nFor an m \\times n matrix: \\text{rank} + \\text{nullity} = n (number of columns)\nImplications: - More columns than rows → guaranteed null space - Full column rank → trivial null space\n\n\n\n\n\n\n\n\nRow-Column Rank Theorem\n\n\n\nRow rank = Column rank\nImplications: - Can find rank by counting pivot rows OR pivot columns - Maximum rank is min(rows, columns)\n\n\n\n\n\n\n\n\ndim(row space) ──────┐\n                     ├── all equal ── RANK\ndim(column space) ───┘\n\nRANK + NULLITY = NUMBER OF COLUMNS\n\n\n\nBASIS ─── consists of ─── LINEARLY INDEPENDENT vectors\n   │                           │\n   └── that ─── SPANS ────────┘\n   │\n   └── number of vectors = DIMENSION\n\n\n\n\n\n\n\n\n\n\nImportant Distinctions\n\n\n\n\nLinear independence ≠ Spanning\n\nA set can span without being linearly independent\nA set can be linearly independent without spanning\n\nRank ≠ Number of Rows/Columns\n\nRank is ≤ min(rows, columns)\nEqual only for full rank matrices\n\nZero vector ≠ Empty set\n\nZero vector is IN every vector space\nEmpty set is NOT a vector space\n\n\n\n\n\n\n\n\nBack to Core Concepts\nJump to Theorems\nSee Matrix Spaces"
   },
   {
     "objectID": "index.html#quick-reference-equivalent-terms",
@@ -91,6 +42,76 @@
     "text": "Back to Core Concepts\nJump to Theorems\nSee Matrix Spaces"
   },
   {
+    "objectID": "null_spaces_col_spaces.html",
+    "href": "null_spaces_col_spaces.html",
+    "title": "Null Space and Column Space",
+    "section": "",
+    "text": "Definition: The null space (or kernel) of a matrix A is the set of all vectors \\mathbf{x} such that A\\mathbf{x} = \\mathbf{0}. It represents solutions to the homogeneous equation, meaning all vectors that the matrix transforms to the zero vector.\nProperties:\n\nThe null space is a subspace of \\mathbb{R}^n (where n is the number of columns of A).\nThe dimension of the null space is known as the nullity of A.\n\nGeometric Interpretation: The null space represents directions in the domain that map to zero. For example, if a transformation represented by A compresses the plane into a line, the null space corresponds to the directions that get “flattened” in that process.\n\n\n\n\n\nDefinition: The column space (or range) of a matrix A is the span of its column vectors. It represents all possible linear combinations of the columns of A and, geometrically, the “reach” or “range” of the transformation applied by A.\nProperties:\n\nThe column space is a subspace of \\mathbb{R}^m (where m is the number of rows of A).\nThe dimension of the column space is called the rank of A.\n\nRelation to Linear Transformations: The column space represents the image of the transformation, describing all possible output vectors."
+  },
+  {
+    "objectID": "null_spaces_col_spaces.html#what-is-the-null-space",
+    "href": "null_spaces_col_spaces.html#what-is-the-null-space",
+    "title": "Null Space and Column Space",
+    "section": "",
+    "text": "Definition: The null space (or kernel) of a matrix A is the set of all vectors \\mathbf{x} such that A\\mathbf{x} = \\mathbf{0}. It represents solutions to the homogeneous equation, meaning all vectors that the matrix transforms to the zero vector.\nProperties:\n\nThe null space is a subspace of \\mathbb{R}^n (where n is the number of columns of A).\nThe dimension of the null space is known as the nullity of A.\n\nGeometric Interpretation: The null space represents directions in the domain that map to zero. For example, if a transformation represented by A compresses the plane into a line, the null space corresponds to the directions that get “flattened” in that process."
+  },
+  {
+    "objectID": "null_spaces_col_spaces.html#what-is-the-column-space",
+    "href": "null_spaces_col_spaces.html#what-is-the-column-space",
+    "title": "Null Space and Column Space",
+    "section": "",
+    "text": "Definition: The column space (or range) of a matrix A is the span of its column vectors. It represents all possible linear combinations of the columns of A and, geometrically, the “reach” or “range” of the transformation applied by A.\nProperties:\n\nThe column space is a subspace of \\mathbb{R}^m (where m is the number of rows of A).\nThe dimension of the column space is called the rank of A.\n\nRelation to Linear Transformations: The column space represents the image of the transformation, describing all possible output vectors."
+  },
+  {
+    "objectID": "null_spaces_col_spaces.html#basic-examples",
+    "href": "null_spaces_col_spaces.html#basic-examples",
+    "title": "Null Space and Column Space",
+    "section": "3.1 Basic Examples",
+    "text": "3.1 Basic Examples\n\n3.1.1 Finding the Null Space of a 2×2 Matrix\nLet A = \\begin{pmatrix} 1 & 2 \\\\ 3 & 6 \\end{pmatrix}. To find the null space, we solve A\\mathbf{x} = \\mathbf{0}: \\begin{pmatrix} 1 & 2 \\\\ 3 & 6 \\end{pmatrix} \\begin{pmatrix} x_1 \\\\ x_2 \\end{pmatrix} = \\begin{pmatrix} 0 \\\\ 0 \\end{pmatrix}. This system reduces to: x_1 + 2x_2 = 0. Thus, x_1 = -2x_2, so any solution is a scalar multiple of \\begin{pmatrix} -2 \\\\ 1 \\end{pmatrix}. The null space is therefore: \\text{Null}(A) = \\text{span}\\left\\{ \\begin{pmatrix} -2 \\\\ 1 \\end{pmatrix} \\right\\}.\n\n\n3.1.2 Finding the Column Space\nThe column space of A is the span of its columns: \\text{Col}(A) = \\text{span}\\left\\{ \\begin{pmatrix} 1 \\\\ 3 \\end{pmatrix}, \\begin{pmatrix} 2 \\\\ 6 \\end{pmatrix} \\right\\}. Since the second column is a scalar multiple of the first, the column space is just the span of \\begin{pmatrix} 1 \\\\ 3 \\end{pmatrix}."
+  },
+  {
+    "objectID": "null_spaces_col_spaces.html#advanced-examples",
+    "href": "null_spaces_col_spaces.html#advanced-examples",
+    "title": "Null Space and Column Space",
+    "section": "3.2 Advanced Examples",
+    "text": "3.2 Advanced Examples\n\n3.2.1 Real-World Application: Signal Processing\nIn signal processing, the null space is essential in understanding the solutions of systems affected by noise or interference. By projecting signals into the null space, unwanted signals or noise can be minimized."
+  },
+  {
+    "objectID": "linear_independence_and_span.html",
+    "href": "linear_independence_and_span.html",
+    "title": "Linear Independence and Span",
+    "section": "",
+    "text": "Definition: A set of vectors is linearly independent if no vector in the set can be written as a linear combination of the others. Mathematically, vectors \\mathbf{v}_1, \\mathbf{v}_2, \\ldots, \\mathbf{v}_n are independent if the equation c_1\\mathbf{v}_1 + c_2\\mathbf{v}_2 + \\cdots + c_n\\mathbf{v}_n = 0 only has the trivial solution c_1 = c_2 = \\cdots = c_n = 0.\nImportance: Independence is crucial for defining bases, understanding dimension, and ensuring minimality in spanning sets.\nGeometric Interpretation: In \\mathbb{R}^3, three linearly independent vectors span the entire space, while fewer vectors (e.g., two) only span a subspace (e.g., a plane).\n\n\n\n\n\nDefinition: The span of a set of vectors is the collection of all linear combinations of those vectors. If vectors \\mathbf{v}_1, \\mathbf{v}_2, \\ldots, \\mathbf{v}_n span a space V, then any vector in V can be expressed as c_1\\mathbf{v}_1 + c_2\\mathbf{v}_2 + \\cdots + c_n\\mathbf{v}_n for some scalars c_1, c_2, \\ldots, c_n.\nRelation to Vector Spaces: A spanning set that is also linearly independent forms a basis for the space, providing both coverage and minimality."
+  },
+  {
+    "objectID": "linear_independence_and_span.html#linear-independence",
+    "href": "linear_independence_and_span.html#linear-independence",
+    "title": "Linear Independence and Span",
+    "section": "",
+    "text": "Definition: A set of vectors is linearly independent if no vector in the set can be written as a linear combination of the others. Mathematically, vectors \\mathbf{v}_1, \\mathbf{v}_2, \\ldots, \\mathbf{v}_n are independent if the equation c_1\\mathbf{v}_1 + c_2\\mathbf{v}_2 + \\cdots + c_n\\mathbf{v}_n = 0 only has the trivial solution c_1 = c_2 = \\cdots = c_n = 0.\nImportance: Independence is crucial for defining bases, understanding dimension, and ensuring minimality in spanning sets.\nGeometric Interpretation: In \\mathbb{R}^3, three linearly independent vectors span the entire space, while fewer vectors (e.g., two) only span a subspace (e.g., a plane)."
+  },
+  {
+    "objectID": "linear_independence_and_span.html#span-of-a-set-of-vectors",
+    "href": "linear_independence_and_span.html#span-of-a-set-of-vectors",
+    "title": "Linear Independence and Span",
+    "section": "",
+    "text": "Definition: The span of a set of vectors is the collection of all linear combinations of those vectors. If vectors \\mathbf{v}_1, \\mathbf{v}_2, \\ldots, \\mathbf{v}_n span a space V, then any vector in V can be expressed as c_1\\mathbf{v}_1 + c_2\\mathbf{v}_2 + \\cdots + c_n\\mathbf{v}_n for some scalars c_1, c_2, \\ldots, c_n.\nRelation to Vector Spaces: A spanning set that is also linearly independent forms a basis for the space, providing both coverage and minimality."
+  },
+  {
+    "objectID": "linear_independence_and_span.html#basic-examples",
+    "href": "linear_independence_and_span.html#basic-examples",
+    "title": "Linear Independence and Span",
+    "section": "3.1 Basic Examples",
+    "text": "3.1 Basic Examples\n\n3.1.1 Testing for Linear Independence\nConsider vectors \\mathbf{v}_1 = \\begin{pmatrix} 1 \\\\ 2 \\end{pmatrix} and \\mathbf{v}_2 = \\begin{pmatrix} 2 \\\\ 4 \\end{pmatrix}. To check independence, we solve for scalars c_1 and c_2 such that: c_1\\mathbf{v}_1 + c_2\\mathbf{v}_2 = \\mathbf{0}. Substituting values, we get: c_1 \\begin{pmatrix} 1 \\\\ 2 \\end{pmatrix} + c_2 \\begin{pmatrix} 2 \\\\ 4 \\end{pmatrix} = \\begin{pmatrix} 0 \\\\ 0 \\end{pmatrix}, leading to c_1 + 2c_2 = 0 and 2c_1 + 4c_2 = 0. These equations imply c_1 = -2c_2, meaning the only solution is trivial if c_1 = c_2 = 0, proving the vectors are dependent.\n\n\n3.1.2 Finding the Span\nFor vectors \\mathbf{v}_1 = \\begin{pmatrix} 1 \\\\ 0 \\end{pmatrix} and \\mathbf{v}_2 = \\begin{pmatrix} 0 \\\\ 1 \\end{pmatrix}, their span is all of \\mathbb{R}^2 since any vector \\mathbf{x} = \\begin{pmatrix} x \\\\ y \\end{pmatrix} can be written as x\\mathbf{v}_1 + y\\mathbf{v}_2."
+  },
+  {
+    "objectID": "linear_independence_and_span.html#advanced-examples",
+    "href": "linear_independence_and_span.html#advanced-examples",
+    "title": "Linear Independence and Span",
+    "section": "3.2 Advanced Examples",
+    "text": "3.2 Advanced Examples\n\n3.2.1 Basis Selection\nIn \\mathbb{R}^3, find a basis for the subspace spanned by \\begin{pmatrix} 1 \\\\ 2 \\\\ 3 \\end{pmatrix}, \\begin{pmatrix} 2 \\\\ 4 \\\\ 6 \\end{pmatrix}, and \\begin{pmatrix} 0 \\\\ 1 \\\\ 0 \\end{pmatrix}. Notice that the first two vectors are linearly dependent, so a basis can be \\left\\{ \\begin{pmatrix} 1 \\\\ 2 \\\\ 3 \\end{pmatrix}, \\begin{pmatrix} 0 \\\\ 1 \\\\ 0 \\end{pmatrix} \\right\\}."
+  },
+  {
     "objectID": "eigenvalues_eigenvectors.html",
     "href": "eigenvalues_eigenvectors.html",
     "title": "Eigenvalues and Eigenvectors",
@@ -126,73 +147,178 @@
     "text": "3.2 Diagonalization\nThe process of diagonalizing A = PDP^{-1} when possible. Only matrices with a full set of linearly independent eigenvectors are diagonalizable."
   },
   {
-    "objectID": "linear_independence_and_span.html",
-    "href": "linear_independence_and_span.html",
-    "title": "Linear Independence and Span",
+    "objectID": "determinants.html",
+    "href": "determinants.html",
+    "title": "Determinants and Invertibility in Linear Algebra",
     "section": "",
-    "text": "Definition: A set of vectors is linearly independent if no vector in the set can be written as a linear combination of the others. Mathematically, vectors $ _1, _2, , _n $ are independent if the equation $ c_1_1 + c_2_2 + + c_n_n = 0 $ only has the trivial solution $ c_1 = c_2 = = c_n = 0 $.\nImportance: Independence is crucial for defining bases, understanding dimension, and ensuring minimality in spanning sets.\nGeometric Interpretation: In $ ^3 $, three linearly independent vectors span the entire space, while fewer vectors (e.g., two) only span a subspace (e.g., a plane).\n\n\n\n\n\nDefinition: The span of a set of vectors is the collection of all linear combinations of those vectors. If vectors $ _1, _2, , _n $ span a space $ V $, then any vector in $ V $ can be expressed as $ c_1_1 + c_2_2 + + c_n_n $ for some scalars $ c_1, c_2, , c_n $.\nRelation to Vector Spaces: A spanning set that is also linearly independent forms a basis for the space, providing both coverage and minimality."
+    "text": "This study guide covers essential concepts about determinants in linear algebra, focusing on the effects of row operations on determinants and the relationship between a matrix’s invertibility and its determinant.\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nDefinition: The determinant of a square matrix A is a scalar that provides information about the matrix’s properties, such as invertibility and volume scaling factor. For a 2x2 matrix, the determinant is calculated as: \\text{det}(A) = ad - bc \\quad \\text{for} \\quad A = \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}.\n\n\n\n\nFor A = \\begin{bmatrix} 3 & 4 \\\\ 2 & 5 \\end{bmatrix}, the determinant is: \\text{det}(A) = (3 \\times 5) - (4 \\times 2) = 15 - 8 = 7.\n\n\n\n\nThe determinant of a matrix A is: - Zero if A is not invertible. - Nonzero if A is invertible.\nThe determinant also changes in predictable ways with row operations, as detailed below.\n\n\n\n\n\n\n\nRow Replacement: Replacing one row with itself plus a multiple of another row leaves the determinant unchanged.\nRow Interchange: Interchanging two rows of a matrix multiplies the determinant by (-1).\nRow Scaling: Multiplying a row by a scalar k scales the determinant by k.\n\n\n\nConsider A = \\begin{bmatrix} 1 & 2 \\\\ 3 & 4 \\end{bmatrix} with \\text{det}(A) = -2. - Row Replacement: Replacing row 1 with \\text{row 1} + 3 \\times \\text{row 2} does not alter the determinant. - Row Interchange: Swapping rows 1 and 2 changes the determinant to 2. - Row Scaling: Multiplying row 1 by 3 changes the determinant to -6.\n\n\n\n\nDeterminants can be computed by transforming the matrix to an upper triangular form via row operations. The determinant is then the product of the diagonal entries.\n\n\n\n\n\n\n\n\n\n\nDeterminant Multiplication Theorem\n\n\n\nFor matrices A and B of the same size, \\text{det}(AB) = \\text{det}(A) \\times \\text{det}(B).\n\n\n\n\n\n\n\n\nInvertibility and Determinants\n\n\n\nA matrix A is invertible if and only if \\text{det}(A) \\neq 0.\n\n\n\n\n\n\n\nIf \\text{det}(A) = 0, then: - A is not invertible. - A has linearly dependent rows or columns. - The matrix A maps volumes to zero, indicating a lack of full rank.\nConversely, if \\text{det}(A) \\neq 0, then A is invertible, has linearly independent columns, and the transformation represented by A is volume-preserving (up to a scaling factor).\n\n\nFor A = \\begin{bmatrix} 1 & 2 \\\\ 3 & 6 \\end{bmatrix}, \\text{det}(A) = (1)(6) - (2)(3) = 0. Thus, A is not invertible due to linearly dependent columns.\n\n\n\n\n\n\n\nThe determinant of a transformation matrix represents the scaling factor for areas (in 2D) or volumes (in 3D) under the transformation. A determinant of zero implies that the transformation collapses the space into a lower dimension.\n\n\n\nFor a triangular matrix, the determinant is the product of its diagonal entries. This property simplifies determinant calculations, especially after transforming a matrix to echelon form.\n\n\n\n\n\n\nCalculate the determinant of the matrix\nA = \\begin{bmatrix} 2 & 5 \\\\ 1 & 3 \\end{bmatrix}\n\n\n\n\n\n\nSolution\n\n\n\n\n\nUsing the formula \\text{det}(A) = ad - bc:\n\\text{det}(A) = (2 \\times 3) - (5 \\times 1) = 6 - 5 = 1\nSince \\text{det}(A) \\neq 0, A is invertible.\n\n\n\n\n\n\nDetermine if the matrix B = \\begin{bmatrix} 0 & 1 \\\\ 4 & 0 \\end{bmatrix} is invertible using its determinant.\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\\text{det}(B) = (0 \\times 0) - (1 \\times 4) = -4. Since \\text{det}(B) \\neq 0, B is invertible.\n\n\n\n\n\n\n\n\nLinear Algebra Done Right by Sheldon Axler\nIntroduction to Linear Algebra by Gilbert Strang\n3Blue1Brown - Essence of Linear Algebra (YouTube)"
   },
   {
-    "objectID": "linear_independence_and_span.html#linear-independence",
-    "href": "linear_independence_and_span.html#linear-independence",
-    "title": "Linear Independence and Span",
+    "objectID": "determinants.html#introduction",
+    "href": "determinants.html#introduction",
+    "title": "Determinants and Invertibility in Linear Algebra",
     "section": "",
-    "text": "Definition: A set of vectors is linearly independent if no vector in the set can be written as a linear combination of the others. Mathematically, vectors $ _1, _2, , _n $ are independent if the equation $ c_1_1 + c_2_2 + + c_n_n = 0 $ only has the trivial solution $ c_1 = c_2 = = c_n = 0 $.\nImportance: Independence is crucial for defining bases, understanding dimension, and ensuring minimality in spanning sets.\nGeometric Interpretation: In $ ^3 $, three linearly independent vectors span the entire space, while fewer vectors (e.g., two) only span a subspace (e.g., a plane)."
+    "text": "This study guide covers essential concepts about determinants in linear algebra, focusing on the effects of row operations on determinants and the relationship between a matrix’s invertibility and its determinant."
   },
   {
-    "objectID": "linear_independence_and_span.html#span-of-a-set-of-vectors",
-    "href": "linear_independence_and_span.html#span-of-a-set-of-vectors",
-    "title": "Linear Independence and Span",
+    "objectID": "determinants.html#key-concepts-and-definitions",
+    "href": "determinants.html#key-concepts-and-definitions",
+    "title": "Determinants and Invertibility in Linear Algebra",
     "section": "",
-    "text": "Definition: The span of a set of vectors is the collection of all linear combinations of those vectors. If vectors $ _1, _2, , _n $ span a space $ V $, then any vector in $ V $ can be expressed as $ c_1_1 + c_2_2 + + c_n_n $ for some scalars $ c_1, c_2, , c_n $.\nRelation to Vector Spaces: A spanning set that is also linearly independent forms a basis for the space, providing both coverage and minimality."
+    "text": "Note\n\n\n\nDefinition: The determinant of a square matrix A is a scalar that provides information about the matrix’s properties, such as invertibility and volume scaling factor. For a 2x2 matrix, the determinant is calculated as: \\text{det}(A) = ad - bc \\quad \\text{for} \\quad A = \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}.\n\n\n\n\nFor A = \\begin{bmatrix} 3 & 4 \\\\ 2 & 5 \\end{bmatrix}, the determinant is: \\text{det}(A) = (3 \\times 5) - (4 \\times 2) = 15 - 8 = 7.\n\n\n\n\nThe determinant of a matrix A is: - Zero if A is not invertible. - Nonzero if A is invertible.\nThe determinant also changes in predictable ways with row operations, as detailed below."
   },
   {
-    "objectID": "linear_independence_and_span.html#basic-examples",
-    "href": "linear_independence_and_span.html#basic-examples",
-    "title": "Linear Independence and Span",
-    "section": "3.1 Basic Examples",
-    "text": "3.1 Basic Examples\n\n3.1.1 Testing for Linear Independence\nConsider vectors $ _1 =\n\\begin{pmatrix} 1 \\\\ 2 \\end{pmatrix}\n$ and $ _2 =\n\\begin{pmatrix} 2 \\\\ 4 \\end{pmatrix}\n$. To check independence, we solve for scalars $ c_1 $ and $ c_2 $ such that: [ c_1_1 + c_2_2 = . ] Substituting values, we get: [ c_1\n\\begin{pmatrix} 1 \\\\ 2 \\end{pmatrix}\n\nc_2\n\\begin{pmatrix} 2 \\\\ 4 \\end{pmatrix}\n=\n\\begin{pmatrix} 0 \\\\ 0 \\end{pmatrix}\n, ] leading to $ c_1 + 2c_2 = 0 $ and $ 2c_1 + 4c_2 = 0 $. These equations imply $ c_1 = -2c_2 $, meaning the only solution is trivial if $ c_1 = c_2 = 0 $, proving the vectors are dependent.\n\n\n\n3.1.2 Finding the Span\nFor vectors $ _1 =\n\\begin{pmatrix} 1 \\\\ 0 \\end{pmatrix}\n$ and $ _2 =\n\\begin{pmatrix} 0 \\\\ 1 \\end{pmatrix}\n$, their span is all of $ ^2 $ since any vector $ =\n\\begin{pmatrix} x \\\\ y \\end{pmatrix}\n$ can be written as $ x_1 + y_2 $."
-  },
-  {
-    "objectID": "linear_independence_and_span.html#advanced-examples",
-    "href": "linear_independence_and_span.html#advanced-examples",
-    "title": "Linear Independence and Span",
-    "section": "3.2 Advanced Examples",
-    "text": "3.2 Advanced Examples\n\n3.2.1 Basis Selection\nIn $ ^3 $, find a basis for the subspace spanned by $\n\\begin{pmatrix} 1 \\\\ 2 \\\\ 3 \\end{pmatrix}\n$, $\n\\begin{pmatrix} 2 \\\\ 4 \\\\ 6 \\end{pmatrix}\n$, and $\n\\begin{pmatrix} 0 \\\\ 1 \\\\ 0 \\end{pmatrix}\n$. Notice that the first two vectors are linearly dependent, so a basis can be $ {\n\\begin{pmatrix} 1 \\\\ 2 \\\\ 3 \\end{pmatrix}\n,\n\\begin{pmatrix} 0 \\\\ 1 \\\\ 0 \\end{pmatrix}\n} $."
-  },
-  {
-    "objectID": "null_spaces_col_spaces.html",
-    "href": "null_spaces_col_spaces.html",
-    "title": "Null Space and Column Space",
+    "objectID": "determinants.html#effects-of-row-operations-on-determinants",
+    "href": "determinants.html#effects-of-row-operations-on-determinants",
+    "title": "Determinants and Invertibility in Linear Algebra",
     "section": "",
-    "text": "Definition: The null space (or kernel) of a matrix $ A $ is the set of all vectors $ $ such that $ A = $. It represents solutions to the homogeneous equation, meaning all vectors that the matrix transforms to the zero vector.\nProperties:\n\nThe null space is a subspace of $ ^n $ (where $ n $ is the number of columns of $ A $).\nThe dimension of the null space is known as the nullity of $ A $.\n\nGeometric Interpretation: The null space represents directions in the domain that map to zero. For example, if a transformation represented by $ A $ compresses the plane into a line, the null space corresponds to the directions that get “flattened” in that process.\n\n\n\n\n\nDefinition: The column space (or range) of a matrix $ A $ is the span of its column vectors. It represents all possible linear combinations of the columns of $ A $ and, geometrically, the “reach” or “range” of the transformation applied by $ A $.\nProperties:\n\nThe column space is a subspace of $ ^m $ (where $ m $ is the number of rows of $ A $).\nThe dimension of the column space is called the rank of $ A $.\n\nRelation to Linear Transformations: The column space represents the image of the transformation, describing all possible output vectors."
+    "text": "Row Replacement: Replacing one row with itself plus a multiple of another row leaves the determinant unchanged.\nRow Interchange: Interchanging two rows of a matrix multiplies the determinant by (-1).\nRow Scaling: Multiplying a row by a scalar k scales the determinant by k.\n\n\n\nConsider A = \\begin{bmatrix} 1 & 2 \\\\ 3 & 4 \\end{bmatrix} with \\text{det}(A) = -2. - Row Replacement: Replacing row 1 with \\text{row 1} + 3 \\times \\text{row 2} does not alter the determinant. - Row Interchange: Swapping rows 1 and 2 changes the determinant to 2. - Row Scaling: Multiplying row 1 by 3 changes the determinant to -6.\n\n\n\n\nDeterminants can be computed by transforming the matrix to an upper triangular form via row operations. The determinant is then the product of the diagonal entries."
   },
   {
-    "objectID": "null_spaces_col_spaces.html#what-is-the-null-space",
-    "href": "null_spaces_col_spaces.html#what-is-the-null-space",
-    "title": "Null Space and Column Space",
+    "objectID": "determinants.html#important-theorems",
+    "href": "determinants.html#important-theorems",
+    "title": "Determinants and Invertibility in Linear Algebra",
     "section": "",
-    "text": "Definition: The null space (or kernel) of a matrix $ A $ is the set of all vectors $ $ such that $ A = $. It represents solutions to the homogeneous equation, meaning all vectors that the matrix transforms to the zero vector.\nProperties:\n\nThe null space is a subspace of $ ^n $ (where $ n $ is the number of columns of $ A $).\nThe dimension of the null space is known as the nullity of $ A $.\n\nGeometric Interpretation: The null space represents directions in the domain that map to zero. For example, if a transformation represented by $ A $ compresses the plane into a line, the null space corresponds to the directions that get “flattened” in that process."
+    "text": "Determinant Multiplication Theorem\n\n\n\nFor matrices A and B of the same size, \\text{det}(AB) = \\text{det}(A) \\times \\text{det}(B).\n\n\n\n\n\n\n\n\nInvertibility and Determinants\n\n\n\nA matrix A is invertible if and only if \\text{det}(A) \\neq 0."
   },
   {
-    "objectID": "null_spaces_col_spaces.html#what-is-the-column-space",
-    "href": "null_spaces_col_spaces.html#what-is-the-column-space",
-    "title": "Null Space and Column Space",
+    "objectID": "determinants.html#relationship-between-invertibility-and-determinants",
+    "href": "determinants.html#relationship-between-invertibility-and-determinants",
+    "title": "Determinants and Invertibility in Linear Algebra",
     "section": "",
-    "text": "Definition: The column space (or range) of a matrix $ A $ is the span of its column vectors. It represents all possible linear combinations of the columns of $ A $ and, geometrically, the “reach” or “range” of the transformation applied by $ A $.\nProperties:\n\nThe column space is a subspace of $ ^m $ (where $ m $ is the number of rows of $ A $).\nThe dimension of the column space is called the rank of $ A $.\n\nRelation to Linear Transformations: The column space represents the image of the transformation, describing all possible output vectors."
+    "text": "If \\text{det}(A) = 0, then: - A is not invertible. - A has linearly dependent rows or columns. - The matrix A maps volumes to zero, indicating a lack of full rank.\nConversely, if \\text{det}(A) \\neq 0, then A is invertible, has linearly independent columns, and the transformation represented by A is volume-preserving (up to a scaling factor).\n\n\nFor A = \\begin{bmatrix} 1 & 2 \\\\ 3 & 6 \\end{bmatrix}, \\text{det}(A) = (1)(6) - (2)(3) = 0. Thus, A is not invertible due to linearly dependent columns."
   },
   {
-    "objectID": "null_spaces_col_spaces.html#basic-examples",
-    "href": "null_spaces_col_spaces.html#basic-examples",
-    "title": "Null Space and Column Space",
-    "section": "3.1 Basic Examples",
-    "text": "3.1 Basic Examples\n\n3.1.1 Finding the Null Space of a 2×2 Matrix\nLet $ A =\n\\begin{pmatrix} 1 & 2 \\\\ 3 & 6 \\end{pmatrix}\n$. To find the null space, we solve $ A = $: [\n\\begin{pmatrix} 1 & 2 \\\\ 3 & 6 \\end{pmatrix} \\begin{pmatrix} x_1 \\\\ x_2 \\end{pmatrix}\n=\n\\begin{pmatrix} 0 \\\\ 0 \\end{pmatrix}\n. ] This system reduces to: [ x_1 + 2x_2 = 0. ] Thus, $ x_1 = -2x_2 $, so any solution is a scalar multiple of $\n\\begin{pmatrix} -2 \\\\ 1 \\end{pmatrix}\n$. The null space is therefore: [ (A) = {\n\\begin{pmatrix} -2 \\\\ 1 \\end{pmatrix}\n}. ]\n\n\n3.1.2 Finding the Column Space\nThe column space of $ A $ is the span of its columns: [ (A) = {\n\\begin{pmatrix} 1 \\\\ 3 \\end{pmatrix}\n,\n\\begin{pmatrix} 2 \\\\ 6 \\end{pmatrix}\n}. ] Since the second column is a scalar multiple of the first, the column space is just the span of $\n\\begin{pmatrix} 1 \\\\ 3 \\end{pmatrix}\n$."
+    "objectID": "determinants.html#special-cases-or-applications",
+    "href": "determinants.html#special-cases-or-applications",
+    "title": "Determinants and Invertibility in Linear Algebra",
+    "section": "",
+    "text": "The determinant of a transformation matrix represents the scaling factor for areas (in 2D) or volumes (in 3D) under the transformation. A determinant of zero implies that the transformation collapses the space into a lower dimension.\n\n\n\nFor a triangular matrix, the determinant is the product of its diagonal entries. This property simplifies determinant calculations, especially after transforming a matrix to echelon form."
   },
   {
-    "objectID": "null_spaces_col_spaces.html#advanced-examples",
-    "href": "null_spaces_col_spaces.html#advanced-examples",
-    "title": "Null Space and Column Space",
-    "section": "3.2 Advanced Examples",
-    "text": "3.2 Advanced Examples\n\n3.2.1 Real-World Application: Signal Processing\nIn signal processing, the null space is essential in understanding the solutions of systems affected by noise or interference. By projecting signals into the null space, unwanted signals or noise can be minimized."
+    "objectID": "determinants.html#practice-problems",
+    "href": "determinants.html#practice-problems",
+    "title": "Determinants and Invertibility in Linear Algebra",
+    "section": "",
+    "text": "Calculate the determinant of the matrix\nA = \\begin{bmatrix} 2 & 5 \\\\ 1 & 3 \\end{bmatrix}\n\n\n\n\n\n\nSolution\n\n\n\n\n\nUsing the formula \\text{det}(A) = ad - bc:\n\\text{det}(A) = (2 \\times 3) - (5 \\times 1) = 6 - 5 = 1\nSince \\text{det}(A) \\neq 0, A is invertible.\n\n\n\n\n\n\nDetermine if the matrix B = \\begin{bmatrix} 0 & 1 \\\\ 4 & 0 \\end{bmatrix} is invertible using its determinant.\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\\text{det}(B) = (0 \\times 0) - (1 \\times 4) = -4. Since \\text{det}(B) \\neq 0, B is invertible."
+  },
+  {
+    "objectID": "determinants.html#additional-resources",
+    "href": "determinants.html#additional-resources",
+    "title": "Determinants and Invertibility in Linear Algebra",
+    "section": "",
+    "text": "Linear Algebra Done Right by Sheldon Axler\nIntroduction to Linear Algebra by Gilbert Strang\n3Blue1Brown - Essence of Linear Algebra (YouTube)"
+  },
+  {
+    "objectID": "linear_equations.html",
+    "href": "linear_equations.html",
+    "title": "Linear Algebra Essentials: Systems, Row Reduction, and Invertibility",
+    "section": "",
+    "text": "This guide outlines foundational topics in linear algebra related to systems of linear equations, row reduction methods, and matrix invertibility. It includes solutions to linear equations, elementary row operations, pivot positions, and the Invertible Matrix Theorem, equipping readers with core principles for understanding matrix theory.\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nDefinition: A linear equation in variables x_1, \\dots, x_n has the form a_1x_1 + a_2x_2 + \\dots + a_nx_n = b, where b and each a_i are constants.\n\n\n\n\nThe equation x_2 = 2(\\sqrt{6} - x_1) + x_3 is linear, whereas 4x_1 - 5x_2 = x_1x_2 is nonlinear due to the term x_1x_2.\n\n\n\n\nA system of linear equations may have: 1. No solution (inconsistent). 2. A unique solution. 3. Infinitely many solutions.\nA system is consistent if it has at least one solution; otherwise, it is inconsistent.\n\n\n\nTo solve linear systems using matrices, we apply these operations: 1. Replacement: Replace one row by the sum of itself and a multiple of another row. 2. Interchange: Swap two rows. 3. Scaling: Multiply all entries in a row by a nonzero constant.\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nDefinition: A matrix is in echelon form if: 1. All nonzero rows are above rows of all zeros. 2. Each leading entry is to the right of the leading entry in the row above it. 3. Entries below each leading entry are zeros.\n\n\nIf, in addition, each leading entry is 1 and is the only nonzero entry in its column, the matrix is in reduced echelon form.\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nDefinition: A pivot position is the location of a leading 1 in a matrix’s reduced echelon form. The corresponding column is a pivot column.\n\n\n\n\n\nBegin with the leftmost nonzero column (a pivot column) and move the pivot to the top row.\nCreate zeros below the pivot using row operations.\nCover the row containing the pivot and repeat with the submatrix formed by the rows below it.\nTo obtain the reduced echelon form, create zeros above each pivot by moving from the rightmost pivot up and left.\n\n\n\n\nTransform the matrix A = \\begin{bmatrix} 0 & -3 & -6 & 4 & 9 \\\\ -1 & -2 & -1 & 3 & 1 \\\\ -2 & -3 & 0 & 3 & -1 \\\\ 1 & 4 & 5 & -9 & -7 \\end{bmatrix} into echelon and then reduced echelon form. Identify pivot positions and columns.\n\n\n\n\n\n\n\n\n\n\n\nThe Uniqueness of the Reduced Echelon Form\n\n\n\nEvery matrix is row equivalent to a unique reduced echelon matrix, regardless of the row operations used.\n\n\n\n\n\n\n\nThe Invertible Matrix Theorem states that for an n \\times n matrix A, the following statements are equivalent:\n\nA is invertible.\nA is row equivalent to the identity matrix.\nA has n pivot positions.\nThe equation Ax = 0 has only the trivial solution.\nThe columns of A are linearly independent.\nThe transformation x \\to Ax is one-to-one.\nThe equation Ax = b has at least one solution for each b \\in \\mathbb{R}^n.\nThe columns of A span \\mathbb{R}^n.\nThe transformation x \\to Ax maps \\mathbb{R}^n onto \\mathbb{R}^n.\nThere exists a matrix C such that CA = I.\nThere exists a matrix D such that AD = I.\nA^T is invertible.\n\n\n\nIf matrices A and B satisfy AB = I, then both A and B are invertible with B = A^{-1} and A = B^{-1}.\n\n\n\n\n\n\n\nIn consistent systems with free variables, the solution set can be expressed parametrically, using free variables to define the set.\n\n\n\nTo test if a matrix is invertible, check for full pivot positions, or equivalently, attempt to reduce it to the identity matrix using row operations.\n\n\n\n\n\n\nIs the system x_2 - 4x_3 = 8 2x_1 - 3x_2 + 2x_3 = 1 5x_1 - 8x_2 + 7x_3 = 1 consistent?\n\n\n\n\n\n\nSolution\n\n\n\n\n\nFormulate the augmented matrix and row reduce to echelon form. Check if there is a row that implies inconsistency.\n\n\n\n\n\n\nVerify the invertibility of the matrix \\begin{bmatrix} -4 & 6 \\\\ 6 & -9 \\end{bmatrix}.\n\n\n\n\n\n\nSolution\n\n\n\n\n\nCalculate the determinant. A nonzero result confirms invertibility. Alternatively, apply row reduction to check if it’s row equivalent to the identity matrix.\n\n\n\n\n\n\n\n\nLinear Algebra and Its Applications by Gilbert Strang\nMIT OpenCourseWare - Linear Algebra\nKhan Academy - Linear Algebra"
+  },
+  {
+    "objectID": "linear_equations.html#introduction",
+    "href": "linear_equations.html#introduction",
+    "title": "Linear Algebra Essentials: Systems, Row Reduction, and Invertibility",
+    "section": "",
+    "text": "This guide outlines foundational topics in linear algebra related to systems of linear equations, row reduction methods, and matrix invertibility. It includes solutions to linear equations, elementary row operations, pivot positions, and the Invertible Matrix Theorem, equipping readers with core principles for understanding matrix theory."
+  },
+  {
+    "objectID": "linear_equations.html#key-concepts-and-definitions",
+    "href": "linear_equations.html#key-concepts-and-definitions",
+    "title": "Linear Algebra Essentials: Systems, Row Reduction, and Invertibility",
+    "section": "",
+    "text": "Note\n\n\n\nDefinition: A linear equation in variables x_1, \\dots, x_n has the form a_1x_1 + a_2x_2 + \\dots + a_nx_n = b, where b and each a_i are constants.\n\n\n\n\nThe equation x_2 = 2(\\sqrt{6} - x_1) + x_3 is linear, whereas 4x_1 - 5x_2 = x_1x_2 is nonlinear due to the term x_1x_2.\n\n\n\n\nA system of linear equations may have: 1. No solution (inconsistent). 2. A unique solution. 3. Infinitely many solutions.\nA system is consistent if it has at least one solution; otherwise, it is inconsistent.\n\n\n\nTo solve linear systems using matrices, we apply these operations: 1. Replacement: Replace one row by the sum of itself and a multiple of another row. 2. Interchange: Swap two rows. 3. Scaling: Multiply all entries in a row by a nonzero constant."
+  },
+  {
+    "objectID": "linear_equations.html#row-reduction-and-echelon-forms-section-1.2",
+    "href": "linear_equations.html#row-reduction-and-echelon-forms-section-1.2",
+    "title": "Linear Algebra Essentials: Systems, Row Reduction, and Invertibility",
+    "section": "",
+    "text": "Note\n\n\n\nDefinition: A matrix is in echelon form if: 1. All nonzero rows are above rows of all zeros. 2. Each leading entry is to the right of the leading entry in the row above it. 3. Entries below each leading entry are zeros.\n\n\nIf, in addition, each leading entry is 1 and is the only nonzero entry in its column, the matrix is in reduced echelon form.\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nDefinition: A pivot position is the location of a leading 1 in a matrix’s reduced echelon form. The corresponding column is a pivot column.\n\n\n\n\n\nBegin with the leftmost nonzero column (a pivot column) and move the pivot to the top row.\nCreate zeros below the pivot using row operations.\nCover the row containing the pivot and repeat with the submatrix formed by the rows below it.\nTo obtain the reduced echelon form, create zeros above each pivot by moving from the rightmost pivot up and left.\n\n\n\n\nTransform the matrix A = \\begin{bmatrix} 0 & -3 & -6 & 4 & 9 \\\\ -1 & -2 & -1 & 3 & 1 \\\\ -2 & -3 & 0 & 3 & -1 \\\\ 1 & 4 & 5 & -9 & -7 \\end{bmatrix} into echelon and then reduced echelon form. Identify pivot positions and columns."
+  },
+  {
+    "objectID": "linear_equations.html#important-theorems",
+    "href": "linear_equations.html#important-theorems",
+    "title": "Linear Algebra Essentials: Systems, Row Reduction, and Invertibility",
+    "section": "",
+    "text": "The Uniqueness of the Reduced Echelon Form\n\n\n\nEvery matrix is row equivalent to a unique reduced echelon matrix, regardless of the row operations used."
+  },
+  {
+    "objectID": "linear_equations.html#invertible-matrices-and-the-invertible-matrix-theorem-section-2.3",
+    "href": "linear_equations.html#invertible-matrices-and-the-invertible-matrix-theorem-section-2.3",
+    "title": "Linear Algebra Essentials: Systems, Row Reduction, and Invertibility",
+    "section": "",
+    "text": "The Invertible Matrix Theorem states that for an n \\times n matrix A, the following statements are equivalent:\n\nA is invertible.\nA is row equivalent to the identity matrix.\nA has n pivot positions.\nThe equation Ax = 0 has only the trivial solution.\nThe columns of A are linearly independent.\nThe transformation x \\to Ax is one-to-one.\nThe equation Ax = b has at least one solution for each b \\in \\mathbb{R}^n.\nThe columns of A span \\mathbb{R}^n.\nThe transformation x \\to Ax maps \\mathbb{R}^n onto \\mathbb{R}^n.\nThere exists a matrix C such that CA = I.\nThere exists a matrix D such that AD = I.\nA^T is invertible.\n\n\n\nIf matrices A and B satisfy AB = I, then both A and B are invertible with B = A^{-1} and A = B^{-1}."
+  },
+  {
+    "objectID": "linear_equations.html#special-cases-or-applications",
+    "href": "linear_equations.html#special-cases-or-applications",
+    "title": "Linear Algebra Essentials: Systems, Row Reduction, and Invertibility",
+    "section": "",
+    "text": "In consistent systems with free variables, the solution set can be expressed parametrically, using free variables to define the set.\n\n\n\nTo test if a matrix is invertible, check for full pivot positions, or equivalently, attempt to reduce it to the identity matrix using row operations."
+  },
+  {
+    "objectID": "linear_equations.html#practice-problems",
+    "href": "linear_equations.html#practice-problems",
+    "title": "Linear Algebra Essentials: Systems, Row Reduction, and Invertibility",
+    "section": "",
+    "text": "Is the system x_2 - 4x_3 = 8 2x_1 - 3x_2 + 2x_3 = 1 5x_1 - 8x_2 + 7x_3 = 1 consistent?\n\n\n\n\n\n\nSolution\n\n\n\n\n\nFormulate the augmented matrix and row reduce to echelon form. Check if there is a row that implies inconsistency.\n\n\n\n\n\n\nVerify the invertibility of the matrix \\begin{bmatrix} -4 & 6 \\\\ 6 & -9 \\end{bmatrix}.\n\n\n\n\n\n\nSolution\n\n\n\n\n\nCalculate the determinant. A nonzero result confirms invertibility. Alternatively, apply row reduction to check if it’s row equivalent to the identity matrix."
+  },
+  {
+    "objectID": "linear_equations.html#additional-resources",
+    "href": "linear_equations.html#additional-resources",
+    "title": "Linear Algebra Essentials: Systems, Row Reduction, and Invertibility",
+    "section": "",
+    "text": "Linear Algebra and Its Applications by Gilbert Strang\nMIT OpenCourseWare - Linear Algebra\nKhan Academy - Linear Algebra"
+  },
+  {
+    "objectID": "matrix_transformations.html",
+    "href": "matrix_transformations.html",
+    "title": "Matrix Transformations",
+    "section": "",
+    "text": "Reference: Section 1.8\nDefinition: A transformation T: \\mathbb{R}^n \\rightarrow \\mathbb{R}^m is linear if it satisfies two properties:\n\nAdditivity: T(\\mathbf{u} + \\mathbf{v}) = T(\\mathbf{u}) + T(\\mathbf{v}) for all vectors \\mathbf{u}, \\mathbf{v} \\in \\mathbb{R}^n.\nScalar Multiplication: T(c \\mathbf{u}) = c T(\\mathbf{u}) for any scalar c and vector \\mathbf{u} \\in \\mathbb{R}^n.\n\nExplanation: These properties mean that linear transformations preserve the structure of vector spaces. For instance, a scaling transformation will uniformly stretch all vectors by the same factor, maintaining the direction of the vectors.\nExample: If T(\\mathbf{x}) = A \\mathbf{x}, where A is a matrix, then T is a linear transformation because matrix multiplication inherently satisfies both additivity and scalar multiplication.\n\n\n\n\n\nReference: Sections 1.9 and 2.4\n“Onto” Transformation (Surjective): A transformation T: \\mathbb{R}^n \\rightarrow \\mathbb{R}^m is “onto” if every vector in \\mathbb{R}^m is the image of at least one vector in \\mathbb{R}^n. This implies that the range of T spans \\mathbb{R}^m.\n“One-to-One” Transformation (Injective): A transformation T: \\mathbb{R}^n \\rightarrow \\mathbb{R}^m is “one-to-one” if different vectors in \\mathbb{R}^n map to different vectors in \\mathbb{R}^m. This means that T(\\mathbf{u}) = T(\\mathbf{v}) implies \\mathbf{u} = \\mathbf{v}.\nExample and Explanation: If T(\\mathbf{x}) = A \\mathbf{x} and A is an m \\times n matrix:\n\nOnto: T is onto if the columns of A span \\mathbb{R}^m.\nOne-to-One: T is one-to-one if the columns of A are linearly independent, which holds if A has a pivot in every column.\n\n\n\n\n\n\nReference: Section 4.9\nDefinition: A Markov Chain is a sequence of states where the probability of moving to the next state depends only on the current state. This process can be represented with a transition matrix P, where each entry P_{ij} denotes the probability of transitioning from state i to state j.\nSteady State Solution: The steady state of a Markov Chain is a vector \\mathbf{s} such that P \\mathbf{s} = \\mathbf{s}. This vector represents a stable distribution of probabilities across states that no longer changes after transitions.\nExplanation: To find the steady state vector \\mathbf{s}, solve (P - I) \\mathbf{s} = 0, ensuring that the sum of the entries in \\mathbf{s} is 1 (since they represent probabilities).\nExample: For a transition matrix $ P =\n\\begin{pmatrix} 0.9 & 0.1 \\\\ 0.5 & 0.5 \\end{pmatrix}\n, ] the steady state vector \\mathbf{s} = \\begin{pmatrix} s_1 \\\\ s_2 \\end{pmatrix} satisfies: $ P = . ] Solving this system, we can find the steady state probabilities for long-term behavior."
+  },
+  {
+    "objectID": "matrix_transformations.html#properties-for-a-transformation-to-be-a-linear-transformation",
+    "href": "matrix_transformations.html#properties-for-a-transformation-to-be-a-linear-transformation",
+    "title": "Matrix Transformations",
+    "section": "",
+    "text": "Reference: Section 1.8\nDefinition: A transformation T: \\mathbb{R}^n \\rightarrow \\mathbb{R}^m is linear if it satisfies two properties:\n\nAdditivity: T(\\mathbf{u} + \\mathbf{v}) = T(\\mathbf{u}) + T(\\mathbf{v}) for all vectors \\mathbf{u}, \\mathbf{v} \\in \\mathbb{R}^n.\nScalar Multiplication: T(c \\mathbf{u}) = c T(\\mathbf{u}) for any scalar c and vector \\mathbf{u} \\in \\mathbb{R}^n.\n\nExplanation: These properties mean that linear transformations preserve the structure of vector spaces. For instance, a scaling transformation will uniformly stretch all vectors by the same factor, maintaining the direction of the vectors.\nExample: If T(\\mathbf{x}) = A \\mathbf{x}, where A is a matrix, then T is a linear transformation because matrix multiplication inherently satisfies both additivity and scalar multiplication."
+  },
+  {
+    "objectID": "matrix_transformations.html#definitions-of-onto-and-one-to-one-transformations",
+    "href": "matrix_transformations.html#definitions-of-onto-and-one-to-one-transformations",
+    "title": "Matrix Transformations",
+    "section": "",
+    "text": "Reference: Sections 1.9 and 2.4\n“Onto” Transformation (Surjective): A transformation T: \\mathbb{R}^n \\rightarrow \\mathbb{R}^m is “onto” if every vector in \\mathbb{R}^m is the image of at least one vector in \\mathbb{R}^n. This implies that the range of T spans \\mathbb{R}^m.\n“One-to-One” Transformation (Injective): A transformation T: \\mathbb{R}^n \\rightarrow \\mathbb{R}^m is “one-to-one” if different vectors in \\mathbb{R}^n map to different vectors in \\mathbb{R}^m. This means that T(\\mathbf{u}) = T(\\mathbf{v}) implies \\mathbf{u} = \\mathbf{v}.\nExample and Explanation: If T(\\mathbf{x}) = A \\mathbf{x} and A is an m \\times n matrix:\n\nOnto: T is onto if the columns of A span \\mathbb{R}^m.\nOne-to-One: T is one-to-one if the columns of A are linearly independent, which holds if A has a pivot in every column."
+  },
+  {
+    "objectID": "matrix_transformations.html#markov-chain-and-steady-state-solution",
+    "href": "matrix_transformations.html#markov-chain-and-steady-state-solution",
+    "title": "Matrix Transformations",
+    "section": "",
+    "text": "Reference: Section 4.9\nDefinition: A Markov Chain is a sequence of states where the probability of moving to the next state depends only on the current state. This process can be represented with a transition matrix P, where each entry P_{ij} denotes the probability of transitioning from state i to state j.\nSteady State Solution: The steady state of a Markov Chain is a vector \\mathbf{s} such that P \\mathbf{s} = \\mathbf{s}. This vector represents a stable distribution of probabilities across states that no longer changes after transitions.\nExplanation: To find the steady state vector \\mathbf{s}, solve (P - I) \\mathbf{s} = 0, ensuring that the sum of the entries in \\mathbf{s} is 1 (since they represent probabilities).\nExample: For a transition matrix $ P =\n\\begin{pmatrix} 0.9 & 0.1 \\\\ 0.5 & 0.5 \\end{pmatrix}\n, ] the steady state vector \\mathbf{s} = \\begin{pmatrix} s_1 \\\\ s_2 \\end{pmatrix} satisfies: $ P = . ] Solving this system, we can find the steady state probabilities for long-term behavior."
+  },
+  {
+    "objectID": "vector_spaces_and_dimensions.html",
+    "href": "vector_spaces_and_dimensions.html",
+    "title": "Vector Spaces and Dimension",
+    "section": "",
+    "text": "Note\n\n\n\nA vector space V is finite-dimensional if it can be spanned by a finite set of vectors. The dimension of V, denoted \\dim V, is the number of vectors in any basis for V.\n\n\n\n\nThe standard basis for \\mathbb{R}^3 consists of: \n\\begin{bmatrix} 1 \\\\ 0 \\\\ 0 \\end{bmatrix},\n\\begin{bmatrix} 0 \\\\ 1 \\\\ 0 \\end{bmatrix},\n\\begin{bmatrix} 0 \\\\ 0 \\\\ 1 \\end{bmatrix}\n Therefore, \\dim \\mathbb{R}^3 = 3\n\n\n\n\n\nZero vector space: \\dim \\{\\mathbf{0}\\} = 0\nInfinite-dimensional spaces: The space of all polynomials P has no finite basis\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nThe definition of Span: The span of a set of vectors is the set of all linear combinations of those vectors. For a set of vectors \\{\\mathbf{v}_1, \\mathbf{v}_2, \\dots, \\mathbf{v}_n\\}, the span is denoted \\text{span}\\{\\mathbf{v}_1, \\mathbf{v}_2, \\dots, \\mathbf{v}_n\\}.\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nDefinition of Linear Independence and Dependence: A set of vectors is linearly independent if no vector in the set is a linear combination of the others; otherwise, the set is linearly dependent.\n\n\n\n\n\n\n\n\nHomogeneous System Form\n\n\n\nA homogeneous system has the form A\\mathbf{x} = \\mathbf{0}\n\n\n\n\n\n\\begin{aligned}\n2x + 3y - z &= 0 \\\\\n4x - 2y + 2z &= 0\n\\end{aligned}\n\nIn matrix form: \n\\begin{bmatrix}\n2 & 3 & -1 \\\\\n4 & -2 & 2\n\\end{bmatrix}\n\\begin{bmatrix}\nx \\\\ y \\\\ z\n\\end{bmatrix}\n= \\begin{bmatrix}\n0 \\\\ 0\n\\end{bmatrix}\n\n\n\n\n\n\n\n\n\n\n\nTheorem 9\n\n\n\nIf a vector space V has a basis \\mathcal{B} = \\{ \\mathbf{b}_1, \\dots, \\mathbf{b}_n \\}, then any set in V containing more than n vectors must be linearly dependent.\n\n\n\n\n\n\n\n\nTheorem 10\n\n\n\nIf a vector space V has a basis of n vectors, then every basis of V must consist of exactly n vectors.\n\n\n\n\n\n\n\n\nTheorem 11\n\n\n\nLet H be a subspace of a finite-dimensional vector space V. Any linearly independent set in H can be expanded, if necessary, to a basis for H. Also, H is finite-dimensional and\n\\dim H \\leq \\dim V\n\n\n\n\n\n\n\n\nThe Basis Theorem (Theorem 12)\n\n\n\nLet V be a p-dimensional vector space, p \\geq 1. Any linearly independent set of exactly p elements in V is automatically a basis for V.\n\n\n\n\n\n\n\n\nSolve the system: \n\\begin{aligned}\nx + y + z &= 0 \\\\\n2x + 2y + 2z &= 0\n\\end{aligned}\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\nNotice the second equation is a multiple of the first\nSystem reduces to x + y + z = 0\nGeneral solution: \\begin{bmatrix} x \\\\ y \\\\ -(x+y) \\end{bmatrix} for any x, y\nBasis: \\text{span}\\left(\\begin{bmatrix} 1 \\\\ 0 \\\\ -1 \\end{bmatrix}, \\begin{bmatrix} 0 \\\\ 1 \\\\ -1 \\end{bmatrix}\\right)\n\n\n\n\n\n\n\nExplain why the standard basis for \\mathbb{R}^3 has exactly three vectors.\n\n\n\n\n\n\nSolution\n\n\n\n\n\nThe space \\mathbb{R}^3 requires three linearly independent vectors to span it fully. Since the standard basis \\{\\begin{bmatrix} 1 \\\\ 0 \\\\ 0 \\end{bmatrix}, \\begin{bmatrix} 0 \\\\ 1 \\\\ 0 \\end{bmatrix}, \\begin{bmatrix} 0 \\\\ 0 \\\\ 1 \\end{bmatrix}\\} spans \\mathbb{R}^3 and no subset of these vectors can do so, they form a basis, making \\dim \\mathbb{R}^3 = 3.\n\n\n\n\n\n\nFind a basis for the null space of: \nA = \\begin{bmatrix} 1 & 2 & 3 \\\\ 2 & 4 & 6 \\end{bmatrix}\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\nRow reduce to: \\begin{bmatrix} 1 & 2 & 3 \\\\ 0 & 0 & 0 \\end{bmatrix}\nFree variables: y, z\nExpress x: x = -2y - 3z\nBasis: \\left\\{\\begin{bmatrix} -2 \\\\ 1 \\\\ 0 \\end{bmatrix}, \\begin{bmatrix} -3 \\\\ 0 \\\\ 1 \\end{bmatrix}\\right\\}"
+  },
+  {
+    "objectID": "vector_spaces_and_dimensions.html#key-concepts-and-definitions",
+    "href": "vector_spaces_and_dimensions.html#key-concepts-and-definitions",
+    "title": "Vector Spaces and Dimension",
+    "section": "",
+    "text": "Note\n\n\n\nThe definition of Span: The span of a set of vectors is the set of all linear combinations of those vectors. For a set of vectors \\{\\mathbf{v}_1, \\mathbf{v}_2, \\dots, \\mathbf{v}_n\\}, the span is denoted \\text{span}\\{\\mathbf{v}_1, \\mathbf{v}_2, \\dots, \\mathbf{v}_n\\}.\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nDefinition of Linear Independence and Dependence: A set of vectors is linearly independent if no vector in the set is a linear combination of the others; otherwise, the set is linearly dependent.\n\n\n\n\n\n\n\n\nHomogeneous System Form\n\n\n\nA homogeneous system has the form A\\mathbf{x} = \\mathbf{0}\n\n\n\n\n\n\\begin{aligned}\n2x + 3y - z &= 0 \\\\\n4x - 2y + 2z &= 0\n\\end{aligned}\n\nIn matrix form: \n\\begin{bmatrix}\n2 & 3 & -1 \\\\\n4 & -2 & 2\n\\end{bmatrix}\n\\begin{bmatrix}\nx \\\\ y \\\\ z\n\\end{bmatrix}\n= \\begin{bmatrix}\n0 \\\\ 0\n\\end{bmatrix}\n\n\n\n\n\n\n\n\n\n\n\nTheorem 9\n\n\n\nIf a vector space V has a basis \\mathcal{B} = \\{ \\mathbf{b}_1, \\dots, \\mathbf{b}_n \\}, then any set in V containing more than n vectors must be linearly dependent.\n\n\n\n\n\n\n\n\nTheorem 10\n\n\n\nIf a vector space V has a basis of n vectors, then every basis of V must consist of exactly n vectors.\n\n\n\n\n\n\n\n\nTheorem 11\n\n\n\nLet H be a subspace of a finite-dimensional vector space V. Any linearly independent set in H can be expanded, if necessary, to a basis for H. Also, H is finite-dimensional and\n\\dim H \\leq \\dim V\n\n\n\n\n\n\n\n\nThe Basis Theorem (Theorem 12)\n\n\n\nLet V be a p-dimensional vector space, p \\geq 1. Any linearly independent set of exactly p elements in V is automatically a basis for V."
+  },
+  {
+    "objectID": "vector_spaces_and_dimensions.html#practice-problems",
+    "href": "vector_spaces_and_dimensions.html#practice-problems",
+    "title": "Vector Spaces and Dimension",
+    "section": "",
+    "text": "Solve the system: \n\\begin{aligned}\nx + y + z &= 0 \\\\\n2x + 2y + 2z &= 0\n\\end{aligned}\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\nNotice the second equation is a multiple of the first\nSystem reduces to x + y + z = 0\nGeneral solution: \\begin{bmatrix} x \\\\ y \\\\ -(x+y) \\end{bmatrix} for any x, y\nBasis: \\text{span}\\left(\\begin{bmatrix} 1 \\\\ 0 \\\\ -1 \\end{bmatrix}, \\begin{bmatrix} 0 \\\\ 1 \\\\ -1 \\end{bmatrix}\\right)\n\n\n\n\n\n\n\nExplain why the standard basis for \\mathbb{R}^3 has exactly three vectors.\n\n\n\n\n\n\nSolution\n\n\n\n\n\nThe space \\mathbb{R}^3 requires three linearly independent vectors to span it fully. Since the standard basis \\{\\begin{bmatrix} 1 \\\\ 0 \\\\ 0 \\end{bmatrix}, \\begin{bmatrix} 0 \\\\ 1 \\\\ 0 \\end{bmatrix}, \\begin{bmatrix} 0 \\\\ 0 \\\\ 1 \\end{bmatrix}\\} spans \\mathbb{R}^3 and no subset of these vectors can do so, they form a basis, making \\dim \\mathbb{R}^3 = 3.\n\n\n\n\n\n\nFind a basis for the null space of: \nA = \\begin{bmatrix} 1 & 2 & 3 \\\\ 2 & 4 & 6 \\end{bmatrix}\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\nRow reduce to: \\begin{bmatrix} 1 & 2 & 3 \\\\ 0 & 0 & 0 \\end{bmatrix}\nFree variables: y, z\nExpress x: x = -2y - 3z\nBasis: \\left\\{\\begin{bmatrix} -2 \\\\ 1 \\\\ 0 \\end{bmatrix}, \\begin{bmatrix} -3 \\\\ 0 \\\\ 1 \\end{bmatrix}\\right\\}"
   }
 ]

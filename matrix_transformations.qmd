@@ -3,55 +3,54 @@ title: "Matrix Transformations"
 format:
   html:
     toc: true
+    toc-depth: 3
     number-sections: true
+    html-math-method: katex
 ---
 
-# Conceptual Overview
-## What is a Matrix Transformation?
-- **Definition**: A matrix transformation is a function $T: \mathbb{R}^n \rightarrow \mathbb{R}^m$ that maps vectors from one space to another through multiplication by a matrix $A$. If $A$ is an $m \times n$ matrix, then $T(\mathbf{x}) = A\mathbf{x}$ defines the transformation.
-- **Types of Transformations**: Common types include **rotations**, **scalings**, and **shears**. Each type affects the geometric properties of vectors in different ways.
-- **Relation to Linear Maps**: Every matrix transformation is a linear transformation, meaning it satisfies the properties of additivity and scalar multiplication.
+# Concepts and Questions on Matrix Transformations
 
-# Common Misconceptions
-- **Transformation vs. Operation**: Students often confuse the transformation applied by a matrix with row operations used to simplify the matrix.
-- **Misinterpreting Effects**: A common error is misapplying transformations, such as confusing rotation angles or scaling factors.
+## Properties for a Transformation to be a Linear Transformation
+- **Reference**: Section 1.8
+- **Definition**: A transformation $T: \mathbb{R}^n \rightarrow \mathbb{R}^m$ is linear if it satisfies two properties:
+  1. **Additivity**: $T(\mathbf{u} + \mathbf{v}) = T(\mathbf{u}) + T(\mathbf{v})$ for all vectors $\mathbf{u}, \mathbf{v} \in \mathbb{R}^n$.
+  2. **Scalar Multiplication**: $T(c \mathbf{u}) = c T(\mathbf{u})$ for any scalar $c$ and vector $\mathbf{u} \in \mathbb{R}^n$.
 
-# Worked Examples
-## Basic Examples
-### Rotation Matrix
-In $\mathbb{R}^2$, a counterclockwise rotation by angle $\theta$ is given by:
-\[
-R = \begin{pmatrix} \cos \theta & -\sin \theta \\ \sin \theta & \cos \theta \end{pmatrix}.
-\]
-Applying this matrix to $\mathbf{x} = \begin{pmatrix} 1 \\ 0 \end{pmatrix}$ with $\theta = 90^\circ$ results in:
-\[
-R \mathbf{x} = \begin{pmatrix} 0 \\ 1 \end{pmatrix},
-\]
-which shows a 90-degree rotation.
+- **Explanation**: These properties mean that linear transformations preserve the structure of vector spaces. For instance, a scaling transformation will uniformly stretch all vectors by the same factor, maintaining the direction of the vectors.
+  
+- **Example**: If $T(\mathbf{x}) = A \mathbf{x}$, where $A$ is a matrix, then $T$ is a linear transformation because matrix multiplication inherently satisfies both additivity and scalar multiplication.
 
-### Scaling Transformation
-A scaling matrix in $\mathbb{R}^2$ by a factor $k$ is:
-\[
-S = \begin{pmatrix} k & 0 \\ 0 & k \end{pmatrix}.
-\]
-For $k = 2$, applying $S$ to $\mathbf{x} = \begin{pmatrix} 1 \\ 1 \end{pmatrix}$ yields $2\mathbf{x} = \begin{pmatrix} 2 \\ 2 \end{pmatrix}$.
+## Definitions of "Onto" and "One-to-One" Transformations
+- **Reference**: Sections 1.9 and 2.4
+- **"Onto" Transformation (Surjective)**: A transformation $T: \mathbb{R}^n \rightarrow \mathbb{R}^m$ is "onto" if every vector in $\mathbb{R}^m$ is the image of at least one vector in $\mathbb{R}^n$. This implies that the range of $T$ spans $\mathbb{R}^m$.
+  
+- **"One-to-One" Transformation (Injective)**: A transformation $T: \mathbb{R}^n \rightarrow \mathbb{R}^m$ is "one-to-one" if different vectors in $\mathbb{R}^n$ map to different vectors in $\mathbb{R}^m$. This means that $T(\mathbf{u}) = T(\mathbf{v})$ implies $\mathbf{u} = \mathbf{v}$.
+  
+- **Example and Explanation**: If $T(\mathbf{x}) = A \mathbf{x}$ and $A$ is an $m \times n$ matrix:
+  - **Onto**: $T$ is onto if the columns of $A$ span $\mathbb{R}^m$.
+  - **One-to-One**: $T$ is one-to-one if the columns of $A$ are linearly independent, which holds if $A$ has a pivot in every column.
 
-## Advanced Examples
-### Composition of Transformations
-Consider a transformation that rotates by 45° and then scales by 3. The combined transformation matrix is:
-\[
-T = 3 \times \begin{pmatrix} \cos(45^\circ) & -\sin(45^\circ) \\ \sin(45^\circ) & \cos(45^\circ) \end{pmatrix}.
-\]
+## Markov Chain and Steady State Solution
+- **Reference**: Section 4.9
+- **Definition**: A **Markov Chain** is a sequence of states where the probability of moving to the next state depends only on the current state. This process can be represented with a **transition matrix** $P$, where each entry $P_{ij}$ denotes the probability of transitioning from state $i$ to state $j$.
 
-# Interactive Elements
-- **Visuals**: Show transformations in R² using rotation, scaling, and shear animations.
-- **Practice Problems**: Include exercises for finding transformed coordinates under given matrices.
+- **Steady State Solution**: The steady state of a Markov Chain is a vector $\mathbf{s}$ such that $P \mathbf{s} = \mathbf{s}$. This vector represents a stable distribution of probabilities across states that no longer changes after transitions.
+  
+- **Explanation**: To find the steady state vector $\mathbf{s}$, solve $(P - I) \mathbf{s} = 0$, ensuring that the sum of the entries in $\mathbf{s}$ is 1 (since they represent probabilities).
 
-# Connections to Other Topics
-- **Eigenvalues and Eigenvectors**: Diagonalizable matrices represent scaling transformations along eigenvectors.
-- **Determinants**: Determinants help interpret the effect of a transformation on area or volume.
+- **Example**: For a transition matrix
+  $  P = \begin{pmatrix} 0.9 & 0.1 \\ 0.5 & 0.5 \end{pmatrix},
+  \]
+  the steady state vector $\mathbf{s} = \begin{pmatrix} s_1 \\ s_2 \end{pmatrix}$ satisfies:
+  $  P \mathbf{s} = \mathbf{s}.
+  \]
+  Solving this system, we can find the steady state probabilities for long-term behavior.
 
-# Summary
-- **Matrix Transformations**: Map vectors through operations like rotation and scaling.
-- **Key Properties**: Linear transformations maintain vector space structure.
-- **Example Matrices**: Rotation, scaling, shearing matrices are foundational examples.
+---
+
+# Summary of Matrix Transformations Concepts
+- **Linear Transformation**: Defined by additivity and scalar multiplication, ensuring the transformation is consistent with vector space structure.
+- **"Onto" and "One-to-One"**: Key properties for transformations, indicating whether every output has a corresponding input ("onto") and whether each input maps uniquely ("one-to-one").
+- **Markov Chains and Steady State**: Used for modeling probabilistic systems that evolve over time, where the steady state represents stable, long-term probabilities.
+
+This expanded section on matrix transformations connects linear algebra concepts with practical examples and applications, reinforcing understanding of these fundamental transformations.

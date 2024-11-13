@@ -1,0 +1,130 @@
+---
+title: "Linear Algebra Essentials: Systems, Row Reduction, and Invertibility"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    html-math-method: katex
+---
+
+# Linear Algebra Essentials: Systems, Row Reduction, and Invertibility
+
+## Introduction
+
+This guide outlines foundational topics in linear algebra related to systems of linear equations, row reduction methods, and matrix invertibility. It includes solutions to linear equations, elementary row operations, pivot positions, and the Invertible Matrix Theorem, equipping readers with core principles for understanding matrix theory.
+
+## Key Concepts and Definitions
+
+### Systems of Linear Equations
+::: {.callout-note}
+**Definition**: A linear equation in variables $x_1, \dots, x_n$ has the form $a_1x_1 + a_2x_2 + \dots + a_nx_n = b$, where $b$ and each $a_i$ are constants.
+:::
+
+#### Example
+The equation $x_2 = 2(\sqrt{6} - x_1) + x_3$ is linear, whereas $4x_1 - 5x_2 = x_1x_2$ is nonlinear due to the term $x_1x_2$.
+
+### Solutions to Systems
+A system of linear equations may have:
+1. No solution (inconsistent).
+2. A unique solution.
+3. Infinitely many solutions.
+
+A system is **consistent** if it has at least one solution; otherwise, it is **inconsistent**.
+
+### Elementary Row Operations
+To solve linear systems using matrices, we apply these operations:
+1. **Replacement**: Replace one row by the sum of itself and a multiple of another row.
+2. **Interchange**: Swap two rows.
+3. **Scaling**: Multiply all entries in a row by a nonzero constant.
+
+## Row Reduction and Echelon Forms (Section 1.2)
+
+### Echelon and Reduced Echelon Forms
+::: {.callout-note}
+**Definition**: A matrix is in **echelon form** if:
+1. All nonzero rows are above rows of all zeros.
+2. Each leading entry is to the right of the leading entry in the row above it.
+3. Entries below each leading entry are zeros.
+:::
+
+If, in addition, each leading entry is 1 and is the only nonzero entry in its column, the matrix is in **reduced echelon form**.
+
+### Pivot Positions and Row Reduction Algorithm
+::: {.callout-note}
+**Definition**: A **pivot position** is the location of a leading 1 in a matrix’s reduced echelon form. The corresponding column is a **pivot column**.
+:::
+
+#### Row Reduction Algorithm
+1. Begin with the leftmost nonzero column (a pivot column) and move the pivot to the top row.
+2. Create zeros below the pivot using row operations.
+3. Cover the row containing the pivot and repeat with the submatrix formed by the rows below it.
+4. To obtain the **reduced echelon form**, create zeros above each pivot by moving from the rightmost pivot up and left.
+
+#### Example
+Transform the matrix $A = \begin{bmatrix} 0 & -3 & -6 & 4 & 9 \\ -1 & -2 & -1 & 3 & 1 \\ -2 & -3 & 0 & 3 & -1 \\ 1 & 4 & 5 & -9 & -7 \end{bmatrix}$ into echelon and then reduced echelon form. Identify pivot positions and columns.
+
+## Important Theorems
+
+::: {.callout-tip}
+## The Uniqueness of the Reduced Echelon Form
+Every matrix is row equivalent to a unique reduced echelon matrix, regardless of the row operations used.
+:::
+
+## Invertible Matrices and the Invertible Matrix Theorem (Section 2.3)
+
+### The Invertible Matrix Theorem
+The **Invertible Matrix Theorem** states that for an $n \times n$ matrix $A$, the following statements are equivalent:
+
+1. $A$ is invertible.
+2. $A$ is row equivalent to the identity matrix.
+3. $A$ has $n$ pivot positions.
+4. The equation $Ax = 0$ has only the trivial solution.
+5. The columns of $A$ are linearly independent.
+6. The transformation $x \to Ax$ is one-to-one.
+7. The equation $Ax = b$ has at least one solution for each $b \in \mathbb{R}^n$.
+8. The columns of $A$ span $\mathbb{R}^n$.
+9. The transformation $x \to Ax$ maps $\mathbb{R}^n$ onto $\mathbb{R}^n$.
+10. There exists a matrix $C$ such that $CA = I$.
+11. There exists a matrix $D$ such that $AD = I$.
+12. $A^T$ is invertible.
+
+#### Fact
+If matrices $A$ and $B$ satisfy $AB = I$, then both $A$ and $B$ are invertible with $B = A^{-1}$ and $A = B^{-1}$.
+
+## Special Cases or Applications
+
+### Free Variables in Solutions
+In consistent systems with free variables, the solution set can be expressed parametrically, using free variables to define the set.
+
+### Determining Invertibility
+To test if a matrix is invertible, check for full pivot positions, or equivalently, attempt to reduce it to the identity matrix using row operations.
+
+## Practice Problems
+
+### Problem 1
+Is the system
+$x_2 - 4x_3 = 8$
+$2x_1 - 3x_2 + 2x_3 = 1$
+$5x_1 - 8x_2 + 7x_3 = 1$
+consistent?
+
+::: {.callout-note collapse="true"}
+## Solution
+Formulate the augmented matrix and row reduce to echelon form. Check if there is a row that implies inconsistency.
+:::
+
+### Problem 2
+Verify the invertibility of the matrix 
+$\begin{bmatrix} -4 & 6 \\ 6 & -9 \end{bmatrix}.$
+
+::: {.callout-note collapse="true"}
+## Solution
+Calculate the determinant. A nonzero result confirms invertibility. Alternatively, apply row reduction to check if it’s row equivalent to the identity matrix.
+:::
+
+## Additional Resources
+
+- [Linear Algebra and Its Applications by Gilbert Strang](https://example.com)
+- [MIT OpenCourseWare - Linear Algebra](https://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/)
+- [Khan Academy - Linear Algebra](https://www.khanacademy.org/math/linear-algebra)

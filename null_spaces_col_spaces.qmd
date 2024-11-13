@@ -3,10 +3,13 @@ title: "Null Space and Column Space"
 format:
   html:
     toc: true
+    toc-depth: 3
     number-sections: true
+    html-math-method: katex
 ---
 
 # Conceptual Overview
+
 ## What is the Null Space?
 - **Definition**: The null space (or kernel) of a matrix $A$ is the set of all vectors $\mathbf{x}$ such that $A\mathbf{x} = \mathbf{0}$. It represents solutions to the homogeneous equation, meaning all vectors that the matrix transforms to the zero vector.
 - **Properties**:
@@ -31,23 +34,15 @@ format:
 ### Finding the Null Space of a 2×2 Matrix
 Let $A = \begin{pmatrix} 1 & 2 \\ 3 & 6 \end{pmatrix}$.
 To find the null space, we solve $A\mathbf{x} = \mathbf{0}$:
-\[
-\begin{pmatrix} 1 & 2 \\ 3 & 6 \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}.
-\]
+$\begin{pmatrix} 1 & 2 \\ 3 & 6 \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}.$
 This system reduces to:
-\[
-x_1 + 2x_2 = 0.
-\]
+$x_1 + 2x_2 = 0.$
 Thus, $x_1 = -2x_2$, so any solution is a scalar multiple of $\begin{pmatrix} -2 \\ 1 \end{pmatrix}$. The null space is therefore:
-\[
-\text{Null}(A) = \text{span}\left\{ \begin{pmatrix} -2 \\ 1 \end{pmatrix} \right\}.
-\]
+$\text{Null}(A) = \text{span}\left\{ \begin{pmatrix} -2 \\ 1 \end{pmatrix} \right\}.$
 
 ### Finding the Column Space
 The column space of $A$ is the span of its columns:
-\[
-\text{Col}(A) = \text{span}\left\{ \begin{pmatrix} 1 \\ 3 \end{pmatrix}, \begin{pmatrix} 2 \\ 6 \end{pmatrix} \right\}.
-\]
+$\text{Col}(A) = \text{span}\left\{ \begin{pmatrix} 1 \\ 3 \end{pmatrix}, \begin{pmatrix} 2 \\ 6 \end{pmatrix} \right\}.$
 Since the second column is a scalar multiple of the first, the column space is just the span of $\begin{pmatrix} 1 \\ 3 \end{pmatrix}$.
 
 ## Advanced Examples

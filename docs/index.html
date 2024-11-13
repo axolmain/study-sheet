@@ -36,10 +36,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -67,6 +69,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
   <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
@@ -161,11 +166,20 @@ window.Quarto = {
     <a class="dropdown-item" href="./matrix_transformations.html">
  <span class="dropdown-text">Matrix Transformations</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./linear_equations.html">
+ <span class="dropdown-text">Basic Linear equations</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./determinants.html">
+ <span class="dropdown-text">Determinants</span></a>
+  </li>  
     </ul>
   </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -198,10 +212,33 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#linear-algebra-key-terms-and-relationships" id="toc-linear-algebra-key-terms-and-relationships" class="nav-link active" data-scroll-target="#linear-algebra-key-terms-and-relationships"><span class="header-section-number">1</span> Linear Algebra: Key Terms and Relationships</a>
+  <ul class="collapse">
+  <li><a href="#quick-reference-equivalent-terms" id="toc-quick-reference-equivalent-terms" class="nav-link" data-scroll-target="#quick-reference-equivalent-terms"><span class="header-section-number">1.1</span> Quick Reference: Equivalent Terms</a></li>
+  <li><a href="#core-concepts-and-their-relationships" id="toc-core-concepts-and-their-relationships" class="nav-link" data-scroll-target="#core-concepts-and-their-relationships"><span class="header-section-number">1.2</span> Core Concepts and Their Relationships</a>
+  <ul class="collapse">
+  <li><a href="#vector-spaces" id="toc-vector-spaces" class="nav-link" data-scroll-target="#vector-spaces"><span class="header-section-number">1.2.1</span> Vector Spaces</a></li>
+  <li><a href="#matrices-and-their-spaces" id="toc-matrices-and-their-spaces" class="nav-link" data-scroll-target="#matrices-and-their-spaces"><span class="header-section-number">1.2.2</span> Matrices and Their Spaces</a></li>
+  <li><a href="#fundamental-theorems-and-their-implications" id="toc-fundamental-theorems-and-their-implications" class="nav-link" data-scroll-target="#fundamental-theorems-and-their-implications"><span class="header-section-number">1.2.3</span> Fundamental Theorems and Their Implications</a></li>
+  </ul></li>
+  <li><a href="#visual-summary-of-relationships" id="toc-visual-summary-of-relationships" class="nav-link" data-scroll-target="#visual-summary-of-relationships"><span class="header-section-number">1.3</span> Visual Summary of Relationships</a>
+  <ul class="collapse">
+  <li><a href="#matrix-properties" id="toc-matrix-properties" class="nav-link" data-scroll-target="#matrix-properties"><span class="header-section-number">1.3.1</span> Matrix Properties</a></li>
+  <li><a href="#vector-space-properties" id="toc-vector-space-properties" class="nav-link" data-scroll-target="#vector-space-properties"><span class="header-section-number">1.3.2</span> Vector Space Properties</a></li>
+  </ul></li>
+  <li><a href="#common-misconceptions-and-clarifications" id="toc-common-misconceptions-and-clarifications" class="nav-link" data-scroll-target="#common-misconceptions-and-clarifications"><span class="header-section-number">1.4</span> Common Misconceptions and Clarifications</a></li>
+  <li><a href="#navigation-links" id="toc-navigation-links" class="nav-link" data-scroll-target="#navigation-links"><span class="header-section-number">1.5</span> Navigation Links</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content column-page-right" id="quarto-document-content">
+<main class="content column-body" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -215,7 +252,7 @@ window.Quarto = {
 </div>
 
 
-<div class="quarto-title-meta column-page-right">
+<div class="quarto-title-meta column-body">
 
     
   
@@ -226,31 +263,110 @@ window.Quarto = {
 
 </header>
 
-<nav id="TOC" role="doc-toc">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#linear-algebra-key-terms-and-relationships" id="toc-linear-algebra-key-terms-and-relationships"><span class="header-section-number">1</span> Linear Algebra: Key Terms and Relationships</a>
-  <ul>
-  <li><a href="#quick-reference-equivalent-terms" id="toc-quick-reference-equivalent-terms"><span class="header-section-number">1.1</span> Quick Reference: Equivalent Terms</a></li>
-  <li><a href="#core-concepts-and-their-relationships" id="toc-core-concepts-and-their-relationships"><span class="header-section-number">1.2</span> Core Concepts and Their Relationships</a>
-  <ul>
-  <li><a href="#vector-spaces" id="toc-vector-spaces"><span class="header-section-number">1.2.1</span> Vector Spaces</a></li>
-  <li><a href="#matrices-and-their-spaces" id="toc-matrices-and-their-spaces"><span class="header-section-number">1.2.2</span> Matrices and Their Spaces</a></li>
-  <li><a href="#fundamental-theorems-and-their-implications" id="toc-fundamental-theorems-and-their-implications"><span class="header-section-number">1.2.3</span> Fundamental Theorems and Their Implications</a></li>
-  </ul></li>
-  <li><a href="#visual-summary-of-relationships" id="toc-visual-summary-of-relationships"><span class="header-section-number">1.3</span> Visual Summary of Relationships</a>
-  <ul>
-  <li><a href="#matrix-properties" id="toc-matrix-properties"><span class="header-section-number">1.3.1</span> Matrix Properties</a></li>
-  <li><a href="#vector-space-properties" id="toc-vector-space-properties"><span class="header-section-number">1.3.2</span> Vector Space Properties</a></li>
-  </ul></li>
-  <li><a href="#common-misconceptions-and-clarifications" id="toc-common-misconceptions-and-clarifications"><span class="header-section-number">1.4</span> Common Misconceptions and Clarifications</a></li>
-  <li><a href="#navigation-links" id="toc-navigation-links"><span class="header-section-number">1.5</span> Navigation Links</a></li>
-  </ul></li>
-  </ul>
-</nav>
+
 <section id="linear-algebra-key-terms-and-relationships" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Linear Algebra: Key Terms and Relationships</h1>
+<p><img src="https://mermaid.ink/img/pako:eNp9VF1vmzAU_SuW-zhSBQj5QNqkJGjSpK2a2moPc_pgwAlWjY2MSZNW_e-9gJ0mdF0UIeN77rnn3mP8gjOVMxzjnaZVge6TjUTwW5KfXDKq0VLsWKrpAxqNvqEV-cMyozS6q2jG6geL7WJr8osazYfbCfneyJyWTBoq0H3BlGZlC-lBq57XJwnbcskNV9Kmr3wbouSOGfTETYFonncQRGWO6owKEFg2wvBK8Iza5AviwCp2olaB3aeuwR8yZxWDh8zYEJQ6UPIpJHOQtSpTLjsRH9oLyYrW_KQhtLtOgzgiflJhUA3tmoLCoqKybp_vZV1qShIOM63P5hWmLuaTm6ZMmUZqi_Z9-1AAhnZEqdXR56x753xyq576Ty3Z2rcRGD6IaIk0QPYXszyBUpLzEn3tIJrKxyF_QNZKNKW8LBHY4HuJrEcNqjicq2JR_yoUQuNCXJYJbQjKQGJnDzIKLQ9ANR6CXA0JNNwch_wT8pvvlTlJm9htMJLRnMsdkkqOnplWCIzUnH1ApmfWVB1XO7fzVpL-swFPYHd00wtxH46lS3wLoqTNRV-c4E664-8HVQ-Zg9btkXXkti_dhQMbB1Jr5CfTtkT2VA-1hTZKyRK8gAPHalTQPUM13AKo5s-sI6rNUTC4JLZciPhqu9h6tdHqkcVXYRja9eiJ56aIJ9XB4Vfe2ktsTpr-JyeoDtjDJdMl5Tlcby-tug02BSvZBsewzKl-3OCNfAUcbYy6O8oMx0Y3zMNaNbsCx1sqanhrqpwalnAKd2TpIHBm_yp1_orjF3zAsR_515E_g_9iPo-mwWTm4SOOg2h-Hc1n4TiMFrPpOIpmrx5-7hj865k_Hs8XwXg6XURRNJ2-vgFBU7c1.png" class="img-fluid"></p>
+<details>
+<summary>
+Linear Algebra –&gt; Vector Spaces
+</summary>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph TD
+    A[Linear Algebra] --&gt; B[Vector Spaces]
+
+    B --&gt; B1[Definition]
+    B1 --&gt; B1a[Set with addition and scalar multiplication]
+
+    B --&gt; B2[Vectors]
+    B2 --&gt; B2a[Linear Independence]
+    B2 --&gt; B2b[Linear Dependence]
+    B2 --&gt; B2c[Linear Combinations]
+
+    B --&gt; B3[Basis]
+    B3 --&gt; B3a[Linearly independent set that spans space]
+    B3 --&gt; B3b[Dimension]
+    B3b --&gt; B3b1[Number of vectors in any basis]
+
+style A fill:#f9f,stroke:#333,stroke-width:4px
+style B fill:#bbf,stroke:#333,stroke-width:2px
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</details>
+<details>
+<summary>
+Linear Algebra –&gt; Matrices
+</summary>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph TD
+    A[Linear Algebra] --&gt; C[Matrices]
+    C --&gt; C1[Row Space]
+    C1 --&gt; C1a[Span of row vectors]
+    C1 --&gt; C1b[dim = row rank]
+
+    C --&gt; C2[Column Space]
+    C2 --&gt; C2a[Span of column vectors]
+    C2 --&gt; C2b[dim = column rank]
+
+    C --&gt; C3[Null Space]
+    C3 --&gt; C3a[Solutions to Ax = 0]
+    C3 --&gt; C3b[dim = nullity]
+
+    C --&gt; C4[Pivots]
+    C4 --&gt; C4a[Leading non-zero entries]
+    C4 --&gt; C4b[Number of pivots = rank]
+
+style A fill:#f9f,stroke:#333,stroke-width:4px
+style C,D fill:#bbf,stroke:#333,stroke-width:2px
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</details>
+<details>
+<summary>
+Linear Algebra –&gt; Fundamental Theorems
+</summary>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph TD
+    A[Linear Algebra] --&gt; D[Fundamental Theorems]
+
+    D --&gt; D1[Rank-Nullity Theorem]
+    D1 --&gt; D1a[rank + nullity = number of columns]
+
+    D --&gt; D2[Row-Column Rank]
+    D2 --&gt; D2a[row rank = column rank]
+
+    D --&gt; D3[Basis Theorem]
+    D3 --&gt; D3a[All bases have same size]
+
+style A fill:#f9f,stroke:#333,stroke-width:4px
+style D fill:#bbf,stroke:#333,stroke-width:2px
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</details>
 <section id="quick-reference-equivalent-terms" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="quick-reference-equivalent-terms"><span class="header-section-number">1.1</span> Quick Reference: Equivalent Terms</h2>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
@@ -486,6 +602,150 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {

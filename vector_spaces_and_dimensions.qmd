@@ -2,22 +2,10 @@
 title: "Vector Spaces and Dimension"
 format:
   html:
-    theme: cosmo
-    css: styles.css
-    page-layout: full
     toc: true
     toc-depth: 3
-    toc-location: body
-    number-sections: false
+    number-sections: true
     html-math-method: katex
-    code-fold: true
-    code-summary: 'Show the code'
-    code-overflow: wrap
-    code-copy: hover
-    code-tools:
-      source: false
-      toggle: true
-      caption: See code
 ---
 
 # Vector Spaces and Dimension
@@ -40,12 +28,20 @@ Therefore, $\dim \mathbb{R}^3 = 3$
 - Zero vector space: $\dim \{\mathbf{0}\} = 0$
 - Infinite-dimensional spaces: The space of all polynomials $P$ has no finite basis
 
-## Homogeneous Systems
+## Key Concepts and Definitions
 
-### Key Concepts
+### Span
+::: {.callout-note}
+The **definition of Span**: The span of a set of vectors is the set of all linear combinations of those vectors. For a set of vectors $\{\mathbf{v}_1, \mathbf{v}_2, \dots, \mathbf{v}_n\}$, the span is denoted $\text{span}\{\mathbf{v}_1, \mathbf{v}_2, \dots, \mathbf{v}_n\}$.
+:::
+
+### Linear Independence
+::: {.callout-note}
+**Definition of Linear Independence and Dependence**: A set of vectors is linearly independent if no vector in the set is a linear combination of the others; otherwise, the set is linearly dependent.
+:::
 
 ::: {.callout-important}
-## Homogeneous System Form
+### Homogeneous System Form
 A homogeneous system has the form $A\mathbf{x} = \mathbf{0}$
 :::
 
@@ -108,7 +104,7 @@ x + y + z &= 0 \\
 \end{aligned}
 $$
 
-::: {.callout-note}
+::: {.callout-note collapse="true"}
 ## Solution
 1. Notice the second equation is a multiple of the first
 2. System reduces to $x + y + z = 0$
@@ -116,13 +112,21 @@ $$
 4. Basis: $\text{span}\left(\begin{bmatrix} 1 \\ 0 \\ -1 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \\ -1 \end{bmatrix}\right)$
 :::
 
-### Problem 2: Null Space Basis
+### Problem 2: Basis and Dimension
+Explain why the standard basis for $\mathbb{R}^3$ has exactly three vectors.
+
+::: {.callout-note collapse="true"}
+## Solution
+The space $\mathbb{R}^3$ requires three linearly independent vectors to span it fully. Since the standard basis $\{\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}\}$ spans $\mathbb{R}^3$ and no subset of these vectors can do so, they form a basis, making $\dim \mathbb{R}^3 = 3$.
+:::
+
+### Problem 3: Null Space Basis
 Find a basis for the null space of:
 $$
 A = \begin{bmatrix} 1 & 2 & 3 \\ 2 & 4 & 6 \end{bmatrix}
 $$
 
-::: {.callout-note}
+::: {.callout-note collapse="true"}
 ## Solution
 1. Row reduce to: $\begin{bmatrix} 1 & 2 & 3 \\ 0 & 0 & 0 \end{bmatrix}$
 2. Free variables: $y, z$

@@ -11,6 +11,84 @@ format:
 
 # Linear Algebra: Key Terms and Relationships
 
+![](https://mermaid.ink/img/pako:eNp9VF1vmzAU_SuW-zhSBQj5QNqkJGjSpK2a2moPc_pgwAlWjY2MSZNW_e-9gJ0mdF0UIeN77rnn3mP8gjOVMxzjnaZVge6TjUTwW5KfXDKq0VLsWKrpAxqNvqEV-cMyozS6q2jG6geL7WJr8osazYfbCfneyJyWTBoq0H3BlGZlC-lBq57XJwnbcskNV9Kmr3wbouSOGfTETYFonncQRGWO6owKEFg2wvBK8Iza5AviwCp2olaB3aeuwR8yZxWDh8zYEJQ6UPIpJHOQtSpTLjsRH9oLyYrW_KQhtLtOgzgiflJhUA3tmoLCoqKybp_vZV1qShIOM63P5hWmLuaTm6ZMmUZqi_Z9-1AAhnZEqdXR56x753xyq576Ty3Z2rcRGD6IaIk0QPYXszyBUpLzEn3tIJrKxyF_QNZKNKW8LBHY4HuJrEcNqjicq2JR_yoUQuNCXJYJbQjKQGJnDzIKLQ9ANR6CXA0JNNwch_wT8pvvlTlJm9htMJLRnMsdkkqOnplWCIzUnH1ApmfWVB1XO7fzVpL-swFPYHd00wtxH46lS3wLoqTNRV-c4E664-8HVQ-Zg9btkXXkti_dhQMbB1Jr5CfTtkT2VA-1hTZKyRK8gAPHalTQPUM13AKo5s-sI6rNUTC4JLZciPhqu9h6tdHqkcVXYRja9eiJ56aIJ9XB4Vfe2ktsTpr-JyeoDtjDJdMl5Tlcby-tug02BSvZBsewzKl-3OCNfAUcbYy6O8oMx0Y3zMNaNbsCx1sqanhrqpwalnAKd2TpIHBm_yp1_orjF3zAsR_515E_g_9iPo-mwWTm4SOOg2h-Hc1n4TiMFrPpOIpmrx5-7hj865k_Hs8XwXg6XURRNJ2-vgFBU7c1)
+
+<details>
+<summary>Linear Algebra --> Vector Spaces</summary>
+
+```{mermaid}
+graph TD
+    A[Linear Algebra] --> B[Vector Spaces]
+
+    B --> B1[Definition]
+    B1 --> B1a[Set with addition and scalar multiplication]
+
+    B --> B2[Vectors]
+    B2 --> B2a[Linear Independence]
+    B2 --> B2b[Linear Dependence]
+    B2 --> B2c[Linear Combinations]
+
+    B --> B3[Basis]
+    B3 --> B3a[Linearly independent set that spans space]
+    B3 --> B3b[Dimension]
+    B3b --> B3b1[Number of vectors in any basis]
+
+style A fill:#f9f,stroke:#333,stroke-width:4px
+style B fill:#bbf,stroke:#333,stroke-width:2px
+```
+
+</details>
+
+<details>
+<summary>Linear Algebra --> Matrices</summary>
+
+```{mermaid}
+graph TD
+    A[Linear Algebra] --> C[Matrices]
+    C --> C1[Row Space]
+    C1 --> C1a[Span of row vectors]
+    C1 --> C1b[dim = row rank]
+
+    C --> C2[Column Space]
+    C2 --> C2a[Span of column vectors]
+    C2 --> C2b[dim = column rank]
+
+    C --> C3[Null Space]
+    C3 --> C3a[Solutions to Ax = 0]
+    C3 --> C3b[dim = nullity]
+
+    C --> C4[Pivots]
+    C4 --> C4a[Leading non-zero entries]
+    C4 --> C4b[Number of pivots = rank]
+
+style A fill:#f9f,stroke:#333,stroke-width:4px
+style C,D fill:#bbf,stroke:#333,stroke-width:2px
+```
+
+</details>
+
+<details>
+<summary>Linear Algebra --> Fundamental Theorems</summary>
+
+```{mermaid}
+graph TD
+    A[Linear Algebra] --> D[Fundamental Theorems]
+
+    D --> D1[Rank-Nullity Theorem]
+    D1 --> D1a[rank + nullity = number of columns]
+
+    D --> D2[Row-Column Rank]
+    D2 --> D2a[row rank = column rank]
+
+    D --> D3[Basis Theorem]
+    D3 --> D3a[All bases have same size]
+
+style A fill:#f9f,stroke:#333,stroke-width:4px
+style D fill:#bbf,stroke:#333,stroke-width:2px
+```
+
+</details>
+
 ## Quick Reference: Equivalent Terms
 
 ::: {.callout-note appearance="minimal"}

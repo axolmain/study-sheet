@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Vector Spaces and Dimension – Study-Sheet: Linear Algebra</title>
+<title>Determinants and Invertibility in Linear Algebra – Study-Sheet: Linear Algebra</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -184,7 +184,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Vector Spaces and Dimension</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Determinants and Invertibility in Linear Algebra</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -213,22 +213,35 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#vector-spaces-and-dimension" id="toc-vector-spaces-and-dimension" class="nav-link active" data-scroll-target="#vector-spaces-and-dimension"><span class="header-section-number">1</span> Vector Spaces and Dimension</a>
+  <li><a href="#determinants-and-invertibility-in-linear-algebra" id="toc-determinants-and-invertibility-in-linear-algebra" class="nav-link active" data-scroll-target="#determinants-and-invertibility-in-linear-algebra"><span class="header-section-number">1</span> Determinants and Invertibility in Linear Algebra</a>
   <ul class="collapse">
-  <li><a href="#definition" id="toc-definition" class="nav-link" data-scroll-target="#definition"><span class="header-section-number">1.0.1</span> Definition</a></li>
-  <li><a href="#special-cases" id="toc-special-cases" class="nav-link" data-scroll-target="#special-cases"><span class="header-section-number">1.0.2</span> Special Cases</a></li>
-  <li><a href="#key-concepts-and-definitions" id="toc-key-concepts-and-definitions" class="nav-link" data-scroll-target="#key-concepts-and-definitions"><span class="header-section-number">1.1</span> Key Concepts and Definitions</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">1.1</span> Introduction</a></li>
+  <li><a href="#key-concepts-and-definitions" id="toc-key-concepts-and-definitions" class="nav-link" data-scroll-target="#key-concepts-and-definitions"><span class="header-section-number">1.2</span> Key Concepts and Definitions</a>
   <ul class="collapse">
-  <li><a href="#span" id="toc-span" class="nav-link" data-scroll-target="#span"><span class="header-section-number">1.1.1</span> Span</a></li>
-  <li><a href="#linear-independence" id="toc-linear-independence" class="nav-link" data-scroll-target="#linear-independence"><span class="header-section-number">1.1.2</span> Linear Independence</a></li>
-  <li><a href="#important-theorems" id="toc-important-theorems" class="nav-link" data-scroll-target="#important-theorems"><span class="header-section-number">1.1.3</span> Important Theorems</a></li>
+  <li><a href="#determinants-of-square-matrices" id="toc-determinants-of-square-matrices" class="nav-link" data-scroll-target="#determinants-of-square-matrices"><span class="header-section-number">1.2.1</span> Determinants of Square Matrices</a></li>
+  <li><a href="#basic-properties-of-determinants" id="toc-basic-properties-of-determinants" class="nav-link" data-scroll-target="#basic-properties-of-determinants"><span class="header-section-number">1.2.2</span> Basic Properties of Determinants</a></li>
   </ul></li>
-  <li><a href="#practice-problems" id="toc-practice-problems" class="nav-link" data-scroll-target="#practice-problems"><span class="header-section-number">1.2</span> Practice Problems</a>
+  <li><a href="#effects-of-row-operations-on-determinants" id="toc-effects-of-row-operations-on-determinants" class="nav-link" data-scroll-target="#effects-of-row-operations-on-determinants"><span class="header-section-number">1.3</span> Effects of Row Operations on Determinants</a>
   <ul class="collapse">
-  <li><a href="#problem-1-homogeneous-systems" id="toc-problem-1-homogeneous-systems" class="nav-link" data-scroll-target="#problem-1-homogeneous-systems"><span class="header-section-number">1.2.1</span> Problem 1: Homogeneous Systems</a></li>
-  <li><a href="#problem-2-basis-and-dimension" id="toc-problem-2-basis-and-dimension" class="nav-link" data-scroll-target="#problem-2-basis-and-dimension"><span class="header-section-number">1.2.2</span> Problem 2: Basis and Dimension</a></li>
-  <li><a href="#problem-3-null-space-basis" id="toc-problem-3-null-space-basis" class="nav-link" data-scroll-target="#problem-3-null-space-basis"><span class="header-section-number">1.2.3</span> Problem 3: Null Space Basis</a></li>
+  <li><a href="#row-operations-and-determinant-effects" id="toc-row-operations-and-determinant-effects" class="nav-link" data-scroll-target="#row-operations-and-determinant-effects"><span class="header-section-number">1.3.1</span> Row Operations and Determinant Effects</a></li>
+  <li><a href="#calculating-determinants-using-row-operations" id="toc-calculating-determinants-using-row-operations" class="nav-link" data-scroll-target="#calculating-determinants-using-row-operations"><span class="header-section-number">1.3.2</span> Calculating Determinants Using Row Operations</a></li>
   </ul></li>
+  <li><a href="#important-theorems" id="toc-important-theorems" class="nav-link" data-scroll-target="#important-theorems"><span class="header-section-number">1.4</span> Important Theorems</a></li>
+  <li><a href="#relationship-between-invertibility-and-determinants" id="toc-relationship-between-invertibility-and-determinants" class="nav-link" data-scroll-target="#relationship-between-invertibility-and-determinants"><span class="header-section-number">1.5</span> Relationship Between Invertibility and Determinants</a>
+  <ul class="collapse">
+  <li><a href="#determinants-as-an-invertibility-criterion" id="toc-determinants-as-an-invertibility-criterion" class="nav-link" data-scroll-target="#determinants-as-an-invertibility-criterion"><span class="header-section-number">1.5.1</span> Determinants as an Invertibility Criterion</a></li>
+  </ul></li>
+  <li><a href="#special-cases-or-applications" id="toc-special-cases-or-applications" class="nav-link" data-scroll-target="#special-cases-or-applications"><span class="header-section-number">1.6</span> Special Cases or Applications</a>
+  <ul class="collapse">
+  <li><a href="#determinants-in-geometric-interpretation" id="toc-determinants-in-geometric-interpretation" class="nav-link" data-scroll-target="#determinants-in-geometric-interpretation"><span class="header-section-number">1.6.1</span> Determinants in Geometric Interpretation</a></li>
+  <li><a href="#determinant-of-triangular-matrices" id="toc-determinant-of-triangular-matrices" class="nav-link" data-scroll-target="#determinant-of-triangular-matrices"><span class="header-section-number">1.6.2</span> Determinant of Triangular Matrices</a></li>
+  </ul></li>
+  <li><a href="#practice-problems" id="toc-practice-problems" class="nav-link" data-scroll-target="#practice-problems"><span class="header-section-number">1.7</span> Practice Problems</a>
+  <ul class="collapse">
+  <li><a href="#problem-1" id="toc-problem-1" class="nav-link" data-scroll-target="#problem-1"><span class="header-section-number">1.7.1</span> Problem 1</a></li>
+  <li><a href="#problem-2" id="toc-problem-2" class="nav-link" data-scroll-target="#problem-2"><span class="header-section-number">1.7.2</span> Problem 2</a></li>
+  </ul></li>
+  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources"><span class="header-section-number">1.8</span> Additional Resources</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -238,7 +251,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Vector Spaces and Dimension</h1>
+<h1 class="title">Determinants and Invertibility in Linear Algebra</h1>
 </div>
 
 
@@ -255,10 +268,16 @@ window.Quarto = {
 </header>
 
 
-<section id="vector-spaces-and-dimension" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Vector Spaces and Dimension</h1>
-<section id="definition" class="level3" data-number="1.0.1">
-<h3 data-number="1.0.1" class="anchored" data-anchor-id="definition"><span class="header-section-number">1.0.1</span> Definition</h3>
+<section id="determinants-and-invertibility-in-linear-algebra" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Determinants and Invertibility in Linear Algebra</h1>
+<section id="introduction" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1.1</span> Introduction</h2>
+<p>This study guide covers essential concepts about determinants in linear algebra, focusing on the effects of row operations on determinants and the relationship between a matrix’s invertibility and its determinant.</p>
+</section>
+<section id="key-concepts-and-definitions" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="key-concepts-and-definitions"><span class="header-section-number">1.2</span> Key Concepts and Definitions</h2>
+<section id="determinants-of-square-matrices" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="determinants-of-square-matrices"><span class="header-section-number">1.2.1</span> Determinants of Square Matrices</h3>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -269,231 +288,146 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>A vector space <span class="math inline">V</span> is finite-dimensional if it can be spanned by a finite set of vectors. The dimension of <span class="math inline">V</span>, denoted <span class="math inline">\dim V</span>, is the number of vectors in any basis for <span class="math inline">V</span>.</p>
+<p><strong>Definition</strong>: The <strong>determinant</strong> of a square matrix <span class="math inline">A</span> is a scalar that provides information about the matrix’s properties, such as invertibility and volume scaling factor. For a 2x2 matrix, the determinant is calculated as: <span class="math inline">\text{det}(A) = ad - bc \quad \text{for} \quad A = \begin{bmatrix} a &amp; b \\ c &amp; d \end{bmatrix}.</span></p>
 </div>
 </div>
-<section id="example-standard-basis" class="level4" data-number="1.0.1.1">
-<h4 data-number="1.0.1.1" class="anchored" data-anchor-id="example-standard-basis"><span class="header-section-number">1.0.1.1</span> Example: Standard Basis</h4>
-<p>The standard basis for <span class="math inline">\mathbb{R}^3</span> consists of: <span class="math display">
-\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix},
-\begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix},
-\begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}
-</span> Therefore, <span class="math inline">\dim \mathbb{R}^3 = 3</span></p>
+<section id="example" class="level4" data-number="1.2.1.1">
+<h4 data-number="1.2.1.1" class="anchored" data-anchor-id="example"><span class="header-section-number">1.2.1.1</span> Example</h4>
+<p>For <span class="math inline">A = \begin{bmatrix} 3 &amp; 4 \\ 2 &amp; 5 \end{bmatrix}</span>, the determinant is: <span class="math inline">\text{det}(A) = (3 \times 5) - (4 \times 2) = 15 - 8 = 7.</span></p>
 </section>
 </section>
-<section id="special-cases" class="level3" data-number="1.0.2">
-<h3 data-number="1.0.2" class="anchored" data-anchor-id="special-cases"><span class="header-section-number">1.0.2</span> Special Cases</h3>
+<section id="basic-properties-of-determinants" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="basic-properties-of-determinants"><span class="header-section-number">1.2.2</span> Basic Properties of Determinants</h3>
+<p>The determinant of a matrix <span class="math inline">A</span> is: - <strong>Zero</strong> if <span class="math inline">A</span> is not invertible. - <strong>Nonzero</strong> if <span class="math inline">A</span> is invertible.</p>
+<p>The determinant also changes in predictable ways with row operations, as detailed below.</p>
+</section>
+</section>
+<section id="effects-of-row-operations-on-determinants" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="effects-of-row-operations-on-determinants"><span class="header-section-number">1.3</span> Effects of Row Operations on Determinants</h2>
+<section id="row-operations-and-determinant-effects" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="row-operations-and-determinant-effects"><span class="header-section-number">1.3.1</span> Row Operations and Determinant Effects</h3>
+<ol type="1">
+<li><strong>Row Replacement</strong>: Replacing one row with itself plus a multiple of another row leaves the determinant unchanged.</li>
+<li><strong>Row Interchange</strong>: Interchanging two rows of a matrix multiplies the determinant by (-1).</li>
+<li><strong>Row Scaling</strong>: Multiplying a row by a scalar <span class="math inline">k</span> scales the determinant by <span class="math inline">k</span>.</li>
+</ol>
+<section id="example-1" class="level4" data-number="1.3.1.1">
+<h4 data-number="1.3.1.1" class="anchored" data-anchor-id="example-1"><span class="header-section-number">1.3.1.1</span> Example</h4>
+<p>Consider <span class="math inline">A = \begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{bmatrix}</span> with <span class="math inline">\text{det}(A) = -2</span>. - <strong>Row Replacement</strong>: Replacing row 1 with <span class="math inline">\text{row 1} + 3 \times \text{row 2}</span> does not alter the determinant. - <strong>Row Interchange</strong>: Swapping rows 1 and 2 changes the determinant to <span class="math inline">2</span>. - <strong>Row Scaling</strong>: Multiplying row 1 by <span class="math inline">3</span> changes the determinant to <span class="math inline">-6</span>.</p>
+</section>
+</section>
+<section id="calculating-determinants-using-row-operations" class="level3" data-number="1.3.2">
+<h3 data-number="1.3.2" class="anchored" data-anchor-id="calculating-determinants-using-row-operations"><span class="header-section-number">1.3.2</span> Calculating Determinants Using Row Operations</h3>
+<p>Determinants can be computed by transforming the matrix to an upper triangular form via row operations. The determinant is then the product of the diagonal entries.</p>
+</section>
+</section>
+<section id="important-theorems" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="important-theorems"><span class="header-section-number">1.4</span> Important Theorems</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Determinant Multiplication Theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For matrices <span class="math inline">A</span> and <span class="math inline">B</span> of the same size, <span class="math inline">\text{det}(AB) = \text{det}(A) \times \text{det}(B)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Invertibility and Determinants
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A matrix <span class="math inline">A</span> is invertible if and only if <span class="math inline">\text{det}(A) \neq 0</span>.</p>
+</div>
+</div>
+</section>
+<section id="relationship-between-invertibility-and-determinants" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="relationship-between-invertibility-and-determinants"><span class="header-section-number">1.5</span> Relationship Between Invertibility and Determinants</h2>
+<section id="determinants-as-an-invertibility-criterion" class="level3" data-number="1.5.1">
+<h3 data-number="1.5.1" class="anchored" data-anchor-id="determinants-as-an-invertibility-criterion"><span class="header-section-number">1.5.1</span> Determinants as an Invertibility Criterion</h3>
+<p>If <span class="math inline">\text{det}(A) = 0</span>, then: - <span class="math inline">A</span> is <strong>not invertible</strong>. - <span class="math inline">A</span> has linearly dependent rows or columns. - The matrix <span class="math inline">A</span> maps volumes to zero, indicating a lack of full rank.</p>
+<p>Conversely, if <span class="math inline">\text{det}(A) \neq 0</span>, then <span class="math inline">A</span> is invertible, has linearly independent columns, and the transformation represented by <span class="math inline">A</span> is volume-preserving (up to a scaling factor).</p>
+<section id="example-2" class="level4" data-number="1.5.1.1">
+<h4 data-number="1.5.1.1" class="anchored" data-anchor-id="example-2"><span class="header-section-number">1.5.1.1</span> Example</h4>
+<p>For <span class="math inline">A = \begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 6 \end{bmatrix}</span>, <span class="math inline">\text{det}(A) = (1)(6) - (2)(3) = 0</span>. Thus, <span class="math inline">A</span> is not invertible due to linearly dependent columns.</p>
+</section>
+</section>
+</section>
+<section id="special-cases-or-applications" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="special-cases-or-applications"><span class="header-section-number">1.6</span> Special Cases or Applications</h2>
+<section id="determinants-in-geometric-interpretation" class="level3" data-number="1.6.1">
+<h3 data-number="1.6.1" class="anchored" data-anchor-id="determinants-in-geometric-interpretation"><span class="header-section-number">1.6.1</span> Determinants in Geometric Interpretation</h3>
+<p>The determinant of a transformation matrix represents the scaling factor for areas (in 2D) or volumes (in 3D) under the transformation. A determinant of zero implies that the transformation collapses the space into a lower dimension.</p>
+</section>
+<section id="determinant-of-triangular-matrices" class="level3" data-number="1.6.2">
+<h3 data-number="1.6.2" class="anchored" data-anchor-id="determinant-of-triangular-matrices"><span class="header-section-number">1.6.2</span> Determinant of Triangular Matrices</h3>
+<p>For a triangular matrix, the determinant is the product of its diagonal entries. This property simplifies determinant calculations, especially after transforming a matrix to echelon form.</p>
+</section>
+</section>
+<section id="practice-problems" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="practice-problems"><span class="header-section-number">1.7</span> Practice Problems</h2>
+<section id="problem-1" class="level3" data-number="1.7.1">
+<h3 data-number="1.7.1" class="anchored" data-anchor-id="problem-1"><span class="header-section-number">1.7.1</span> Problem 1</h3>
+<p>Calculate the determinant of the matrix</p>
+<p><span class="math inline">A = \begin{bmatrix} 2 &amp; 5 \\ 1 &amp; 3 \end{bmatrix}</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Using the formula <span class="math inline">\text{det}(A) = ad - bc</span>:</p>
+<p><span class="math inline">\text{det}(A) = (2 \times 3) - (5 \times 1) = 6 - 5 = 1</span></p>
+<p>Since <span class="math inline">\text{det}(A) \neq 0</span>, <span class="math inline">A</span> is invertible.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="problem-2" class="level3" data-number="1.7.2">
+<h3 data-number="1.7.2" class="anchored" data-anchor-id="problem-2"><span class="header-section-number">1.7.2</span> Problem 2</h3>
+<p>Determine if the matrix <span class="math inline">B = \begin{bmatrix} 0 &amp; 1 \\ 4 &amp; 0 \end{bmatrix}</span> is invertible using its determinant.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\text{det}(B) = (0 \times 0) - (1 \times 4) = -4.</span> Since <span class="math inline">\text{det}(B) \neq 0</span>, <span class="math inline">B</span> is invertible.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="additional-resources" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="additional-resources"><span class="header-section-number">1.8</span> Additional Resources</h2>
 <ul>
-<li>Zero vector space: <span class="math inline">\dim \{\mathbf{0}\} = 0</span></li>
-<li>Infinite-dimensional spaces: The space of all polynomials <span class="math inline">P</span> has no finite basis</li>
+<li><a href="https://example.com">Linear Algebra Done Right by Sheldon Axler</a></li>
+<li><a href="https://example.com">Introduction to Linear Algebra by Gilbert Strang</a></li>
+<li><a href="https://www.youtube.com/watch?v=kjBOesZCoqc">3Blue1Brown - Essence of Linear Algebra (YouTube)</a></li>
 </ul>
-</section>
-<section id="key-concepts-and-definitions" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="key-concepts-and-definitions"><span class="header-section-number">1.1</span> Key Concepts and Definitions</h2>
-<section id="span" class="level3" data-number="1.1.1">
-<h3 data-number="1.1.1" class="anchored" data-anchor-id="span"><span class="header-section-number">1.1.1</span> Span</h3>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The <strong>definition of Span</strong>: The span of a set of vectors is the set of all linear combinations of those vectors. For a set of vectors <span class="math inline">\{\mathbf{v}_1, \mathbf{v}_2, \dots, \mathbf{v}_n\}</span>, the span is denoted <span class="math inline">\text{span}\{\mathbf{v}_1, \mathbf{v}_2, \dots, \mathbf{v}_n\}</span>.</p>
-</div>
-</div>
-</section>
-<section id="linear-independence" class="level3" data-number="1.1.2">
-<h3 data-number="1.1.2" class="anchored" data-anchor-id="linear-independence"><span class="header-section-number">1.1.2</span> Linear Independence</h3>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Definition of Linear Independence and Dependence</strong>: A set of vectors is linearly independent if no vector in the set is a linear combination of the others; otherwise, the set is linearly dependent.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Homogeneous System Form
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A homogeneous system has the form <span class="math inline">A\mathbf{x} = \mathbf{0}</span></p>
-</div>
-</div>
-<section id="example-system" class="level4" data-number="1.1.2.1">
-<h4 data-number="1.1.2.1" class="anchored" data-anchor-id="example-system"><span class="header-section-number">1.1.2.1</span> Example System</h4>
-<p><span class="math display">
-\begin{aligned}
-2x + 3y - z &amp;= 0 \\
-4x - 2y + 2z &amp;= 0
-\end{aligned}
-</span></p>
-<p>In matrix form: <span class="math display">
-\begin{bmatrix}
-2 &amp; 3 &amp; -1 \\
-4 &amp; -2 &amp; 2
-\end{bmatrix}
-\begin{bmatrix}
-x \\ y \\ z
-\end{bmatrix}
-= \begin{bmatrix}
-0 \\ 0
-\end{bmatrix}
-</span></p>
-</section>
-</section>
-<section id="important-theorems" class="level3" data-number="1.1.3">
-<h3 data-number="1.1.3" class="anchored" data-anchor-id="important-theorems"><span class="header-section-number">1.1.3</span> Important Theorems</h3>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Theorem 9
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If a vector space <span class="math inline">V</span> has a basis <span class="math inline">\mathcal{B} = \{ \mathbf{b}_1, \dots, \mathbf{b}_n \}</span>, then any set in <span class="math inline">V</span> containing more than <span class="math inline">n</span> vectors must be linearly dependent.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Theorem 10
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If a vector space <span class="math inline">V</span> has a basis of <span class="math inline">n</span> vectors, then every basis of <span class="math inline">V</span> must consist of exactly <span class="math inline">n</span> vectors.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Theorem 11
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let <span class="math inline">H</span> be a subspace of a finite-dimensional vector space <span class="math inline">V</span>. Any linearly independent set in <span class="math inline">H</span> can be expanded, if necessary, to a basis for <span class="math inline">H</span>. Also, <span class="math inline">H</span> is finite-dimensional and</p>
-<p><span class="math inline">\dim H \leq \dim V</span></p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-The Basis Theorem (Theorem 12)
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let <span class="math inline">V</span> be a <span class="math inline">p</span>-dimensional vector space, <span class="math inline">p \geq 1</span>. Any linearly independent set of exactly <span class="math inline">p</span> elements in <span class="math inline">V</span> is automatically a basis for <span class="math inline">V</span>.</p>
-</div>
-</div>
-</section>
-</section>
-<section id="practice-problems" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="practice-problems"><span class="header-section-number">1.2</span> Practice Problems</h2>
-<section id="problem-1-homogeneous-systems" class="level3" data-number="1.2.1">
-<h3 data-number="1.2.1" class="anchored" data-anchor-id="problem-1-homogeneous-systems"><span class="header-section-number">1.2.1</span> Problem 1: Homogeneous Systems</h3>
-<p>Solve the system: <span class="math display">
-\begin{aligned}
-x + y + z &amp;= 0 \\
-2x + 2y + 2z &amp;= 0
-\end{aligned}
-</span></p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Solution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<ol type="1">
-<li>Notice the second equation is a multiple of the first</li>
-<li>System reduces to <span class="math inline">x + y + z = 0</span></li>
-<li>General solution: <span class="math inline">\begin{bmatrix} x \\ y \\ -(x+y) \end{bmatrix}</span> for any <span class="math inline">x, y</span></li>
-<li>Basis: <span class="math inline">\text{span}\left(\begin{bmatrix} 1 \\ 0 \\ -1 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \\ -1 \end{bmatrix}\right)</span></li>
-</ol>
-</div>
-</div>
-</div>
-</section>
-<section id="problem-2-basis-and-dimension" class="level3" data-number="1.2.2">
-<h3 data-number="1.2.2" class="anchored" data-anchor-id="problem-2-basis-and-dimension"><span class="header-section-number">1.2.2</span> Problem 2: Basis and Dimension</h3>
-<p>Explain why the standard basis for <span class="math inline">\mathbb{R}^3</span> has exactly three vectors.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Solution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>The space <span class="math inline">\mathbb{R}^3</span> requires three linearly independent vectors to span it fully. Since the standard basis <span class="math inline">\{\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}\}</span> spans <span class="math inline">\mathbb{R}^3</span> and no subset of these vectors can do so, they form a basis, making <span class="math inline">\dim \mathbb{R}^3 = 3</span>.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="problem-3-null-space-basis" class="level3" data-number="1.2.3">
-<h3 data-number="1.2.3" class="anchored" data-anchor-id="problem-3-null-space-basis"><span class="header-section-number">1.2.3</span> Problem 3: Null Space Basis</h3>
-<p>Find a basis for the null space of: <span class="math display">
-A = \begin{bmatrix} 1 &amp; 2 &amp; 3 \\ 2 &amp; 4 &amp; 6 \end{bmatrix}
-</span></p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Solution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<ol type="1">
-<li>Row reduce to: <span class="math inline">\begin{bmatrix} 1 &amp; 2 &amp; 3 \\ 0 &amp; 0 &amp; 0 \end{bmatrix}</span></li>
-<li>Free variables: <span class="math inline">y, z</span></li>
-<li>Express <span class="math inline">x</span>: <span class="math inline">x = -2y - 3z</span></li>
-<li>Basis: <span class="math inline">\left\{\begin{bmatrix} -2 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} -3 \\ 0 \\ 1 \end{bmatrix}\right\}</span></li>
-</ol>
-</div>
-</div>
-</div>
 
 
-</section>
 </section>
 </section>
 

@@ -35,10 +35,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -160,11 +162,20 @@ window.Quarto = {
     <a class="dropdown-item" href="./matrix_transformations.html">
  <span class="dropdown-text">Matrix Transformations</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./linear_equations.html">
+ <span class="dropdown-text">Basic Linear equations</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./determinants.html">
+ <span class="dropdown-text">Determinants</span></a>
+  </li>  
     </ul>
   </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -197,10 +208,23 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#concepts-and-questions-on-matrix-transformations" id="toc-concepts-and-questions-on-matrix-transformations" class="nav-link active" data-scroll-target="#concepts-and-questions-on-matrix-transformations"><span class="header-section-number">1</span> Concepts and Questions on Matrix Transformations</a>
+  <ul class="collapse">
+  <li><a href="#properties-for-a-transformation-to-be-a-linear-transformation" id="toc-properties-for-a-transformation-to-be-a-linear-transformation" class="nav-link" data-scroll-target="#properties-for-a-transformation-to-be-a-linear-transformation"><span class="header-section-number">1.1</span> Properties for a Transformation to be a Linear Transformation</a></li>
+  <li><a href="#definitions-of-onto-and-one-to-one-transformations" id="toc-definitions-of-onto-and-one-to-one-transformations" class="nav-link" data-scroll-target="#definitions-of-onto-and-one-to-one-transformations"><span class="header-section-number">1.2</span> Definitions of “Onto” and “One-to-One” Transformations</a></li>
+  <li><a href="#markov-chain-and-steady-state-solution" id="toc-markov-chain-and-steady-state-solution" class="nav-link" data-scroll-target="#markov-chain-and-steady-state-solution"><span class="header-section-number">1.3</span> Markov Chain and Steady State Solution</a></li>
+  </ul></li>
+  <li><a href="#summary-of-matrix-transformations-concepts" id="toc-summary-of-matrix-transformations-concepts" class="nav-link" data-scroll-target="#summary-of-matrix-transformations-concepts"><span class="header-section-number">2</span> Summary of Matrix Transformations Concepts</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content column-page-right" id="quarto-document-content">
+<main class="content column-body" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -209,7 +233,7 @@ window.Quarto = {
 
 
 
-<div class="quarto-title-meta column-page-right">
+<div class="quarto-title-meta column-body">
 
     
   
@@ -220,106 +244,57 @@ window.Quarto = {
 
 </header>
 
-<nav id="TOC" role="doc-toc">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#conceptual-overview" id="toc-conceptual-overview"><span class="header-section-number">1</span> Conceptual Overview</a>
-  <ul>
-  <li><a href="#what-is-a-matrix-transformation" id="toc-what-is-a-matrix-transformation"><span class="header-section-number">1.1</span> What is a Matrix Transformation?</a></li>
-  </ul></li>
-  <li><a href="#common-misconceptions" id="toc-common-misconceptions"><span class="header-section-number">2</span> Common Misconceptions</a></li>
-  <li><a href="#worked-examples" id="toc-worked-examples"><span class="header-section-number">3</span> Worked Examples</a>
-  <ul>
-  <li><a href="#basic-examples" id="toc-basic-examples"><span class="header-section-number">3.1</span> Basic Examples</a>
-  <ul>
-  <li><a href="#rotation-matrix" id="toc-rotation-matrix"><span class="header-section-number">3.1.1</span> Rotation Matrix</a></li>
-  <li><a href="#scaling-transformation" id="toc-scaling-transformation"><span class="header-section-number">3.1.2</span> Scaling Transformation</a></li>
-  </ul></li>
-  <li><a href="#advanced-examples" id="toc-advanced-examples"><span class="header-section-number">3.2</span> Advanced Examples</a>
-  <ul>
-  <li><a href="#composition-of-transformations" id="toc-composition-of-transformations"><span class="header-section-number">3.2.1</span> Composition of Transformations</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#interactive-elements" id="toc-interactive-elements"><span class="header-section-number">4</span> Interactive Elements</a></li>
-  <li><a href="#connections-to-other-topics" id="toc-connections-to-other-topics"><span class="header-section-number">5</span> Connections to Other Topics</a></li>
-  <li><a href="#summary" id="toc-summary"><span class="header-section-number">6</span> Summary</a></li>
-  </ul>
-</nav>
-<section id="conceptual-overview" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Conceptual Overview</h1>
-<section id="what-is-a-matrix-transformation" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="what-is-a-matrix-transformation"><span class="header-section-number">1.1</span> What is a Matrix Transformation?</h2>
+
+<section id="concepts-and-questions-on-matrix-transformations" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Concepts and Questions on Matrix Transformations</h1>
+<section id="properties-for-a-transformation-to-be-a-linear-transformation" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="properties-for-a-transformation-to-be-a-linear-transformation"><span class="header-section-number">1.1</span> Properties for a Transformation to be a Linear Transformation</h2>
 <ul>
-<li><strong>Definition</strong>: A matrix transformation is a function $ T: ^n ^m $ that maps vectors from one space to another through multiplication by a matrix $ A $. If $ A $ is an $ m n $ matrix, then $ T() = A $ defines the transformation.</li>
-<li><strong>Types of Transformations</strong>: Common types include <strong>rotations</strong>, <strong>scalings</strong>, and <strong>shears</strong>. Each type affects the geometric properties of vectors in different ways.</li>
-<li><strong>Relation to Linear Maps</strong>: Every matrix transformation is a linear transformation, meaning it satisfies the properties of additivity and scalar multiplication.</li>
+<li><p><strong>Reference</strong>: Section 1.8</p></li>
+<li><p><strong>Definition</strong>: A transformation <span class="math inline">T: \mathbb{R}^n \rightarrow \mathbb{R}^m</span> is linear if it satisfies two properties:</p>
+<ol type="1">
+<li><strong>Additivity</strong>: <span class="math inline">T(\mathbf{u} + \mathbf{v}) = T(\mathbf{u}) + T(\mathbf{v})</span> for all vectors <span class="math inline">\mathbf{u}, \mathbf{v} \in \mathbb{R}^n</span>.</li>
+<li><strong>Scalar Multiplication</strong>: <span class="math inline">T(c \mathbf{u}) = c T(\mathbf{u})</span> for any scalar <span class="math inline">c</span> and vector <span class="math inline">\mathbf{u} \in \mathbb{R}^n</span>.</li>
+</ol></li>
+<li><p><strong>Explanation</strong>: These properties mean that linear transformations preserve the structure of vector spaces. For instance, a scaling transformation will uniformly stretch all vectors by the same factor, maintaining the direction of the vectors.</p></li>
+<li><p><strong>Example</strong>: If <span class="math inline">T(\mathbf{x}) = A \mathbf{x}</span>, where <span class="math inline">A</span> is a matrix, then <span class="math inline">T</span> is a linear transformation because matrix multiplication inherently satisfies both additivity and scalar multiplication.</p></li>
 </ul>
 </section>
-</section>
-<section id="common-misconceptions" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Common Misconceptions</h1>
+<section id="definitions-of-onto-and-one-to-one-transformations" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="definitions-of-onto-and-one-to-one-transformations"><span class="header-section-number">1.2</span> Definitions of “Onto” and “One-to-One” Transformations</h2>
 <ul>
-<li><strong>Transformation vs.&nbsp;Operation</strong>: Students often confuse the transformation applied by a matrix with row operations used to simplify the matrix.</li>
-<li><strong>Misinterpreting Effects</strong>: A common error is misapplying transformations, such as confusing rotation angles or scaling factors.</li>
+<li><p><strong>Reference</strong>: Sections 1.9 and 2.4</p></li>
+<li><p><strong>“Onto” Transformation (Surjective)</strong>: A transformation <span class="math inline">T: \mathbb{R}^n \rightarrow \mathbb{R}^m</span> is “onto” if every vector in <span class="math inline">\mathbb{R}^m</span> is the image of at least one vector in <span class="math inline">\mathbb{R}^n</span>. This implies that the range of <span class="math inline">T</span> spans <span class="math inline">\mathbb{R}^m</span>.</p></li>
+<li><p><strong>“One-to-One” Transformation (Injective)</strong>: A transformation <span class="math inline">T: \mathbb{R}^n \rightarrow \mathbb{R}^m</span> is “one-to-one” if different vectors in <span class="math inline">\mathbb{R}^n</span> map to different vectors in <span class="math inline">\mathbb{R}^m</span>. This means that <span class="math inline">T(\mathbf{u}) = T(\mathbf{v})</span> implies <span class="math inline">\mathbf{u} = \mathbf{v}</span>.</p></li>
+<li><p><strong>Example and Explanation</strong>: If <span class="math inline">T(\mathbf{x}) = A \mathbf{x}</span> and <span class="math inline">A</span> is an <span class="math inline">m \times n</span> matrix:</p>
+<ul>
+<li><strong>Onto</strong>: <span class="math inline">T</span> is onto if the columns of <span class="math inline">A</span> span <span class="math inline">\mathbb{R}^m</span>.</li>
+<li><strong>One-to-One</strong>: <span class="math inline">T</span> is one-to-one if the columns of <span class="math inline">A</span> are linearly independent, which holds if <span class="math inline">A</span> has a pivot in every column.</li>
+</ul></li>
 </ul>
 </section>
-<section id="worked-examples" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Worked Examples</h1>
-<section id="basic-examples" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="basic-examples"><span class="header-section-number">3.1</span> Basic Examples</h2>
-<section id="rotation-matrix" class="level3" data-number="3.1.1">
-<h3 data-number="3.1.1" class="anchored" data-anchor-id="rotation-matrix"><span class="header-section-number">3.1.1</span> Rotation Matrix</h3>
-In $ ^2 $, a counterclockwise rotation by angle $ $ is given by: [ R =
-<span class="math display">\begin{pmatrix} \cos \theta &amp; -\sin \theta \\ \sin \theta &amp; \cos \theta \end{pmatrix}</span>
-. ] Applying this matrix to $ =
-<span class="math display">\begin{pmatrix} 1 \\ 0 \end{pmatrix}</span>
-$ with $ = 90^$ results in: [ R =
-<span class="math display">\begin{pmatrix} 0 \\ 1 \end{pmatrix}</span>
-<p>, ] which shows a 90-degree rotation.</p>
-</section>
-<section id="scaling-transformation" class="level3" data-number="3.1.2">
-<h3 data-number="3.1.2" class="anchored" data-anchor-id="scaling-transformation"><span class="header-section-number">3.1.2</span> Scaling Transformation</h3>
-A scaling matrix in $ ^2 $ by a factor $ k $ is: [ S =
-<span class="math display">\begin{pmatrix} k &amp; 0 \\ 0 &amp; k \end{pmatrix}</span>
-. ] For $ k = 2 $, applying $ S $ to $ =
-<span class="math display">\begin{pmatrix} 1 \\ 1 \end{pmatrix}</span>
-$ yields $ 2 =
-<span class="math display">\begin{pmatrix} 2 \\ 2 \end{pmatrix}</span>
-<p>$.</p>
-</section>
-</section>
-<section id="advanced-examples" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="advanced-examples"><span class="header-section-number">3.2</span> Advanced Examples</h2>
-<section id="composition-of-transformations" class="level3" data-number="3.2.1">
-<h3 data-number="3.2.1" class="anchored" data-anchor-id="composition-of-transformations"><span class="header-section-number">3.2.1</span> Composition of Transformations</h3>
-Consider a transformation that rotates by 45° and then scales by 3. The combined transformation matrix is: [ T = 3
-<span class="math display">\begin{pmatrix} \cos(45^\circ) &amp; -\sin(45^\circ) \\ \sin(45^\circ) &amp; \cos(45^\circ) \end{pmatrix}</span>
-<p>. ]</p>
-</section>
-</section>
-</section>
-<section id="interactive-elements" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Interactive Elements</h1>
+<section id="markov-chain-and-steady-state-solution" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="markov-chain-and-steady-state-solution"><span class="header-section-number">1.3</span> Markov Chain and Steady State Solution</h2>
 <ul>
-<li><strong>Visuals</strong>: Show transformations in R² using rotation, scaling, and shear animations.</li>
-<li><strong>Practice Problems</strong>: Include exercises for finding transformed coordinates under given matrices.</li>
+<li><p><strong>Reference</strong>: Section 4.9</p></li>
+<li><p><strong>Definition</strong>: A <strong>Markov Chain</strong> is a sequence of states where the probability of moving to the next state depends only on the current state. This process can be represented with a <strong>transition matrix</strong> <span class="math inline">P</span>, where each entry <span class="math inline">P_{ij}</span> denotes the probability of transitioning from state <span class="math inline">i</span> to state <span class="math inline">j</span>.</p></li>
+<li><p><strong>Steady State Solution</strong>: The steady state of a Markov Chain is a vector <span class="math inline">\mathbf{s}</span> such that <span class="math inline">P \mathbf{s} = \mathbf{s}</span>. This vector represents a stable distribution of probabilities across states that no longer changes after transitions.</p></li>
+<li><p><strong>Explanation</strong>: To find the steady state vector <span class="math inline">\mathbf{s}</span>, solve <span class="math inline">(P - I) \mathbf{s} = 0</span>, ensuring that the sum of the entries in <span class="math inline">\mathbf{s}</span> is 1 (since they represent probabilities).</p></li>
+<li><p><strong>Example</strong>: For a transition matrix $ P =</p>
+<span class="math display">\begin{pmatrix} 0.9 &amp; 0.1 \\ 0.5 &amp; 0.5 \end{pmatrix}</span>
+<p>, ] the steady state vector <span class="math inline">\mathbf{s} = \begin{pmatrix} s_1 \\ s_2 \end{pmatrix}</span> satisfies: $ P = . ] Solving this system, we can find the steady state probabilities for long-term behavior.</p></li>
 </ul>
+<hr>
 </section>
-<section id="connections-to-other-topics" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Connections to Other Topics</h1>
-<ul>
-<li><strong>Eigenvalues and Eigenvectors</strong>: Diagonalizable matrices represent scaling transformations along eigenvectors.</li>
-<li><strong>Determinants</strong>: Determinants help interpret the effect of a transformation on area or volume.</li>
-</ul>
 </section>
-<section id="summary" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> Summary</h1>
+<section id="summary-of-matrix-transformations-concepts" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Summary of Matrix Transformations Concepts</h1>
 <ul>
-<li><strong>Matrix Transformations</strong>: Map vectors through operations like rotation and scaling.</li>
-<li><strong>Key Properties</strong>: Linear transformations maintain vector space structure.</li>
-<li><strong>Example Matrices</strong>: Rotation, scaling, shearing matrices are foundational examples.</li>
+<li><strong>Linear Transformation</strong>: Defined by additivity and scalar multiplication, ensuring the transformation is consistent with vector space structure.</li>
+<li><strong>“Onto” and “One-to-One”</strong>: Key properties for transformations, indicating whether every output has a corresponding input (“onto”) and whether each input maps uniquely (“one-to-one”).</li>
+<li><strong>Markov Chains and Steady State</strong>: Used for modeling probabilistic systems that evolve over time, where the steady state represents stable, long-term probabilities.</li>
 </ul>
+<p>This expanded section on matrix transformations connects linear algebra concepts with practical examples and applications, reinforcing understanding of these fundamental transformations.</p>
 
 
 </section>
@@ -345,6 +320,150 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {

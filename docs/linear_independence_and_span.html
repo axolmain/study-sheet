@@ -35,10 +35,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -160,11 +162,20 @@ window.Quarto = {
     <a class="dropdown-item" href="./matrix_transformations.html">
  <span class="dropdown-text">Matrix Transformations</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./linear_equations.html">
+ <span class="dropdown-text">Basic Linear equations</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./determinants.html">
+ <span class="dropdown-text">Determinants</span></a>
+  </li>  
     </ul>
   </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -197,10 +208,37 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#conceptual-overview" id="toc-conceptual-overview" class="nav-link active" data-scroll-target="#conceptual-overview"><span class="header-section-number">1</span> Conceptual Overview</a>
+  <ul class="collapse">
+  <li><a href="#linear-independence" id="toc-linear-independence" class="nav-link" data-scroll-target="#linear-independence"><span class="header-section-number">1.1</span> Linear Independence</a></li>
+  <li><a href="#span-of-a-set-of-vectors" id="toc-span-of-a-set-of-vectors" class="nav-link" data-scroll-target="#span-of-a-set-of-vectors"><span class="header-section-number">1.2</span> Span of a Set of Vectors</a></li>
+  </ul></li>
+  <li><a href="#common-misconceptions" id="toc-common-misconceptions" class="nav-link" data-scroll-target="#common-misconceptions"><span class="header-section-number">2</span> Common Misconceptions</a></li>
+  <li><a href="#worked-examples" id="toc-worked-examples" class="nav-link" data-scroll-target="#worked-examples"><span class="header-section-number">3</span> Worked Examples</a>
+  <ul class="collapse">
+  <li><a href="#basic-examples" id="toc-basic-examples" class="nav-link" data-scroll-target="#basic-examples"><span class="header-section-number">3.1</span> Basic Examples</a>
+  <ul class="collapse">
+  <li><a href="#testing-for-linear-independence" id="toc-testing-for-linear-independence" class="nav-link" data-scroll-target="#testing-for-linear-independence"><span class="header-section-number">3.1.1</span> Testing for Linear Independence</a></li>
+  <li><a href="#finding-the-span" id="toc-finding-the-span" class="nav-link" data-scroll-target="#finding-the-span"><span class="header-section-number">3.1.2</span> Finding the Span</a></li>
+  </ul></li>
+  <li><a href="#advanced-examples" id="toc-advanced-examples" class="nav-link" data-scroll-target="#advanced-examples"><span class="header-section-number">3.2</span> Advanced Examples</a>
+  <ul class="collapse">
+  <li><a href="#basis-selection" id="toc-basis-selection" class="nav-link" data-scroll-target="#basis-selection"><span class="header-section-number">3.2.1</span> Basis Selection</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#interactive-elements" id="toc-interactive-elements" class="nav-link" data-scroll-target="#interactive-elements"><span class="header-section-number">4</span> Interactive Elements</a></li>
+  <li><a href="#connections-to-other-topics" id="toc-connections-to-other-topics" class="nav-link" data-scroll-target="#connections-to-other-topics"><span class="header-section-number">5</span> Connections to Other Topics</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">6</span> Summary</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content column-page-right" id="quarto-document-content">
+<main class="content column-body" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -209,7 +247,7 @@ window.Quarto = {
 
 
 
-<div class="quarto-title-meta column-page-right">
+<div class="quarto-title-meta column-body">
 
     
   
@@ -220,47 +258,21 @@ window.Quarto = {
 
 </header>
 
-<nav id="TOC" role="doc-toc">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#conceptual-overview" id="toc-conceptual-overview"><span class="header-section-number">1</span> Conceptual Overview</a>
-  <ul>
-  <li><a href="#linear-independence" id="toc-linear-independence"><span class="header-section-number">1.1</span> Linear Independence</a></li>
-  <li><a href="#span-of-a-set-of-vectors" id="toc-span-of-a-set-of-vectors"><span class="header-section-number">1.2</span> Span of a Set of Vectors</a></li>
-  </ul></li>
-  <li><a href="#common-misconceptions" id="toc-common-misconceptions"><span class="header-section-number">2</span> Common Misconceptions</a></li>
-  <li><a href="#worked-examples" id="toc-worked-examples"><span class="header-section-number">3</span> Worked Examples</a>
-  <ul>
-  <li><a href="#basic-examples" id="toc-basic-examples"><span class="header-section-number">3.1</span> Basic Examples</a>
-  <ul>
-  <li><a href="#testing-for-linear-independence" id="toc-testing-for-linear-independence"><span class="header-section-number">3.1.1</span> Testing for Linear Independence</a></li>
-  <li><a href="#finding-the-span" id="toc-finding-the-span"><span class="header-section-number">3.1.2</span> Finding the Span</a></li>
-  </ul></li>
-  <li><a href="#advanced-examples" id="toc-advanced-examples"><span class="header-section-number">3.2</span> Advanced Examples</a>
-  <ul>
-  <li><a href="#basis-selection" id="toc-basis-selection"><span class="header-section-number">3.2.1</span> Basis Selection</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#interactive-elements" id="toc-interactive-elements"><span class="header-section-number">4</span> Interactive Elements</a></li>
-  <li><a href="#connections-to-other-topics" id="toc-connections-to-other-topics"><span class="header-section-number">5</span> Connections to Other Topics</a></li>
-  <li><a href="#summary" id="toc-summary"><span class="header-section-number">6</span> Summary</a></li>
-  </ul>
-</nav>
+
 <section id="conceptual-overview" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Conceptual Overview</h1>
 <section id="linear-independence" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="linear-independence"><span class="header-section-number">1.1</span> Linear Independence</h2>
 <ul>
-<li><strong>Definition</strong>: A set of vectors is linearly independent if no vector in the set can be written as a linear combination of the others. Mathematically, vectors $ _1, _2, , _n $ are independent if the equation $ c_1_1 + c_2_2 + + c_n_n = 0 $ only has the trivial solution $ c_1 = c_2 = = c_n = 0 $.</li>
+<li><strong>Definition</strong>: A set of vectors is linearly independent if no vector in the set can be written as a linear combination of the others. Mathematically, vectors <span class="math inline">\mathbf{v}_1, \mathbf{v}_2, \ldots, \mathbf{v}_n</span> are independent if the equation <span class="math inline">c_1\mathbf{v}_1 + c_2\mathbf{v}_2 + \cdots + c_n\mathbf{v}_n = 0</span> only has the trivial solution <span class="math inline">c_1 = c_2 = \cdots = c_n = 0</span>.</li>
 <li><strong>Importance</strong>: Independence is crucial for defining bases, understanding dimension, and ensuring minimality in spanning sets.</li>
-<li><strong>Geometric Interpretation</strong>: In $ ^3 $, three linearly independent vectors span the entire space, while fewer vectors (e.g., two) only span a subspace (e.g., a plane).</li>
+<li><strong>Geometric Interpretation</strong>: In <span class="math inline">\mathbb{R}^3</span>, three linearly independent vectors span the entire space, while fewer vectors (e.g., two) only span a subspace (e.g., a plane).</li>
 </ul>
 </section>
 <section id="span-of-a-set-of-vectors" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="span-of-a-set-of-vectors"><span class="header-section-number">1.2</span> Span of a Set of Vectors</h2>
 <ul>
-<li><strong>Definition</strong>: The span of a set of vectors is the collection of all linear combinations of those vectors. If vectors $ _1, _2, , _n $ span a space $ V $, then any vector in $ V $ can be expressed as $ c_1_1 + c_2_2 + + c_n_n $ for some scalars $ c_1, c_2, , c_n $.</li>
+<li><strong>Definition</strong>: The span of a set of vectors is the collection of all linear combinations of those vectors. If vectors <span class="math inline">\mathbf{v}_1, \mathbf{v}_2, \ldots, \mathbf{v}_n</span> span a space <span class="math inline">V</span>, then any vector in <span class="math inline">V</span> can be expressed as <span class="math inline">c_1\mathbf{v}_1 + c_2\mathbf{v}_2 + \cdots + c_n\mathbf{v}_n</span> for some scalars <span class="math inline">c_1, c_2, \ldots, c_n</span>.</li>
 <li><strong>Relation to Vector Spaces</strong>: A spanning set that is also linearly independent forms a <strong>basis</strong> for the space, providing both coverage and minimality.</li>
 </ul>
 </section>
@@ -278,46 +290,18 @@ window.Quarto = {
 <h2 data-number="3.1" class="anchored" data-anchor-id="basic-examples"><span class="header-section-number">3.1</span> Basic Examples</h2>
 <section id="testing-for-linear-independence" class="level3" data-number="3.1.1">
 <h3 data-number="3.1.1" class="anchored" data-anchor-id="testing-for-linear-independence"><span class="header-section-number">3.1.1</span> Testing for Linear Independence</h3>
-Consider vectors $ _1 =
-<span class="math display">\begin{pmatrix} 1 \\ 2 \end{pmatrix}</span>
-$ and $ _2 =
-<span class="math display">\begin{pmatrix} 2 \\ 4 \end{pmatrix}</span>
-$. To check independence, we solve for scalars $ c_1 $ and $ c_2 $ such that: [ c_1_1 + c_2_2 = . ] Substituting values, we get: [ c_1
-<span class="math display">\begin{pmatrix} 1 \\ 2 \end{pmatrix}</span>
-<ul>
-<li>c_2
-<span class="math display">\begin{pmatrix} 2 \\ 4 \end{pmatrix}</span>
-=
-<span class="math display">\begin{pmatrix} 0 \\ 0 \end{pmatrix}</span>
-, ] leading to $ c_1 + 2c_2 = 0 $ and $ 2c_1 + 4c_2 = 0 $. These equations imply $ c_1 = -2c_2 $, meaning the only solution is trivial if $ c_1 = c_2 = 0 $, proving the vectors are dependent.</li>
-</ul>
+<p>Consider vectors <span class="math inline">\mathbf{v}_1 = \begin{pmatrix} 1 \\ 2 \end{pmatrix}</span> and <span class="math inline">\mathbf{v}_2 = \begin{pmatrix} 2 \\ 4 \end{pmatrix}</span>. To check independence, we solve for scalars <span class="math inline">c_1</span> and <span class="math inline">c_2</span> such that: <span class="math inline">c_1\mathbf{v}_1 + c_2\mathbf{v}_2 = \mathbf{0}.</span> Substituting values, we get: <span class="math inline">c_1 \begin{pmatrix} 1 \\ 2 \end{pmatrix} + c_2 \begin{pmatrix} 2 \\ 4 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix},</span> leading to <span class="math inline">c_1 + 2c_2 = 0</span> and <span class="math inline">2c_1 + 4c_2 = 0</span>. These equations imply <span class="math inline">c_1 = -2c_2</span>, meaning the only solution is trivial if <span class="math inline">c_1 = c_2 = 0</span>, proving the vectors are dependent.</p>
 </section>
 <section id="finding-the-span" class="level3" data-number="3.1.2">
 <h3 data-number="3.1.2" class="anchored" data-anchor-id="finding-the-span"><span class="header-section-number">3.1.2</span> Finding the Span</h3>
-For vectors $ _1 =
-<span class="math display">\begin{pmatrix} 1 \\ 0 \end{pmatrix}</span>
-$ and $ _2 =
-<span class="math display">\begin{pmatrix} 0 \\ 1 \end{pmatrix}</span>
-$, their span is all of $ ^2 $ since any vector $ =
-<span class="math display">\begin{pmatrix} x \\ y \end{pmatrix}</span>
-<p>$ can be written as $ x_1 + y_2 $.</p>
+<p>For vectors <span class="math inline">\mathbf{v}_1 = \begin{pmatrix} 1 \\ 0 \end{pmatrix}</span> and <span class="math inline">\mathbf{v}_2 = \begin{pmatrix} 0 \\ 1 \end{pmatrix}</span>, their span is all of <span class="math inline">\mathbb{R}^2</span> since any vector <span class="math inline">\mathbf{x} = \begin{pmatrix} x \\ y \end{pmatrix}</span> can be written as <span class="math inline">x\mathbf{v}_1 + y\mathbf{v}_2</span>.</p>
 </section>
 </section>
 <section id="advanced-examples" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="advanced-examples"><span class="header-section-number">3.2</span> Advanced Examples</h2>
 <section id="basis-selection" class="level3" data-number="3.2.1">
 <h3 data-number="3.2.1" class="anchored" data-anchor-id="basis-selection"><span class="header-section-number">3.2.1</span> Basis Selection</h3>
-In $ ^3 $, find a basis for the subspace spanned by $
-<span class="math display">\begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}</span>
-$, $
-<span class="math display">\begin{pmatrix} 2 \\ 4 \\ 6 \end{pmatrix}</span>
-$, and $
-<span class="math display">\begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix}</span>
-$. Notice that the first two vectors are linearly dependent, so a basis can be $ {
-<span class="math display">\begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}</span>
-,
-<span class="math display">\begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix}</span>
-<p>} $.</p>
+<p>In <span class="math inline">\mathbb{R}^3</span>, find a basis for the subspace spanned by <span class="math inline">\begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}</span>, <span class="math inline">\begin{pmatrix} 2 \\ 4 \\ 6 \end{pmatrix}</span>, and <span class="math inline">\begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix}</span>. Notice that the first two vectors are linearly dependent, so a basis can be <span class="math inline">\left\{ \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}, \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} \right\}</span>.</p>
 </section>
 </section>
 </section>
@@ -367,6 +351,150 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {

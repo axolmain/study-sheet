@@ -1,6 +1,7 @@
 {
   "index.qmd": {
-    "index.html": "a5d47737"
+    "index.html": "a5d47737",
+    "index.md": "27dc3c85"
   },
   "about.qmd": {
     "about.html": "8509adb4"
@@ -22,5 +23,11 @@
   },
   "linear_independence_and_span.qmd": {
     "linear_independence_and_span.html": "cea689e9"
+  },
+  "linear_equations.qmd": {
+    "linear_equations.html": "6ad28866"
+  },
+  "determinants.qmd": {
+    "determinants.html": "b866eef7"
   }
 }
