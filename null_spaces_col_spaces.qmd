@@ -8,29 +8,29 @@ format:
 
 # Conceptual Overview
 ## What is the Null Space?
-- **Definition**: The null space (or kernel) of a matrix \( A \) is the set of all vectors \( \mathbf{x} \) such that \( A\mathbf{x} = \mathbf{0} \). It represents solutions to the homogeneous equation, meaning all vectors that the matrix transforms to the zero vector.
+- **Definition**: The null space (or kernel) of a matrix $A$ is the set of all vectors $\mathbf{x}$ such that $A\mathbf{x} = \mathbf{0}$. It represents solutions to the homogeneous equation, meaning all vectors that the matrix transforms to the zero vector.
 - **Properties**:
-  - The null space is a subspace of \( \mathbb{R}^n \) (where \( n \) is the number of columns of \( A \)).
-  - The dimension of the null space is known as the **nullity** of \( A \).
-- **Geometric Interpretation**: The null space represents directions in the domain that map to zero. For example, if a transformation represented by \( A \) compresses the plane into a line, the null space corresponds to the directions that get “flattened” in that process.
+  - The null space is a subspace of $\mathbb{R}^n$ (where $n$ is the number of columns of $A$).
+  - The dimension of the null space is known as the **nullity** of $A$.
+- **Geometric Interpretation**: The null space represents directions in the domain that map to zero. For example, if a transformation represented by $A$ compresses the plane into a line, the null space corresponds to the directions that get “flattened” in that process.
 
 ## What is the Column Space?
-- **Definition**: The column space (or range) of a matrix \( A \) is the span of its column vectors. It represents all possible linear combinations of the columns of \( A \) and, geometrically, the "reach" or "range" of the transformation applied by \( A \).
+- **Definition**: The column space (or range) of a matrix $A$ is the span of its column vectors. It represents all possible linear combinations of the columns of $A$ and, geometrically, the "reach" or "range" of the transformation applied by $A$.
 - **Properties**:
-  - The column space is a subspace of \( \mathbb{R}^m \) (where \( m \) is the number of rows of \( A \)).
-  - The dimension of the column space is called the **rank** of \( A \).
+  - The column space is a subspace of $\mathbb{R}^m$ (where $m$ is the number of rows of $A$).
+  - The dimension of the column space is called the **rank** of $A$.
 - **Relation to Linear Transformations**: The column space represents the image of the transformation, describing all possible output vectors.
 
 # Common Misconceptions
 - **Null space vs. solution space**: Students often confuse the null space with the general solution to non-homogeneous equations, but the null space specifically pertains to solutions where the result is zero.
-- **Rank-nullity theorem**: The connection between the null space and the column space isn’t always intuitive, but they are related by the **rank-nullity theorem**, which states that the dimension of the null space plus the dimension of the column space equals the number of columns of \( A \).
+- **Rank-nullity theorem**: The connection between the null space and the column space isn’t always intuitive, but they are related by the **rank-nullity theorem**, which states that the dimension of the null space plus the dimension of the column space equals the number of columns of $A$.
 - **Misinterpreting dimensions**: Many students assume that the null space or column space’s dimension equals the number of rows or columns, but these dimensions depend on the linear independence of rows or columns, respectively.
 
 # Worked Examples
 ## Basic Examples
 ### Finding the Null Space of a 2×2 Matrix
-Let \( A = \begin{pmatrix} 1 & 2 \\ 3 & 6 \end{pmatrix} \).
-To find the null space, we solve \( A\mathbf{x} = \mathbf{0} \):
+Let $A = \begin{pmatrix} 1 & 2 \\ 3 & 6 \end{pmatrix}$.
+To find the null space, we solve $A\mathbf{x} = \mathbf{0}$:
 \[
 \begin{pmatrix} 1 & 2 \\ 3 & 6 \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}.
 \]
@@ -38,17 +38,17 @@ This system reduces to:
 \[
 x_1 + 2x_2 = 0.
 \]
-Thus, \( x_1 = -2x_2 \), so any solution is a scalar multiple of \( \begin{pmatrix} -2 \\ 1 \end{pmatrix} \). The null space is therefore:
+Thus, $x_1 = -2x_2$, so any solution is a scalar multiple of $\begin{pmatrix} -2 \\ 1 \end{pmatrix}$. The null space is therefore:
 \[
 \text{Null}(A) = \text{span}\left\{ \begin{pmatrix} -2 \\ 1 \end{pmatrix} \right\}.
 \]
 
 ### Finding the Column Space
-The column space of \( A \) is the span of its columns:
+The column space of $A$ is the span of its columns:
 \[
 \text{Col}(A) = \text{span}\left\{ \begin{pmatrix} 1 \\ 3 \end{pmatrix}, \begin{pmatrix} 2 \\ 6 \end{pmatrix} \right\}.
 \]
-Since the second column is a scalar multiple of the first, the column space is just the span of \( \begin{pmatrix} 1 \\ 3 \end{pmatrix} \).
+Since the second column is a scalar multiple of the first, the column space is just the span of $\begin{pmatrix} 1 \\ 3 \end{pmatrix}$.
 
 ## Advanced Examples
 ### Real-World Application: Signal Processing
@@ -63,6 +63,6 @@ In signal processing, the null space is essential in understanding the solutions
 - **Solving Systems of Equations**: The null space provides insight into the solutions of homogeneous systems, while the column space explains the potential outputs of linear transformations.
 
 # Summary
-- **Null Space**: Set of all vectors mapped to zero by \( A \), dimension is called the nullity.
+- **Null Space**: Set of all vectors mapped to zero by $A$, dimension is called the nullity.
 - **Column Space**: Set of all possible outputs (span of columns), dimension is the rank.
-- **Key Formula**: Rank-nullity theorem: \( \text{rank} + \text{nullity} = \text{number of columns} \).
+- **Key Formula**: Rank-nullity theorem: $\text{rank} + \text{nullity} = \text{number of columns}$.

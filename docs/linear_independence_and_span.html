@@ -252,15 +252,15 @@ window.Quarto = {
 <section id="linear-independence" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="linear-independence"><span class="header-section-number">1.1</span> Linear Independence</h2>
 <ul>
-<li><strong>Definition</strong>: A set of vectors is linearly independent if no vector in the set can be written as a linear combination of the others. Mathematically, vectors ( _1, _2, , _n ) are independent if the equation ( c_1_1 + c_2_2 + + c_n_n = 0 ) only has the trivial solution ( c_1 = c_2 = = c_n = 0 ).</li>
+<li><strong>Definition</strong>: A set of vectors is linearly independent if no vector in the set can be written as a linear combination of the others. Mathematically, vectors $ _1, _2, , _n $ are independent if the equation $ c_1_1 + c_2_2 + + c_n_n = 0 $ only has the trivial solution $ c_1 = c_2 = = c_n = 0 $.</li>
 <li><strong>Importance</strong>: Independence is crucial for defining bases, understanding dimension, and ensuring minimality in spanning sets.</li>
-<li><strong>Geometric Interpretation</strong>: In ( ^3 ), three linearly independent vectors span the entire space, while fewer vectors (e.g., two) only span a subspace (e.g., a plane).</li>
+<li><strong>Geometric Interpretation</strong>: In $ ^3 $, three linearly independent vectors span the entire space, while fewer vectors (e.g., two) only span a subspace (e.g., a plane).</li>
 </ul>
 </section>
 <section id="span-of-a-set-of-vectors" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="span-of-a-set-of-vectors"><span class="header-section-number">1.2</span> Span of a Set of Vectors</h2>
 <ul>
-<li><strong>Definition</strong>: The span of a set of vectors is the collection of all linear combinations of those vectors. If vectors ( _1, _2, , _n ) span a space ( V ), then any vector in ( V ) can be expressed as ( c_1_1 + c_2_2 + + c_n_n ) for some scalars ( c_1, c_2, , c_n ).</li>
+<li><strong>Definition</strong>: The span of a set of vectors is the collection of all linear combinations of those vectors. If vectors $ _1, _2, , _n $ span a space $ V $, then any vector in $ V $ can be expressed as $ c_1_1 + c_2_2 + + c_n_n $ for some scalars $ c_1, c_2, , c_n $.</li>
 <li><strong>Relation to Vector Spaces</strong>: A spanning set that is also linearly independent forms a <strong>basis</strong> for the space, providing both coverage and minimality.</li>
 </ul>
 </section>
@@ -278,46 +278,46 @@ window.Quarto = {
 <h2 data-number="3.1" class="anchored" data-anchor-id="basic-examples"><span class="header-section-number">3.1</span> Basic Examples</h2>
 <section id="testing-for-linear-independence" class="level3" data-number="3.1.1">
 <h3 data-number="3.1.1" class="anchored" data-anchor-id="testing-for-linear-independence"><span class="header-section-number">3.1.1</span> Testing for Linear Independence</h3>
-Consider vectors ( _1 =
+Consider vectors $ _1 =
 <span class="math display">\begin{pmatrix} 1 \\ 2 \end{pmatrix}</span>
-) and ( _2 =
+$ and $ _2 =
 <span class="math display">\begin{pmatrix} 2 \\ 4 \end{pmatrix}</span>
-). To check independence, we solve for scalars ( c_1 ) and ( c_2 ) such that: [ c_1_1 + c_2_2 = . ] Substituting values, we get: [ c_1
+$. To check independence, we solve for scalars $ c_1 $ and $ c_2 $ such that: [ c_1_1 + c_2_2 = . ] Substituting values, we get: [ c_1
 <span class="math display">\begin{pmatrix} 1 \\ 2 \end{pmatrix}</span>
 <ul>
 <li>c_2
 <span class="math display">\begin{pmatrix} 2 \\ 4 \end{pmatrix}</span>
 =
 <span class="math display">\begin{pmatrix} 0 \\ 0 \end{pmatrix}</span>
-, ] leading to ( c_1 + 2c_2 = 0 ) and ( 2c_1 + 4c_2 = 0 ). These equations imply ( c_1 = -2c_2 ), meaning the only solution is trivial if ( c_1 = c_2 = 0 ), proving the vectors are dependent.</li>
+, ] leading to $ c_1 + 2c_2 = 0 $ and $ 2c_1 + 4c_2 = 0 $. These equations imply $ c_1 = -2c_2 $, meaning the only solution is trivial if $ c_1 = c_2 = 0 $, proving the vectors are dependent.</li>
 </ul>
 </section>
 <section id="finding-the-span" class="level3" data-number="3.1.2">
 <h3 data-number="3.1.2" class="anchored" data-anchor-id="finding-the-span"><span class="header-section-number">3.1.2</span> Finding the Span</h3>
-For vectors ( _1 =
+For vectors $ _1 =
 <span class="math display">\begin{pmatrix} 1 \\ 0 \end{pmatrix}</span>
-) and ( _2 =
+$ and $ _2 =
 <span class="math display">\begin{pmatrix} 0 \\ 1 \end{pmatrix}</span>
-), their span is all of ( ^2 ) since any vector ( =
+$, their span is all of $ ^2 $ since any vector $ =
 <span class="math display">\begin{pmatrix} x \\ y \end{pmatrix}</span>
-<p>) can be written as ( x_1 + y_2 ).</p>
+<p>$ can be written as $ x_1 + y_2 $.</p>
 </section>
 </section>
 <section id="advanced-examples" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="advanced-examples"><span class="header-section-number">3.2</span> Advanced Examples</h2>
 <section id="basis-selection" class="level3" data-number="3.2.1">
 <h3 data-number="3.2.1" class="anchored" data-anchor-id="basis-selection"><span class="header-section-number">3.2.1</span> Basis Selection</h3>
-In ( ^3 ), find a basis for the subspace spanned by (
+In $ ^3 $, find a basis for the subspace spanned by $
 <span class="math display">\begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}</span>
-), (
+$, $
 <span class="math display">\begin{pmatrix} 2 \\ 4 \\ 6 \end{pmatrix}</span>
-), and (
+$, and $
 <span class="math display">\begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix}</span>
-). Notice that the first two vectors are linearly dependent, so a basis can be ( {
+$. Notice that the first two vectors are linearly dependent, so a basis can be $ {
 <span class="math display">\begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}</span>
 ,
 <span class="math display">\begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix}</span>
-<p>} ).</p>
+<p>} $.</p>
 </section>
 </section>
 </section>

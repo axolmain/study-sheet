@@ -8,7 +8,7 @@ format:
 
 # Conceptual Overview
 ## What is a Matrix Transformation?
-- **Definition**: A matrix transformation is a function \( T: \mathbb{R}^n \rightarrow \mathbb{R}^m \) that maps vectors from one space to another through multiplication by a matrix \( A \). If \( A \) is an \( m \times n \) matrix, then \( T(\mathbf{x}) = A\mathbf{x} \) defines the transformation.
+- **Definition**: A matrix transformation is a function $T: \mathbb{R}^n \rightarrow \mathbb{R}^m$ that maps vectors from one space to another through multiplication by a matrix $A$. If $A$ is an $m \times n$ matrix, then $T(\mathbf{x}) = A\mathbf{x}$ defines the transformation.
 - **Types of Transformations**: Common types include **rotations**, **scalings**, and **shears**. Each type affects the geometric properties of vectors in different ways.
 - **Relation to Linear Maps**: Every matrix transformation is a linear transformation, meaning it satisfies the properties of additivity and scalar multiplication.
 
@@ -19,22 +19,22 @@ format:
 # Worked Examples
 ## Basic Examples
 ### Rotation Matrix
-In \( \mathbb{R}^2 \), a counterclockwise rotation by angle \( \theta \) is given by:
+In $\mathbb{R}^2$, a counterclockwise rotation by angle $\theta$ is given by:
 \[
 R = \begin{pmatrix} \cos \theta & -\sin \theta \\ \sin \theta & \cos \theta \end{pmatrix}.
 \]
-Applying this matrix to \( \mathbf{x} = \begin{pmatrix} 1 \\ 0 \end{pmatrix} \) with \( \theta = 90^\circ \) results in:
+Applying this matrix to $\mathbf{x} = \begin{pmatrix} 1 \\ 0 \end{pmatrix}$ with $\theta = 90^\circ$ results in:
 \[
 R \mathbf{x} = \begin{pmatrix} 0 \\ 1 \end{pmatrix},
 \]
 which shows a 90-degree rotation.
 
 ### Scaling Transformation
-A scaling matrix in \( \mathbb{R}^2 \) by a factor \( k \) is:
+A scaling matrix in $\mathbb{R}^2$ by a factor $k$ is:
 \[
 S = \begin{pmatrix} k & 0 \\ 0 & k \end{pmatrix}.
 \]
-For \( k = 2 \), applying \( S \) to \( \mathbf{x} = \begin{pmatrix} 1 \\ 1 \end{pmatrix} \) yields \( 2\mathbf{x} = \begin{pmatrix} 2 \\ 2 \end{pmatrix} \).
+For $k = 2$, applying $S$ to $\mathbf{x} = \begin{pmatrix} 1 \\ 1 \end{pmatrix}$ yields $2\mathbf{x} = \begin{pmatrix} 2 \\ 2 \end{pmatrix}$.
 
 ## Advanced Examples
 ### Composition of Transformations

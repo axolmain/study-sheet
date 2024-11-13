@@ -252,23 +252,23 @@ window.Quarto = {
 <section id="what-is-the-null-space" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="what-is-the-null-space"><span class="header-section-number">1.1</span> What is the Null Space?</h2>
 <ul>
-<li><strong>Definition</strong>: The null space (or kernel) of a matrix ( A ) is the set of all vectors ( ) such that ( A = ). It represents solutions to the homogeneous equation, meaning all vectors that the matrix transforms to the zero vector.</li>
+<li><strong>Definition</strong>: The null space (or kernel) of a matrix $ A $ is the set of all vectors $ $ such that $ A = $. It represents solutions to the homogeneous equation, meaning all vectors that the matrix transforms to the zero vector.</li>
 <li><strong>Properties</strong>:
 <ul>
-<li>The null space is a subspace of ( ^n ) (where ( n ) is the number of columns of ( A )).</li>
-<li>The dimension of the null space is known as the <strong>nullity</strong> of ( A ).</li>
+<li>The null space is a subspace of $ ^n $ (where $ n $ is the number of columns of $ A $).</li>
+<li>The dimension of the null space is known as the <strong>nullity</strong> of $ A $.</li>
 </ul></li>
-<li><strong>Geometric Interpretation</strong>: The null space represents directions in the domain that map to zero. For example, if a transformation represented by ( A ) compresses the plane into a line, the null space corresponds to the directions that get “flattened” in that process.</li>
+<li><strong>Geometric Interpretation</strong>: The null space represents directions in the domain that map to zero. For example, if a transformation represented by $ A $ compresses the plane into a line, the null space corresponds to the directions that get “flattened” in that process.</li>
 </ul>
 </section>
 <section id="what-is-the-column-space" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="what-is-the-column-space"><span class="header-section-number">1.2</span> What is the Column Space?</h2>
 <ul>
-<li><strong>Definition</strong>: The column space (or range) of a matrix ( A ) is the span of its column vectors. It represents all possible linear combinations of the columns of ( A ) and, geometrically, the “reach” or “range” of the transformation applied by ( A ).</li>
+<li><strong>Definition</strong>: The column space (or range) of a matrix $ A $ is the span of its column vectors. It represents all possible linear combinations of the columns of $ A $ and, geometrically, the “reach” or “range” of the transformation applied by $ A $.</li>
 <li><strong>Properties</strong>:
 <ul>
-<li>The column space is a subspace of ( ^m ) (where ( m ) is the number of rows of ( A )).</li>
-<li>The dimension of the column space is called the <strong>rank</strong> of ( A ).</li>
+<li>The column space is a subspace of $ ^m $ (where $ m $ is the number of rows of $ A $).</li>
+<li>The dimension of the column space is called the <strong>rank</strong> of $ A $.</li>
 </ul></li>
 <li><strong>Relation to Linear Transformations</strong>: The column space represents the image of the transformation, describing all possible output vectors.</li>
 </ul>
@@ -278,7 +278,7 @@ window.Quarto = {
 <h1 data-number="2"><span class="header-section-number">2</span> Common Misconceptions</h1>
 <ul>
 <li><strong>Null space vs.&nbsp;solution space</strong>: Students often confuse the null space with the general solution to non-homogeneous equations, but the null space specifically pertains to solutions where the result is zero.</li>
-<li><strong>Rank-nullity theorem</strong>: The connection between the null space and the column space isn’t always intuitive, but they are related by the <strong>rank-nullity theorem</strong>, which states that the dimension of the null space plus the dimension of the column space equals the number of columns of ( A ).</li>
+<li><strong>Rank-nullity theorem</strong>: The connection between the null space and the column space isn’t always intuitive, but they are related by the <strong>rank-nullity theorem</strong>, which states that the dimension of the null space plus the dimension of the column space equals the number of columns of $ A $.</li>
 <li><strong>Misinterpreting dimensions</strong>: Many students assume that the null space or column space’s dimension equals the number of rows or columns, but these dimensions depend on the linear independence of rows or columns, respectively.</li>
 </ul>
 </section>
@@ -288,27 +288,27 @@ window.Quarto = {
 <h2 data-number="3.1" class="anchored" data-anchor-id="basic-examples"><span class="header-section-number">3.1</span> Basic Examples</h2>
 <section id="finding-the-null-space-of-a-22-matrix" class="level3" data-number="3.1.1">
 <h3 data-number="3.1.1" class="anchored" data-anchor-id="finding-the-null-space-of-a-22-matrix"><span class="header-section-number">3.1.1</span> Finding the Null Space of a 2×2 Matrix</h3>
-Let ( A =
+Let $ A =
 <span class="math display">\begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 6 \end{pmatrix}</span>
-). To find the null space, we solve ( A = ): [
+$. To find the null space, we solve $ A = $: [
 <span class="math display">\begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 6 \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \end{pmatrix}</span>
 =
 <span class="math display">\begin{pmatrix} 0 \\ 0 \end{pmatrix}</span>
-. ] This system reduces to: [ x_1 + 2x_2 = 0. ] Thus, ( x_1 = -2x_2 ), so any solution is a scalar multiple of (
+. ] This system reduces to: [ x_1 + 2x_2 = 0. ] Thus, $ x_1 = -2x_2 $, so any solution is a scalar multiple of $
 <span class="math display">\begin{pmatrix} -2 \\ 1 \end{pmatrix}</span>
-). The null space is therefore: [ (A) = {
+$. The null space is therefore: [ (A) = {
 <span class="math display">\begin{pmatrix} -2 \\ 1 \end{pmatrix}</span>
 <p>}. ]</p>
 </section>
 <section id="finding-the-column-space" class="level3" data-number="3.1.2">
 <h3 data-number="3.1.2" class="anchored" data-anchor-id="finding-the-column-space"><span class="header-section-number">3.1.2</span> Finding the Column Space</h3>
-The column space of ( A ) is the span of its columns: [ (A) = {
+The column space of $ A $ is the span of its columns: [ (A) = {
 <span class="math display">\begin{pmatrix} 1 \\ 3 \end{pmatrix}</span>
 ,
 <span class="math display">\begin{pmatrix} 2 \\ 6 \end{pmatrix}</span>
-}. ] Since the second column is a scalar multiple of the first, the column space is just the span of (
+}. ] Since the second column is a scalar multiple of the first, the column space is just the span of $
 <span class="math display">\begin{pmatrix} 1 \\ 3 \end{pmatrix}</span>
-<p>).</p>
+<p>$.</p>
 </section>
 </section>
 <section id="advanced-examples" class="level2" data-number="3.2">
@@ -336,9 +336,9 @@ The column space of ( A ) is the span of its columns: [ (A) = {
 <section id="summary" class="level1" data-number="6">
 <h1 data-number="6"><span class="header-section-number">6</span> Summary</h1>
 <ul>
-<li><strong>Null Space</strong>: Set of all vectors mapped to zero by ( A ), dimension is called the nullity.</li>
+<li><strong>Null Space</strong>: Set of all vectors mapped to zero by $ A $, dimension is called the nullity.</li>
 <li><strong>Column Space</strong>: Set of all possible outputs (span of columns), dimension is the rank.</li>
-<li><strong>Key Formula</strong>: Rank-nullity theorem: ( + = ).</li>
+<li><strong>Key Formula</strong>: Rank-nullity theorem: $ + = $.</li>
 </ul>
 
 

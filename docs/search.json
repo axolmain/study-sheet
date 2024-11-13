@@ -25,21 +25,21 @@
     "href": "matrix_transformations.html",
     "title": "Matrix Transformations",
     "section": "",
-    "text": "Definition: A matrix transformation is a function ( T: ^n ^m ) that maps vectors from one space to another through multiplication by a matrix ( A ). If ( A ) is an ( m n ) matrix, then ( T() = A ) defines the transformation.\nTypes of Transformations: Common types include rotations, scalings, and shears. Each type affects the geometric properties of vectors in different ways.\nRelation to Linear Maps: Every matrix transformation is a linear transformation, meaning it satisfies the properties of additivity and scalar multiplication."
+    "text": "Definition: A matrix transformation is a function $ T: ^n ^m $ that maps vectors from one space to another through multiplication by a matrix $ A $. If $ A $ is an $ m n $ matrix, then $ T() = A $ defines the transformation.\nTypes of Transformations: Common types include rotations, scalings, and shears. Each type affects the geometric properties of vectors in different ways.\nRelation to Linear Maps: Every matrix transformation is a linear transformation, meaning it satisfies the properties of additivity and scalar multiplication."
   },
   {
     "objectID": "matrix_transformations.html#what-is-a-matrix-transformation",
     "href": "matrix_transformations.html#what-is-a-matrix-transformation",
     "title": "Matrix Transformations",
     "section": "",
-    "text": "Definition: A matrix transformation is a function ( T: ^n ^m ) that maps vectors from one space to another through multiplication by a matrix ( A ). If ( A ) is an ( m n ) matrix, then ( T() = A ) defines the transformation.\nTypes of Transformations: Common types include rotations, scalings, and shears. Each type affects the geometric properties of vectors in different ways.\nRelation to Linear Maps: Every matrix transformation is a linear transformation, meaning it satisfies the properties of additivity and scalar multiplication."
+    "text": "Definition: A matrix transformation is a function $ T: ^n ^m $ that maps vectors from one space to another through multiplication by a matrix $ A $. If $ A $ is an $ m n $ matrix, then $ T() = A $ defines the transformation.\nTypes of Transformations: Common types include rotations, scalings, and shears. Each type affects the geometric properties of vectors in different ways.\nRelation to Linear Maps: Every matrix transformation is a linear transformation, meaning it satisfies the properties of additivity and scalar multiplication."
   },
   {
     "objectID": "matrix_transformations.html#basic-examples",
     "href": "matrix_transformations.html#basic-examples",
     "title": "Matrix Transformations",
     "section": "3.1 Basic Examples",
-    "text": "3.1 Basic Examples\n\n3.1.1 Rotation Matrix\nIn ( ^2 ), a counterclockwise rotation by angle ( ) is given by: [ R =\n\\begin{pmatrix} \\cos \\theta & -\\sin \\theta \\\\ \\sin \\theta & \\cos \\theta \\end{pmatrix}\n. ] Applying this matrix to ( =\n\\begin{pmatrix} 1 \\\\ 0 \\end{pmatrix}\n) with ( = 90^) results in: [ R =\n\\begin{pmatrix} 0 \\\\ 1 \\end{pmatrix}\n, ] which shows a 90-degree rotation.\n\n\n3.1.2 Scaling Transformation\nA scaling matrix in ( ^2 ) by a factor ( k ) is: [ S =\n\\begin{pmatrix} k & 0 \\\\ 0 & k \\end{pmatrix}\n. ] For ( k = 2 ), applying ( S ) to ( =\n\\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix}\n) yields ( 2 =\n\\begin{pmatrix} 2 \\\\ 2 \\end{pmatrix}\n)."
+    "text": "3.1 Basic Examples\n\n3.1.1 Rotation Matrix\nIn $ ^2 $, a counterclockwise rotation by angle $ $ is given by: [ R =\n\\begin{pmatrix} \\cos \\theta & -\\sin \\theta \\\\ \\sin \\theta & \\cos \\theta \\end{pmatrix}\n. ] Applying this matrix to $ =\n\\begin{pmatrix} 1 \\\\ 0 \\end{pmatrix}\n$ with $ = 90^$ results in: [ R =\n\\begin{pmatrix} 0 \\\\ 1 \\end{pmatrix}\n, ] which shows a 90-degree rotation.\n\n\n3.1.2 Scaling Transformation\nA scaling matrix in $ ^2 $ by a factor $ k $ is: [ S =\n\\begin{pmatrix} k & 0 \\\\ 0 & k \\end{pmatrix}\n. ] For $ k = 2 $, applying $ S $ to $ =\n\\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix}\n$ yields $ 2 =\n\\begin{pmatrix} 2 \\\\ 2 \\end{pmatrix}\n$."
   },
   {
     "objectID": "matrix_transformations.html#advanced-examples",
@@ -95,98 +95,98 @@
     "href": "eigenvalues_eigenvectors.html",
     "title": "Eigenvalues and Eigenvectors",
     "section": "",
-    "text": "Definitions: For a matrix ( A ), an eigenvector ( ) satisfies ( A = ), where ( ) is a scalar called the eigenvalue associated with ( ).\nGeometric Interpretation: Eigenvectors represent directions that are stretched or compressed by the transformation ( A ) without changing direction, while eigenvalues indicate the scaling factor.\nImportance: Eigenvalues and eigenvectors are crucial for understanding stability, resonance, and other dynamic behaviors in systems.\n\n\n\n\n\nCharacteristic Equation: The eigenvalues of ( A ) are solutions to ( (A - I) = 0 ).\nProperties: Real eigenvalues indicate scaling, while complex eigenvalues often signify rotations."
+    "text": "Definitions: For a matrix $ A $, an eigenvector $ $ satisfies $ A = $, where $ $ is a scalar called the eigenvalue associated with $ $.\nGeometric Interpretation: Eigenvectors represent directions that are stretched or compressed by the transformation $ A $ without changing direction, while eigenvalues indicate the scaling factor.\nImportance: Eigenvalues and eigenvectors are crucial for understanding stability, resonance, and other dynamic behaviors in systems.\n\n\n\n\n\nCharacteristic Equation: The eigenvalues of $ A $ are solutions to $ (A - I) = 0 $.\nProperties: Real eigenvalues indicate scaling, while complex eigenvalues often signify rotations."
   },
   {
     "objectID": "eigenvalues_eigenvectors.html#what-are-eigenvalues-and-eigenvectors",
     "href": "eigenvalues_eigenvectors.html#what-are-eigenvalues-and-eigenvectors",
     "title": "Eigenvalues and Eigenvectors",
     "section": "",
-    "text": "Definitions: For a matrix ( A ), an eigenvector ( ) satisfies ( A = ), where ( ) is a scalar called the eigenvalue associated with ( ).\nGeometric Interpretation: Eigenvectors represent directions that are stretched or compressed by the transformation ( A ) without changing direction, while eigenvalues indicate the scaling factor.\nImportance: Eigenvalues and eigenvectors are crucial for understanding stability, resonance, and other dynamic behaviors in systems."
+    "text": "Definitions: For a matrix $ A $, an eigenvector $ $ satisfies $ A = $, where $ $ is a scalar called the eigenvalue associated with $ $.\nGeometric Interpretation: Eigenvectors represent directions that are stretched or compressed by the transformation $ A $ without changing direction, while eigenvalues indicate the scaling factor.\nImportance: Eigenvalues and eigenvectors are crucial for understanding stability, resonance, and other dynamic behaviors in systems."
   },
   {
     "objectID": "eigenvalues_eigenvectors.html#finding-eigenvalues",
     "href": "eigenvalues_eigenvectors.html#finding-eigenvalues",
     "title": "Eigenvalues and Eigenvectors",
     "section": "",
-    "text": "Characteristic Equation: The eigenvalues of ( A ) are solutions to ( (A - I) = 0 ).\nProperties: Real eigenvalues indicate scaling, while complex eigenvalues often signify rotations."
+    "text": "Characteristic Equation: The eigenvalues of $ A $ are solutions to $ (A - I) = 0 $.\nProperties: Real eigenvalues indicate scaling, while complex eigenvalues often signify rotations."
   },
   {
     "objectID": "eigenvalues_eigenvectors.html#matrix-example",
     "href": "eigenvalues_eigenvectors.html#matrix-example",
     "title": "Eigenvalues and Eigenvectors",
     "section": "3.1 2×2 Matrix Example",
-    "text": "3.1 2×2 Matrix Example\nFor ( A =\n\\begin{pmatrix} 4 & 1 \\\\ 2 & 3 \\end{pmatrix}\n), find the eigenvalues by solving ( (A - I) = 0 )."
+    "text": "3.1 2×2 Matrix Example\nFor $ A =\n\\begin{pmatrix} 4 & 1 \\\\ 2 & 3 \\end{pmatrix}\n$, find the eigenvalues by solving $ (A - I) = 0 $."
   },
   {
     "objectID": "eigenvalues_eigenvectors.html#diagonalization",
     "href": "eigenvalues_eigenvectors.html#diagonalization",
     "title": "Eigenvalues and Eigenvectors",
     "section": "3.2 Diagonalization",
-    "text": "3.2 Diagonalization\nThe process of diagonalizing ( A = PDP^{-1} ) when possible. Only matrices with a full set of linearly independent eigenvectors are diagonalizable."
+    "text": "3.2 Diagonalization\nThe process of diagonalizing $ A = PDP^{-1} $ when possible. Only matrices with a full set of linearly independent eigenvectors are diagonalizable."
   },
   {
     "objectID": "linear_independence_and_span.html",
     "href": "linear_independence_and_span.html",
     "title": "Linear Independence and Span",
     "section": "",
-    "text": "Definition: A set of vectors is linearly independent if no vector in the set can be written as a linear combination of the others. Mathematically, vectors ( _1, _2, , _n ) are independent if the equation ( c_1_1 + c_2_2 + + c_n_n = 0 ) only has the trivial solution ( c_1 = c_2 = = c_n = 0 ).\nImportance: Independence is crucial for defining bases, understanding dimension, and ensuring minimality in spanning sets.\nGeometric Interpretation: In ( ^3 ), three linearly independent vectors span the entire space, while fewer vectors (e.g., two) only span a subspace (e.g., a plane).\n\n\n\n\n\nDefinition: The span of a set of vectors is the collection of all linear combinations of those vectors. If vectors ( _1, _2, , _n ) span a space ( V ), then any vector in ( V ) can be expressed as ( c_1_1 + c_2_2 + + c_n_n ) for some scalars ( c_1, c_2, , c_n ).\nRelation to Vector Spaces: A spanning set that is also linearly independent forms a basis for the space, providing both coverage and minimality."
+    "text": "Definition: A set of vectors is linearly independent if no vector in the set can be written as a linear combination of the others. Mathematically, vectors $ _1, _2, , _n $ are independent if the equation $ c_1_1 + c_2_2 + + c_n_n = 0 $ only has the trivial solution $ c_1 = c_2 = = c_n = 0 $.\nImportance: Independence is crucial for defining bases, understanding dimension, and ensuring minimality in spanning sets.\nGeometric Interpretation: In $ ^3 $, three linearly independent vectors span the entire space, while fewer vectors (e.g., two) only span a subspace (e.g., a plane).\n\n\n\n\n\nDefinition: The span of a set of vectors is the collection of all linear combinations of those vectors. If vectors $ _1, _2, , _n $ span a space $ V $, then any vector in $ V $ can be expressed as $ c_1_1 + c_2_2 + + c_n_n $ for some scalars $ c_1, c_2, , c_n $.\nRelation to Vector Spaces: A spanning set that is also linearly independent forms a basis for the space, providing both coverage and minimality."
   },
   {
     "objectID": "linear_independence_and_span.html#linear-independence",
     "href": "linear_independence_and_span.html#linear-independence",
     "title": "Linear Independence and Span",
     "section": "",
-    "text": "Definition: A set of vectors is linearly independent if no vector in the set can be written as a linear combination of the others. Mathematically, vectors ( _1, _2, , _n ) are independent if the equation ( c_1_1 + c_2_2 + + c_n_n = 0 ) only has the trivial solution ( c_1 = c_2 = = c_n = 0 ).\nImportance: Independence is crucial for defining bases, understanding dimension, and ensuring minimality in spanning sets.\nGeometric Interpretation: In ( ^3 ), three linearly independent vectors span the entire space, while fewer vectors (e.g., two) only span a subspace (e.g., a plane)."
+    "text": "Definition: A set of vectors is linearly independent if no vector in the set can be written as a linear combination of the others. Mathematically, vectors $ _1, _2, , _n $ are independent if the equation $ c_1_1 + c_2_2 + + c_n_n = 0 $ only has the trivial solution $ c_1 = c_2 = = c_n = 0 $.\nImportance: Independence is crucial for defining bases, understanding dimension, and ensuring minimality in spanning sets.\nGeometric Interpretation: In $ ^3 $, three linearly independent vectors span the entire space, while fewer vectors (e.g., two) only span a subspace (e.g., a plane)."
   },
   {
     "objectID": "linear_independence_and_span.html#span-of-a-set-of-vectors",
     "href": "linear_independence_and_span.html#span-of-a-set-of-vectors",
     "title": "Linear Independence and Span",
     "section": "",
-    "text": "Definition: The span of a set of vectors is the collection of all linear combinations of those vectors. If vectors ( _1, _2, , _n ) span a space ( V ), then any vector in ( V ) can be expressed as ( c_1_1 + c_2_2 + + c_n_n ) for some scalars ( c_1, c_2, , c_n ).\nRelation to Vector Spaces: A spanning set that is also linearly independent forms a basis for the space, providing both coverage and minimality."
+    "text": "Definition: The span of a set of vectors is the collection of all linear combinations of those vectors. If vectors $ _1, _2, , _n $ span a space $ V $, then any vector in $ V $ can be expressed as $ c_1_1 + c_2_2 + + c_n_n $ for some scalars $ c_1, c_2, , c_n $.\nRelation to Vector Spaces: A spanning set that is also linearly independent forms a basis for the space, providing both coverage and minimality."
   },
   {
     "objectID": "linear_independence_and_span.html#basic-examples",
     "href": "linear_independence_and_span.html#basic-examples",
     "title": "Linear Independence and Span",
     "section": "3.1 Basic Examples",
-    "text": "3.1 Basic Examples\n\n3.1.1 Testing for Linear Independence\nConsider vectors ( _1 =\n\\begin{pmatrix} 1 \\\\ 2 \\end{pmatrix}\n) and ( _2 =\n\\begin{pmatrix} 2 \\\\ 4 \\end{pmatrix}\n). To check independence, we solve for scalars ( c_1 ) and ( c_2 ) such that: [ c_1_1 + c_2_2 = . ] Substituting values, we get: [ c_1\n\\begin{pmatrix} 1 \\\\ 2 \\end{pmatrix}\n\nc_2\n\\begin{pmatrix} 2 \\\\ 4 \\end{pmatrix}\n=\n\\begin{pmatrix} 0 \\\\ 0 \\end{pmatrix}\n, ] leading to ( c_1 + 2c_2 = 0 ) and ( 2c_1 + 4c_2 = 0 ). These equations imply ( c_1 = -2c_2 ), meaning the only solution is trivial if ( c_1 = c_2 = 0 ), proving the vectors are dependent.\n\n\n\n3.1.2 Finding the Span\nFor vectors ( _1 =\n\\begin{pmatrix} 1 \\\\ 0 \\end{pmatrix}\n) and ( _2 =\n\\begin{pmatrix} 0 \\\\ 1 \\end{pmatrix}\n), their span is all of ( ^2 ) since any vector ( =\n\\begin{pmatrix} x \\\\ y \\end{pmatrix}\n) can be written as ( x_1 + y_2 )."
+    "text": "3.1 Basic Examples\n\n3.1.1 Testing for Linear Independence\nConsider vectors $ _1 =\n\\begin{pmatrix} 1 \\\\ 2 \\end{pmatrix}\n$ and $ _2 =\n\\begin{pmatrix} 2 \\\\ 4 \\end{pmatrix}\n$. To check independence, we solve for scalars $ c_1 $ and $ c_2 $ such that: [ c_1_1 + c_2_2 = . ] Substituting values, we get: [ c_1\n\\begin{pmatrix} 1 \\\\ 2 \\end{pmatrix}\n\nc_2\n\\begin{pmatrix} 2 \\\\ 4 \\end{pmatrix}\n=\n\\begin{pmatrix} 0 \\\\ 0 \\end{pmatrix}\n, ] leading to $ c_1 + 2c_2 = 0 $ and $ 2c_1 + 4c_2 = 0 $. These equations imply $ c_1 = -2c_2 $, meaning the only solution is trivial if $ c_1 = c_2 = 0 $, proving the vectors are dependent.\n\n\n\n3.1.2 Finding the Span\nFor vectors $ _1 =\n\\begin{pmatrix} 1 \\\\ 0 \\end{pmatrix}\n$ and $ _2 =\n\\begin{pmatrix} 0 \\\\ 1 \\end{pmatrix}\n$, their span is all of $ ^2 $ since any vector $ =\n\\begin{pmatrix} x \\\\ y \\end{pmatrix}\n$ can be written as $ x_1 + y_2 $."
   },
   {
     "objectID": "linear_independence_and_span.html#advanced-examples",
     "href": "linear_independence_and_span.html#advanced-examples",
     "title": "Linear Independence and Span",
     "section": "3.2 Advanced Examples",
-    "text": "3.2 Advanced Examples\n\n3.2.1 Basis Selection\nIn ( ^3 ), find a basis for the subspace spanned by (\n\\begin{pmatrix} 1 \\\\ 2 \\\\ 3 \\end{pmatrix}\n), (\n\\begin{pmatrix} 2 \\\\ 4 \\\\ 6 \\end{pmatrix}\n), and (\n\\begin{pmatrix} 0 \\\\ 1 \\\\ 0 \\end{pmatrix}\n). Notice that the first two vectors are linearly dependent, so a basis can be ( {\n\\begin{pmatrix} 1 \\\\ 2 \\\\ 3 \\end{pmatrix}\n,\n\\begin{pmatrix} 0 \\\\ 1 \\\\ 0 \\end{pmatrix}\n} )."
+    "text": "3.2 Advanced Examples\n\n3.2.1 Basis Selection\nIn $ ^3 $, find a basis for the subspace spanned by $\n\\begin{pmatrix} 1 \\\\ 2 \\\\ 3 \\end{pmatrix}\n$, $\n\\begin{pmatrix} 2 \\\\ 4 \\\\ 6 \\end{pmatrix}\n$, and $\n\\begin{pmatrix} 0 \\\\ 1 \\\\ 0 \\end{pmatrix}\n$. Notice that the first two vectors are linearly dependent, so a basis can be $ {\n\\begin{pmatrix} 1 \\\\ 2 \\\\ 3 \\end{pmatrix}\n,\n\\begin{pmatrix} 0 \\\\ 1 \\\\ 0 \\end{pmatrix}\n} $."
   },
   {
     "objectID": "null_spaces_col_spaces.html",
     "href": "null_spaces_col_spaces.html",
     "title": "Null Space and Column Space",
     "section": "",
-    "text": "Definition: The null space (or kernel) of a matrix ( A ) is the set of all vectors ( ) such that ( A = ). It represents solutions to the homogeneous equation, meaning all vectors that the matrix transforms to the zero vector.\nProperties:\n\nThe null space is a subspace of ( ^n ) (where ( n ) is the number of columns of ( A )).\nThe dimension of the null space is known as the nullity of ( A ).\n\nGeometric Interpretation: The null space represents directions in the domain that map to zero. For example, if a transformation represented by ( A ) compresses the plane into a line, the null space corresponds to the directions that get “flattened” in that process.\n\n\n\n\n\nDefinition: The column space (or range) of a matrix ( A ) is the span of its column vectors. It represents all possible linear combinations of the columns of ( A ) and, geometrically, the “reach” or “range” of the transformation applied by ( A ).\nProperties:\n\nThe column space is a subspace of ( ^m ) (where ( m ) is the number of rows of ( A )).\nThe dimension of the column space is called the rank of ( A ).\n\nRelation to Linear Transformations: The column space represents the image of the transformation, describing all possible output vectors."
+    "text": "Definition: The null space (or kernel) of a matrix $ A $ is the set of all vectors $ $ such that $ A = $. It represents solutions to the homogeneous equation, meaning all vectors that the matrix transforms to the zero vector.\nProperties:\n\nThe null space is a subspace of $ ^n $ (where $ n $ is the number of columns of $ A $).\nThe dimension of the null space is known as the nullity of $ A $.\n\nGeometric Interpretation: The null space represents directions in the domain that map to zero. For example, if a transformation represented by $ A $ compresses the plane into a line, the null space corresponds to the directions that get “flattened” in that process.\n\n\n\n\n\nDefinition: The column space (or range) of a matrix $ A $ is the span of its column vectors. It represents all possible linear combinations of the columns of $ A $ and, geometrically, the “reach” or “range” of the transformation applied by $ A $.\nProperties:\n\nThe column space is a subspace of $ ^m $ (where $ m $ is the number of rows of $ A $).\nThe dimension of the column space is called the rank of $ A $.\n\nRelation to Linear Transformations: The column space represents the image of the transformation, describing all possible output vectors."
   },
   {
     "objectID": "null_spaces_col_spaces.html#what-is-the-null-space",
     "href": "null_spaces_col_spaces.html#what-is-the-null-space",
     "title": "Null Space and Column Space",
     "section": "",
-    "text": "Definition: The null space (or kernel) of a matrix ( A ) is the set of all vectors ( ) such that ( A = ). It represents solutions to the homogeneous equation, meaning all vectors that the matrix transforms to the zero vector.\nProperties:\n\nThe null space is a subspace of ( ^n ) (where ( n ) is the number of columns of ( A )).\nThe dimension of the null space is known as the nullity of ( A ).\n\nGeometric Interpretation: The null space represents directions in the domain that map to zero. For example, if a transformation represented by ( A ) compresses the plane into a line, the null space corresponds to the directions that get “flattened” in that process."
+    "text": "Definition: The null space (or kernel) of a matrix $ A $ is the set of all vectors $ $ such that $ A = $. It represents solutions to the homogeneous equation, meaning all vectors that the matrix transforms to the zero vector.\nProperties:\n\nThe null space is a subspace of $ ^n $ (where $ n $ is the number of columns of $ A $).\nThe dimension of the null space is known as the nullity of $ A $.\n\nGeometric Interpretation: The null space represents directions in the domain that map to zero. For example, if a transformation represented by $ A $ compresses the plane into a line, the null space corresponds to the directions that get “flattened” in that process."
   },
   {
     "objectID": "null_spaces_col_spaces.html#what-is-the-column-space",
     "href": "null_spaces_col_spaces.html#what-is-the-column-space",
     "title": "Null Space and Column Space",
     "section": "",
-    "text": "Definition: The column space (or range) of a matrix ( A ) is the span of its column vectors. It represents all possible linear combinations of the columns of ( A ) and, geometrically, the “reach” or “range” of the transformation applied by ( A ).\nProperties:\n\nThe column space is a subspace of ( ^m ) (where ( m ) is the number of rows of ( A )).\nThe dimension of the column space is called the rank of ( A ).\n\nRelation to Linear Transformations: The column space represents the image of the transformation, describing all possible output vectors."
+    "text": "Definition: The column space (or range) of a matrix $ A $ is the span of its column vectors. It represents all possible linear combinations of the columns of $ A $ and, geometrically, the “reach” or “range” of the transformation applied by $ A $.\nProperties:\n\nThe column space is a subspace of $ ^m $ (where $ m $ is the number of rows of $ A $).\nThe dimension of the column space is called the rank of $ A $.\n\nRelation to Linear Transformations: The column space represents the image of the transformation, describing all possible output vectors."
   },
   {
     "objectID": "null_spaces_col_spaces.html#basic-examples",
     "href": "null_spaces_col_spaces.html#basic-examples",
     "title": "Null Space and Column Space",
     "section": "3.1 Basic Examples",
-    "text": "3.1 Basic Examples\n\n3.1.1 Finding the Null Space of a 2×2 Matrix\nLet ( A =\n\\begin{pmatrix} 1 & 2 \\\\ 3 & 6 \\end{pmatrix}\n). To find the null space, we solve ( A = ): [\n\\begin{pmatrix} 1 & 2 \\\\ 3 & 6 \\end{pmatrix} \\begin{pmatrix} x_1 \\\\ x_2 \\end{pmatrix}\n=\n\\begin{pmatrix} 0 \\\\ 0 \\end{pmatrix}\n. ] This system reduces to: [ x_1 + 2x_2 = 0. ] Thus, ( x_1 = -2x_2 ), so any solution is a scalar multiple of (\n\\begin{pmatrix} -2 \\\\ 1 \\end{pmatrix}\n). The null space is therefore: [ (A) = {\n\\begin{pmatrix} -2 \\\\ 1 \\end{pmatrix}\n}. ]\n\n\n3.1.2 Finding the Column Space\nThe column space of ( A ) is the span of its columns: [ (A) = {\n\\begin{pmatrix} 1 \\\\ 3 \\end{pmatrix}\n,\n\\begin{pmatrix} 2 \\\\ 6 \\end{pmatrix}\n}. ] Since the second column is a scalar multiple of the first, the column space is just the span of (\n\\begin{pmatrix} 1 \\\\ 3 \\end{pmatrix}\n)."
+    "text": "3.1 Basic Examples\n\n3.1.1 Finding the Null Space of a 2×2 Matrix\nLet $ A =\n\\begin{pmatrix} 1 & 2 \\\\ 3 & 6 \\end{pmatrix}\n$. To find the null space, we solve $ A = $: [\n\\begin{pmatrix} 1 & 2 \\\\ 3 & 6 \\end{pmatrix} \\begin{pmatrix} x_1 \\\\ x_2 \\end{pmatrix}\n=\n\\begin{pmatrix} 0 \\\\ 0 \\end{pmatrix}\n. ] This system reduces to: [ x_1 + 2x_2 = 0. ] Thus, $ x_1 = -2x_2 $, so any solution is a scalar multiple of $\n\\begin{pmatrix} -2 \\\\ 1 \\end{pmatrix}\n$. The null space is therefore: [ (A) = {\n\\begin{pmatrix} -2 \\\\ 1 \\end{pmatrix}\n}. ]\n\n\n3.1.2 Finding the Column Space\nThe column space of $ A $ is the span of its columns: [ (A) = {\n\\begin{pmatrix} 1 \\\\ 3 \\end{pmatrix}\n,\n\\begin{pmatrix} 2 \\\\ 6 \\end{pmatrix}\n}. ] Since the second column is a scalar multiple of the first, the column space is just the span of $\n\\begin{pmatrix} 1 \\\\ 3 \\end{pmatrix}\n$."
   },
   {
     "objectID": "null_spaces_col_spaces.html#advanced-examples",
