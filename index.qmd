@@ -17,6 +17,8 @@ format:
 <summary>Linear Algebra --> Vector Spaces</summary>
 
 ```{mermaid}
+%%| label: fig-interactive-diagram
+%%| fig-cap: "Interactive diagram with clickable nodes"
 graph TD
     A[Linear Algebra] --> B[Vector Spaces]
 
@@ -32,9 +34,13 @@ graph TD
     B3 --> B3a[Linearly independent set that spans space]
     B3 --> B3b[Dimension]
     B3b --> B3b1[Number of vectors in any basis]
+    
+    click B3a "linear_independence_and_span.html"
+    click B3b "vector_spaces_and_dimensions.html"
 
 style A fill:#f9f,stroke:#333,stroke-width:4px
 style B fill:#bbf,stroke:#333,stroke-width:2px
+
 ```
 
 </details>
@@ -93,6 +99,7 @@ style D fill:#bbf,stroke:#333,stroke-width:2px
 
 ::: {.callout-note appearance="minimal"}
 ## Dimension = Rank = Size
+
 - Dimension of a vector space = Number of vectors in any basis
 - Rank of a matrix = Number of pivot columns
 - Size of a span = Number of linearly independent vectors
@@ -100,6 +107,7 @@ style D fill:#bbf,stroke:#333,stroke-width:2px
 
 ::: {.callout-note appearance="minimal"}
 ## Span = Range = Image
+
 - Span of vectors = All possible linear combinations
 - Range of a transformation = Output vectors
 - Image of a matrix = Column space
@@ -107,9 +115,16 @@ style D fill:#bbf,stroke:#333,stroke-width:2px
 
 ::: {.callout-note appearance="minimal"}
 ## Kernel = Null Space = Solution Space
+
 - Kernel of transformation = Vectors that map to zero
 - Null space of matrix = Solutions to $A\mathbf{x} = \mathbf{0}$
 - Solution space of homogeneous system = Null space
+:::
+
+::: {.callout-note appearance="minimal"}
+## Trace = Sum Diagonal Elements
+
+- Trace = The Sum of all Diagonal Elements
 :::
 
 ## Core Concepts and Their Relationships

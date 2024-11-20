@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Vector Spaces and Dimension – Study-Sheet: Linear Algebra</title>
+<title>Probability with Vectors/Matrices in Linear Algebra – Study-Sheet: Linear Algebra</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -192,7 +192,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Vector Spaces and Dimension</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Probability with Vectors/Matrices in Linear Algebra</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -221,22 +221,41 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#vector-spaces-and-dimension" id="toc-vector-spaces-and-dimension" class="nav-link active" data-scroll-target="#vector-spaces-and-dimension"><span class="header-section-number">1</span> Vector Spaces and Dimension</a>
+  <li><a href="#probability-with-vectorsmatrices-in-linear-algebra" id="toc-probability-with-vectorsmatrices-in-linear-algebra" class="nav-link active" data-scroll-target="#probability-with-vectorsmatrices-in-linear-algebra"><span class="header-section-number">1</span> Probability with Vectors/Matrices in Linear Algebra</a>
   <ul class="collapse">
-  <li><a href="#definition" id="toc-definition" class="nav-link" data-scroll-target="#definition"><span class="header-section-number">1.0.1</span> Definition</a></li>
-  <li><a href="#special-cases" id="toc-special-cases" class="nav-link" data-scroll-target="#special-cases"><span class="header-section-number">1.0.2</span> Special Cases</a></li>
-  <li><a href="#key-concepts-and-definitions" id="toc-key-concepts-and-definitions" class="nav-link" data-scroll-target="#key-concepts-and-definitions"><span class="header-section-number">1.1</span> Key Concepts and Definitions</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">1.1</span> Introduction</a></li>
+  <li><a href="#key-concepts-and-definitions" id="toc-key-concepts-and-definitions" class="nav-link" data-scroll-target="#key-concepts-and-definitions"><span class="header-section-number">1.2</span> Key Concepts and Definitions</a>
   <ul class="collapse">
-  <li><a href="#span" id="toc-span" class="nav-link" data-scroll-target="#span"><span class="header-section-number">1.1.1</span> Span</a></li>
-  <li><a href="#linear-independence" id="toc-linear-independence" class="nav-link" data-scroll-target="#linear-independence"><span class="header-section-number">1.1.2</span> Linear Independence</a></li>
-  <li><a href="#important-theorems" id="toc-important-theorems" class="nav-link" data-scroll-target="#important-theorems"><span class="header-section-number">1.1.3</span> Important Theorems</a></li>
+  <li><a href="#probability-vectors" id="toc-probability-vectors" class="nav-link" data-scroll-target="#probability-vectors"><span class="header-section-number">1.2.1</span> Probability Vectors</a></li>
+  <li><a href="#stochastic-matrix" id="toc-stochastic-matrix" class="nav-link" data-scroll-target="#stochastic-matrix"><span class="header-section-number">1.2.2</span> Stochastic Matrix</a></li>
+  <li><a href="#steady-state-vector" id="toc-steady-state-vector" class="nav-link" data-scroll-target="#steady-state-vector"><span class="header-section-number">1.2.3</span> Steady State Vector</a></li>
+  <li><a href="#markov-chains" id="toc-markov-chains" class="nav-link" data-scroll-target="#markov-chains"><span class="header-section-number">1.2.4</span> Markov Chains</a></li>
+  <li><a href="#regular-stochastic-matrix" id="toc-regular-stochastic-matrix" class="nav-link" data-scroll-target="#regular-stochastic-matrix"><span class="header-section-number">1.2.5</span> Regular Stochastic Matrix</a></li>
   </ul></li>
-  <li><a href="#practice-problems" id="toc-practice-problems" class="nav-link" data-scroll-target="#practice-problems"><span class="header-section-number">1.2</span> Practice Problems</a>
+  <li><a href="#relationship-to-other-linear-algebra-topics" id="toc-relationship-to-other-linear-algebra-topics" class="nav-link" data-scroll-target="#relationship-to-other-linear-algebra-topics"><span class="header-section-number">1.3</span> Relationship to other Linear Algebra topics</a>
   <ul class="collapse">
-  <li><a href="#problem-1-homogeneous-systems" id="toc-problem-1-homogeneous-systems" class="nav-link" data-scroll-target="#problem-1-homogeneous-systems"><span class="header-section-number">1.2.1</span> Problem 1: Homogeneous Systems</a></li>
-  <li><a href="#problem-2-basis-and-dimension" id="toc-problem-2-basis-and-dimension" class="nav-link" data-scroll-target="#problem-2-basis-and-dimension"><span class="header-section-number">1.2.2</span> Problem 2: Basis and Dimension</a></li>
-  <li><a href="#problem-3-null-space-basis" id="toc-problem-3-null-space-basis" class="nav-link" data-scroll-target="#problem-3-null-space-basis"><span class="header-section-number">1.2.3</span> Problem 3: Null Space Basis</a></li>
+  <li><a href="#similarity-transformations" id="toc-similarity-transformations" class="nav-link" data-scroll-target="#similarity-transformations"><span class="header-section-number">1.3.1</span> Similarity Transformations</a></li>
+  <li><a href="#eigenvalues-and-eigenvectors" id="toc-eigenvalues-and-eigenvectors" class="nav-link" data-scroll-target="#eigenvalues-and-eigenvectors"><span class="header-section-number">1.3.2</span> Eigenvalues and Eigenvectors:</a></li>
   </ul></li>
+  <li><a href="#important-theorems" id="toc-important-theorems" class="nav-link" data-scroll-target="#important-theorems"><span class="header-section-number">1.4</span> Important Theorems</a>
+  <ul class="collapse">
+  <li><a href="#theorem-18-fundamental-theorem-of-markov-chains" id="toc-theorem-18-fundamental-theorem-of-markov-chains" class="nav-link" data-scroll-target="#theorem-18-fundamental-theorem-of-markov-chains"><span class="header-section-number">1.4.1</span> Theorem 18 (Fundamental Theorem of Markov Chains)</a></li>
+  <li><a href="#perron-frobenius-theorem" id="toc-perron-frobenius-theorem" class="nav-link" data-scroll-target="#perron-frobenius-theorem"><span class="header-section-number">1.4.2</span> Perron-Frobenius Theorem</a></li>
+  </ul></li>
+  <li><a href="#special-cases-or-applications" id="toc-special-cases-or-applications" class="nav-link" data-scroll-target="#special-cases-or-applications"><span class="header-section-number">1.5</span> Special Cases or Applications</a>
+  <ul class="collapse">
+  <li><a href="#google-pagerank-algorithm" id="toc-google-pagerank-algorithm" class="nav-link" data-scroll-target="#google-pagerank-algorithm"><span class="header-section-number">1.5.1</span> Google PageRank Algorithm</a></li>
+  <li><a href="#population-growth-models" id="toc-population-growth-models" class="nav-link" data-scroll-target="#population-growth-models"><span class="header-section-number">1.5.2</span> Population Growth Models</a></li>
+  <li><a href="#economic-models" id="toc-economic-models" class="nav-link" data-scroll-target="#economic-models"><span class="header-section-number">1.5.3</span> Economic Models</a></li>
+  </ul></li>
+  <li><a href="#practice-problems" id="toc-practice-problems" class="nav-link" data-scroll-target="#practice-problems"><span class="header-section-number">1.6</span> Practice Problems</a>
+  <ul class="collapse">
+  <li><a href="#problem-1" id="toc-problem-1" class="nav-link" data-scroll-target="#problem-1"><span class="header-section-number">1.6.1</span> Problem 1</a></li>
+  <li><a href="#problem-2" id="toc-problem-2" class="nav-link" data-scroll-target="#problem-2"><span class="header-section-number">1.6.2</span> Problem 2</a></li>
+  <li><a href="#problem-3" id="toc-problem-3" class="nav-link" data-scroll-target="#problem-3"><span class="header-section-number">1.6.3</span> Problem 3</a></li>
+  </ul></li>
+  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources"><span class="header-section-number">1.7</span> Additional Resources</a></li>
+  <li><a href="#common-mistakes-to-avoid" id="toc-common-mistakes-to-avoid" class="nav-link" data-scroll-target="#common-mistakes-to-avoid"><span class="header-section-number">1.8</span> Common Mistakes to Avoid</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -246,7 +265,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Vector Spaces and Dimension</h1>
+<h1 class="title">Probability with Vectors/Matrices in Linear Algebra</h1>
 </div>
 
 
@@ -263,10 +282,16 @@ window.Quarto = {
 </header>
 
 
-<section id="vector-spaces-and-dimension" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Vector Spaces and Dimension</h1>
-<section id="definition" class="level3" data-number="1.0.1">
-<h3 data-number="1.0.1" class="anchored" data-anchor-id="definition"><span class="header-section-number">1.0.1</span> Definition</h3>
+<section id="probability-with-vectorsmatrices-in-linear-algebra" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Probability with Vectors/Matrices in Linear Algebra</h1>
+<section id="introduction" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1.1</span> Introduction</h2>
+<p>The intersection of probability theory and linear algebra provides powerful tools for analyzing stochastic processes and Markov chains. This study guide explores how vectors and matrices can represent probabilistic systems and help us understand their behavior over time.</p>
+</section>
+<section id="key-concepts-and-definitions" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="key-concepts-and-definitions"><span class="header-section-number">1.2</span> Key Concepts and Definitions</h2>
+<section id="probability-vectors" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="probability-vectors"><span class="header-section-number">1.2.1</span> Probability Vectors</h3>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -277,185 +302,198 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>A vector space <span class="math inline">V</span> is finite-dimensional if it can be spanned by a finite set of vectors. The dimension of <span class="math inline">V</span>, denoted <span class="math inline">\dim V</span>, is the number of vectors in any basis for <span class="math inline">V</span>.</p>
-</div>
-</div>
-<section id="example-standard-basis" class="level4" data-number="1.0.1.1">
-<h4 data-number="1.0.1.1" class="anchored" data-anchor-id="example-standard-basis"><span class="header-section-number">1.0.1.1</span> Example: Standard Basis</h4>
-<p>The standard basis for <span class="math inline">\mathbb{R}^3</span> consists of: <span class="math display">
-\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix},
-\begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix},
-\begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}
-</span> Therefore, <span class="math inline">\dim \mathbb{R}^3 = 3</span></p>
-</section>
-</section>
-<section id="special-cases" class="level3" data-number="1.0.2">
-<h3 data-number="1.0.2" class="anchored" data-anchor-id="special-cases"><span class="header-section-number">1.0.2</span> Special Cases</h3>
-<ul>
-<li>Zero vector space: <span class="math inline">\dim \{\mathbf{0}\} = 0</span></li>
-<li>Infinite-dimensional spaces: The space of all polynomials <span class="math inline">P</span> has no finite basis</li>
-</ul>
-</section>
-<section id="key-concepts-and-definitions" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="key-concepts-and-definitions"><span class="header-section-number">1.1</span> Key Concepts and Definitions</h2>
-<section id="span" class="level3" data-number="1.1.1">
-<h3 data-number="1.1.1" class="anchored" data-anchor-id="span"><span class="header-section-number">1.1.1</span> Span</h3>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The <strong>definition of Span</strong>: The span of a set of vectors is the set of all linear combinations of those vectors. For a set of vectors <span class="math inline">\{\mathbf{v}_1, \mathbf{v}_2, \dots, \mathbf{v}_n\}</span>, the span is denoted <span class="math inline">\text{span}\{\mathbf{v}_1, \mathbf{v}_2, \dots, \mathbf{v}_n\}</span>.</p>
-</div>
-</div>
-</section>
-<section id="linear-independence" class="level3" data-number="1.1.2">
-<h3 data-number="1.1.2" class="anchored" data-anchor-id="linear-independence"><span class="header-section-number">1.1.2</span> Linear Independence</h3>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Definition of Linear Independence and Dependence</strong>: A set of vectors is linearly independent if no vector in the set is a linear combination of the others; otherwise, the set is linearly dependent.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Homogeneous System Form
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A homogeneous system has the form <span class="math inline">A\mathbf{x} = \mathbf{0}</span></p>
-</div>
-</div>
-<section id="example-system" class="level4" data-number="1.1.2.1">
-<h4 data-number="1.1.2.1" class="anchored" data-anchor-id="example-system"><span class="header-section-number">1.1.2.1</span> Example System</h4>
-<p><span class="math display">
-\begin{aligned}
-2x + 3y - z &amp;= 0 \\
-4x - 2y + 2z &amp;= 0
-\end{aligned}
-</span></p>
-<p>In matrix form: <span class="math display">
-\begin{bmatrix}
-2 &amp; 3 &amp; -1 \\
-4 &amp; -2 &amp; 2
-\end{bmatrix}
-\begin{bmatrix}
-x \\ y \\ z
-\end{bmatrix}
-= \begin{bmatrix}
-0 \\ 0
-\end{bmatrix}
-</span></p>
-</section>
-</section>
-<section id="important-theorems" class="level3" data-number="1.1.3">
-<h3 data-number="1.1.3" class="anchored" data-anchor-id="important-theorems"><span class="header-section-number">1.1.3</span> Important Theorems</h3>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Theorem 9
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If a vector space <span class="math inline">V</span> has a basis <span class="math inline">\mathcal{B} = \{ \mathbf{b}_1, \dots, \mathbf{b}_n \}</span>, then any set in <span class="math inline">V</span> containing more than <span class="math inline">n</span> vectors must be linearly dependent.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Theorem 10
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If a vector space <span class="math inline">V</span> has a basis of <span class="math inline">n</span> vectors, then every basis of <span class="math inline">V</span> must consist of exactly <span class="math inline">n</span> vectors.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Theorem 11
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let <span class="math inline">H</span> be a subspace of a finite-dimensional vector space <span class="math inline">V</span>. Any linearly independent set in <span class="math inline">H</span> can be expanded, if necessary, to a basis for <span class="math inline">H</span>. Also, <span class="math inline">H</span> is finite-dimensional and</p>
-<p><span class="math inline">\dim H \leq \dim V</span></p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-The Basis Theorem (Theorem 12)
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let <span class="math inline">V</span> be a <span class="math inline">p</span>-dimensional vector space, <span class="math inline">p \geq 1</span>. Any linearly independent set of exactly <span class="math inline">p</span> elements in <span class="math inline">V</span> is automatically a basis for <span class="math inline">V</span>.</p>
-</div>
-</div>
-</section>
-</section>
-<section id="practice-problems" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="practice-problems"><span class="header-section-number">1.2</span> Practice Problems</h2>
-<section id="problem-1-homogeneous-systems" class="level3" data-number="1.2.1">
-<h3 data-number="1.2.1" class="anchored" data-anchor-id="problem-1-homogeneous-systems"><span class="header-section-number">1.2.1</span> Problem 1: Homogeneous Systems</h3>
-<p>Solve the system: <span class="math display">
-\begin{aligned}
-x + y + z &amp;= 0 \\
-2x + 2y + 2z &amp;= 0
-\end{aligned}
-</span></p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Solution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
+<p><strong>Definition</strong>: A probability vector is a column vector <span class="math inline">p = [p_1, p_2, ..., p_n]^T</span> where:</p>
 <ol type="1">
-<li>Notice the second equation is a multiple of the first</li>
-<li>System reduces to <span class="math inline">x + y + z = 0</span></li>
-<li>General solution: <span class="math inline">\begin{bmatrix} x \\ y \\ -(x+y) \end{bmatrix}</span> for any <span class="math inline">x, y</span></li>
-<li>Basis: <span class="math inline">\text{span}\left(\begin{bmatrix} 1 \\ 0 \\ -1 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \\ -1 \end{bmatrix}\right)</span></li>
+<li>All components are non-negative: <span class="math inline">p_i \geq 0</span> for all <span class="math inline">i</span></li>
+<li>The sum of all components equals 1: <span class="math inline">\sum_{i=1}^n p_i = 1</span></li>
+</ol>
+<p>These vectors represent probability distributions over a finite set of states.</p>
+</div>
+</div>
+</section>
+<section id="stochastic-matrix" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="stochastic-matrix"><span class="header-section-number">1.2.2</span> Stochastic Matrix</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Definition</strong>: A stochastic matrix (or probability matrix) <span class="math inline">P</span> is a square matrix where:</p>
+<ol type="1">
+<li>All entries are non-negative: <span class="math inline">p_{ij} \geq 0</span> for all <span class="math inline">i,j</span></li>
+<li>Each row sums to 1: <span class="math inline">\sum_{j=1}^n p_{ij} = 1</span> for all <span class="math inline">i</span></li>
+</ol>
+<p>The entry <span class="math inline">p_{ij}</span> represents the probability of transitioning from state <span class="math inline">i</span> to state <span class="math inline">j</span>.</p>
+</div>
+</div>
+</section>
+<section id="steady-state-vector" class="level3" data-number="1.2.3">
+<h3 data-number="1.2.3" class="anchored" data-anchor-id="steady-state-vector"><span class="header-section-number">1.2.3</span> Steady State Vector</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Definition</strong>: A steady state vector (or stationary distribution) <span class="math inline">q</span> is a probability vector that satisfies: <span class="math inline">q^T P = q^T</span> or <span class="math inline">Pq = q</span></p>
+<p>This vector represents the long-term probabilities of being in each state, regardless of the initial state.</p>
+</div>
+</div>
+</section>
+<section id="markov-chains" class="level3" data-number="1.2.4">
+<h3 data-number="1.2.4" class="anchored" data-anchor-id="markov-chains"><span class="header-section-number">1.2.4</span> Markov Chains</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Definition</strong>: A Markov chain is a sequence of random variables <span class="math inline">\{X_n\}</span> where:</p>
+<ol type="1">
+<li>The probability of the next state depends only on the current state (Markov property)</li>
+<li>These probabilities are represented by a stochastic matrix <span class="math inline">P</span></li>
+<li>The state probabilities at time <span class="math inline">n</span> are given by <span class="math inline">x_n = P^n x_0</span>, where <span class="math inline">x_0</span> is the initial distribution</li>
 </ol>
 </div>
 </div>
+</section>
+<section id="regular-stochastic-matrix" class="level3" data-number="1.2.5">
+<h3 data-number="1.2.5" class="anchored" data-anchor-id="regular-stochastic-matrix"><span class="header-section-number">1.2.5</span> Regular Stochastic Matrix</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Definition</strong>: A regular stochastic matrix is a stochastic matrix <span class="math inline">P</span> that satisfies the following condition:</p>
+<ol type="1">
+<li>There exists a positive integer <span class="math inline">k</span> such that all entries of <span class="math inline">P^k</span> are strictly positive: <span class="math inline">(P^k)_{ij} &gt; 0</span> for all <span class="math inline">i, j</span>.</li>
+</ol>
+<p>This property ensures that, regardless of the initial state, the Markov chain associated with <span class="math inline">P</span> will converge to a unique steady-state vector as <span class="math inline">n \to \infty</span>.</p>
+</div>
 </div>
 </section>
-<section id="problem-2-basis-and-dimension" class="level3" data-number="1.2.2">
-<h3 data-number="1.2.2" class="anchored" data-anchor-id="problem-2-basis-and-dimension"><span class="header-section-number">1.2.2</span> Problem 2: Basis and Dimension</h3>
-<p>Explain why the standard basis for <span class="math inline">\mathbb{R}^3</span> has exactly three vectors.</p>
+</section>
+<section id="relationship-to-other-linear-algebra-topics" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="relationship-to-other-linear-algebra-topics"><span class="header-section-number">1.3</span> Relationship to other Linear Algebra topics</h2>
+<section id="similarity-transformations" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="similarity-transformations"><span class="header-section-number">1.3.1</span> Similarity Transformations</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Definition</strong>: Two matrices <span class="math inline">A</span> and <span class="math inline">B</span> are similar if there exists an invertible matrix <span class="math inline">P</span> such that <span class="math inline">B = P^{-1}AP</span>. Similar matrices share important properties like rank, determinant, and eigenvalues.</p>
+</div>
+</div>
+</section>
+<section id="eigenvalues-and-eigenvectors" class="level3" data-number="1.3.2">
+<h3 data-number="1.3.2" class="anchored" data-anchor-id="eigenvalues-and-eigenvectors"><span class="header-section-number">1.3.2</span> Eigenvalues and Eigenvectors:</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Definition</strong>: For stochastic matrices:</p>
+<ol type="1">
+<li>The largest eigenvalue is always <span class="math inline">1</span></li>
+<li>All eigenvalues have absolute value <span class="math inline">≤ 1</span></li>
+<li>The steady state vector is an eigenvector corresponding to eigenvalue <span class="math inline">1</span></li>
+</ol>
+</div>
+</div>
+</section>
+</section>
+<section id="important-theorems" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="important-theorems"><span class="header-section-number">1.4</span> Important Theorems</h2>
+<section id="theorem-18-fundamental-theorem-of-markov-chains" class="level3" data-number="1.4.1">
+<h3 data-number="1.4.1" class="anchored" data-anchor-id="theorem-18-fundamental-theorem-of-markov-chains"><span class="header-section-number">1.4.1</span> Theorem 18 (Fundamental Theorem of Markov Chains)</h3>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">P</span> is an <span class="math inline">n \times n</span> regular stochastic matrix, then <span class="math inline">P</span> has a unique steady-state vector <span class="math inline">q</span>. Further, if <span class="math inline">x_0</span> is any initial state and <span class="math inline">x_{k + 1} = Px_k</span> for <span class="math inline">k = 0, 1, 2, \dots</span>, then the Markov chain <span class="math inline">\{x_k\}</span> converges to <span class="math inline">q</span> as <span class="math inline">k \rightarrow \infty</span>.</p>
+</div>
+</div>
+</section>
+<section id="perron-frobenius-theorem" class="level3" data-number="1.4.2">
+<h3 data-number="1.4.2" class="anchored" data-anchor-id="perron-frobenius-theorem"><span class="header-section-number">1.4.2</span> Perron-Frobenius Theorem</h3>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For a positive stochastic matrix:</p>
+<ol type="1">
+<li>The spectral radius (largest eigenvalue) equals 1</li>
+<li>The corresponding eigenvector has all positive entries</li>
+<li>This eigenvalue-eigenvector pair is unique</li>
+</ol>
+</div>
+</div>
+</section>
+</section>
+<section id="special-cases-or-applications" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="special-cases-or-applications"><span class="header-section-number">1.5</span> Special Cases or Applications</h2>
+<section id="google-pagerank-algorithm" class="level3" data-number="1.5.1">
+<h3 data-number="1.5.1" class="anchored" data-anchor-id="google-pagerank-algorithm"><span class="header-section-number">1.5.1</span> Google PageRank Algorithm</h3>
+<p>The PageRank algorithm uses a modified stochastic matrix to rank web pages. The steady state vector gives the importance scores of pages.</p>
+</section>
+<section id="population-growth-models" class="level3" data-number="1.5.2">
+<h3 data-number="1.5.2" class="anchored" data-anchor-id="population-growth-models"><span class="header-section-number">1.5.2</span> Population Growth Models</h3>
+<p>Leslie matrices (a type of stochastic matrix) model population dynamics in age-structured populations.</p>
+</section>
+<section id="economic-models" class="level3" data-number="1.5.3">
+<h3 data-number="1.5.3" class="anchored" data-anchor-id="economic-models"><span class="header-section-number">1.5.3</span> Economic Models</h3>
+<p>Input-output models in economics use stochastic matrices to represent flows between economic sectors.</p>
+</section>
+</section>
+<section id="practice-problems" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="practice-problems"><span class="header-section-number">1.6</span> Practice Problems</h2>
+<section id="problem-1" class="level3" data-number="1.6.1">
+<h3 data-number="1.6.1" class="anchored" data-anchor-id="problem-1"><span class="header-section-number">1.6.1</span> Problem 1</h3>
+<p>Given the stochastic matrix: <span class="math display">P = \begin{bmatrix}
+0.7 &amp; 0.3 \\
+0.4 &amp; 0.6
+\end{bmatrix}</span> Find its steady state vector.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -468,16 +506,19 @@ Solution
 </div>
 <div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The space <span class="math inline">\mathbb{R}^3</span> requires three linearly independent vectors to span it fully. Since the standard basis <span class="math inline">\{\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}\}</span> spans <span class="math inline">\mathbb{R}^3</span> and no subset of these vectors can do so, they form a basis, making <span class="math inline">\dim \mathbb{R}^3 = 3</span>.</p>
+<ol type="1">
+<li>Let <span class="math inline">q = [x, y]^T</span> be the steady state vector</li>
+<li>Write <span class="math inline">Pq = q</span>: <span class="math display">\begin{bmatrix} 0.7x + 0.3y = x \\ 0.4x + 0.6y = y \end{bmatrix}</span></li>
+<li>Use <span class="math inline">x + y = 1</span></li>
+<li>Solve to get <span class="math inline">q = [0.571, 0.429]^T</span></li>
+</ol>
 </div>
 </div>
 </div>
 </section>
-<section id="problem-3-null-space-basis" class="level3" data-number="1.2.3">
-<h3 data-number="1.2.3" class="anchored" data-anchor-id="problem-3-null-space-basis"><span class="header-section-number">1.2.3</span> Problem 3: Null Space Basis</h3>
-<p>Find a basis for the null space of: <span class="math display">
-A = \begin{bmatrix} 1 &amp; 2 &amp; 3 \\ 2 &amp; 4 &amp; 6 \end{bmatrix}
-</span></p>
+<section id="problem-2" class="level3" data-number="1.6.2">
+<h3 data-number="1.6.2" class="anchored" data-anchor-id="problem-2"><span class="header-section-number">1.6.2</span> Problem 2</h3>
+<p>Show that if <span class="math inline">P</span> is stochastic, then <span class="math inline">P^n</span> is also stochastic for any positive integer <span class="math inline">n</span>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -491,17 +532,59 @@ Solution
 <div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li>Row reduce to: <span class="math inline">\begin{bmatrix} 1 &amp; 2 &amp; 3 \\ 0 &amp; 0 &amp; 0 \end{bmatrix}</span></li>
-<li>Free variables: <span class="math inline">y, z</span></li>
-<li>Express <span class="math inline">x</span>: <span class="math inline">x = -2y - 3z</span></li>
-<li>Basis: <span class="math inline">\left\{\begin{bmatrix} -2 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} -3 \\ 0 \\ 1 \end{bmatrix}\right\}</span></li>
+<li>Use induction on <span class="math inline">n</span></li>
+<li>Base case: True for <span class="math inline">n=1</span></li>
+<li>Inductive step: Show if true for <span class="math inline">k</span>, then true for <span class="math inline">k+1</span></li>
+<li>Use properties of matrix multiplication</li>
 </ol>
 </div>
 </div>
 </div>
-
-
 </section>
+<section id="problem-3" class="level3" data-number="1.6.3">
+<h3 data-number="1.6.3" class="anchored" data-anchor-id="problem-3"><span class="header-section-number">1.6.3</span> Problem 3</h3>
+<p>For a regular stochastic matrix, prove that 1 is an eigenvalue and all other eigenvalues have absolute value less than 1.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Show that <span class="math inline">(1,v)</span> is an eigenvalue-eigenvector pair where <span class="math inline">v</span> is column of ones</li>
+<li>Use Gershgorin’s circle theorem to bound other eigenvalues</li>
+<li>Use regularity to show strict inequality</li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="additional-resources" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="additional-resources"><span class="header-section-number">1.7</span> Additional Resources</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=kjBOesZCoqc">3Blue1Brown - Essence of Linear Algebra (YouTube)</a></li>
+<li>Gilbert Strang’s Linear Algebra Lectures (MIT OpenCourseWare)</li>
+<li>“Introduction to Probability” by Bertsekas and Tsitsiklis</li>
+<li>“Matrix Analysis” by Horn and Johnson</li>
+</ul>
+</section>
+<section id="common-mistakes-to-avoid" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="common-mistakes-to-avoid"><span class="header-section-number">1.8</span> Common Mistakes to Avoid</h2>
+<ol type="1">
+<li>Forgetting to verify the stochastic property when computing matrix powers</li>
+<li>Misinterpreting steady state probabilities as transition probabilities</li>
+<li>Assuming all stochastic matrices have unique steady states (only true for regular matrices)</li>
+<li>Neglecting to normalize probability vectors after computations</li>
+</ol>
+
+
 </section>
 </section>
 

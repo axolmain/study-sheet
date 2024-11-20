@@ -31,6 +31,11 @@ website:
             text: Basic Linear equations
           - href: determinants.qmd
             text: Determinants
+          - href: rank.qmd
+            text: Rank
+          - href: predicting_the_future.qmd
+            text: Predicting The Future
+            
 
 format:
   html:

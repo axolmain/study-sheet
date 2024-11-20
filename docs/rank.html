@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Vector Spaces and Dimension – Study-Sheet: Linear Algebra</title>
+<title>Rank in Linear Algebra – Study-Sheet: Linear Algebra</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -192,7 +192,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Vector Spaces and Dimension</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Rank in Linear Algebra</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -221,22 +221,36 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#vector-spaces-and-dimension" id="toc-vector-spaces-and-dimension" class="nav-link active" data-scroll-target="#vector-spaces-and-dimension"><span class="header-section-number">1</span> Vector Spaces and Dimension</a>
+  <li><a href="#rank-in-linear-algebra" id="toc-rank-in-linear-algebra" class="nav-link active" data-scroll-target="#rank-in-linear-algebra"><span class="header-section-number">1</span> Rank in Linear Algebra</a>
   <ul class="collapse">
-  <li><a href="#definition" id="toc-definition" class="nav-link" data-scroll-target="#definition"><span class="header-section-number">1.0.1</span> Definition</a></li>
-  <li><a href="#special-cases" id="toc-special-cases" class="nav-link" data-scroll-target="#special-cases"><span class="header-section-number">1.0.2</span> Special Cases</a></li>
-  <li><a href="#key-concepts-and-definitions" id="toc-key-concepts-and-definitions" class="nav-link" data-scroll-target="#key-concepts-and-definitions"><span class="header-section-number">1.1</span> Key Concepts and Definitions</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">1.1</span> Introduction</a></li>
+  <li><a href="#key-concepts-and-definitions" id="toc-key-concepts-and-definitions" class="nav-link" data-scroll-target="#key-concepts-and-definitions"><span class="header-section-number">1.2</span> Key Concepts and Definitions</a>
   <ul class="collapse">
-  <li><a href="#span" id="toc-span" class="nav-link" data-scroll-target="#span"><span class="header-section-number">1.1.1</span> Span</a></li>
-  <li><a href="#linear-independence" id="toc-linear-independence" class="nav-link" data-scroll-target="#linear-independence"><span class="header-section-number">1.1.2</span> Linear Independence</a></li>
-  <li><a href="#important-theorems" id="toc-important-theorems" class="nav-link" data-scroll-target="#important-theorems"><span class="header-section-number">1.1.3</span> Important Theorems</a></li>
+  <li><a href="#row-space-and-column-space" id="toc-row-space-and-column-space" class="nav-link" data-scroll-target="#row-space-and-column-space"><span class="header-section-number">1.2.1</span> Row Space and Column Space</a></li>
+  <li><a href="#rank-of-a-matrix" id="toc-rank-of-a-matrix" class="nav-link" data-scroll-target="#rank-of-a-matrix"><span class="header-section-number">1.2.2</span> Rank of a Matrix</a></li>
+  <li><a href="#null-space-and-nullity" id="toc-null-space-and-nullity" class="nav-link" data-scroll-target="#null-space-and-nullity"><span class="header-section-number">1.2.3</span> Null Space and Nullity</a></li>
   </ul></li>
-  <li><a href="#practice-problems" id="toc-practice-problems" class="nav-link" data-scroll-target="#practice-problems"><span class="header-section-number">1.2</span> Practice Problems</a>
+  <li><a href="#effects-of-row-operations-on-rank" id="toc-effects-of-row-operations-on-rank" class="nav-link" data-scroll-target="#effects-of-row-operations-on-rank"><span class="header-section-number">1.3</span> Effects of Row Operations on Rank</a></li>
+  <li><a href="#important-theorems" id="toc-important-theorems" class="nav-link" data-scroll-target="#important-theorems"><span class="header-section-number">1.4</span> Important Theorems</a>
   <ul class="collapse">
-  <li><a href="#problem-1-homogeneous-systems" id="toc-problem-1-homogeneous-systems" class="nav-link" data-scroll-target="#problem-1-homogeneous-systems"><span class="header-section-number">1.2.1</span> Problem 1: Homogeneous Systems</a></li>
-  <li><a href="#problem-2-basis-and-dimension" id="toc-problem-2-basis-and-dimension" class="nav-link" data-scroll-target="#problem-2-basis-and-dimension"><span class="header-section-number">1.2.2</span> Problem 2: Basis and Dimension</a></li>
-  <li><a href="#problem-3-null-space-basis" id="toc-problem-3-null-space-basis" class="nav-link" data-scroll-target="#problem-3-null-space-basis"><span class="header-section-number">1.2.3</span> Problem 3: Null Space Basis</a></li>
+  <li><a href="#the-rank-theorem" id="toc-the-rank-theorem" class="nav-link" data-scroll-target="#the-rank-theorem"><span class="header-section-number">1.4.1</span> The Rank Theorem</a></li>
+  <li><a href="#the-invertible-matrix-theorem-imt---rank-conditions" id="toc-the-invertible-matrix-theorem-imt---rank-conditions" class="nav-link" data-scroll-target="#the-invertible-matrix-theorem-imt---rank-conditions"><span class="header-section-number">1.4.2</span> The Invertible Matrix Theorem (IMT) - Rank Conditions</a></li>
   </ul></li>
+  <li><a href="#relationship-between-rank-and-solutions-to-linear-systems" id="toc-relationship-between-rank-and-solutions-to-linear-systems" class="nav-link" data-scroll-target="#relationship-between-rank-and-solutions-to-linear-systems"><span class="header-section-number">1.5</span> Relationship Between Rank and Solutions to Linear Systems</a></li>
+  <li><a href="#special-cases-or-applications" id="toc-special-cases-or-applications" class="nav-link" data-scroll-target="#special-cases-or-applications"><span class="header-section-number">1.6</span> Special Cases or Applications</a>
+  <ul class="collapse">
+  <li><a href="#full-rank-matrix" id="toc-full-rank-matrix" class="nav-link" data-scroll-target="#full-rank-matrix"><span class="header-section-number">1.6.1</span> Full Rank Matrix</a></li>
+  <li><a href="#determinant-and-rank-for-square-matrices" id="toc-determinant-and-rank-for-square-matrices" class="nav-link" data-scroll-target="#determinant-and-rank-for-square-matrices"><span class="header-section-number">1.6.2</span> Determinant and Rank for Square Matrices</a></li>
+  </ul></li>
+  <li><a href="#practice-problems" id="toc-practice-problems" class="nav-link" data-scroll-target="#practice-problems"><span class="header-section-number">1.7</span> Practice Problems</a>
+  <ul class="collapse">
+  <li><a href="#problem-1" id="toc-problem-1" class="nav-link" data-scroll-target="#problem-1"><span class="header-section-number">1.7.1</span> Problem 1</a></li>
+  <li><a href="#problem-2" id="toc-problem-2" class="nav-link" data-scroll-target="#problem-2"><span class="header-section-number">1.7.2</span> Problem 2</a></li>
+  <li><a href="#problem-3" id="toc-problem-3" class="nav-link" data-scroll-target="#problem-3"><span class="header-section-number">1.7.3</span> Problem 3</a></li>
+  <li><a href="#problem-4" id="toc-problem-4" class="nav-link" data-scroll-target="#problem-4"><span class="header-section-number">1.7.4</span> Problem 4</a></li>
+  <li><a href="#problem-5" id="toc-problem-5" class="nav-link" data-scroll-target="#problem-5"><span class="header-section-number">1.7.5</span> Problem 5</a></li>
+  </ul></li>
+  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources"><span class="header-section-number">1.8</span> Additional Resources</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -246,7 +260,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Vector Spaces and Dimension</h1>
+<h1 class="title">Rank in Linear Algebra</h1>
 </div>
 
 
@@ -263,10 +277,16 @@ window.Quarto = {
 </header>
 
 
-<section id="vector-spaces-and-dimension" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Vector Spaces and Dimension</h1>
-<section id="definition" class="level3" data-number="1.0.1">
-<h3 data-number="1.0.1" class="anchored" data-anchor-id="definition"><span class="header-section-number">1.0.1</span> Definition</h3>
+<section id="rank-in-linear-algebra" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Rank in Linear Algebra</h1>
+<section id="introduction" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1.1</span> Introduction</h2>
+<p>The concept of <strong>rank</strong> is central to linear algebra and provides insight into the structure and properties of matrices, particularly in the context of solutions to systems of linear equations. Rank helps define dimensions of subspaces formed by the matrix rows or columns and plays a role in determining matrix invertibility.</p>
+</section>
+<section id="key-concepts-and-definitions" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="key-concepts-and-definitions"><span class="header-section-number">1.2</span> Key Concepts and Definitions</h2>
+<section id="row-space-and-column-space" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="row-space-and-column-space"><span class="header-section-number">1.2.1</span> Row Space and Column Space</h3>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -277,160 +297,194 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>A vector space <span class="math inline">V</span> is finite-dimensional if it can be spanned by a finite set of vectors. The dimension of <span class="math inline">V</span>, denoted <span class="math inline">\dim V</span>, is the number of vectors in any basis for <span class="math inline">V</span>.</p>
+<p><strong>Definition</strong>: For a matrix <span class="math inline">A</span>, the <strong>row space</strong> is the set of all linear combinations of its rows, and the <strong>column space</strong> is the set of all linear combinations of its columns. These spaces represent the span of the row and column vectors and define the respective dimensions of the space. For any matrix <span class="math inline">A</span>, if we denote the row space by Row(A) and the column space by Col(A), these spaces are essential in defining the matrix’s rank.</p>
 </div>
 </div>
-<section id="example-standard-basis" class="level4" data-number="1.0.1.1">
-<h4 data-number="1.0.1.1" class="anchored" data-anchor-id="example-standard-basis"><span class="header-section-number">1.0.1.1</span> Example: Standard Basis</h4>
-<p>The standard basis for <span class="math inline">\mathbb{R}^3</span> consists of: <span class="math display">
-\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix},
-\begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix},
-\begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}
-</span> Therefore, <span class="math inline">\dim \mathbb{R}^3 = 3</span></p>
+</section>
+<section id="rank-of-a-matrix" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="rank-of-a-matrix"><span class="header-section-number">1.2.2</span> Rank of a Matrix</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Definition</strong>: The <strong>rank</strong> of a matrix <span class="math inline">A</span>, denoted <span class="math inline">\text{rank}(A)</span>, is the dimension of its column space (or equivalently, the row space). This dimension is also equal to the number of pivot positions in the matrix when it is in echelon form.</p>
+</div>
+</div>
+</section>
+<section id="null-space-and-nullity" class="level3" data-number="1.2.3">
+<h3 data-number="1.2.3" class="anchored" data-anchor-id="null-space-and-nullity"><span class="header-section-number">1.2.3</span> Null Space and Nullity</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Definition</strong>: The <strong>null space</strong> of a matrix <span class="math inline">A</span>, denoted Nul(A), is the set of all vectors <span class="math inline">x</span> such that <span class="math inline">A \cdot x = 0</span>. The <strong>nullity</strong> of <span class="math inline">A</span> is the dimension of the null space and is related to the rank by the Rank-Nullity Theorem.</p>
+</div>
+</div>
 </section>
 </section>
-<section id="special-cases" class="level3" data-number="1.0.2">
-<h3 data-number="1.0.2" class="anchored" data-anchor-id="special-cases"><span class="header-section-number">1.0.2</span> Special Cases</h3>
+<section id="effects-of-row-operations-on-rank" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="effects-of-row-operations-on-rank"><span class="header-section-number">1.3</span> Effects of Row Operations on Rank</h2>
+<p>Row operations do not change the row space or rank of a matrix. Thus, row-equivalent matrices share the same row space and rank. This property is particularly useful for transforming matrices to row echelon form or reduced row echelon form to determine rank.</p>
+</section>
+<section id="important-theorems" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="important-theorems"><span class="header-section-number">1.4</span> Important Theorems</h2>
+<section id="the-rank-theorem" class="level3" data-number="1.4.1">
+<h3 data-number="1.4.1" class="anchored" data-anchor-id="the-rank-theorem"><span class="header-section-number">1.4.1</span> The Rank Theorem</h3>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For an <span class="math inline">m \times n</span> matrix <span class="math inline">A</span>, the rank theorem states that:</p>
+<p><span class="math inline">\text{rank}(A) + \text{dim Nul}(A) = n</span></p>
+<p>This relationship shows that the sum of the dimensions of the column space and null space equals the number of columns in the matrix. This theorem is fundamental for analyzing solutions to linear systems.</p>
+</div>
+</div>
+</section>
+<section id="the-invertible-matrix-theorem-imt---rank-conditions" class="level3" data-number="1.4.2">
+<h3 data-number="1.4.2" class="anchored" data-anchor-id="the-invertible-matrix-theorem-imt---rank-conditions"><span class="header-section-number">1.4.2</span> The Invertible Matrix Theorem (IMT) - Rank Conditions</h3>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The Invertible Matrix Theorem provides several conditions that are equivalent to the invertibility of an <span class="math inline">n \times n</span> matrix <span class="math inline">A</span>. Among these are the rank conditions:</p>
+<ol type="1">
+<li>The columns of <span class="math inline">A</span> form a basis for <span class="math inline">\mathbb{R}^n</span>.</li>
+<li><span class="math inline">\text{Col}(A) = \mathbb{R}^n</span>.</li>
+<li><span class="math inline">\text{dim Col}(A) = n</span>.</li>
+<li><span class="math inline">\text{rank}(A) = n</span>.</li>
+<li><span class="math inline">\text{Nul}(A) = \{0\}</span>.</li>
+<li><span class="math inline">\text{dim Nul}(A) = 0</span>.</li>
+</ol>
+</div>
+</div>
+</section>
+</section>
+<section id="relationship-between-rank-and-solutions-to-linear-systems" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="relationship-between-rank-and-solutions-to-linear-systems"><span class="header-section-number">1.5</span> Relationship Between Rank and Solutions to Linear Systems</h2>
 <ul>
-<li>Zero vector space: <span class="math inline">\dim \{\mathbf{0}\} = 0</span></li>
-<li>Infinite-dimensional spaces: The space of all polynomials <span class="math inline">P</span> has no finite basis</li>
+<li><strong>Unique Solution</strong>: If the rank of the coefficient matrix equals the number of variables, and the system is consistent, there is a unique solution.</li>
+<li><strong>Infinitely Many Solutions</strong>: If the rank of the matrix is less than the number of variables, there are infinitely many solutions.</li>
+<li><strong>No Solution</strong>: If the rank of the augmented matrix is greater than the rank of the coefficient matrix, the system is inconsistent.</li>
 </ul>
 </section>
-<section id="key-concepts-and-definitions" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="key-concepts-and-definitions"><span class="header-section-number">1.1</span> Key Concepts and Definitions</h2>
-<section id="span" class="level3" data-number="1.1.1">
-<h3 data-number="1.1.1" class="anchored" data-anchor-id="span"><span class="header-section-number">1.1.1</span> Span</h3>
+<section id="special-cases-or-applications" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="special-cases-or-applications"><span class="header-section-number">1.6</span> Special Cases or Applications</h2>
+<section id="full-rank-matrix" class="level3" data-number="1.6.1">
+<h3 data-number="1.6.1" class="anchored" data-anchor-id="full-rank-matrix"><span class="header-section-number">1.6.1</span> Full Rank Matrix</h3>
+<ul>
+<li><strong>Full Row Rank</strong>: For a matrix with rank equal to the number of rows (full row rank), every row is linearly independent.</li>
+<li><strong>Full Column Rank</strong>: For a matrix with rank equal to the number of columns (full column rank), every column is linearly independent, implying invertibility for square matrices.</li>
+</ul>
+</section>
+<section id="determinant-and-rank-for-square-matrices" class="level3" data-number="1.6.2">
+<h3 data-number="1.6.2" class="anchored" data-anchor-id="determinant-and-rank-for-square-matrices"><span class="header-section-number">1.6.2</span> Determinant and Rank for Square Matrices</h3>
+<p>For a square matrix <span class="math inline">A</span>:</p>
+<ul>
+<li>If <span class="math inline">\text{det}(A) \neq 0</span>, then <span class="math inline">\text{rank}(A) = n</span> (full rank), and <span class="math inline">A</span> is invertible.</li>
+<li>If <span class="math inline">\text{det}(A) = 0</span>, then <span class="math inline">\text{rank}(A) &lt; n</span>, and <span class="math inline">A</span> is singular (non-invertible).</li>
+</ul>
+<p>Here’s the updated section for your Quarto study sheet with the new problems and their solutions:</p>
+<hr>
+</section>
+</section>
+<section id="practice-problems" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="practice-problems"><span class="header-section-number">1.7</span> Practice Problems</h2>
+<section id="problem-1" class="level3" data-number="1.7.1">
+<h3 data-number="1.7.1" class="anchored" data-anchor-id="problem-1"><span class="header-section-number">1.7.1</span> Problem 1</h3>
+<p>For a <span class="math inline">6 \times 3</span> matrix <span class="math inline">A</span> with rank 3, determine:</p>
+<ol type="1">
+<li><span class="math inline">\text{dim Nul}(A)</span></li>
+<li><span class="math inline">\text{dim Row}(A)</span></li>
+<li><span class="math inline">\text{rank}(A^T)</span></li>
+</ol>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Solution
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The <strong>definition of Span</strong>: The span of a set of vectors is the set of all linear combinations of those vectors. For a set of vectors <span class="math inline">\{\mathbf{v}_1, \mathbf{v}_2, \dots, \mathbf{v}_n\}</span>, the span is denoted <span class="math inline">\text{span}\{\mathbf{v}_1, \mathbf{v}_2, \dots, \mathbf{v}_n\}</span>.</p>
+<ol type="1">
+<li><span class="math inline">\text{dim Nul}(A) = 0</span> since <span class="math inline">\text{rank}(A) = 3</span>.</li>
+<li><span class="math inline">\text{dim Row}(A) = 3</span>.</li>
+<li><span class="math inline">\text{rank}(A^T) = 3</span>, as rank remains the same under transposition.</li>
+</ol>
+</div>
 </div>
 </div>
 </section>
-<section id="linear-independence" class="level3" data-number="1.1.2">
-<h3 data-number="1.1.2" class="anchored" data-anchor-id="linear-independence"><span class="header-section-number">1.1.2</span> Linear Independence</h3>
+<section id="problem-2" class="level3" data-number="1.7.2">
+<h3 data-number="1.7.2" class="anchored" data-anchor-id="problem-2"><span class="header-section-number">1.7.2</span> Problem 2</h3>
+<p>If the null space of a <span class="math inline">7 \times 6</span> matrix <span class="math inline">A</span> is 5-dimensional, what is <span class="math inline">\text{dim Col}(A)</span>?</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Solution
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>Definition of Linear Independence and Dependence</strong>: A set of vectors is linearly independent if no vector in the set is a linear combination of the others; otherwise, the set is linearly dependent.</p>
+<p>Using the Rank-Nullity Theorem: <span class="math inline">text{rank}(A) + \text{dim Nul}(A) = 6</span> Since <span class="math inline">\text{dim Nul}(A) = 5</span>, <span class="math inline">\text{rank}(A) = 1</span>, so <span class="math inline">\text{dim Col}(A) = 1</span>.</p>
 </div>
-</div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Homogeneous System Form
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A homogeneous system has the form <span class="math inline">A\mathbf{x} = \mathbf{0}</span></p>
-</div>
-</div>
-<section id="example-system" class="level4" data-number="1.1.2.1">
-<h4 data-number="1.1.2.1" class="anchored" data-anchor-id="example-system"><span class="header-section-number">1.1.2.1</span> Example System</h4>
-<p><span class="math display">
-\begin{aligned}
-2x + 3y - z &amp;= 0 \\
-4x - 2y + 2z &amp;= 0
-\end{aligned}
-</span></p>
-<p>In matrix form: <span class="math display">
-\begin{bmatrix}
-2 &amp; 3 &amp; -1 \\
-4 &amp; -2 &amp; 2
-\end{bmatrix}
-\begin{bmatrix}
-x \\ y \\ z
-\end{bmatrix}
-= \begin{bmatrix}
-0 \\ 0
-\end{bmatrix}
-</span></p>
-</section>
-</section>
-<section id="important-theorems" class="level3" data-number="1.1.3">
-<h3 data-number="1.1.3" class="anchored" data-anchor-id="important-theorems"><span class="header-section-number">1.1.3</span> Important Theorems</h3>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Theorem 9
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If a vector space <span class="math inline">V</span> has a basis <span class="math inline">\mathcal{B} = \{ \mathbf{b}_1, \dots, \mathbf{b}_n \}</span>, then any set in <span class="math inline">V</span> containing more than <span class="math inline">n</span> vectors must be linearly dependent.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Theorem 10
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If a vector space <span class="math inline">V</span> has a basis of <span class="math inline">n</span> vectors, then every basis of <span class="math inline">V</span> must consist of exactly <span class="math inline">n</span> vectors.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Theorem 11
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let <span class="math inline">H</span> be a subspace of a finite-dimensional vector space <span class="math inline">V</span>. Any linearly independent set in <span class="math inline">H</span> can be expanded, if necessary, to a basis for <span class="math inline">H</span>. Also, <span class="math inline">H</span> is finite-dimensional and</p>
-<p><span class="math inline">\dim H \leq \dim V</span></p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-The Basis Theorem (Theorem 12)
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let <span class="math inline">V</span> be a <span class="math inline">p</span>-dimensional vector space, <span class="math inline">p \geq 1</span>. Any linearly independent set of exactly <span class="math inline">p</span> elements in <span class="math inline">V</span> is automatically a basis for <span class="math inline">V</span>.</p>
 </div>
 </div>
 </section>
+<section id="problem-3" class="level3" data-number="1.7.3">
+<h3 data-number="1.7.3" class="anchored" data-anchor-id="problem-3"><span class="header-section-number">1.7.3</span> Problem 3</h3>
+<p>If <span class="math inline">A</span> is a <span class="math inline">6 \times 4</span> matrix, what is the smallest possible dimension of Nul(A)?</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The smallest possible dimension of Nul(A) is 0 if <span class="math inline">\text{rank}(A) = 4</span>, meaning the matrix has full column rank.</p>
+</div>
+</div>
+</div>
 </section>
-<section id="practice-problems" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="practice-problems"><span class="header-section-number">1.2</span> Practice Problems</h2>
-<section id="problem-1-homogeneous-systems" class="level3" data-number="1.2.1">
-<h3 data-number="1.2.1" class="anchored" data-anchor-id="problem-1-homogeneous-systems"><span class="header-section-number">1.2.1</span> Problem 1: Homogeneous Systems</h3>
-<p>Solve the system: <span class="math display">
-\begin{aligned}
-x + y + z &amp;= 0 \\
-2x + 2y + 2z &amp;= 0
-\end{aligned}
-</span></p>
+<section id="problem-4" class="level3" data-number="1.7.4">
+<h3 data-number="1.7.4" class="anchored" data-anchor-id="problem-4"><span class="header-section-number">1.7.4</span> Problem 4</h3>
+<p>Suppose the solutions of a homogeneous system of five linear equations in six unknowns are all multiples of one nonzero solution. Will the system necessarily have a solution for every possible choice of constants on the right sides of the equations? Explain.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -443,19 +497,14 @@ Solution
 </div>
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<ol type="1">
-<li>Notice the second equation is a multiple of the first</li>
-<li>System reduces to <span class="math inline">x + y + z = 0</span></li>
-<li>General solution: <span class="math inline">\begin{bmatrix} x \\ y \\ -(x+y) \end{bmatrix}</span> for any <span class="math inline">x, y</span></li>
-<li>Basis: <span class="math inline">\text{span}\left(\begin{bmatrix} 1 \\ 0 \\ -1 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \\ -1 \end{bmatrix}\right)</span></li>
-</ol>
+<p>The system does not necessarily have a solution for every possible choice of constants. The key observation is that the homogeneous system has a null space of dimension 1, as all solutions are multiples of one nonzero solution. For the inhomogeneous system to have a solution for every choice of constants, the coefficient matrix must have full row rank (rank 5). However, since there are 6 unknowns, the rank cannot exceed 5, leaving one degree of freedom in the solution space. This means there may exist some choices of constants for which the system is inconsistent.</p>
 </div>
 </div>
 </div>
 </section>
-<section id="problem-2-basis-and-dimension" class="level3" data-number="1.2.2">
-<h3 data-number="1.2.2" class="anchored" data-anchor-id="problem-2-basis-and-dimension"><span class="header-section-number">1.2.2</span> Problem 2: Basis and Dimension</h3>
-<p>Explain why the standard basis for <span class="math inline">\mathbb{R}^3</span> has exactly three vectors.</p>
+<section id="problem-5" class="level3" data-number="1.7.5">
+<h3 data-number="1.7.5" class="anchored" data-anchor-id="problem-5"><span class="header-section-number">1.7.5</span> Problem 5</h3>
+<p>In statistical theory, a common requirement is that a matrix be of full rank. That is, the rank should be as large as possible. Explain why an <span class="math inline">m \times n</span> matrix with more rows than columns has full rank if and only if its columns are linearly independent.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -468,40 +517,22 @@ Solution
 </div>
 <div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The space <span class="math inline">\mathbb{R}^3</span> requires three linearly independent vectors to span it fully. Since the standard basis <span class="math inline">\{\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}\}</span> spans <span class="math inline">\mathbb{R}^3</span> and no subset of these vectors can do so, they form a basis, making <span class="math inline">\dim \mathbb{R}^3 = 3</span>.</p>
+<p>An <span class="math inline">m \times n</span> matrix <span class="math inline">A</span> (where <span class="math inline">m &gt; n</span>) has full rank when <span class="math inline">\text{rank}(A) = n</span>, which implies that the columns span an <span class="math inline">n</span>-dimensional space. This is only possible if the columns are linearly independent; otherwise, the rank would be less than <span class="math inline">n</span>. If the columns are linearly dependent, at least one column can be expressed as a linear combination of others, reducing the rank. Therefore, full rank requires that the columns be linearly independent.</p>
 </div>
 </div>
 </div>
+<hr>
 </section>
-<section id="problem-3-null-space-basis" class="level3" data-number="1.2.3">
-<h3 data-number="1.2.3" class="anchored" data-anchor-id="problem-3-null-space-basis"><span class="header-section-number">1.2.3</span> Problem 3: Null Space Basis</h3>
-<p>Find a basis for the null space of: <span class="math display">
-A = \begin{bmatrix} 1 &amp; 2 &amp; 3 \\ 2 &amp; 4 &amp; 6 \end{bmatrix}
-</span></p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Solution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<ol type="1">
-<li>Row reduce to: <span class="math inline">\begin{bmatrix} 1 &amp; 2 &amp; 3 \\ 0 &amp; 0 &amp; 0 \end{bmatrix}</span></li>
-<li>Free variables: <span class="math inline">y, z</span></li>
-<li>Express <span class="math inline">x</span>: <span class="math inline">x = -2y - 3z</span></li>
-<li>Basis: <span class="math inline">\left\{\begin{bmatrix} -2 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} -3 \\ 0 \\ 1 \end{bmatrix}\right\}</span></li>
-</ol>
-</div>
-</div>
-</div>
+</section>
+<section id="additional-resources" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="additional-resources"><span class="header-section-number">1.8</span> Additional Resources</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=kjBOesZCoqc">3Blue1Brown - Essence of Linear Algebra (YouTube)</a></li>
+<li><a href="https://www.youtube.com/playlist?list=PL1328115D3D8A2566">Khan Academy - Linear Algebra (YouTube)</a></li>
+<li><a href="https://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/">MIT OpenCourseWare - Linear Algebra</a></li>
+</ul>
 
 
-</section>
 </section>
 </section>
 

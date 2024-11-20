@@ -29,5 +29,11 @@
   },
   "determinants.qmd": {
     "determinants.html": "b866eef7"
+  },
+  "rank.qmd": {
+    "rank.html": "5ce8cc6d"
+  },
+  "predicting_the_future.qmd": {
+    "predicting_the_future.html": "3e5414a2"
   }
 }

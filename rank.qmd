@@ -1,0 +1,149 @@
+---
+title: "Rank in Linear Algebra"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    html-math-method: katex
+---
+
+# Rank in Linear Algebra
+
+## Introduction
+The concept of **rank** is central to linear algebra and provides insight into the structure and properties of matrices, particularly in the context of solutions to systems of linear equations. Rank helps define dimensions of subspaces formed by the matrix rows or columns and plays a role in determining matrix invertibility.
+
+## Key Concepts and Definitions
+
+### Row Space and Column Space
+::: {.callout-note}
+**Definition**: For a matrix $A$, the **row space** is the set of all linear combinations of its rows, and the **column space** is the set of all linear combinations of its columns. These spaces represent the span of the row and column vectors and define the respective dimensions of the space. For any matrix $A$, if we denote the row space by Row(A) and the column space by Col(A), these spaces are essential in defining the matrix’s rank.
+:::
+
+### Rank of a Matrix
+::: {.callout-note}
+**Definition**: The **rank** of a matrix $A$, denoted $\text{rank}(A)$, is the dimension of its column space (or equivalently, the row space). This dimension is also equal to the number of pivot positions in the matrix when it is in echelon form.
+:::
+
+### Null Space and Nullity
+::: {.callout-note}
+**Definition**: The **null space** of a matrix $A$, denoted Nul(A), is the set of all vectors $x$ such that $A \cdot x = 0$. The **nullity** of $A$ is the dimension of the null space and is related to the rank by the Rank-Nullity Theorem.
+:::
+
+## Effects of Row Operations on Rank
+Row operations do not change the row space or rank of a matrix. Thus, row-equivalent matrices share the same row space and rank. This property is particularly useful for transforming matrices to row echelon form or reduced row echelon form to determine rank.
+
+## Important Theorems
+
+### The Rank Theorem
+::: {.callout-tip}
+For an $m \times n$ matrix $A$, the rank theorem states that:
+
+$\text{rank}(A) + \text{dim Nul}(A) = n$
+
+This relationship shows that the sum of the dimensions of the column space and null space equals the number of columns in the matrix. This theorem is fundamental for analyzing solutions to linear systems.
+:::
+
+### The Invertible Matrix Theorem (IMT) - Rank Conditions
+::: {.callout-tip}
+The Invertible Matrix Theorem provides several conditions that are equivalent to the invertibility of an $n \times n$ matrix $A$. Among these are the rank conditions:
+
+1. The columns of $A$ form a basis for $\mathbb{R}^n$.
+2. $\text{Col}(A) = \mathbb{R}^n$.
+3. $\text{dim Col}(A) = n$.
+4. $\text{rank}(A) = n$.
+5. $\text{Nul}(A) = \{0\}$.
+6. $\text{dim Nul}(A) = 0$.
+:::
+
+## Relationship Between Rank and Solutions to Linear Systems
+
+- **Unique Solution**: If the rank of the coefficient matrix equals the number of variables, and the system is consistent, there is a unique solution.
+- **Infinitely Many Solutions**: If the rank of the matrix is less than the number of variables, there are infinitely many solutions.
+- **No Solution**: If the rank of the augmented matrix is greater than the rank of the coefficient matrix, the system is inconsistent.
+
+## Special Cases or Applications
+
+### Full Rank Matrix
+
+- **Full Row Rank**: For a matrix with rank equal to the number of rows (full row rank), every row is linearly independent.
+- **Full Column Rank**: For a matrix with rank equal to the number of columns (full column rank), every column is linearly independent, implying invertibility for square matrices.
+
+### Determinant and Rank for Square Matrices
+
+For a square matrix $A$:
+
+- If $\text{det}(A) \neq 0$, then $\text{rank}(A) = n$ (full rank), and $A$ is invertible.
+- If $\text{det}(A) = 0$, then $\text{rank}(A) < n$, and $A$ is singular (non-invertible).
+
+Here's the updated section for your Quarto study sheet with the new problems and their solutions:
+
+---
+
+## Practice Problems
+
+### Problem 1
+For a $6 \times 3$ matrix $A$ with rank 3, determine:
+
+1. $\text{dim Nul}(A)$
+2. $\text{dim Row}(A)$
+3. $\text{rank}(A^T)$
+
+::: {.callout-note collapse="true"}
+#### Solution
+
+1. $\text{dim Nul}(A) = 0$ since $\text{rank}(A) = 3$.
+2. $\text{dim Row}(A) = 3$.
+3. $\text{rank}(A^T) = 3$, as rank remains the same under transposition.
+:::
+
+### Problem 2
+If the null space of a $7 \times 6$ matrix $A$ is 5-dimensional, what is $\text{dim Col}(A)$?
+
+::: {.callout-note collapse="true"}
+#### Solution
+Using the Rank-Nullity Theorem:
+$text{rank}(A) + \text{dim Nul}(A) = 6$
+Since $\text{dim Nul}(A) = 5$, $\text{rank}(A) = 1$, so $\text{dim Col}(A) = 1$.
+:::
+
+### Problem 3
+If $A$ is a $6 \times 4$ matrix, what is the smallest possible dimension of Nul(A)?
+
+::: {.callout-note collapse="true"}
+#### Solution
+The smallest possible dimension of Nul(A) is 0 if $\text{rank}(A) = 4$, meaning the matrix has full column rank.
+:::
+
+### Problem 4
+Suppose the solutions of a homogeneous system of five linear equations in six unknowns are all multiples of one nonzero solution. 
+Will the system necessarily have a solution for every possible choice of constants on the right sides of the equations? Explain.
+
+::: {.callout-note collapse="true"}
+#### Solution
+The system does not necessarily have a solution for every possible choice of constants. The key observation is that the homogeneous 
+system has a null space of dimension 1, as all solutions are multiples of one nonzero solution. For the inhomogeneous system to
+have a solution for every choice of constants, the coefficient matrix must have full row rank (rank 5). However, since there are 6 
+unknowns, the rank cannot exceed 5, leaving one degree of freedom in the solution space. This means there may exist some choices of 
+constants for which the system is inconsistent.
+:::
+
+### Problem 5
+In statistical theory, a common requirement is that a matrix be of full rank. That is, the rank should be as large as possible. 
+Explain why an $m \times n$ matrix with more rows than columns has full rank if and only if its columns are linearly independent.
+
+::: {.callout-note collapse="true"}
+#### Solution
+An $m \times n$ matrix $A$ (where $m > n$) has full rank when $\text{rank}(A) = n$, which implies that the columns span an 
+$n$-dimensional space. This is only possible if the columns are linearly independent; otherwise, the rank would be less than $n$. 
+If the columns are linearly dependent, at least one column can be expressed as a linear combination of others, reducing the 
+rank. Therefore, full rank requires that the columns be linearly independent.
+:::
+
+--- 
+
+## Additional Resources
+
+- [3Blue1Brown - Essence of Linear Algebra (YouTube)](https://www.youtube.com/watch?v=kjBOesZCoqc)
+- [Khan Academy - Linear Algebra (YouTube)](https://www.youtube.com/playlist?list=PL1328115D3D8A2566)
+- [MIT OpenCourseWare - Linear Algebra](https://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/)

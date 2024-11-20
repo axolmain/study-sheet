@@ -1,5 +1,5 @@
 ---
-title: "Eigenvalues and Eigenvectors"
+title: "Eigenvalues and Eigenvectors in Linear Algebra"
 format:
   html:
     toc: true
@@ -8,39 +8,222 @@ format:
     html-math-method: katex
 ---
 
-# Conceptual Understanding
-## What are Eigenvalues and Eigenvectors?
-- **Definitions**: For a matrix $A$, an eigenvector $\mathbf{v}$ satisfies $A\mathbf{v} = \lambda \mathbf{v}$, where $\lambda$ is a scalar called the eigenvalue associated with $\mathbf{v}$.
-- **Geometric Interpretation**: Eigenvectors represent directions that are stretched or compressed by the transformation $A$ without changing direction, while eigenvalues indicate the scaling factor.
-- **Importance**: Eigenvalues and eigenvectors are crucial for understanding stability, resonance, and other dynamic behaviors in systems.
+# Eigenvalues and Eigenvectors in Linear Algebra
 
-## Finding Eigenvalues
-- **Characteristic Equation**: The eigenvalues of $A$ are solutions to $\det(A - \lambda I) = 0$.
-- **Properties**: Real eigenvalues indicate scaling, while complex eigenvalues often signify rotations.
+## Introduction
 
-# Common Applications
-### Population Growth
-Eigenvalues of a transition matrix indicate growth or decay rates in population models.
+Eigenvalues and eigenvectors are fundamental concepts in linear algebra that help us understand how linear transformations affect vector spaces. They are particularly useful in analyzing linear operators and their behavior on invariant subspaces.
 
-### Principal Component Analysis
-In data science, eigenvalues of covariance matrices help determine directions of maximum variance, reducing dimensionality.
+I'll expand your request with collapsible example sections for each concept, showing detailed step-by-step calculations.
 
-# Step-by-Step Examples
-## 2×2 Matrix Example
-For $A = \begin{pmatrix} 4 & 1 \\ 2 & 3 \end{pmatrix}$, find the eigenvalues by solving $\det(A - \lambda I) = 0$.
+## Key Concepts and Definitions
 
-## Diagonalization
-The process of diagonalizing $A = PDP^{-1}$ when possible. Only matrices with a full set of linearly independent eigenvectors are diagonalizable.
+### Eigenvalues
+::: {.callout-note}
+**Definition**: A scalar $\lambda \in \mathbb{R}$ is called an eigenvalue of operator $T: V \to V$ if there exists a nonzero vector $\mathbf{u} \in V$ such that $T\mathbf{u} = \lambda\mathbf{u}$.
+:::
 
-# Interactive Elements
-- **Visual Representation**: Show eigenvectors for transformations on vectors.
-- **Practice Problems**: Include exercises for finding characteristic polynomials and eigenvectors.
+<details>
+<summary>Example: Finding Eigenvalues</summary>
 
-# Connections to Other Topics
-- **Matrix Transformations**: Eigenvalues indicate stretching along specific directions.
-- **Determinants**: The product of eigenvalues equals the determinant of the matrix.
+Let's find the eigenvalues of matrix $A = \begin{pmatrix} 3 & 1 \\ 1 & 3 \end{pmatrix}$
 
-# Summary
-- **Eigenvalues and Eigenvectors**: Reveal directions and scaling of transformations.
-- **Key Process**: Use characteristic polynomials to find eigenvalues.
-- **Applications**: From stability analysis to machine learning.
+1) Set up characteristic equation: $det(A - \lambda I) = 0$
+
+2) Expand determinant:
+   $$det\begin{pmatrix} 3-\lambda & 1 \\ 1 & 3-\lambda \end{pmatrix} = 0$$
+   $$(3-\lambda)(3-\lambda) - (1)(1) = 0$$
+
+3) Solve polynomial:
+   $$\lambda^2 - 6\lambda + 8 = 0$$
+   $$(\lambda - 4)(\lambda - 2) = 0$$
+   $$\lambda = 4 \text{ or } \lambda = 2$$
+
+Therefore, the eigenvalues are $\lambda_1 = 4$ and $\lambda_2 = 2$
+</details>
+
+### Eigenvectors
+::: {.callout-note}
+**Definition**: For an eigenvalue $\lambda$ of matrix $A$, a vector $\mathbf{x} \in V$ is called an eigenvector of $A$ (corresponding to $\lambda$) if $A\mathbf{x} = \lambda\mathbf{x}$.
+:::
+
+<details>
+<summary>Example: Finding Eigenvectors</summary>
+
+Using the same matrix $A = \begin{pmatrix} 3 & 1 \\ 1 & 3 \end{pmatrix}$ and $\lambda_1 = 4$:
+
+1) Set up equation $(A - \lambda I)\mathbf{x} = \mathbf{0}$:
+   $$\begin{pmatrix} 3-4 & 1 \\ 1 & 3-4 \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}$$
+
+2) Simplify system of equations:
+   $$\begin{pmatrix} -1 & 1 \\ 1 & -1 \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}$$
+
+3) Solve system:
+   $$-x_1 + x_2 = 0$$
+   $$x_1 = x_2$$
+
+4) Choose a non-zero solution:
+   Let $x_1 = 1$, then $x_2 = 1$
+   
+Therefore, $\mathbf{v}_1 = \begin{pmatrix} 1 \\ 1 \end{pmatrix}$ is an eigenvector for $\lambda_1 = 4$
+</details>
+
+### Eigenspace
+::: {.callout-note}
+**Definition**: The eigenspace of matrix $A$ corresponding to eigenvalue $\lambda$ is the set of all solutions to $(A - \lambda I)\mathbf{x} = \mathbf{0}$, which is equivalent to $\text{Nul}(A - \lambda I)$.
+:::
+
+<details>
+<summary>Example: Finding Eigenspace</summary>
+
+For the same matrix $A = \begin{pmatrix} 3 & 1 \\ 1 & 3 \end{pmatrix}$ and $\lambda_1 = 4$:
+
+1) Form $A - \lambda I$:
+   $$A - 4I = \begin{pmatrix} -1 & 1 \\ 1 & -1 \end{pmatrix}$$
+
+2) Find general solution to $(A - 4I)\mathbf{x} = \mathbf{0}$:
+   $$\begin{pmatrix} -1 & 1 \\ 1 & -1 \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}$$
+
+3) Row reduce to find basis:
+   - From earlier, we found $x_1 = x_2$
+   - Let $t$ be a free parameter
+
+4) Express eigenspace:
+   $$E_4 = \text{span}\left\{\begin{pmatrix} 1 \\ 1 \end{pmatrix}\right\}$$
+   $$= \left\{t\begin{pmatrix} 1 \\ 1 \end{pmatrix} : t \in \mathbb{R}\right\}$$
+
+This is the complete eigenspace corresponding to $\lambda_1 = 4$
+</details>
+
+## Important Theorems
+
+### Theorem 1: Eigenvalues of Triangular Matrices
+**Statement**: The eigenvalues of a triangular matrix are the entries on its main diagonal.
+
+::: {.callout-note}
+#### Proof
+Let $T: V \to V$ have an upper-triangular matrix $A$ with respect to some basis $\{\mathbf{v}_1, \ldots, \mathbf{v}_n\}$:
+
+$$A = \begin{bmatrix} 
+\lambda_1 & * & \cdots & * \\
+0 & \lambda_2 & \cdots & * \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \cdots & \lambda_n
+\end{bmatrix}$$
+
+For any $\lambda \in \mathbb{R}$, $A - \lambda I$ has the form:
+$$A - \lambda I = \begin{bmatrix} 
+\lambda_1 - \lambda & * & \cdots & * \\
+0 & \lambda_2 - \lambda & \cdots & * \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \cdots & \lambda_n - \lambda
+\end{bmatrix}$$
+
+$A - \lambda I$ is not invertible if and only if $\lambda$ equals one of the $\lambda_i$'s (since $\det(A - \lambda I) = \prod_{i=1}^n (\lambda_i - \lambda)$).
+Therefore, $\lambda$ is an eigenvalue of $T$ if and only if $\lambda$ equals one of the diagonal entries $\lambda_i$.
+:::
+
+### Theorem 2: Linear Independence of Eigenvectors
+**Statement**: If $\mathbf{v}_1, \ldots, \mathbf{v}_r$ are eigenvectors that correspond to distinct eigenvalues $\lambda_1, \ldots, \lambda_r$ of an $n \times n$ matrix $A$, then the set $\{\mathbf{v}_1, \ldots, \mathbf{v}_r\}$ is linearly independent.
+
+::: {.callout-note}
+#### Proof
+1. Assume by contradiction that $\{\mathbf{v}_1, \ldots, \mathbf{v}_r\}$ is linearly dependent
+2. Let $k$ be smallest positive integer such that $\mathbf{v}_k \in \text{Span}\{\mathbf{v}_1, \ldots, \mathbf{v}_{k-1}\}$
+3. Then there exist scalars $a_1, \ldots, a_{k-1}$ such that:
+   $\mathbf{v}_k = a_1\mathbf{v}_1 + \cdots + a_{k-1}\mathbf{v}_{k-1}$
+4. Apply $A$ to both sides:
+   $\lambda_k\mathbf{v}_k = a_1\lambda_1\mathbf{v}_1 + \cdots + a_{k-1}\lambda_{k-1}\mathbf{v}_{k-1}$
+5. Multiply original equation by $\lambda_k$ and subtract:
+   $\mathbf{0} = a_1(\lambda_k - \lambda_1)\mathbf{v}_1 + \cdots + a_{k-1}(\lambda_k - \lambda_{k-1})\mathbf{v}_{k-1}$
+6. Since $\{\mathbf{v}_1, \ldots, \mathbf{v}_{k-1}\}$ is linearly independent and $\lambda_k \neq \lambda_i$ for $i < k$, all $a_i$ must be 0
+7. This implies $\mathbf{v}_k = \mathbf{0}$, contradicting that $\mathbf{v}_k$ is an eigenvector
+Therefore, $\{\mathbf{v}_1, \ldots, \mathbf{v}_r\}$ must be linearly independent
+:::
+
+## Practice Problems
+
+### Problem 1: Zero Eigenvalue
+
+::: {.callout-note collapse="true"}
+#### Problem
+What does it mean for a matrix $A$ to have an eigenvalue of 0?
+
+#### Solution
+For $\lambda = 0$ to be an eigenvalue of $A$:
+
+1. There must exist a nonzero vector $\mathbf{x}$ such that $A\mathbf{x} = 0\mathbf{x} = \mathbf{0}$
+2. This means $\mathbf{x} \in \text{Nul}(A)$, and $\mathbf{x} \neq \mathbf{0}$
+3. Therefore, $A$ having an eigenvalue of 0 means:
+   - $A$ is not invertible
+   - $A$ has a nontrivial null space
+   - $\det(A) = 0$
+   - $A$ is singular
+
+Example:
+Consider $A = \begin{bmatrix} 1 & 2 \\ -2 & -4 \end{bmatrix}$
+- $\det(A) = 1(-4) - 2(-2) = -4 + 4 = 0$
+- The vector $\begin{bmatrix} 2 \\ 1 \end{bmatrix}$ is in $\text{Nul}(A)$
+- Therefore, 0 is an eigenvalue with eigenvector $\begin{bmatrix} 2 \\ 1 \end{bmatrix}$
+:::
+
+### Problem 2: First-Order Difference Equations
+
+::: {.callout-note collapse="true"}
+#### Problem
+Given a first-order difference equation $\mathbf{x}_{k+1} = A\mathbf{x}_k$, where $A$ is an $n\times n$ matrix, explain how to construct solutions.
+
+#### Solution
+1. Find eigenvalues $\lambda_i$ and corresponding eigenvectors $\mathbf{v}_i$ of $A$
+2. Any solution has the form:
+   $\mathbf{x}_k = c_1\lambda_1^k\mathbf{v}_1 + c_2\lambda_2^k\mathbf{v}_2 + \cdots + c_n\lambda_n^k\mathbf{v}_n$
+   where $c_i$ are constants determined by initial conditions
+
+Example:
+For $A = \begin{bmatrix} 2 & 1 \\ -1 & 4 \end{bmatrix}$, let's find solution with $\mathbf{x}_0 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}$:
+1. Find eigenvalues: $\lambda = 3,1$
+2. Find eigenvectors: $\mathbf{v}_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}$, $\mathbf{v}_2 = \begin{bmatrix} 1 \\ -1 \end{bmatrix}$
+3. Write $\mathbf{x}_0 = c_1\mathbf{v}_1 + c_2\mathbf{v}_2$
+4. Solve for $c_i$: $\begin{bmatrix} 1 \\ 0 \end{bmatrix} = c_1\begin{bmatrix} 1 \\ 1 \end{bmatrix} + c_2\begin{bmatrix} 1 \\ -1 \end{bmatrix}$
+5. Get $c_1 = \frac{1}{2}$, $c_2 = \frac{1}{2}$
+6. Solution: $\mathbf{x}_k = \frac{1}{2}(3^k)\begin{bmatrix} 1 \\ 1 \end{bmatrix} + \frac{1}{2}(1^k)\begin{bmatrix} 1 \\ -1 \end{bmatrix}$
+:::
+
+### Problem 3: Determining if λ is an Eigenvalue
+
+::: {.callout-note collapse="true"}
+#### Problem
+Determine if $\lambda = 2$ is an eigenvalue of $A = \begin{bmatrix} 3 & 1 \\ -1 & 5 \end{bmatrix}$
+
+#### Solution
+Step 1: Form $A - 2I$
+$$A - 2I = \begin{bmatrix} 1 & 1 \\ -1 & 3 \end{bmatrix}$$
+
+Step 2: Calculate $\det(A - 2I)$
+$\det(A - 2I) = (1)(3) - (1)(-1) = 3 + 1 = 4$
+
+Step 3: Conclusion
+Since $\det(A - 2I) \neq 0$, $\lambda = 2$ is not an eigenvalue of $A$
+
+Alternative method:
+1. Find characteristic equation: $\det(A - \lambda I) = 0$
+2. $(3-\lambda)(5-\lambda) - (-1)(1) = 0$
+3. $\lambda^2 - 8\lambda + 14 = 0$
+4. $\lambda = 4 \pm \sqrt{2}$
+Therefore, 2 is not an eigenvalue
+:::
+
+## Common Mistakes to Avoid
+
+1. Not checking if eigenvector is nonzero
+2. Assuming eigenvalues must be on the main diagonal (only true for triangular matrices)
+3. Forgetting that eigenvectors corresponding to the same eigenvalue might be linearly dependent
+4. Not verifying that λ is a real number when working in real vector spaces
+5. Confusing eigenspace with the span of eigenvectors
+
+## Additional Resources
+
+- [3Blue1Brown - Essence of Linear Algebra (YouTube)](https://www.youtube.com/watch?v=kjBOesZCoqc)
+- Gilbert Strang's Linear Algebra Lectures (MIT OpenCourseWare)
+- "Introduction to Probability" by Bertsekas and Tsitsiklis
+- "Matrix Analysis" by Horn and Johnson

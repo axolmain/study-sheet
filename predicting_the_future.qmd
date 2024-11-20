@@ -1,0 +1,168 @@
+---
+title: "Probability with Vectors/Matrices in Linear Algebra"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    html-math-method: katex
+---
+
+# Probability with Vectors/Matrices in Linear Algebra
+
+## Introduction
+
+The intersection of probability theory and linear algebra provides powerful tools for analyzing stochastic processes and Markov chains. This study guide explores how vectors and matrices can represent probabilistic systems and help us understand their behavior over time.
+
+## Key Concepts and Definitions
+
+### Probability Vectors
+::: {.callout-note}
+**Definition**: A probability vector is a column vector $p = [p_1, p_2, ..., p_n]^T$ where:
+
+1. All components are non-negative: $p_i \geq 0$ for all $i$
+2. The sum of all components equals 1: $\sum_{i=1}^n p_i = 1$
+
+These vectors represent probability distributions over a finite set of states.
+:::
+
+### Stochastic Matrix
+::: {.callout-note}
+**Definition**: A stochastic matrix (or probability matrix) $P$ is a square matrix where:
+
+1. All entries are non-negative: $p_{ij} \geq 0$ for all $i,j$
+2. Each row sums to 1: $\sum_{j=1}^n p_{ij} = 1$ for all $i$
+
+The entry $p_{ij}$ represents the probability of transitioning from state $i$ to state $j$.
+:::
+
+### Steady State Vector
+::: {.callout-note}
+**Definition**: A steady state vector (or stationary distribution) $q$ is a probability vector that satisfies:
+$q^T P = q^T$ or $Pq = q$
+
+This vector represents the long-term probabilities of being in each state, regardless of the initial state.
+:::
+
+### Markov Chains
+::: {.callout-note}
+**Definition**: A Markov chain is a sequence of random variables $\{X_n\}$ where:
+
+1. The probability of the next state depends only on the current state (Markov property)
+2. These probabilities are represented by a stochastic matrix $P$
+3. The state probabilities at time $n$ are given by $x_n = P^n x_0$, where $x_0$ is the initial distribution
+:::
+
+### Regular Stochastic Matrix
+::: {.callout-note}
+**Definition**: A regular stochastic matrix is a stochastic matrix $P$ that satisfies the following condition:
+
+1. There exists a positive integer $k$ such that all entries of $P^k$ are strictly positive: $(P^k)_{ij} > 0$ for all $i, j$.
+
+This property ensures that, regardless of the initial state, the Markov chain associated with $P$ will converge to a unique steady-state vector as $n \to \infty$.
+:::
+
+
+
+## Relationship to other Linear Algebra topics
+
+### Similarity Transformations
+::: {.callout-note}
+**Definition**: Two matrices $A$ and $B$ are similar if there exists an invertible matrix $P$ such that 
+$B = P^{-1}AP$. Similar matrices share important properties like rank, determinant, and eigenvalues.
+:::
+
+### Eigenvalues and Eigenvectors:
+::: {.callout-note}
+**Definition**: For stochastic matrices:
+
+1. The largest eigenvalue is always $1$
+2. All eigenvalues have absolute value $≤ 1$
+3. The steady state vector is an eigenvector corresponding to eigenvalue $1$
+:::
+
+## Important Theorems
+
+### Theorem 18 (Fundamental Theorem of Markov Chains)
+::: {.callout-tip}
+If $P$ is an $n \times n$ regular stochastic matrix, then $P$ has a unique steady-state vector
+$q$. Further, if $x_0$ is any initial state and $x_{k + 1} = Px_k$ for $k = 0, 1, 2, \dots$, then the
+Markov chain $\{x_k\}$ converges to $q$ as $k \rightarrow \infty$.
+:::
+
+### Perron-Frobenius Theorem
+::: {.callout-tip}
+For a positive stochastic matrix:
+
+1. The spectral radius (largest eigenvalue) equals 1
+2. The corresponding eigenvector has all positive entries
+3. This eigenvalue-eigenvector pair is unique
+:::
+
+## Special Cases or Applications
+
+### Google PageRank Algorithm
+The PageRank algorithm uses a modified stochastic matrix to rank web pages. The steady state vector gives the importance scores of pages.
+
+### Population Growth Models
+Leslie matrices (a type of stochastic matrix) model population dynamics in age-structured populations.
+
+### Economic Models
+Input-output models in economics use stochastic matrices to represent flows between economic sectors.
+
+## Practice Problems
+
+### Problem 1
+Given the stochastic matrix:
+$$P = \begin{bmatrix} 
+0.7 & 0.3 \\
+0.4 & 0.6
+\end{bmatrix}$$
+Find its steady state vector.
+
+::: {.callout-note collapse="true"}
+#### Solution
+
+1. Let $q = [x, y]^T$ be the steady state vector
+2. Write $Pq = q$:
+   $$\begin{bmatrix} 0.7x + 0.3y = x \\ 0.4x + 0.6y = y \end{bmatrix}$$
+3. Use $x + y = 1$
+4. Solve to get $q = [0.571, 0.429]^T$
+:::
+
+### Problem 2
+Show that if $P$ is stochastic, then $P^n$ is also stochastic for any positive integer $n$.
+
+::: {.callout-note collapse="true"}
+#### Solution
+
+1. Use induction on $n$
+2. Base case: True for $n=1$
+3. Inductive step: Show if true for $k$, then true for $k+1$
+4. Use properties of matrix multiplication
+:::
+
+### Problem 3
+For a regular stochastic matrix, prove that 1 is an eigenvalue and all other eigenvalues have absolute value less than 1.
+
+::: {.callout-note collapse="true"}
+#### Solution
+
+1. Show that $(1,v)$ is an eigenvalue-eigenvector pair where $v$ is column of ones
+2. Use Gershgorin's circle theorem to bound other eigenvalues
+3. Use regularity to show strict inequality
+:::
+
+## Additional Resources
+
+- [3Blue1Brown - Essence of Linear Algebra (YouTube)](https://www.youtube.com/watch?v=kjBOesZCoqc)
+- Gilbert Strang's Linear Algebra Lectures (MIT OpenCourseWare)
+- "Introduction to Probability" by Bertsekas and Tsitsiklis
+- "Matrix Analysis" by Horn and Johnson
+
+## Common Mistakes to Avoid
+
+1. Forgetting to verify the stochastic property when computing matrix powers
+2. Misinterpreting steady state probabilities as transition probabilities
+3. Assuming all stochastic matrices have unique steady states (only true for regular matrices)
+4. Neglecting to normalize probability vectors after computations
