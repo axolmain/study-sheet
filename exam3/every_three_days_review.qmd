@@ -1,0 +1,184 @@
+---
+title: "Supporting Topics (Review Twice Weekly)"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    html-math-method: katex
+---
+
+# Advanced Vector Space Topics
+
+## Inner Product Spaces
+
+::: {.callout-note}
+**Definition**: An inner product space is a vector space equipped with an inner product $\langle \mathbf{u}, \mathbf{v} \rangle$ that satisfies:
+1. Symmetry: $\langle \mathbf{u}, \mathbf{v} \rangle = \overline{\langle \mathbf{v}, \mathbf{u} \rangle}$
+2. Linearity: $\langle a\mathbf{u} + \mathbf{w}, \mathbf{v} \rangle = a\langle \mathbf{u}, \mathbf{v} \rangle + \langle \mathbf{w}, \mathbf{v} \rangle$
+3. Positive definiteness: $\langle \mathbf{u}, \mathbf{u} \rangle > 0$ for $\mathbf{u} \neq \mathbf{0}$
+:::
+
+### Properties
+- Norm: $\|\mathbf{v}\| = \sqrt{\langle \mathbf{v}, \mathbf{v} \rangle}$
+- Orthogonality: $\mathbf{u} \perp \mathbf{v}$ if $\langle \mathbf{u}, \mathbf{v} \rangle = 0$
+- Cauchy-Schwarz: $|\langle \mathbf{u}, \mathbf{v} \rangle| \leq \|\mathbf{u}\| \|\mathbf{v}\|$
+
+### Example 1: Standard Inner Product
+For vectors in $\mathbb{R}^n$, find the angle between $\mathbf{u} = \begin{bmatrix} 1 \\ 2 \end{bmatrix}$ and $\mathbf{v} = \begin{bmatrix} 2 \\ 1 \end{bmatrix}$.
+
+:::{.callout-tip collapse="true"}
+#### Solution:
+1. Use the formula: $\cos \theta = \frac{\langle \mathbf{u}, \mathbf{v} \rangle}{\|\mathbf{u}\| \|\mathbf{v}\|}$
+2. Calculate inner product: $\langle \mathbf{u}, \mathbf{v} \rangle = 1(2) + 2(1) = 4$
+3. Calculate norms: 
+   - $\|\mathbf{u}\| = \sqrt{1^2 + 2^2} = \sqrt{5}$
+   - $\|\mathbf{v}\| = \sqrt{2^2 + 1^2} = \sqrt{5}$
+4. Therefore: $\cos \theta = \frac{4}{\sqrt{5}\sqrt{5}} = \frac{4}{5}$
+5. $\theta = \arccos(\frac{4}{5}) \approx 36.9°$
+:::
+
+## Orthogonal Complement
+
+::: {.callout-note}
+**Definition**: The orthogonal complement $W^\perp$ of a subspace $W$ consists of all vectors orthogonal to every vector in $W$.
+:::
+
+### Properties
+- If $W$ is a subspace of $\mathbb{R}^n$, then:
+  1. $\dim(W) + \dim(W^\perp) = n$
+  2. $(W^\perp)^\perp = W$
+  3. $W \cap W^\perp = \{\mathbf{0}\}$
+
+### Example 2: Finding Orthogonal Complement
+Find the orthogonal complement of $W = \text{span}\{\begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix}\}$ in $\mathbb{R}^3$.
+
+:::{.callout-tip collapse="true"}
+#### Solution:
+1. Let $\mathbf{x} = \begin{bmatrix} x \\ y \\ z \end{bmatrix}$ be in $W^\perp$
+2. Then $\langle \mathbf{x}, \begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix} \rangle = 0$
+3. This gives: $x + y = 0$
+4. Therefore: $W^\perp = \text{span}\{\begin{bmatrix} 1 \\ -1 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}\}$
+:::
+
+## Projection
+
+::: {.callout-note}
+**Definition**: The orthogonal projection of $\mathbf{v}$ onto $\mathbf{u}$ is:
+$$\text{proj}_\mathbf{u}(\mathbf{v}) = \frac{\langle \mathbf{v}, \mathbf{u} \rangle}{\langle \mathbf{u}, \mathbf{u} \rangle} \mathbf{u}$$
+:::
+
+### Properties
+1. $\text{proj}_\mathbf{u}(\mathbf{v})$ is parallel to $\mathbf{u}$
+2. $\mathbf{v} - \text{proj}_\mathbf{u}(\mathbf{v})$ is orthogonal to $\mathbf{u}$
+3. $\|\text{proj}_\mathbf{u}(\mathbf{v})\| \leq \|\mathbf{v}\|$
+
+# Matrix Decompositions
+
+## LU Decomposition
+
+::: {.callout-note}
+**Definition**: For a square matrix $A$, the LU decomposition is $A = LU$ where:
+- $L$ is lower triangular with 1's on diagonal
+- $U$ is upper triangular
+:::
+
+### Example 3: LU Decomposition
+Find the LU decomposition of $A = \begin{bmatrix} 2 & 1 \\ 4 & 3 \end{bmatrix}$.
+
+:::{.callout-tip collapse="true"}
+#### Solution:
+1. First row remains unchanged for $U$
+2. Multiply first row by 2 and subtract from second row
+3. Result:
+   $$L = \begin{bmatrix} 1 & 0 \\ 2 & 1 \end{bmatrix}, U = \begin{bmatrix} 2 & 1 \\ 0 & 1 \end{bmatrix}$$
+4. Verify: $LU = A$
+:::
+
+## QR Decomposition
+
+::: {.callout-note}
+**Definition**: For a matrix $A$, the QR decomposition is $A = QR$ where:
+- $Q$ is orthogonal ($Q^TQ = I$)
+- $R$ is upper triangular
+:::
+
+### Applications
+1. Solving linear systems
+2. Least squares problems
+3. Computing eigenvalues (QR algorithm)
+
+## Singular Value Decomposition (SVD)
+
+::: {.callout-note}
+**Definition**: For any matrix $A$, the SVD is $A = U\Sigma V^T$ where:
+- $U$ and $V$ are orthogonal
+- $\Sigma$ is diagonal with non-negative entries (singular values)
+:::
+
+### Properties
+1. Singular values $\sigma_i$ are unique
+2. Number of non-zero singular values = rank of $A$
+3. $\|A\|_2 = \sigma_1$ (largest singular value)
+
+# Special Matrices
+
+## Symmetric Matrices
+
+### Properties
+1. All eigenvalues are real
+2. Eigenvectors of distinct eigenvalues are orthogonal
+3. Diagonalizable with orthogonal eigenvector matrix
+
+### Example 4: Symmetric Matrix Properties
+Verify the properties for $A = \begin{bmatrix} 3 & 1 \\ 1 & 3 \end{bmatrix}$.
+
+:::{.callout-tip collapse="true"}
+#### Solution:
+1. Characteristic equation: $(3-\lambda)^2 - 1 = 0$
+2. Eigenvalues: $\lambda = 4, 2$ (real)
+3. Eigenvectors: $\begin{bmatrix} 1 \\ 1 \end{bmatrix}, \begin{bmatrix} -1 \\ 1 \end{bmatrix}$ (orthogonal)
+:::
+
+## Positive Definite Matrices
+
+### Equivalent Conditions
+1. All eigenvalues are positive
+2. All leading principal minors are positive
+3. $\mathbf{x}^T A \mathbf{x} > 0$ for all non-zero $\mathbf{x}$
+4. Existence of unique Cholesky decomposition $A = LL^T$
+
+# Applications
+
+## Systems of Linear ODEs
+
+### General Form
+$$\frac{d\mathbf{x}}{dt} = A\mathbf{x}$$
+
+### Solution Method
+1. Find eigenvalues and eigenvectors of $A$
+2. Solution: $\mathbf{x}(t) = c_1e^{\lambda_1t}\mathbf{v}_1 + c_2e^{\lambda_2t}\mathbf{v}_2$
+
+### Example 5: Solving System of ODEs
+Solve $\begin{bmatrix} x'(t) \\ y'(t) \end{bmatrix} = \begin{bmatrix} 1 & 2 \\ 2 & 1 \end{bmatrix}\begin{bmatrix} x(t) \\ y(t) \end{bmatrix}$
+
+:::{.callout-tip collapse="true"}
+#### Solution:
+1. Eigenvalues: $\lambda = 3, -1$
+2. Eigenvectors: $\mathbf{v}_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}, \mathbf{v}_2 = \begin{bmatrix} -1 \\ 1 \end{bmatrix}$
+3. General solution: $\mathbf{x}(t) = c_1e^{3t}\begin{bmatrix} 1 \\ 1 \end{bmatrix} + c_2e^{-t}\begin{bmatrix} -1 \\ 1 \end{bmatrix}$
+:::
+
+# Practice Problems
+
+1. Find the orthogonal complement of $W = \text{span}\{\begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}\}$ in $\mathbb{R}^3$.
+
+2. Compute the QR decomposition of $A = \begin{bmatrix} 1 & 1 \\ 0 & 1 \end{bmatrix}$.
+
+3. Show that $A = \begin{bmatrix} 2 & -1 \\ -1 & 2 \end{bmatrix}$ is positive definite.
+
+4. Solve the system $\mathbf{x}'(t) = \begin{bmatrix} 0 & 1 \\ -1 & 0 \end{bmatrix}\mathbf{x}(t)$.
+
+<div style="text-align: right;">
+  <a href="semi_daily_review.qmd" style="font-size: 16px; color: #6c757d; text-decoration: none;">← Supporting Topics</a>
+</div>

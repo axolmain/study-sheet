@@ -138,6 +138,29 @@ window.Quarto = {
 <span class="menu-text">Concept Connections</span></a>
   </li>  
   <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-exam-prep" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Exam Prep</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-exam-prep">    
+        <li>
+    <a class="dropdown-item" href="./exam3/notecard_topics.html">
+ <span class="dropdown-text">Exam 3 - Notecard</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./exam3/daily_review.html">
+ <span class="dropdown-text">Exam 3 - Critical Foundations</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./exam3/semi_daily_review.html">
+ <span class="dropdown-text">Exam 3 - Important Applications</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./exam3/every_three_days_review.html">
+ <span class="dropdown-text">Exam 3 - Supporting Topics</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-topics" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Topics</span>
     </a>
@@ -164,7 +187,7 @@ window.Quarto = {
   </li>  
         <li>
     <a class="dropdown-item" href="./linear_equations.html">
- <span class="dropdown-text">Basic Linear equations</span></a>
+ <span class="dropdown-text">Basic Linear Equations</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./determinants.html">
@@ -176,7 +199,7 @@ window.Quarto = {
   </li>  
         <li>
     <a class="dropdown-item" href="./predicting_the_future.html">
- <span class="dropdown-text">Predicting The Future</span></a>
+ <span class="dropdown-text">Predicting the Future</span></a>
   </li>  
     </ul>
   </li>
@@ -297,10 +320,10 @@ Note
 <summary>
 Example: Finding Eigenvalues
 </summary>
-<p>Let’s find the eigenvalues of matrix <span class="math inline">A = \begin{pmatrix} 3 &amp; 1 \\ 1 &amp; 3 \end{pmatrix}</span></p>
+<p>Let’s find the eigenvalues of matrix <span class="math inline">A = \begin{bmatrix} 3 &amp; 1 \\ 1 &amp; 3 \end{bmatrix}</span></p>
 <ol type="1">
 <li><p>Set up characteristic equation: <span class="math inline">det(A - \lambda I) = 0</span></p></li>
-<li><p>Expand determinant: <span class="math display">det\begin{pmatrix} 3-\lambda &amp; 1 \\ 1 &amp; 3-\lambda \end{pmatrix} = 0</span> <span class="math display">(3-\lambda)(3-\lambda) - (1)(1) = 0</span></p></li>
+<li><p>Expand determinant: <span class="math display">det\begin{bmatrix} 3-\lambda &amp; 1 \\ 1 &amp; 3-\lambda \end{bmatrix} = 0</span> <span class="math display">(3-\lambda)(3-\lambda) - (1)(1) = 0</span></p></li>
 <li><p>Solve polynomial: <span class="math display">\lambda^2 - 6\lambda + 8 = 0</span> <span class="math display">(\lambda - 4)(\lambda - 2) = 0</span> <span class="math display">\lambda = 4 \text{ or } \lambda = 2</span></p></li>
 </ol>
 Therefore, the eigenvalues are <span class="math inline">\lambda_1 = 4</span> and <span class="math inline">\lambda_2 = 2</span>
@@ -325,14 +348,14 @@ Note
 <summary>
 Example: Finding Eigenvectors
 </summary>
-<p>Using the same matrix <span class="math inline">A = \begin{pmatrix} 3 &amp; 1 \\ 1 &amp; 3 \end{pmatrix}</span> and <span class="math inline">\lambda_1 = 4</span>:</p>
+<p>Using the same matrix <span class="math inline">A = \begin{bmatrix} 3 &amp; 1 \\ 1 &amp; 3 \end{bmatrix}</span> and <span class="math inline">\lambda_1 = 4</span>:</p>
 <ol type="1">
-<li><p>Set up equation <span class="math inline">(A - \lambda I)\mathbf{x} = \mathbf{0}</span>: <span class="math display">\begin{pmatrix} 3-4 &amp; 1 \\ 1 &amp; 3-4 \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}</span></p></li>
-<li><p>Simplify system of equations: <span class="math display">\begin{pmatrix} -1 &amp; 1 \\ 1 &amp; -1 \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}</span></p></li>
+<li><p>Set up equation <span class="math inline">(A - \lambda I)\mathbf{x} = \mathbf{0}</span>: <span class="math display">\begin{bmatrix} 3-4 &amp; 1 \\ 1 &amp; 3-4 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}</span></p></li>
+<li><p>Simplify system of equations: <span class="math display">\begin{bmatrix} -1 &amp; 1 \\ 1 &amp; -1 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}</span></p></li>
 <li><p>Solve system: <span class="math display">-x_1 + x_2 = 0</span> <span class="math display">x_1 = x_2</span></p></li>
 <li><p>Choose a non-zero solution: Let <span class="math inline">x_1 = 1</span>, then <span class="math inline">x_2 = 1</span></p></li>
 </ol>
-Therefore, <span class="math inline">\mathbf{v}_1 = \begin{pmatrix} 1 \\ 1 \end{pmatrix}</span> is an eigenvector for <span class="math inline">\lambda_1 = 4</span>
+Therefore, <span class="math inline">\mathbf{v}_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}</span> is an eigenvector for <span class="math inline">\lambda_1 = 4</span>
 </details>
 </section>
 <section id="eigenspace" class="level3" data-number="1.2.3">
@@ -354,16 +377,16 @@ Note
 <summary>
 Example: Finding Eigenspace
 </summary>
-<p>For the same matrix <span class="math inline">A = \begin{pmatrix} 3 &amp; 1 \\ 1 &amp; 3 \end{pmatrix}</span> and <span class="math inline">\lambda_1 = 4</span>:</p>
+<p>For the same matrix <span class="math inline">A = \begin{bmatrix} 3 &amp; 1 \\ 1 &amp; 3 \end{bmatrix}</span> and <span class="math inline">\lambda_1 = 4</span>:</p>
 <ol type="1">
-<li><p>Form <span class="math inline">A - \lambda I</span>: <span class="math display">A - 4I = \begin{pmatrix} -1 &amp; 1 \\ 1 &amp; -1 \end{pmatrix}</span></p></li>
-<li><p>Find general solution to <span class="math inline">(A - 4I)\mathbf{x} = \mathbf{0}</span>: <span class="math display">\begin{pmatrix} -1 &amp; 1 \\ 1 &amp; -1 \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}</span></p></li>
+<li><p>Form <span class="math inline">A - \lambda I</span>: <span class="math display">A - 4I = \begin{bmatrix} -1 &amp; 1 \\ 1 &amp; -1 \end{bmatrix}</span></p></li>
+<li><p>Find general solution to <span class="math inline">(A - 4I)\mathbf{x} = \mathbf{0}</span>: <span class="math display">\begin{bmatrix} -1 &amp; 1 \\ 1 &amp; -1 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}</span></p></li>
 <li><p>Row reduce to find basis:</p>
 <ul>
 <li>From earlier, we found <span class="math inline">x_1 = x_2</span></li>
 <li>Let <span class="math inline">t</span> be a free parameter</li>
 </ul></li>
-<li><p>Express eigenspace: <span class="math display">E_4 = \text{span}\left\{\begin{pmatrix} 1 \\ 1 \end{pmatrix}\right\}</span> <span class="math display">= \left\{t\begin{pmatrix} 1 \\ 1 \end{pmatrix} : t \in \mathbb{R}\right\}</span></p></li>
+<li><p>Express eigenspace: <span class="math display">E_4 = \text{span}\left\{\begin{bmatrix} 1 \\ 1 \end{bmatrix}\right\}</span> <span class="math display">= \left\{t\begin{bmatrix} 1 \\ 1 \end{bmatrix} : t \in \mathbb{R}\right\}</span></p></li>
 </ol>
 This is the complete eigenspace corresponding to <span class="math inline">\lambda_1 = 4</span>
 </details>

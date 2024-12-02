@@ -26,12 +26,12 @@ I'll expand your request with collapsible example sections for each concept, sho
 <details>
 <summary>Example: Finding Eigenvalues</summary>
 
-Let's find the eigenvalues of matrix $A = \begin{pmatrix} 3 & 1 \\ 1 & 3 \end{pmatrix}$
+Let's find the eigenvalues of matrix $A = \begin{bmatrix} 3 & 1 \\ 1 & 3 \end{bmatrix}$
 
 1) Set up characteristic equation: $det(A - \lambda I) = 0$
 
 2) Expand determinant:
-   $$det\begin{pmatrix} 3-\lambda & 1 \\ 1 & 3-\lambda \end{pmatrix} = 0$$
+   $$det\begin{bmatrix} 3-\lambda & 1 \\ 1 & 3-\lambda \end{bmatrix} = 0$$
    $$(3-\lambda)(3-\lambda) - (1)(1) = 0$$
 
 3) Solve polynomial:
@@ -50,13 +50,13 @@ Therefore, the eigenvalues are $\lambda_1 = 4$ and $\lambda_2 = 2$
 <details>
 <summary>Example: Finding Eigenvectors</summary>
 
-Using the same matrix $A = \begin{pmatrix} 3 & 1 \\ 1 & 3 \end{pmatrix}$ and $\lambda_1 = 4$:
+Using the same matrix $A = \begin{bmatrix} 3 & 1 \\ 1 & 3 \end{bmatrix}$ and $\lambda_1 = 4$:
 
 1) Set up equation $(A - \lambda I)\mathbf{x} = \mathbf{0}$:
-   $$\begin{pmatrix} 3-4 & 1 \\ 1 & 3-4 \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}$$
+   $$\begin{bmatrix} 3-4 & 1 \\ 1 & 3-4 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}$$
 
 2) Simplify system of equations:
-   $$\begin{pmatrix} -1 & 1 \\ 1 & -1 \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}$$
+   $$\begin{bmatrix} -1 & 1 \\ 1 & -1 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}$$
 
 3) Solve system:
    $$-x_1 + x_2 = 0$$
@@ -65,7 +65,7 @@ Using the same matrix $A = \begin{pmatrix} 3 & 1 \\ 1 & 3 \end{pmatrix}$ and $\l
 4) Choose a non-zero solution:
    Let $x_1 = 1$, then $x_2 = 1$
    
-Therefore, $\mathbf{v}_1 = \begin{pmatrix} 1 \\ 1 \end{pmatrix}$ is an eigenvector for $\lambda_1 = 4$
+Therefore, $\mathbf{v}_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}$ is an eigenvector for $\lambda_1 = 4$
 </details>
 
 ### Eigenspace
@@ -76,21 +76,21 @@ Therefore, $\mathbf{v}_1 = \begin{pmatrix} 1 \\ 1 \end{pmatrix}$ is an eigenvect
 <details>
 <summary>Example: Finding Eigenspace</summary>
 
-For the same matrix $A = \begin{pmatrix} 3 & 1 \\ 1 & 3 \end{pmatrix}$ and $\lambda_1 = 4$:
+For the same matrix $A = \begin{bmatrix} 3 & 1 \\ 1 & 3 \end{bmatrix}$ and $\lambda_1 = 4$:
 
 1) Form $A - \lambda I$:
-   $$A - 4I = \begin{pmatrix} -1 & 1 \\ 1 & -1 \end{pmatrix}$$
+   $$A - 4I = \begin{bmatrix} -1 & 1 \\ 1 & -1 \end{bmatrix}$$
 
 2) Find general solution to $(A - 4I)\mathbf{x} = \mathbf{0}$:
-   $$\begin{pmatrix} -1 & 1 \\ 1 & -1 \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}$$
+   $$\begin{bmatrix} -1 & 1 \\ 1 & -1 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}$$
 
 3) Row reduce to find basis:
    - From earlier, we found $x_1 = x_2$
    - Let $t$ be a free parameter
 
 4) Express eigenspace:
-   $$E_4 = \text{span}\left\{\begin{pmatrix} 1 \\ 1 \end{pmatrix}\right\}$$
-   $$= \left\{t\begin{pmatrix} 1 \\ 1 \end{pmatrix} : t \in \mathbb{R}\right\}$$
+   $$E_4 = \text{span}\left\{\begin{bmatrix} 1 \\ 1 \end{bmatrix}\right\}$$
+   $$= \left\{t\begin{bmatrix} 1 \\ 1 \end{bmatrix} : t \in \mathbb{R}\right\}$$
 
 This is the complete eigenspace corresponding to $\lambda_1 = 4$
 </details>

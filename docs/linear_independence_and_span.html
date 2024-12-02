@@ -138,6 +138,29 @@ window.Quarto = {
 <span class="menu-text">Concept Connections</span></a>
   </li>  
   <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-exam-prep" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Exam Prep</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-exam-prep">    
+        <li>
+    <a class="dropdown-item" href="./exam3/notecard_topics.html">
+ <span class="dropdown-text">Exam 3 - Notecard</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./exam3/daily_review.html">
+ <span class="dropdown-text">Exam 3 - Critical Foundations</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./exam3/semi_daily_review.html">
+ <span class="dropdown-text">Exam 3 - Important Applications</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./exam3/every_three_days_review.html">
+ <span class="dropdown-text">Exam 3 - Supporting Topics</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-topics" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Topics</span>
     </a>
@@ -164,7 +187,7 @@ window.Quarto = {
   </li>  
         <li>
     <a class="dropdown-item" href="./linear_equations.html">
- <span class="dropdown-text">Basic Linear equations</span></a>
+ <span class="dropdown-text">Basic Linear Equations</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./determinants.html">
@@ -176,7 +199,7 @@ window.Quarto = {
   </li>  
         <li>
     <a class="dropdown-item" href="./predicting_the_future.html">
- <span class="dropdown-text">Predicting The Future</span></a>
+ <span class="dropdown-text">Predicting the Future</span></a>
   </li>  
     </ul>
   </li>
@@ -298,18 +321,18 @@ window.Quarto = {
 <h2 data-number="3.1" class="anchored" data-anchor-id="basic-examples"><span class="header-section-number">3.1</span> Basic Examples</h2>
 <section id="testing-for-linear-independence" class="level3" data-number="3.1.1">
 <h3 data-number="3.1.1" class="anchored" data-anchor-id="testing-for-linear-independence"><span class="header-section-number">3.1.1</span> Testing for Linear Independence</h3>
-<p>Consider vectors <span class="math inline">\mathbf{v}_1 = \begin{pmatrix} 1 \\ 2 \end{pmatrix}</span> and <span class="math inline">\mathbf{v}_2 = \begin{pmatrix} 2 \\ 4 \end{pmatrix}</span>. To check independence, we solve for scalars <span class="math inline">c_1</span> and <span class="math inline">c_2</span> such that: <span class="math inline">c_1\mathbf{v}_1 + c_2\mathbf{v}_2 = \mathbf{0}.</span> Substituting values, we get: <span class="math inline">c_1 \begin{pmatrix} 1 \\ 2 \end{pmatrix} + c_2 \begin{pmatrix} 2 \\ 4 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix},</span> leading to <span class="math inline">c_1 + 2c_2 = 0</span> and <span class="math inline">2c_1 + 4c_2 = 0</span>. These equations imply <span class="math inline">c_1 = -2c_2</span>, meaning the only solution is trivial if <span class="math inline">c_1 = c_2 = 0</span>, proving the vectors are dependent.</p>
+<p>Consider vectors <span class="math inline">\mathbf{v}_1 = \begin{bmatrix} 1 \\ 2 \end{bmatrix}</span> and <span class="math inline">\mathbf{v}_2 = \begin{bmatrix} 2 \\ 4 \end{bmatrix}</span>. To check independence, we solve for scalars <span class="math inline">c_1</span> and <span class="math inline">c_2</span> such that: <span class="math inline">c_1\mathbf{v}_1 + c_2\mathbf{v}_2 = \mathbf{0}.</span> Substituting values, we get: <span class="math inline">c_1 \begin{bmatrix} 1 \\ 2 \end{bmatrix} + c_2 \begin{bmatrix} 2 \\ 4 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix},</span> leading to <span class="math inline">c_1 + 2c_2 = 0</span> and <span class="math inline">2c_1 + 4c_2 = 0</span>. These equations imply <span class="math inline">c_1 = -2c_2</span>, meaning the only solution is trivial if <span class="math inline">c_1 = c_2 = 0</span>, proving the vectors are dependent.</p>
 </section>
 <section id="finding-the-span" class="level3" data-number="3.1.2">
 <h3 data-number="3.1.2" class="anchored" data-anchor-id="finding-the-span"><span class="header-section-number">3.1.2</span> Finding the Span</h3>
-<p>For vectors <span class="math inline">\mathbf{v}_1 = \begin{pmatrix} 1 \\ 0 \end{pmatrix}</span> and <span class="math inline">\mathbf{v}_2 = \begin{pmatrix} 0 \\ 1 \end{pmatrix}</span>, their span is all of <span class="math inline">\mathbb{R}^2</span> since any vector <span class="math inline">\mathbf{x} = \begin{pmatrix} x \\ y \end{pmatrix}</span> can be written as <span class="math inline">x\mathbf{v}_1 + y\mathbf{v}_2</span>.</p>
+<p>For vectors <span class="math inline">\mathbf{v}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}</span> and <span class="math inline">\mathbf{v}_2 = \begin{bmatrix} 0 \\ 1 \end{bmatrix}</span>, their span is all of <span class="math inline">\mathbb{R}^2</span> since any vector <span class="math inline">\mathbf{x} = \begin{bmatrix} x \\ y \end{bmatrix}</span> can be written as <span class="math inline">x\mathbf{v}_1 + y\mathbf{v}_2</span>.</p>
 </section>
 </section>
 <section id="advanced-examples" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="advanced-examples"><span class="header-section-number">3.2</span> Advanced Examples</h2>
 <section id="basis-selection" class="level3" data-number="3.2.1">
 <h3 data-number="3.2.1" class="anchored" data-anchor-id="basis-selection"><span class="header-section-number">3.2.1</span> Basis Selection</h3>
-<p>In <span class="math inline">\mathbb{R}^3</span>, find a basis for the subspace spanned by <span class="math inline">\begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}</span>, <span class="math inline">\begin{pmatrix} 2 \\ 4 \\ 6 \end{pmatrix}</span>, and <span class="math inline">\begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix}</span>. Notice that the first two vectors are linearly dependent, so a basis can be <span class="math inline">\left\{ \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}, \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} \right\}</span>.</p>
+<p>In <span class="math inline">\mathbb{R}^3</span>, find a basis for the subspace spanned by <span class="math inline">\begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}</span>, <span class="math inline">\begin{bmatrix} 2 \\ 4 \\ 6 \end{bmatrix}</span>, and <span class="math inline">\begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}</span>. Notice that the first two vectors are linearly dependent, so a basis can be <span class="math inline">\left\{ \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} \right\}</span>.</p>
 </section>
 </section>
 </section>

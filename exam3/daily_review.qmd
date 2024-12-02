@@ -1,0 +1,79 @@
+---
+title: "Critical Foundations (Review Daily)"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    html-math-method: katex
+---
+
+# Core Vector Space Concepts
+
+## Vector Space Definition & Properties
+- A vector space is a set $V$ with two operations: addition and scalar multiplication, satisfying axioms like associativity, distributivity, and the existence of zero and additive inverses.
+
+## Subspaces
+- Three Key Properties: 
+  1. Closed under addition ($\vec{u} + \vec{v} \in H$).
+  2. Closed under scalar multiplication ($c\vec{u} \in H$).
+  3. Contains the zero vector ($\vec{0} \in H$).
+- Common Examples: Null space, column space, solution spaces to homogeneous equations.
+
+## Linear Independence & Dependence
+- Definition: A set of vectors is linearly independent if no vector in the set is a linear combination of the others.
+- Common Mistake: Confusing dependence with spanning.
+
+## Spanning Sets
+- A set spans $V$ if every element in $V$ can be written as a linear combination of the set.
+
+## Basis
+- A basis is a linearly independent spanning set.
+
+## Dimension
+- Defined as the number of vectors in any basis for $V$.
+
+---
+
+# Fundamental Spaces of Matrices
+
+## Null Space
+- Definition: Set of all solutions to $A\mathbf{x} = 0$.
+- Computation: Solve $A\mathbf{x} = 0$ via row reduction.
+
+## Column Space
+- Definition: Span of the column vectors of a matrix.
+- Finding Basis: Use pivot columns in RREF.
+
+## Row Space
+- Definition: Span of the row vectors of a matrix.
+
+## Rank-Nullity Theorem
+- $\text{Rank}(A) + \text{Nullity}(A) = \text{Number of columns of } A$.
+
+---
+
+# Essential Matrix Operations
+
+## Matrix Multiplication
+- Associative but not commutative. Common mistake: Mixing these properties.
+
+## Linear Transformations
+- Defined by matrix actions $T(\mathbf{x}) = A\mathbf{x}$.
+
+## Elementary Row Operations
+- Used for Gaussian elimination and finding RREF.
+
+## Row Reduction (RREF)
+- Steps: Eliminate lower triangle, scale pivots, eliminate above pivots.
+
+---
+
+## Practice Problems
+1. Compute the null space and column space of a given matrix.
+2. Prove that a given set is a subspace.
+3. Find a basis and dimension for a vector space.
+
+<div style="text-align: right;">
+  <a href="semi_daily_review.qmd" style="font-size: 16px; color: #6c757d; text-decoration: none;">Important Applications →</a>
+</div>

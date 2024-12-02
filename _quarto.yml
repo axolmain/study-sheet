@@ -13,28 +13,39 @@ website:
         href: https://quizlet.com/explanations/textbook-solutions/linear-algebra-and-its-applications-5th-edition-9780321982384?funnelUUID=06d4ef46-c8b7-4ebd-b80a-08d311a6cdc7
   navbar:
     left:
-      - href: index.qmd
-        text: Concept Connections
-      - text: Topics
-        menu:
-          - href: vector_spaces_and_dimensions.qmd
-            text: Vector Spaces and Dimensions
-          - href: null_spaces_col_spaces.qmd
-            text: Null Space and Column Space
-          - href: eigenvalues_eigenvectors.qmd
-            text: Eigenvalues and Eigenvectors
-          - href: linear_independence_and_span.qmd
-            text: Linear Independence and Span
-          - href: matrix_transformations.qmd
-            text: Matrix Transformations
-          - href: linear_equations.qmd
-            text: Basic Linear equations
-          - href: determinants.qmd
-            text: Determinants
-          - href: rank.qmd
-            text: Rank
-          - href: predicting_the_future.qmd
-            text: Predicting The Future
+    - href: index.qmd
+      text: Concept Connections
+    - text: Exam Prep
+      menu:
+        - href: exam3/notecard_topics.qmd
+          text: Exam 3 - Notecard
+        - href: exam3/daily_review.qmd
+          text: Exam 3 - Critical Foundations
+        - href: exam3/semi_daily_review.qmd
+          text: Exam 3 - Important Applications
+        - href: exam3/every_three_days_review.qmd
+          text: Exam 3 - Supporting Topics
+    - text: Topics
+      menu:
+        - href: vector_spaces_and_dimensions.qmd
+          text: Vector Spaces and Dimensions
+        - href: null_spaces_col_spaces.qmd
+          text: Null Space and Column Space
+        - href: eigenvalues_eigenvectors.qmd
+          text: Eigenvalues and Eigenvectors
+        - href: linear_independence_and_span.qmd
+          text: Linear Independence and Span
+        - href: matrix_transformations.qmd
+          text: Matrix Transformations
+        - href: linear_equations.qmd
+          text: Basic Linear Equations
+        - href: determinants.qmd
+          text: Determinants
+        - href: rank.qmd
+          text: Rank
+        - href: predicting_the_future.qmd
+          text: Predicting the Future
+
             
 
 format:

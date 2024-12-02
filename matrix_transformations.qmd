@@ -39,9 +39,9 @@ format:
 - **Explanation**: To find the steady state vector $\mathbf{s}$, solve $(P - I) \mathbf{s} = 0$, ensuring that the sum of the entries in $\mathbf{s}$ is 1 (since they represent probabilities).
 
 - **Example**: For a transition matrix
-  $  P = \begin{pmatrix} 0.9 & 0.1 \\ 0.5 & 0.5 \end{pmatrix},
+  $  P = \begin{bmatrix} 0.9 & 0.1 \\ 0.5 & 0.5 \end{bmatrix},
   \]
-  the steady state vector $\mathbf{s} = \begin{pmatrix} s_1 \\ s_2 \end{pmatrix}$ satisfies:
+  the steady state vector $\mathbf{s} = \begin{bmatrix} s_1 \\ s_2 \end{bmatrix}$ satisfies:
   $  P \mathbf{s} = \mathbf{s}.
   \]
   Solving this system, we can find the steady state probabilities for long-term behavior.

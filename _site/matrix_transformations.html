@@ -271,21 +271,21 @@ window.Quarto = {
 <section id="rotation-matrix" class="level3" data-number="3.1.1">
 <h3 data-number="3.1.1" class="anchored" data-anchor-id="rotation-matrix"><span class="header-section-number">3.1.1</span> Rotation Matrix</h3>
 In ( ^2 ), a counterclockwise rotation by angle ( ) is given by: [ R =
-<span class="math display">\begin{pmatrix} \cos \theta &amp; -\sin \theta \\ \sin \theta &amp; \cos \theta \end{pmatrix}</span>
+<span class="math display">\begin{bmatrix} \cos \theta &amp; -\sin \theta \\ \sin \theta &amp; \cos \theta \end{bmatrix}</span>
 . ] Applying this matrix to ( =
-<span class="math display">\begin{pmatrix} 1 \\ 0 \end{pmatrix}</span>
+<span class="math display">\begin{bmatrix} 1 \\ 0 \end{bmatrix}</span>
 ) with ( = 90^) results in: [ R =
-<span class="math display">\begin{pmatrix} 0 \\ 1 \end{pmatrix}</span>
+<span class="math display">\begin{bmatrix} 0 \\ 1 \end{bmatrix}</span>
 <p>, ] which shows a 90-degree rotation.</p>
 </section>
 <section id="scaling-transformation" class="level3" data-number="3.1.2">
 <h3 data-number="3.1.2" class="anchored" data-anchor-id="scaling-transformation"><span class="header-section-number">3.1.2</span> Scaling Transformation</h3>
 A scaling matrix in ( ^2 ) by a factor ( k ) is: [ S =
-<span class="math display">\begin{pmatrix} k &amp; 0 \\ 0 &amp; k \end{pmatrix}</span>
+<span class="math display">\begin{bmatrix} k &amp; 0 \\ 0 &amp; k \end{bmatrix}</span>
 . ] For ( k = 2 ), applying ( S ) to ( =
-<span class="math display">\begin{pmatrix} 1 \\ 1 \end{pmatrix}</span>
+<span class="math display">\begin{bmatrix} 1 \\ 1 \end{bmatrix}</span>
 ) yields ( 2 =
-<span class="math display">\begin{pmatrix} 2 \\ 2 \end{pmatrix}</span>
+<span class="math display">\begin{bmatrix} 2 \\ 2 \end{bmatrix}</span>
 <p>).</p>
 </section>
 </section>
@@ -294,7 +294,7 @@ A scaling matrix in ( ^2 ) by a factor ( k ) is: [ S =
 <section id="composition-of-transformations" class="level3" data-number="3.2.1">
 <h3 data-number="3.2.1" class="anchored" data-anchor-id="composition-of-transformations"><span class="header-section-number">3.2.1</span> Composition of Transformations</h3>
 Consider a transformation that rotates by 45° and then scales by 3. The combined transformation matrix is: [ T = 3
-<span class="math display">\begin{pmatrix} \cos(45^\circ) &amp; -\sin(45^\circ) \\ \sin(45^\circ) &amp; \cos(45^\circ) \end{pmatrix}</span>
+<span class="math display">\begin{bmatrix} \cos(45^\circ) &amp; -\sin(45^\circ) \\ \sin(45^\circ) &amp; \cos(45^\circ) \end{bmatrix}</span>
 <p>. ]</p>
 </section>
 </section>

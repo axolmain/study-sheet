@@ -226,6 +226,26 @@ BASIS ─── consists of ─── LINEARLY INDEPENDENT vectors
    - Empty set is NOT a vector space
 :::
 
+## Additional Concepts and Relationships
+
+### Invertible and Non-Invertible Matrices
+- A matrix A is invertible if there exists a matrix B such that AB = BA = I, where I is the identity matrix.
+- The determinant of a matrix, denoted as `det A`, plays a crucial role in determining whether a matrix is invertible or not.
+- If `det A ≠ 0`, then the matrix A is invertible. If `det A = 0`, then the matrix A is not invertible.
+- Invertible matrices represent linear transformations that are one-to-one and onto (bijective), while non-invertible matrices represent linear transformations that are not one-to-one or not onto.
+
+### Determinant and its Meaning
+- The determinant of a square matrix, `det A`, is a scalar value that reflects various properties of the matrix.
+- `det A = 0` if and only if the columns (or rows) of the matrix are linearly dependent, meaning they do not form a basis for the vector space.
+- The determinant of a matrix also represents the scaling factor of the volume (or area in 2D) of the parallelotope (or parallelogram in 2D) formed by the columns (or rows) of the matrix.
+- If `det A > 0`, the linear transformation represented by the matrix preserves the orientation of the vector space. If `det A < 0`, the linear transformation reverses the orientation.
+
+### One-to-One and Many-to-One Transformations
+- A linear transformation T: V → W is one-to-one (injective) if for every y in W, there is at most one x in V such that T(x) = y.
+- A linear transformation T: V → W is many-to-one (surjective) if for every y in W, there is at least one x in V such that T(x) = y.
+- If a linear transformation T: V → W is one-to-one and onto (bijective), then it has an inverse transformation T^(-1): W → V, and the matrix representation of T^(-1) is the inverse of the matrix representation of T.
+- One-to-one transformations preserve the linear independence of vectors, while many-to-one transformations may map linearly independent vectors to linearly dependent vectors.
+
 ## Navigation Links
 - [Back to Core Concepts](#core-concepts-and-their-relationships)
 - [Jump to Theorems](#fundamental-theorems-and-their-implications)

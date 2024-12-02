@@ -1,0 +1,116 @@
+---
+title: "3 X 5 - Notecard"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    html-math-method: katex
+---
+
+# Vector Spaces Quick Reference
+
+## Key Definitions
+- **Vector Space**: Set $V$ with addition and scalar multiplication
+- **Subspace**: Subset closed under operations, contains zero vector
+- **Basis**: Linearly independent set spanning $V$
+- **Dimension**: Number of basis vectors
+
+## Core Concepts
+### Linear Independence
+- Vectors with no linear combinations of each other
+- Minimal set that spans vector space
+
+### Matrices
+- **Row Space**: Span of row vectors
+- **Column Space**: Span of column vectors
+- **Null Space**: Solutions to $A\mathbf{x} = \mathbf{0}$
+
+## Fundamental Theorems
+- **Rank-Nullity**: $\text{rank} + \text{nullity} = n$
+- **Rank** = $\dim(\text{row space}) = \dim(\text{column space})$
+- **Nullity** = $\dim(\text{null space})$
+
+## Invertibility Criteria
+- $\det A \ne 0$
+- Linearly independent columns
+- $\text{Rank} = n$
+
+## Critical Relationships
+- Basis spans entire vector space
+- Zero vector in all vector spaces
+- Empty set ≠ vector space
+
+## Transformations
+- **One-to-One**: Injective
+- **Onto**: Surjective
+- Preserves linear combinations
+
+## Key Takeaways
+- **Rank**: Image space dimension
+- **Nullity**: Kernel space dimension
+- Row operations preserve row space
+
+$\det$ (determinant) is a scalar value computed for square matrices that provides critical information about the matrix's properties:
+
+Key Determinant Insights:
+
+- Indicates linear transformation's volume scaling factor
+- $\det A = 0$ means columns/rows are linearly dependent
+- Signifies matrix invertibility
+- Measures matrix's "stretching" or "compressing" effect
+
+Practical Implications:
+
+- $\det = 0$: Non-invertible matrix
+- $\det \ne 0$: Invertible matrix
+- Larger absolute value means more significant volume transformation
+
+In vector spaces, determinant helps assess:
+
+- Linear independence
+- Transformation characteristics
+- Matrix invertibility
+
+
+# Backside
+
+Parametric Vector Key Notes:
+
+1. Basic Structure
+
+- Express vector as linear combination
+- Form: $\mathbf{x} = \mathbf{x}_p + t\mathbf{v}$
+- $\mathbf{x}_p$: Particular solution
+- $t$: Free variable
+- $\mathbf{v}$: Direction vector
+
+2. Null Space Representation
+
+- Solutions to $A\mathbf{x} = \mathbf{0}$
+- Parametric form shows all solutions
+- Number of free variables = nullity
+
+3. Solution Set Characteristics
+
+- Zero solution always included
+- Entire solution space described
+- Linear independence of direction vectors
+
+4. Geometric Interpretation
+
+- Represents line/plane through origin
+- Direction vector shows transformation
+- Free variable controls position
+
+5. Computational Steps
+
+- Reduce augmented matrix
+- Identify pivot/free columns
+- Construct parametric vector representation
+
+6. Related Theorems
+
+- Rank-Nullity applies
+- Solution space dimension = nullity
+- Free variables determine solution complexity

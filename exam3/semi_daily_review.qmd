@@ -1,0 +1,111 @@
+---
+title: "Important Applications (Review Every Other Day)"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    html-math-method: katex
+---
+
+# Determinants and Their Applications
+
+## Definition and Basic Properties
+
+::: {.callout-note}
+**Definition**: The determinant of a square matrix $A$ is a scalar value denoted $\det(A)$ or $|A|$ that provides key insights into the matrix's properties, such as invertibility and volume scaling.
+:::
+
+- For a $2 \times 2$ matrix:
+$\det \begin{bmatrix} a & b \\ c & d \end{bmatrix}$
+
+- Properties:
+  - $\det(I) = 1$ for the identity matrix $I$.
+  - If $\det(A) = 0$, the matrix $A$ is singular (non-invertible).
+  - Determinants are multiplicative: $\det(AB) = \det(A)\det(B)$.
+  - Transpose invariance: $\det(A^T) = \det(A)$.
+
+## Geometric Interpretation
+
+Determinants help calculate:
+
+- **Area** or **Volume Scaling**:
+  - For $2 \times 2$: The absolute value of the determinant gives the area of the parallelogram spanned by the column vectors of the matrix.
+  - For $3 \times 3$: It represents the volume of the parallelepiped.
+- **Orientation**: The sign of $\det(A)$ indicates whether a transformation preserves or reverses orientation.
+
+
+### Example 1: Determinant and Area
+
+Find the area of the parallelogram formed by vectors $\mathbf{u} = \begin{bmatrix} 3 \\ 1 \end{bmatrix}$ and $\mathbf{v} = \begin{bmatrix} 2 \\ 4 \end{bmatrix}$.
+
+:::{.callout-tip collapse="true"}
+#### Solution:
+
+The determinant of the matrix $A = [\mathbf{u} \ \mathbf{v}]$ is:
+
+$\det(A) = \det\begin{bmatrix} 3 & 2 \\ 1 & 4 \end{bmatrix} = (3)(4) - (1)(2) = 12 - 2 = 10$
+
+**Area** = $|\det(A)| = 10$.
+:::
+
+## Applications in Linear Algebra
+
+### Invertibility
+
+A matrix $A$ is invertible if $\det(A) \neq 0$. For $2 \times 2$ matrices, the inverse can be calculated as:
+
+$A^{-1} = \frac{1}{\det(A)} \begin{bmatrix} d & -b \\ -c & a \end{bmatrix}$
+
+### Example 2: Finding an Inverse
+
+Find the inverse of $A = \begin{bmatrix} 2 & 3 \\ 1 & 4 \end{bmatrix}$.
+
+:::{.callout-tip collapse="true"}
+#### Solution:
+1. Compute $\det(A)$:
+
+$\det(A) = (2)(4) - (1)(3) = 8 - 3 = 5$
+
+
+2. Use the formula:
+
+$A^{-1} = \frac{1}{5} \begin{bmatrix} 4 & -3 \\ -1 & 2 \end{bmatrix} = \begin{bmatrix} 0.8 & -0.6 \\ -0.2 & 0.4 \end{bmatrix}$
+:::
+
+### Eigenvalues and Eigenvectors
+
+The determinant is used in finding eigenvalues $\lambda$ of $A$ by solving:
+
+$\det(A - \lambda I) = 0$
+
+### Example 3: Eigenvalue Determination
+
+Let $A = \begin{bmatrix} 4 & 1 \\ 2 & 3 \end{bmatrix}$. Find its eigenvalues.
+
+:::{.callout-tip collapse="true"}
+#### Solution:
+1. Compute $\det(A - \lambda I)$:
+
+$\det(A - \lambda I) = \det\begin{bmatrix} 4 - \lambda & 1 \\ 2 & 3 - \lambda\end{bmatrix} = (4-\lambda)(3-\lambda) - 2$
+2. Expand and solve:
+
+
+$\lambda^2 - 7\lambda + 10 = 0$
+
+3. Eigenvalues: $\lambda = 5, 2$.
+
+:::
+---
+
+# Practice Problems
+
+1. Calculate the determinant of $A = \begin{bmatrix} 1 & 2 & 3 \\ 0 & 4 & 5 \\ 1 & 0 & 6 \end{bmatrix}$.
+2. Determine whether $B = \begin{bmatrix} 1 & 3 \\ 2 & 6 \end{bmatrix}$ is invertible.
+3. Solve for the eigenvalues of $C = \begin{bmatrix} 2 & -1 \\ -1 & 2 \end{bmatrix}$.
+
+<div style="display: flex; justify-content: space-between; align-items: center; font-size: 16px;">
+  <a href="daily_review.qmd" style="color: #6c757d; text-decoration: none;">← Critical Foundations</a>
+  <a href="semi_daily_review.qmd" style="color: #6c757d; text-decoration: none;">Supporting Topics →</a>
+</div>
+

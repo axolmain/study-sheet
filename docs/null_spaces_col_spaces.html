@@ -138,6 +138,29 @@ window.Quarto = {
 <span class="menu-text">Concept Connections</span></a>
   </li>  
   <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-exam-prep" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Exam Prep</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-exam-prep">    
+        <li>
+    <a class="dropdown-item" href="./exam3/notecard_topics.html">
+ <span class="dropdown-text">Exam 3 - Notecard</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./exam3/daily_review.html">
+ <span class="dropdown-text">Exam 3 - Critical Foundations</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./exam3/semi_daily_review.html">
+ <span class="dropdown-text">Exam 3 - Important Applications</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./exam3/every_three_days_review.html">
+ <span class="dropdown-text">Exam 3 - Supporting Topics</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-topics" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Topics</span>
     </a>
@@ -164,7 +187,7 @@ window.Quarto = {
   </li>  
         <li>
     <a class="dropdown-item" href="./linear_equations.html">
- <span class="dropdown-text">Basic Linear equations</span></a>
+ <span class="dropdown-text">Basic Linear Equations</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./determinants.html">
@@ -176,7 +199,7 @@ window.Quarto = {
   </li>  
         <li>
     <a class="dropdown-item" href="./predicting_the_future.html">
- <span class="dropdown-text">Predicting The Future</span></a>
+ <span class="dropdown-text">Predicting the Future</span></a>
   </li>  
     </ul>
   </li>
@@ -308,11 +331,11 @@ window.Quarto = {
 <h2 data-number="3.1" class="anchored" data-anchor-id="basic-examples"><span class="header-section-number">3.1</span> Basic Examples</h2>
 <section id="finding-the-null-space-of-a-22-matrix" class="level3" data-number="3.1.1">
 <h3 data-number="3.1.1" class="anchored" data-anchor-id="finding-the-null-space-of-a-22-matrix"><span class="header-section-number">3.1.1</span> Finding the Null Space of a 2×2 Matrix</h3>
-<p>Let <span class="math inline">A = \begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 6 \end{pmatrix}</span>. To find the null space, we solve <span class="math inline">A\mathbf{x} = \mathbf{0}</span>: <span class="math inline">\begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 6 \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}.</span> This system reduces to: <span class="math inline">x_1 + 2x_2 = 0.</span> Thus, <span class="math inline">x_1 = -2x_2</span>, so any solution is a scalar multiple of <span class="math inline">\begin{pmatrix} -2 \\ 1 \end{pmatrix}</span>. The null space is therefore: <span class="math inline">\text{Null}(A) = \text{span}\left\{ \begin{pmatrix} -2 \\ 1 \end{pmatrix} \right\}.</span></p>
+<p>Let <span class="math inline">A = \begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 6 \end{bmatrix}</span>. To find the null space, we solve <span class="math inline">A\mathbf{x} = \mathbf{0}</span>: <span class="math inline">\begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 6 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}.</span> This system reduces to: <span class="math inline">x_1 + 2x_2 = 0.</span> Thus, <span class="math inline">x_1 = -2x_2</span>, so any solution is a scalar multiple of <span class="math inline">\begin{bmatrix} -2 \\ 1 \end{bmatrix}</span>. The null space is therefore: <span class="math inline">\text{Null}(A) = \text{span}\left\{ \begin{bmatrix} -2 \\ 1 \end{bmatrix} \right\}.</span></p>
 </section>
 <section id="finding-the-column-space" class="level3" data-number="3.1.2">
 <h3 data-number="3.1.2" class="anchored" data-anchor-id="finding-the-column-space"><span class="header-section-number">3.1.2</span> Finding the Column Space</h3>
-<p>The column space of <span class="math inline">A</span> is the span of its columns: <span class="math inline">\text{Col}(A) = \text{span}\left\{ \begin{pmatrix} 1 \\ 3 \end{pmatrix}, \begin{pmatrix} 2 \\ 6 \end{pmatrix} \right\}.</span> Since the second column is a scalar multiple of the first, the column space is just the span of <span class="math inline">\begin{pmatrix} 1 \\ 3 \end{pmatrix}</span>.</p>
+<p>The column space of <span class="math inline">A</span> is the span of its columns: <span class="math inline">\text{Col}(A) = \text{span}\left\{ \begin{bmatrix} 1 \\ 3 \end{bmatrix}, \begin{bmatrix} 2 \\ 6 \end{bmatrix} \right\}.</span> Since the second column is a scalar multiple of the first, the column space is just the span of <span class="math inline">\begin{bmatrix} 1 \\ 3 \end{bmatrix}</span>.</p>
 </section>
 </section>
 <section id="advanced-examples" class="level2" data-number="3.2">

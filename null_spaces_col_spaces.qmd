@@ -32,18 +32,18 @@ format:
 # Worked Examples
 ## Basic Examples
 ### Finding the Null Space of a 2×2 Matrix
-Let $A = \begin{pmatrix} 1 & 2 \\ 3 & 6 \end{pmatrix}$.
+Let $A = \begin{bmatrix} 1 & 2 \\ 3 & 6 \end{bmatrix}$.
 To find the null space, we solve $A\mathbf{x} = \mathbf{0}$:
-$\begin{pmatrix} 1 & 2 \\ 3 & 6 \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}.$
+$\begin{bmatrix} 1 & 2 \\ 3 & 6 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}.$
 This system reduces to:
 $x_1 + 2x_2 = 0.$
-Thus, $x_1 = -2x_2$, so any solution is a scalar multiple of $\begin{pmatrix} -2 \\ 1 \end{pmatrix}$. The null space is therefore:
-$\text{Null}(A) = \text{span}\left\{ \begin{pmatrix} -2 \\ 1 \end{pmatrix} \right\}.$
+Thus, $x_1 = -2x_2$, so any solution is a scalar multiple of $\begin{bmatrix} -2 \\ 1 \end{bmatrix}$. The null space is therefore:
+$\text{Null}(A) = \text{span}\left\{ \begin{bmatrix} -2 \\ 1 \end{bmatrix} \right\}.$
 
 ### Finding the Column Space
 The column space of $A$ is the span of its columns:
-$\text{Col}(A) = \text{span}\left\{ \begin{pmatrix} 1 \\ 3 \end{pmatrix}, \begin{pmatrix} 2 \\ 6 \end{pmatrix} \right\}.$
-Since the second column is a scalar multiple of the first, the column space is just the span of $\begin{pmatrix} 1 \\ 3 \end{pmatrix}$.
+$\text{Col}(A) = \text{span}\left\{ \begin{bmatrix} 1 \\ 3 \end{bmatrix}, \begin{bmatrix} 2 \\ 6 \end{bmatrix} \right\}.$
+Since the second column is a scalar multiple of the first, the column space is just the span of $\begin{bmatrix} 1 \\ 3 \end{bmatrix}$.
 
 ## Advanced Examples
 ### Real-World Application: Signal Processing

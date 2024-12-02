@@ -25,19 +25,19 @@ format:
 # Worked Examples
 ## Basic Examples
 ### Testing for Linear Independence
-Consider vectors $\mathbf{v}_1 = \begin{pmatrix} 1 \\ 2 \end{pmatrix}$ and $\mathbf{v}_2 = \begin{pmatrix} 2 \\ 4 \end{pmatrix}$.
+Consider vectors $\mathbf{v}_1 = \begin{bmatrix} 1 \\ 2 \end{bmatrix}$ and $\mathbf{v}_2 = \begin{bmatrix} 2 \\ 4 \end{bmatrix}$.
 To check independence, we solve for scalars $c_1$ and $c_2$ such that:
 $c_1\mathbf{v}_1 + c_2\mathbf{v}_2 = \mathbf{0}.$
 Substituting values, we get:
-$c_1 \begin{pmatrix} 1 \\ 2 \end{pmatrix} + c_2 \begin{pmatrix} 2 \\ 4 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix},$
+$c_1 \begin{bmatrix} 1 \\ 2 \end{bmatrix} + c_2 \begin{bmatrix} 2 \\ 4 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix},$
 leading to $c_1 + 2c_2 = 0$ and $2c_1 + 4c_2 = 0$. These equations imply $c_1 = -2c_2$, meaning the only solution is trivial if $c_1 = c_2 = 0$, proving the vectors are dependent.
 
 ### Finding the Span
-For vectors $\mathbf{v}_1 = \begin{pmatrix} 1 \\ 0 \end{pmatrix}$ and $\mathbf{v}_2 = \begin{pmatrix} 0 \\ 1 \end{pmatrix}$, their span is all of $\mathbb{R}^2$ since any vector $\mathbf{x} = \begin{pmatrix} x \\ y \end{pmatrix}$ can be written as $x\mathbf{v}_1 + y\mathbf{v}_2$.
+For vectors $\mathbf{v}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}$ and $\mathbf{v}_2 = \begin{bmatrix} 0 \\ 1 \end{bmatrix}$, their span is all of $\mathbb{R}^2$ since any vector $\mathbf{x} = \begin{bmatrix} x \\ y \end{bmatrix}$ can be written as $x\mathbf{v}_1 + y\mathbf{v}_2$.
 
 ## Advanced Examples
 ### Basis Selection
-In $\mathbb{R}^3$, find a basis for the subspace spanned by $\begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}$, $\begin{pmatrix} 2 \\ 4 \\ 6 \end{pmatrix}$, and $\begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix}$. Notice that the first two vectors are linearly dependent, so a basis can be $\left\{ \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}, \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} \right\}$.
+In $\mathbb{R}^3$, find a basis for the subspace spanned by $\begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}$, $\begin{bmatrix} 2 \\ 4 \\ 6 \end{bmatrix}$, and $\begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}$. Notice that the first two vectors are linearly dependent, so a basis can be $\left\{ \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} \right\}$.
 
 # Interactive Elements
 - **Self-Check Questions**: Practice with determining independence and span.
