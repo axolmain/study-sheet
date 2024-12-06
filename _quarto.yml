@@ -15,7 +15,13 @@ website:
     left:
     - href: index.qmd
       text: Concept Connections
-    - text: Exam Prep
+    - text: Exam 4
+      menu: 
+        - href: exam4/chapter5_3.qmd
+          text: Chapter 5.3 (Diagonality)
+        - href: exam4/chapter6_1.qmd
+          text: Chapter 5.1 (Orthogonality)
+    - text: Exam 3
       menu:
         - href: exam3/notecard_topics.qmd
           text: Exam 3 - Notecard

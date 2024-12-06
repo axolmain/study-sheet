@@ -1,0 +1,270 @@
+---
+title: "Chapter 6.1"
+description: "Inner Product, Length, Distance, and Orthogonality"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    html-math-method: katex
+---
+
+# Introduction & Overview
+
+Chapter 6.1 introduces the fundamental concepts of inner products in $\mathbb{R}^n$, which generalize the dot product to more abstract vector spaces. These ideas lay the groundwork for understanding vector length (norm), the notion of distance between vectors, and the concept of orthogonality. These are essential building blocks for deeper topics such as orthogonal projections, orthonormal bases, and decomposition of vector spaces into complementary subspaces.
+
+**Key Ideas:**
+
+- **Inner Product:** Generalization of the dot product that introduces notions of angle and length.
+- **Length (Norm):** A measure of the size of a vector.
+- **Distance:** A natural extension of the norm to measure how far apart two vectors are.
+- **Orthogonality:** When two vectors are perpendicular, their inner product is zero. Orthogonality underlies many powerful results and techniques in linear algebra.
+
+Below, we will cover each concept in detail, provide worked examples, and illustrate how they connect to fundamental spaces (column spaces, null spaces) and their applications (like orthogonal projection).
+
+---
+
+::: {.panel-tabset}
+
+# Inner Product
+
+## Definition & Properties
+
+**Definition of Inner Product (Dot Product in $\mathbb{R}^n$):**  
+For vectors $\mathbf{u}, \mathbf{v} \in \mathbb{R}^n$, the dot product is:
+$$
+\mathbf{u} \cdot \mathbf{v} = u_1 v_1 + u_2 v_2 + \cdots + u_n v_n.
+$$
+
+**Properties:** For any $\mathbf{u}, \mathbf{v}, \mathbf{w} \in \mathbb{R}^n$ and scalar $c$:
+
+1. **Commutativity:** $\mathbf{u} \cdot \mathbf{v} = \mathbf{v} \cdot \mathbf{u}$
+2. **Distributivity over Addition:** $(\mathbf{u} + \mathbf{v}) \cdot \mathbf{w} = \mathbf{u} \cdot \mathbf{w} + \mathbf{v} \cdot \mathbf{w}$
+3. **Compatibility with Scalar Multiplication:** $(c \mathbf{u}) \cdot \mathbf{v} = c (\mathbf{u} \cdot \mathbf{v}) = \mathbf{u} \cdot (c \mathbf{v})$
+4. **Positivity:** $\mathbf{u} \cdot \mathbf{u} \geq 0$, with equality if and only if $\mathbf{u} = \mathbf{0}$.
+
+**Relation to Vector Spaces:**  
+
+- The inner product allows one to define angles between vectors, orthogonality, and lengths.  
+- A vector space equipped with an inner product is called an **inner product space**, and these form the foundation for more advanced constructs (e.g., Hilbert spaces in functional analysis).
+
+## Examples & Problems
+
+**Example:**  
+
+For $\mathbf{u} = [1, 2, 3]$ and $\mathbf{v} = [4, 5, 6]$, the dot product is:
+$$
+\mathbf{u} \cdot \mathbf{v} = (1)(4) + (2)(5) + (3)(6) = 4 + 10 + 18 = 32.
+$$
+
+**Problem 1:**  
+
+Given $\mathbf{u} = \begin{bmatrix} -1 \\ 2 \end{bmatrix}$ and $\mathbf{v} = \begin{bmatrix} 4 \\ 6 \end{bmatrix}$:
+
+- (a) $\mathbf{u} \cdot \mathbf{u} = (-1)(-1) + (2)(2) = 1 + 4 = \boxed{5}$
+
+- (b) $\mathbf{v} \cdot \mathbf{u} = (4)(-1) + (6)(2) = -4 + 12 = \boxed{8}$
+
+- (c) $\dfrac{\mathbf{v} \cdot \mathbf{u}}{\mathbf{u} \cdot \mathbf{u}} = \dfrac{8}{5} = \boxed{\tfrac{8}{5}}$
+
+---
+
+# Length (Norm)
+
+**Definition:**  
+If $\mathbf{v} = (v_1, v_2, \dots, v_n)$, then the **length** (or **norm**) of $\mathbf{v}$ is:
+$$
+\|\mathbf{v}\| = \sqrt{\mathbf{v} \cdot \mathbf{v}} = \sqrt{v_1^2 + v_2^2 + \cdots + v_n^2}.
+$$
+Also, $\|\mathbf{v}\|^2 = \mathbf{v} \cdot \mathbf{v}$.
+
+**Relation to Vector Spaces:**  
+- Norms measure the “size” of vectors and allow one to quantify concepts like “small,” “large,” or “close to zero.”
+- Norms are essential when constructing **orthonormal bases**, where each vector has length 1.
+- Norms also help describe null spaces: if $\mathbf{u}$ is in the null space of $A$, then $\|A\mathbf{u}\|=0$, reflecting the idea that $A\mathbf{u}$ collapses that vector to the zero vector.
+
+## Examples & Problems
+
+**Example:** 
+
+For $\mathbf{u} = [3, 4]$:
+$$
+\|\mathbf{u}\| = \sqrt{3^2 + 4^2} = \sqrt{9 + 16} = 5.
+$$
+
+**Problem 7:**  
+
+Compute the norm of $\mathbf{a} = \begin{bmatrix} 3 \\ -1 \\ -5 \end{bmatrix}$:
+$$
+\|\mathbf{a}\| = \sqrt{3^2 + (-1)^2 + (-5)^2} = \sqrt{9 + 1 + 25} = \sqrt{35} = \boxed{\sqrt{35}}.
+$$
+
+---
+
+# Distance
+
+## Definition
+
+The **distance** between two vectors $\mathbf{u}, \mathbf{v} \in \mathbb{R}^n$ is defined as:
+$$
+d(\mathbf{u}, \mathbf{v}) = \|\mathbf{u} - \mathbf{v}\| = \sqrt{\sum_{i=1}^n (u_i - v_i)^2}.
+$$
+
+This naturally extends the concept of length to measure how far apart two vectors are from each other in space.
+
+**Relation to Vector Spaces:**  
+
+- Distance allows us to talk about convergence, continuity, and approximation within vector spaces.
+- In geometric interpretations, the distance from a vector to a subspace (like the column space of a matrix) is minimized by orthogonal projections.  
+- The distance between a vector and the null space or column space helps describe how well a given system can approximate certain vectors.
+
+## Polarization Identity & Expansion of the Squared Norm
+
+
+:::{.callout-tip collapse="true"}
+### Polarization Identity/Expansion of the Squared Norm
+
+We have identities for $\|\mathbf{u}-\mathbf{v}\|^2$ and $\|\mathbf{u}+\mathbf{v}\|^2$:
+
+1. Start with the squared norm:
+   $$
+   \|\mathbf{u} - \mathbf{v}\|^2 = (\mathbf{u} - \mathbf{v}) \cdot (\mathbf{u} - \mathbf{v}).
+   $$
+
+2. Expand:
+   $$
+   (\mathbf{u} - \mathbf{v}) \cdot (\mathbf{u} - \mathbf{v}) = \mathbf{u}\cdot\mathbf{u} - 2(\mathbf{u}\cdot\mathbf{v}) + \mathbf{v}\cdot\mathbf{v}.
+   $$
+
+3. Similarly:
+   $$
+   \|\mathbf{u} + \mathbf{v}\|^2 = (\mathbf{u} + \mathbf{v}) \cdot (\mathbf{u} + \mathbf{v}) = \mathbf{u}\cdot\mathbf{u} + 2(\mathbf{u}\cdot\mathbf{v}) + \mathbf{v}\cdot\mathbf{v}.
+   $$
+
+Thus:
+$$
+\|\mathbf{u} - \mathbf{v}\|^2 = \|\mathbf{u}\|^2 + \|\mathbf{v}\|^2 - 2(\mathbf{u}\cdot\mathbf{v}), \\
+\|\mathbf{u} + \mathbf{v}\|^2 = \|\mathbf{u}\|^2 + \|\mathbf{v}\|^2 + 2(\mathbf{u}\cdot\mathbf{v}).
+$$
+
+**Orthogonality case:** If $\mathbf{u}\cdot\mathbf{v}=0$:
+$$
+\|\mathbf{u} \pm \mathbf{v}\|^2 = \|\mathbf{u}\|^2 + \|\mathbf{v}\|^2.
+$$
+:::
+
+**Example:**  
+For $\mathbf{u} = [1, 2]$ and $\mathbf{v} = [4, 6]$:
+$$
+\begin{aligned}
+d(\mathbf{u}, \mathbf{v}) &= \|\mathbf{u} - \mathbf{v}\| = \sqrt{(1 - 4)^2 + (2 - 6)^2} \\
+&= \sqrt{(-3)^2 + (-4)^2} = \sqrt{9 + 16} \\
+&= 5
+\end{aligned}
+$$
+
+---
+
+# Orthogonality
+
+## Definition & Key Ideas
+
+**Definition:**  
+Vectors $\mathbf{u}$ and $\mathbf{v}$ are **orthogonal** if:
+$$
+\mathbf{u} \cdot \mathbf{v} = 0.
+$$
+
+An **orthogonal set** of vectors is a collection in which every pair of distinct vectors is mutually perpendicular (their dot product is zero).
+
+**Pythagorean Theorem in $\mathbb{R}^n$:**  
+Two vectors $\mathbf{u}$ and $\mathbf{v}$ are orthogonal if and only if:
+$$
+\|\mathbf{u} + \mathbf{v}\|^2 = \|\mathbf{u}\|^2 + \|\mathbf{v}\|^2.
+$$
+
+## Relation to Vector Spaces
+
+- Orthogonality underpins important decompositions of vector spaces.  
+- If $\mathbf{u}$ is in the null space of $A$, it is orthogonal to every vector in the column space of $A$.  
+- More generally, we have orthogonal complements: if $V$ is a vector space, it can often be decomposed into the direct sum of a subspace and its orthogonal complement:
+  $$
+  V = \text{Col}(A) \oplus \text{Nul}(A^T).
+  $$
+- Orthogonality is crucial for defining orthogonal projections, which “drop” a vector onto a subspace without introducing any component orthogonal to that subspace.
+
+## Examples & Problems
+
+**Example:**  
+For $\mathbf{u} = [1, 0]$ and $\mathbf{v} = [0, 1]$:
+$$
+\mathbf{u} \cdot \mathbf{v} = (1)(0) + (0)(1) = 0.
+$$
+These vectors are orthogonal (standard unit vectors along coordinate axes).
+
+**Problem 28:**  
+If $\mathbf{y}$ is orthogonal to both $\mathbf{u}$ and $\mathbf{v}$, then $\mathbf{y}$ is orthogonal to every vector in $\text{Span}\{\mathbf{u}, \mathbf{v}\}$.  
+**Proof Outline:** Any $\mathbf{w}$ in the span can be written as $a\mathbf{u}+b\mathbf{v}$. Since $\mathbf{y}\cdot\mathbf{u}=0$ and $\mathbf{y}\cdot\mathbf{v}=0$, it follows that $\mathbf{y}\cdot\mathbf{w}=0$.
+
+**Problem 5 (Projection):**  
+Given $\mathbf{u} = \begin{bmatrix}-1 \\ 2\end{bmatrix}$ and $\mathbf{v} = \begin{bmatrix}4 \\ 6\end{bmatrix}$, compute:
+$$
+\left(\frac{\mathbf{u}\cdot\mathbf{v}}{\mathbf{v}\cdot\mathbf{v}}\right)\mathbf{v}.
+$$
+
+- We found $\mathbf{v}\cdot\mathbf{v} = 52$ and $\mathbf{u}\cdot\mathbf{v} = 8$:
+  $$
+  \frac{\mathbf{u}\cdot\mathbf{v}}{\mathbf{v}\cdot\mathbf{v}} = \frac{8}{52} = \frac{2}{13}.
+  $$
+  Thus:
+  $$
+  \left(\frac{2}{13}\right)\mathbf{v} = \begin{bmatrix}\tfrac{8}{13}\\[6pt]\tfrac{12}{13}\end{bmatrix}.
+  $$
+  
+This vector is the **projection of $\mathbf{u}$ onto $\mathbf{v}$**, a fundamental concept in orthogonal decompositions.
+
+---
+
+# Orthogonality of Matrices
+
+## Definition (Frobenius Inner Product)
+
+For matrices, orthogonality is defined using an inner product known as the **Frobenius inner product**. For two matrices $A$ and $B$ of the same dimensions:
+$$
+\langle A, B \rangle_F = \text{trace}(A^T B) = \sum_{i,j} a_{ij}b_{ij}.
+$$
+
+**Definition:**  
+Matrices $A$ and $B$ are orthogonal (under the Frobenius inner product) if:
+$$
+\langle A, B \rangle_F = 0.
+$$
+
+**Relation to Vector Spaces:**  
+- The concept of orthogonality extends from vectors to matrices by considering the space of all $m\times n$ matrices as a vector space over $\mathbb{R}$.  
+- Orthogonality of matrices is equivalent to the orthogonality of their vectorized forms (flattening the matrix into a long vector).
+
+**Example:**  
+For 
+$$
+A = \begin{bmatrix}1 & 0 \\ 0 & 0\end{bmatrix}, \quad B = \begin{bmatrix}0 & 0 \\ 0 & 1\end{bmatrix},
+$$
+we have:
+$$
+\langle A, B \rangle_F = (1)(0) + (0)(0) + (0)(0) + (0)(1) = 0.
+$$
+
+---
+
+# Concluding Remarks
+
+In this chapter, we have:
+
+- Introduced the concept of the inner product as a generalization of the familiar dot product, allowing for the definition of angles, lengths, and orthogonality in vector spaces.
+- Defined the norm of a vector and showed how it leads to the notion of distance.
+- Explored how orthogonality underpins many fundamental results in linear algebra, including projections, decompositions of vector spaces, and relationships between column spaces and null spaces.
+- Extended the idea of inner products and orthogonality to matrices via the Frobenius inner product.
+
+These concepts set the stage for more advanced topics like orthogonal projections, orthonormal bases, and least-squares solutions, all of which rely critically on the notions introduced here.
+
+:::
