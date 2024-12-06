@@ -1,6 +1,6 @@
 ---
 title: "Chapter 6.1"
-description: "Inner Product, Length, Distance, and Orthogonality"
+description: "*Inner Product, Length, Distance, and Orthogonality*"
 format:
   html:
     toc: true
