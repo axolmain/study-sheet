@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Eigenvalues and Eigenvectors in Linear Algebra – Study-Sheet: Linear Algebra</title>
+<title>Vector Spaces and Dimension – Study-Sheet: Linear Algebra</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +23,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -113,7 +113,7 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-sidebar floating nav-fixed">
@@ -123,7 +123,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Study-Sheet: Linear Algebra</span>
     </a>
   </div>
@@ -134,8 +134,12 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Concept Connections</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../class.html"> 
+<span class="menu-text">Class Schedule</span></a>
   </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-exam-4" role="link" data-bs-toggle="dropdown" aria-expanded="false">
@@ -143,12 +147,24 @@ window.Quarto = {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-exam-4">    
         <li>
-    <a class="dropdown-item" href="./exam4/chapter5_3.html">
+    <a class="dropdown-item" href="../exam4/chapter5_3.html">
  <span class="dropdown-text">Chapter 5.3 (Diagonality)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./exam4/chapter6_1.html">
- <span class="dropdown-text">Chapter 5.1 (Orthogonality)</span></a>
+    <a class="dropdown-item" href="../exam4/chapter6_1.html">
+ <span class="dropdown-text">Chapter 6.1 (Orthogonality)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../exam4/chapter6_2.html">
+ <span class="dropdown-text">Chapter 6.2 (Orthogonal Sets)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../exam4/chapter6_3.html">
+ <span class="dropdown-text">Chapter 6.3 (Orthogonal Projections)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../exam4/chapter6_5.html">
+ <span class="dropdown-text">Chapter 6.5 (Least squares problem)</span></a>
   </li>  
     </ul>
   </li>
@@ -158,19 +174,19 @@ window.Quarto = {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-exam-3">    
         <li>
-    <a class="dropdown-item" href="./exam3/notecard_topics.html">
+    <a class="dropdown-item" href="../exam3/notecard_topics.html">
  <span class="dropdown-text">Exam 3 - Notecard</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./exam3/daily_review.html">
+    <a class="dropdown-item" href="../exam3/daily_review.html">
  <span class="dropdown-text">Exam 3 - Critical Foundations</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./exam3/semi_daily_review.html">
+    <a class="dropdown-item" href="../exam3/semi_daily_review.html">
  <span class="dropdown-text">Exam 3 - Important Applications</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./exam3/every_three_days_review.html">
+    <a class="dropdown-item" href="../exam3/every_three_days_review.html">
  <span class="dropdown-text">Exam 3 - Supporting Topics</span></a>
   </li>  
     </ul>
@@ -181,39 +197,39 @@ window.Quarto = {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-topics">    
         <li>
-    <a class="dropdown-item" href="./vector_spaces_and_dimensions.html">
+    <a class="dropdown-item" href="../general_topics/vector_spaces_and_dimensions.html">
  <span class="dropdown-text">Vector Spaces and Dimensions</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./null_spaces_col_spaces.html">
+    <a class="dropdown-item" href="../general_topics/null_spaces_col_spaces.html">
  <span class="dropdown-text">Null Space and Column Space</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./eigenvalues_eigenvectors.html">
+    <a class="dropdown-item" href="../general_topics/eigenvalues_eigenvectors.html">
  <span class="dropdown-text">Eigenvalues and Eigenvectors</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./linear_independence_and_span.html">
+    <a class="dropdown-item" href="../general_topics/linear_independence_and_span.html">
  <span class="dropdown-text">Linear Independence and Span</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./matrix_transformations.html">
+    <a class="dropdown-item" href="../general_topics/matrix_transformations.html">
  <span class="dropdown-text">Matrix Transformations</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./linear_equations.html">
+    <a class="dropdown-item" href="../general_topics/linear_equations.html">
  <span class="dropdown-text">Basic Linear Equations</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./determinants.html">
+    <a class="dropdown-item" href="../general_topics/determinants.html">
  <span class="dropdown-text">Determinants</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./rank.html">
+    <a class="dropdown-item" href="../general_topics/rank.html">
  <span class="dropdown-text">Rank</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./predicting_the_future.html">
+    <a class="dropdown-item" href="../general_topics/predicting_the_future.html">
  <span class="dropdown-text">Predicting the Future</span></a>
   </li>  
     </ul>
@@ -230,7 +246,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Eigenvalues and Eigenvectors in Linear Algebra</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Vector Spaces and Dimension</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -259,28 +275,22 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#eigenvalues-and-eigenvectors-in-linear-algebra" id="toc-eigenvalues-and-eigenvectors-in-linear-algebra" class="nav-link active" data-scroll-target="#eigenvalues-and-eigenvectors-in-linear-algebra"><span class="header-section-number">1</span> Eigenvalues and Eigenvectors in Linear Algebra</a>
+  <li><a href="#vector-spaces-and-dimension" id="toc-vector-spaces-and-dimension" class="nav-link active" data-scroll-target="#vector-spaces-and-dimension"><span class="header-section-number">1</span> Vector Spaces and Dimension</a>
   <ul class="collapse">
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">1.1</span> Introduction</a></li>
-  <li><a href="#key-concepts-and-definitions" id="toc-key-concepts-and-definitions" class="nav-link" data-scroll-target="#key-concepts-and-definitions"><span class="header-section-number">1.2</span> Key Concepts and Definitions</a>
+  <li><a href="#definition" id="toc-definition" class="nav-link" data-scroll-target="#definition"><span class="header-section-number">1.0.1</span> Definition</a></li>
+  <li><a href="#special-cases" id="toc-special-cases" class="nav-link" data-scroll-target="#special-cases"><span class="header-section-number">1.0.2</span> Special Cases</a></li>
+  <li><a href="#key-concepts-and-definitions" id="toc-key-concepts-and-definitions" class="nav-link" data-scroll-target="#key-concepts-and-definitions"><span class="header-section-number">1.1</span> Key Concepts and Definitions</a>
   <ul class="collapse">
-  <li><a href="#eigenvalues" id="toc-eigenvalues" class="nav-link" data-scroll-target="#eigenvalues"><span class="header-section-number">1.2.1</span> Eigenvalues</a></li>
-  <li><a href="#eigenvectors" id="toc-eigenvectors" class="nav-link" data-scroll-target="#eigenvectors"><span class="header-section-number">1.2.2</span> Eigenvectors</a></li>
-  <li><a href="#eigenspace" id="toc-eigenspace" class="nav-link" data-scroll-target="#eigenspace"><span class="header-section-number">1.2.3</span> Eigenspace</a></li>
+  <li><a href="#span" id="toc-span" class="nav-link" data-scroll-target="#span"><span class="header-section-number">1.1.1</span> Span</a></li>
+  <li><a href="#linear-independence" id="toc-linear-independence" class="nav-link" data-scroll-target="#linear-independence"><span class="header-section-number">1.1.2</span> Linear Independence</a></li>
+  <li><a href="#important-theorems" id="toc-important-theorems" class="nav-link" data-scroll-target="#important-theorems"><span class="header-section-number">1.1.3</span> Important Theorems</a></li>
   </ul></li>
-  <li><a href="#important-theorems" id="toc-important-theorems" class="nav-link" data-scroll-target="#important-theorems"><span class="header-section-number">1.3</span> Important Theorems</a>
+  <li><a href="#practice-problems" id="toc-practice-problems" class="nav-link" data-scroll-target="#practice-problems"><span class="header-section-number">1.2</span> Practice Problems</a>
   <ul class="collapse">
-  <li><a href="#theorem-1-eigenvalues-of-triangular-matrices" id="toc-theorem-1-eigenvalues-of-triangular-matrices" class="nav-link" data-scroll-target="#theorem-1-eigenvalues-of-triangular-matrices"><span class="header-section-number">1.3.1</span> Theorem 1: Eigenvalues of Triangular Matrices</a></li>
-  <li><a href="#theorem-2-linear-independence-of-eigenvectors" id="toc-theorem-2-linear-independence-of-eigenvectors" class="nav-link" data-scroll-target="#theorem-2-linear-independence-of-eigenvectors"><span class="header-section-number">1.3.2</span> Theorem 2: Linear Independence of Eigenvectors</a></li>
+  <li><a href="#problem-1-homogeneous-systems" id="toc-problem-1-homogeneous-systems" class="nav-link" data-scroll-target="#problem-1-homogeneous-systems"><span class="header-section-number">1.2.1</span> Problem 1: Homogeneous Systems</a></li>
+  <li><a href="#problem-2-basis-and-dimension" id="toc-problem-2-basis-and-dimension" class="nav-link" data-scroll-target="#problem-2-basis-and-dimension"><span class="header-section-number">1.2.2</span> Problem 2: Basis and Dimension</a></li>
+  <li><a href="#problem-3-null-space-basis" id="toc-problem-3-null-space-basis" class="nav-link" data-scroll-target="#problem-3-null-space-basis"><span class="header-section-number">1.2.3</span> Problem 3: Null Space Basis</a></li>
   </ul></li>
-  <li><a href="#practice-problems" id="toc-practice-problems" class="nav-link" data-scroll-target="#practice-problems"><span class="header-section-number">1.4</span> Practice Problems</a>
-  <ul class="collapse">
-  <li><a href="#problem-1-zero-eigenvalue" id="toc-problem-1-zero-eigenvalue" class="nav-link" data-scroll-target="#problem-1-zero-eigenvalue"><span class="header-section-number">1.4.1</span> Problem 1: Zero Eigenvalue</a></li>
-  <li><a href="#problem-2-first-order-difference-equations" id="toc-problem-2-first-order-difference-equations" class="nav-link" data-scroll-target="#problem-2-first-order-difference-equations"><span class="header-section-number">1.4.2</span> Problem 2: First-Order Difference Equations</a></li>
-  <li><a href="#problem-3-determining-if-λ-is-an-eigenvalue" id="toc-problem-3-determining-if-λ-is-an-eigenvalue" class="nav-link" data-scroll-target="#problem-3-determining-if-λ-is-an-eigenvalue"><span class="header-section-number">1.4.3</span> Problem 3: Determining if λ is an Eigenvalue</a></li>
-  </ul></li>
-  <li><a href="#common-mistakes-to-avoid" id="toc-common-mistakes-to-avoid" class="nav-link" data-scroll-target="#common-mistakes-to-avoid"><span class="header-section-number">1.5</span> Common Mistakes to Avoid</a></li>
-  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources"><span class="header-section-number">1.6</span> Additional Resources</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -290,7 +300,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Eigenvalues and Eigenvectors in Linear Algebra</h1>
+<h1 class="title">Vector Spaces and Dimension</h1>
 </div>
 
 
@@ -307,17 +317,10 @@ window.Quarto = {
 </header>
 
 
-<section id="eigenvalues-and-eigenvectors-in-linear-algebra" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Eigenvalues and Eigenvectors in Linear Algebra</h1>
-<section id="introduction" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1.1</span> Introduction</h2>
-<p>Eigenvalues and eigenvectors are fundamental concepts in linear algebra that help us understand how linear transformations affect vector spaces. They are particularly useful in analyzing linear operators and their behavior on invariant subspaces.</p>
-<p>I’ll expand your request with collapsible example sections for each concept, showing detailed step-by-step calculations.</p>
-</section>
-<section id="key-concepts-and-definitions" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="key-concepts-and-definitions"><span class="header-section-number">1.2</span> Key Concepts and Definitions</h2>
-<section id="eigenvalues" class="level3" data-number="1.2.1">
-<h3 data-number="1.2.1" class="anchored" data-anchor-id="eigenvalues"><span class="header-section-number">1.2.1</span> Eigenvalues</h3>
+<section id="vector-spaces-and-dimension" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Vector Spaces and Dimension</h1>
+<section id="definition" class="level3" data-number="1.0.1">
+<h3 data-number="1.0.1" class="anchored" data-anchor-id="definition"><span class="header-section-number">1.0.1</span> Definition</h3>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -328,254 +331,231 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Definition</strong>: A scalar <span class="math inline">\lambda \in \mathbb{R}</span> is called an eigenvalue of operator <span class="math inline">T: V \to V</span> if there exists a nonzero vector <span class="math inline">\mathbf{u} \in V</span> such that <span class="math inline">T\mathbf{u} = \lambda\mathbf{u}</span>.</p>
+<p>A vector space <span class="math inline">V</span> is finite-dimensional if it can be spanned by a finite set of vectors. The dimension of <span class="math inline">V</span>, denoted <span class="math inline">\dim V</span>, is the number of vectors in any basis for <span class="math inline">V</span>.</p>
 </div>
 </div>
-<details>
-<summary>
-Example: Finding Eigenvalues
-</summary>
-<p>Let’s find the eigenvalues of matrix <span class="math inline">A = \begin{bmatrix} 3 &amp; 1 \\ 1 &amp; 3 \end{bmatrix}</span></p>
-<ol type="1">
-<li><p>Set up characteristic equation: <span class="math inline">det(A - \lambda I) = 0</span></p></li>
-<li><p>Expand determinant: <span class="math display">det\begin{bmatrix} 3-\lambda &amp; 1 \\ 1 &amp; 3-\lambda \end{bmatrix} = 0</span> <span class="math display">(3-\lambda)(3-\lambda) - (1)(1) = 0</span></p></li>
-<li><p>Solve polynomial: <span class="math display">\lambda^2 - 6\lambda + 8 = 0</span> <span class="math display">(\lambda - 4)(\lambda - 2) = 0</span> <span class="math display">\lambda = 4 \text{ or } \lambda = 2</span></p></li>
-</ol>
-Therefore, the eigenvalues are <span class="math inline">\lambda_1 = 4</span> and <span class="math inline">\lambda_2 = 2</span>
-</details>
+<section id="example-standard-basis" class="level4" data-number="1.0.1.1">
+<h4 data-number="1.0.1.1" class="anchored" data-anchor-id="example-standard-basis"><span class="header-section-number">1.0.1.1</span> Example: Standard Basis</h4>
+<p>The standard basis for <span class="math inline">\mathbb{R}^3</span> consists of: <span class="math display">
+\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix},
+\begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix},
+\begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}
+</span> Therefore, <span class="math inline">\dim \mathbb{R}^3 = 3</span></p>
 </section>
-<section id="eigenvectors" class="level3" data-number="1.2.2">
-<h3 data-number="1.2.2" class="anchored" data-anchor-id="eigenvectors"><span class="header-section-number">1.2.2</span> Eigenvectors</h3>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Definition</strong>: For an eigenvalue <span class="math inline">\lambda</span> of matrix <span class="math inline">A</span>, a vector <span class="math inline">\mathbf{x} \in V</span> is called an eigenvector of <span class="math inline">A</span> (corresponding to <span class="math inline">\lambda</span>) if <span class="math inline">A\mathbf{x} = \lambda\mathbf{x}</span>.</p>
-</div>
-</div>
-<details>
-<summary>
-Example: Finding Eigenvectors
-</summary>
-<p>Using the same matrix <span class="math inline">A = \begin{bmatrix} 3 &amp; 1 \\ 1 &amp; 3 \end{bmatrix}</span> and <span class="math inline">\lambda_1 = 4</span>:</p>
-<ol type="1">
-<li><p>Set up equation <span class="math inline">(A - \lambda I)\mathbf{x} = \mathbf{0}</span>: <span class="math display">\begin{bmatrix} 3-4 &amp; 1 \\ 1 &amp; 3-4 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}</span></p></li>
-<li><p>Simplify system of equations: <span class="math display">\begin{bmatrix} -1 &amp; 1 \\ 1 &amp; -1 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}</span></p></li>
-<li><p>Solve system: <span class="math display">-x_1 + x_2 = 0</span> <span class="math display">x_1 = x_2</span></p></li>
-<li><p>Choose a non-zero solution: Let <span class="math inline">x_1 = 1</span>, then <span class="math inline">x_2 = 1</span></p></li>
-</ol>
-Therefore, <span class="math inline">\mathbf{v}_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}</span> is an eigenvector for <span class="math inline">\lambda_1 = 4</span>
-</details>
 </section>
-<section id="eigenspace" class="level3" data-number="1.2.3">
-<h3 data-number="1.2.3" class="anchored" data-anchor-id="eigenspace"><span class="header-section-number">1.2.3</span> Eigenspace</h3>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Definition</strong>: The eigenspace of matrix <span class="math inline">A</span> corresponding to eigenvalue <span class="math inline">\lambda</span> is the set of all solutions to <span class="math inline">(A - \lambda I)\mathbf{x} = \mathbf{0}</span>, which is equivalent to <span class="math inline">\text{Nul}(A - \lambda I)</span>.</p>
-</div>
-</div>
-<details>
-<summary>
-Example: Finding Eigenspace
-</summary>
-<p>For the same matrix <span class="math inline">A = \begin{bmatrix} 3 &amp; 1 \\ 1 &amp; 3 \end{bmatrix}</span> and <span class="math inline">\lambda_1 = 4</span>:</p>
-<ol type="1">
-<li><p>Form <span class="math inline">A - \lambda I</span>: <span class="math display">A - 4I = \begin{bmatrix} -1 &amp; 1 \\ 1 &amp; -1 \end{bmatrix}</span></p></li>
-<li><p>Find general solution to <span class="math inline">(A - 4I)\mathbf{x} = \mathbf{0}</span>: <span class="math display">\begin{bmatrix} -1 &amp; 1 \\ 1 &amp; -1 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}</span></p></li>
-<li><p>Row reduce to find basis:</p>
+<section id="special-cases" class="level3" data-number="1.0.2">
+<h3 data-number="1.0.2" class="anchored" data-anchor-id="special-cases"><span class="header-section-number">1.0.2</span> Special Cases</h3>
 <ul>
-<li>From earlier, we found <span class="math inline">x_1 = x_2</span></li>
-<li>Let <span class="math inline">t</span> be a free parameter</li>
-</ul></li>
-<li><p>Express eigenspace: <span class="math display">E_4 = \text{span}\left\{\begin{bmatrix} 1 \\ 1 \end{bmatrix}\right\}</span> <span class="math display">= \left\{t\begin{bmatrix} 1 \\ 1 \end{bmatrix} : t \in \mathbb{R}\right\}</span></p></li>
-</ol>
-This is the complete eigenspace corresponding to <span class="math inline">\lambda_1 = 4</span>
-</details>
-</section>
-</section>
-<section id="important-theorems" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="important-theorems"><span class="header-section-number">1.3</span> Important Theorems</h2>
-<section id="theorem-1-eigenvalues-of-triangular-matrices" class="level3" data-number="1.3.1">
-<h3 data-number="1.3.1" class="anchored" data-anchor-id="theorem-1-eigenvalues-of-triangular-matrices"><span class="header-section-number">1.3.1</span> Theorem 1: Eigenvalues of Triangular Matrices</h3>
-<p><strong>Statement</strong>: The eigenvalues of a triangular matrix are the entries on its main diagonal.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Proof
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let <span class="math inline">T: V \to V</span> have an upper-triangular matrix <span class="math inline">A</span> with respect to some basis <span class="math inline">\{\mathbf{v}_1, \ldots, \mathbf{v}_n\}</span>:</p>
-<p><span class="math display">A = \begin{bmatrix}
-\lambda_1 &amp; * &amp; \cdots &amp; * \\
-0 &amp; \lambda_2 &amp; \cdots &amp; * \\
-\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
-0 &amp; 0 &amp; \cdots &amp; \lambda_n
-\end{bmatrix}</span></p>
-<p>For any <span class="math inline">\lambda \in \mathbb{R}</span>, <span class="math inline">A - \lambda I</span> has the form: <span class="math display">A - \lambda I = \begin{bmatrix}
-\lambda_1 - \lambda &amp; * &amp; \cdots &amp; * \\
-0 &amp; \lambda_2 - \lambda &amp; \cdots &amp; * \\
-\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
-0 &amp; 0 &amp; \cdots &amp; \lambda_n - \lambda
-\end{bmatrix}</span></p>
-<p><span class="math inline">A - \lambda I</span> is not invertible if and only if <span class="math inline">\lambda</span> equals one of the <span class="math inline">\lambda_i</span>’s (since <span class="math inline">\det(A - \lambda I) = \prod_{i=1}^n (\lambda_i - \lambda)</span>). Therefore, <span class="math inline">\lambda</span> is an eigenvalue of <span class="math inline">T</span> if and only if <span class="math inline">\lambda</span> equals one of the diagonal entries <span class="math inline">\lambda_i</span>.</p>
-</div>
-</div>
-</section>
-<section id="theorem-2-linear-independence-of-eigenvectors" class="level3" data-number="1.3.2">
-<h3 data-number="1.3.2" class="anchored" data-anchor-id="theorem-2-linear-independence-of-eigenvectors"><span class="header-section-number">1.3.2</span> Theorem 2: Linear Independence of Eigenvectors</h3>
-<p><strong>Statement</strong>: If <span class="math inline">\mathbf{v}_1, \ldots, \mathbf{v}_r</span> are eigenvectors that correspond to distinct eigenvalues <span class="math inline">\lambda_1, \ldots, \lambda_r</span> of an <span class="math inline">n \times n</span> matrix <span class="math inline">A</span>, then the set <span class="math inline">\{\mathbf{v}_1, \ldots, \mathbf{v}_r\}</span> is linearly independent.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Proof
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ol type="1">
-<li>Assume by contradiction that <span class="math inline">\{\mathbf{v}_1, \ldots, \mathbf{v}_r\}</span> is linearly dependent</li>
-<li>Let <span class="math inline">k</span> be smallest positive integer such that <span class="math inline">\mathbf{v}_k \in \text{Span}\{\mathbf{v}_1, \ldots, \mathbf{v}_{k-1}\}</span></li>
-<li>Then there exist scalars <span class="math inline">a_1, \ldots, a_{k-1}</span> such that: <span class="math inline">\mathbf{v}_k = a_1\mathbf{v}_1 + \cdots + a_{k-1}\mathbf{v}_{k-1}</span></li>
-<li>Apply <span class="math inline">A</span> to both sides: <span class="math inline">\lambda_k\mathbf{v}_k = a_1\lambda_1\mathbf{v}_1 + \cdots + a_{k-1}\lambda_{k-1}\mathbf{v}_{k-1}</span></li>
-<li>Multiply original equation by <span class="math inline">\lambda_k</span> and subtract: <span class="math inline">\mathbf{0} = a_1(\lambda_k - \lambda_1)\mathbf{v}_1 + \cdots + a_{k-1}(\lambda_k - \lambda_{k-1})\mathbf{v}_{k-1}</span></li>
-<li>Since <span class="math inline">\{\mathbf{v}_1, \ldots, \mathbf{v}_{k-1}\}</span> is linearly independent and <span class="math inline">\lambda_k \neq \lambda_i</span> for <span class="math inline">i &lt; k</span>, all <span class="math inline">a_i</span> must be 0</li>
-<li>This implies <span class="math inline">\mathbf{v}_k = \mathbf{0}</span>, contradicting that <span class="math inline">\mathbf{v}_k</span> is an eigenvector Therefore, <span class="math inline">\{\mathbf{v}_1, \ldots, \mathbf{v}_r\}</span> must be linearly independent</li>
-</ol>
-</div>
-</div>
-</section>
-</section>
-<section id="practice-problems" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="practice-problems"><span class="header-section-number">1.4</span> Practice Problems</h2>
-<section id="problem-1-zero-eigenvalue" class="level3" data-number="1.4.1">
-<h3 data-number="1.4.1" class="anchored" data-anchor-id="problem-1-zero-eigenvalue"><span class="header-section-number">1.4.1</span> Problem 1: Zero Eigenvalue</h3>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Problem
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>What does it mean for a matrix <span class="math inline">A</span> to have an eigenvalue of 0?</p>
-<section id="solution" class="level4" data-number="1.4.1.1">
-<h4 data-number="1.4.1.1" class="anchored" data-anchor-id="solution"><span class="header-section-number">1.4.1.1</span> Solution</h4>
-<p>For <span class="math inline">\lambda = 0</span> to be an eigenvalue of <span class="math inline">A</span>:</p>
-<ol type="1">
-<li>There must exist a nonzero vector <span class="math inline">\mathbf{x}</span> such that <span class="math inline">A\mathbf{x} = 0\mathbf{x} = \mathbf{0}</span></li>
-<li>This means <span class="math inline">\mathbf{x} \in \text{Nul}(A)</span>, and <span class="math inline">\mathbf{x} \neq \mathbf{0}</span></li>
-<li>Therefore, <span class="math inline">A</span> having an eigenvalue of 0 means:
-<ul>
-<li><span class="math inline">A</span> is not invertible</li>
-<li><span class="math inline">A</span> has a nontrivial null space</li>
-<li><span class="math inline">\det(A) = 0</span></li>
-<li><span class="math inline">A</span> is singular</li>
-</ul></li>
-</ol>
-<p>Example: Consider <span class="math inline">A = \begin{bmatrix} 1 &amp; 2 \\ -2 &amp; -4 \end{bmatrix}</span> - <span class="math inline">\det(A) = 1(-4) - 2(-2) = -4 + 4 = 0</span> - The vector <span class="math inline">\begin{bmatrix} 2 \\ 1 \end{bmatrix}</span> is in <span class="math inline">\text{Nul}(A)</span> - Therefore, 0 is an eigenvalue with eigenvector <span class="math inline">\begin{bmatrix} 2 \\ 1 \end{bmatrix}</span></p>
-</section>
-</div>
-</div>
-</div>
-</section>
-<section id="problem-2-first-order-difference-equations" class="level3" data-number="1.4.2">
-<h3 data-number="1.4.2" class="anchored" data-anchor-id="problem-2-first-order-difference-equations"><span class="header-section-number">1.4.2</span> Problem 2: First-Order Difference Equations</h3>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Problem
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Given a first-order difference equation <span class="math inline">\mathbf{x}_{k+1} = A\mathbf{x}_k</span>, where <span class="math inline">A</span> is an <span class="math inline">n\times n</span> matrix, explain how to construct solutions.</p>
-<section id="solution-1" class="level4" data-number="1.4.2.1">
-<h4 data-number="1.4.2.1" class="anchored" data-anchor-id="solution-1"><span class="header-section-number">1.4.2.1</span> Solution</h4>
-<ol type="1">
-<li>Find eigenvalues <span class="math inline">\lambda_i</span> and corresponding eigenvectors <span class="math inline">\mathbf{v}_i</span> of <span class="math inline">A</span></li>
-<li>Any solution has the form: <span class="math inline">\mathbf{x}_k = c_1\lambda_1^k\mathbf{v}_1 + c_2\lambda_2^k\mathbf{v}_2 + \cdots + c_n\lambda_n^k\mathbf{v}_n</span> where <span class="math inline">c_i</span> are constants determined by initial conditions</li>
-</ol>
-<p>Example: For <span class="math inline">A = \begin{bmatrix} 2 &amp; 1 \\ -1 &amp; 4 \end{bmatrix}</span>, let’s find solution with <span class="math inline">\mathbf{x}_0 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}</span>: 1. Find eigenvalues: <span class="math inline">\lambda = 3,1</span> 2. Find eigenvectors: <span class="math inline">\mathbf{v}_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}</span>, <span class="math inline">\mathbf{v}_2 = \begin{bmatrix} 1 \\ -1 \end{bmatrix}</span> 3. Write <span class="math inline">\mathbf{x}_0 = c_1\mathbf{v}_1 + c_2\mathbf{v}_2</span> 4. Solve for <span class="math inline">c_i</span>: <span class="math inline">\begin{bmatrix} 1 \\ 0 \end{bmatrix} = c_1\begin{bmatrix} 1 \\ 1 \end{bmatrix} + c_2\begin{bmatrix} 1 \\ -1 \end{bmatrix}</span> 5. Get <span class="math inline">c_1 = \frac{1}{2}</span>, <span class="math inline">c_2 = \frac{1}{2}</span> 6. Solution: <span class="math inline">\mathbf{x}_k = \frac{1}{2}(3^k)\begin{bmatrix} 1 \\ 1 \end{bmatrix} + \frac{1}{2}(1^k)\begin{bmatrix} 1 \\ -1 \end{bmatrix}</span></p>
-</section>
-</div>
-</div>
-</div>
-</section>
-<section id="problem-3-determining-if-λ-is-an-eigenvalue" class="level3" data-number="1.4.3">
-<h3 data-number="1.4.3" class="anchored" data-anchor-id="problem-3-determining-if-λ-is-an-eigenvalue"><span class="header-section-number">1.4.3</span> Problem 3: Determining if λ is an Eigenvalue</h3>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Problem
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Determine if <span class="math inline">\lambda = 2</span> is an eigenvalue of <span class="math inline">A = \begin{bmatrix} 3 &amp; 1 \\ -1 &amp; 5 \end{bmatrix}</span></p>
-<section id="solution-2" class="level4" data-number="1.4.3.1">
-<h4 data-number="1.4.3.1" class="anchored" data-anchor-id="solution-2"><span class="header-section-number">1.4.3.1</span> Solution</h4>
-<p>Step 1: Form <span class="math inline">A - 2I</span> <span class="math display">A - 2I = \begin{bmatrix} 1 &amp; 1 \\ -1 &amp; 3 \end{bmatrix}</span></p>
-<p>Step 2: Calculate <span class="math inline">\det(A - 2I)</span> <span class="math inline">\det(A - 2I) = (1)(3) - (1)(-1) = 3 + 1 = 4</span></p>
-<p>Step 3: Conclusion Since <span class="math inline">\det(A - 2I) \neq 0</span>, <span class="math inline">\lambda = 2</span> is not an eigenvalue of <span class="math inline">A</span></p>
-<p>Alternative method: 1. Find characteristic equation: <span class="math inline">\det(A - \lambda I) = 0</span> 2. <span class="math inline">(3-\lambda)(5-\lambda) - (-1)(1) = 0</span> 3. <span class="math inline">\lambda^2 - 8\lambda + 14 = 0</span> 4. <span class="math inline">\lambda = 4 \pm \sqrt{2}</span> Therefore, 2 is not an eigenvalue</p>
-</section>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="common-mistakes-to-avoid" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="common-mistakes-to-avoid"><span class="header-section-number">1.5</span> Common Mistakes to Avoid</h2>
-<ol type="1">
-<li>Not checking if eigenvector is nonzero</li>
-<li>Assuming eigenvalues must be on the main diagonal (only true for triangular matrices)</li>
-<li>Forgetting that eigenvectors corresponding to the same eigenvalue might be linearly dependent</li>
-<li>Not verifying that λ is a real number when working in real vector spaces</li>
-<li>Confusing eigenspace with the span of eigenvectors</li>
-</ol>
-</section>
-<section id="additional-resources" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="additional-resources"><span class="header-section-number">1.6</span> Additional Resources</h2>
-<ul>
-<li><a href="https://www.youtube.com/watch?v=kjBOesZCoqc">3Blue1Brown - Essence of Linear Algebra (YouTube)</a></li>
-<li>Gilbert Strang’s Linear Algebra Lectures (MIT OpenCourseWare)</li>
-<li>“Introduction to Probability” by Bertsekas and Tsitsiklis</li>
-<li>“Matrix Analysis” by Horn and Johnson</li>
+<li>Zero vector space: <span class="math inline">\dim \{\mathbf{0}\} = 0</span></li>
+<li>Infinite-dimensional spaces: The space of all polynomials <span class="math inline">P</span> has no finite basis</li>
 </ul>
+</section>
+<section id="key-concepts-and-definitions" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="key-concepts-and-definitions"><span class="header-section-number">1.1</span> Key Concepts and Definitions</h2>
+<section id="span" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="span"><span class="header-section-number">1.1.1</span> Span</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <strong>definition of Span</strong>: The span of a set of vectors is the set of all linear combinations of those vectors. For a set of vectors <span class="math inline">\{\mathbf{v}_1, \mathbf{v}_2, \dots, \mathbf{v}_n\}</span>, the span is denoted <span class="math inline">\text{span}\{\mathbf{v}_1, \mathbf{v}_2, \dots, \mathbf{v}_n\}</span>.</p>
+</div>
+</div>
+</section>
+<section id="linear-independence" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="linear-independence"><span class="header-section-number">1.1.2</span> Linear Independence</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Definition of Linear Independence and Dependence</strong>: A set of vectors is linearly independent if no vector in the set is a linear combination of the others; otherwise, the set is linearly dependent.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Homogeneous System Form
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A homogeneous system has the form <span class="math inline">A\mathbf{x} = \mathbf{0}</span></p>
+</div>
+</div>
+<section id="example-system" class="level4" data-number="1.1.2.1">
+<h4 data-number="1.1.2.1" class="anchored" data-anchor-id="example-system"><span class="header-section-number">1.1.2.1</span> Example System</h4>
+<p><span class="math display">
+\begin{aligned}
+2x + 3y - z &amp;= 0 \\
+4x - 2y + 2z &amp;= 0
+\end{aligned}
+</span></p>
+<p>In matrix form: <span class="math display">
+\begin{bmatrix}
+2 &amp; 3 &amp; -1 \\
+4 &amp; -2 &amp; 2
+\end{bmatrix}
+\begin{bmatrix}
+x \\ y \\ z
+\end{bmatrix}
+= \begin{bmatrix}
+0 \\ 0
+\end{bmatrix}
+</span></p>
+</section>
+</section>
+<section id="important-theorems" class="level3" data-number="1.1.3">
+<h3 data-number="1.1.3" class="anchored" data-anchor-id="important-theorems"><span class="header-section-number">1.1.3</span> Important Theorems</h3>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 9
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If a vector space <span class="math inline">V</span> has a basis <span class="math inline">\mathcal{B} = \{ \mathbf{b}_1, \dots, \mathbf{b}_n \}</span>, then any set in <span class="math inline">V</span> containing more than <span class="math inline">n</span> vectors must be linearly dependent.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 10
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If a vector space <span class="math inline">V</span> has a basis of <span class="math inline">n</span> vectors, then every basis of <span class="math inline">V</span> must consist of exactly <span class="math inline">n</span> vectors.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 11
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">H</span> be a subspace of a finite-dimensional vector space <span class="math inline">V</span>. Any linearly independent set in <span class="math inline">H</span> can be expanded, if necessary, to a basis for <span class="math inline">H</span>. Also, <span class="math inline">H</span> is finite-dimensional and</p>
+<p><span class="math inline">\dim H \leq \dim V</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The Basis Theorem (Theorem 12)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">V</span> be a <span class="math inline">p</span>-dimensional vector space, <span class="math inline">p \geq 1</span>. Any linearly independent set of exactly <span class="math inline">p</span> elements in <span class="math inline">V</span> is automatically a basis for <span class="math inline">V</span>.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="practice-problems" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="practice-problems"><span class="header-section-number">1.2</span> Practice Problems</h2>
+<section id="problem-1-homogeneous-systems" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="problem-1-homogeneous-systems"><span class="header-section-number">1.2.1</span> Problem 1: Homogeneous Systems</h3>
+<p>Solve the system: <span class="math display">
+\begin{aligned}
+x + y + z &amp;= 0 \\
+2x + 2y + 2z &amp;= 0
+\end{aligned}
+</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Notice the second equation is a multiple of the first</li>
+<li>System reduces to <span class="math inline">x + y + z = 0</span></li>
+<li>General solution: <span class="math inline">\begin{bmatrix} x \\ y \\ -(x+y) \end{bmatrix}</span> for any <span class="math inline">x, y</span></li>
+<li>Basis: <span class="math inline">\text{span}\left(\begin{bmatrix} 1 \\ 0 \\ -1 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \\ -1 \end{bmatrix}\right)</span></li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section id="problem-2-basis-and-dimension" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="problem-2-basis-and-dimension"><span class="header-section-number">1.2.2</span> Problem 2: Basis and Dimension</h3>
+<p>Explain why the standard basis for <span class="math inline">\mathbb{R}^3</span> has exactly three vectors.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The space <span class="math inline">\mathbb{R}^3</span> requires three linearly independent vectors to span it fully. Since the standard basis <span class="math inline">\{\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}\}</span> spans <span class="math inline">\mathbb{R}^3</span> and no subset of these vectors can do so, they form a basis, making <span class="math inline">\dim \mathbb{R}^3 = 3</span>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="problem-3-null-space-basis" class="level3" data-number="1.2.3">
+<h3 data-number="1.2.3" class="anchored" data-anchor-id="problem-3-null-space-basis"><span class="header-section-number">1.2.3</span> Problem 3: Null Space Basis</h3>
+<p>Find a basis for the null space of: <span class="math display">
+A = \begin{bmatrix} 1 &amp; 2 &amp; 3 \\ 2 &amp; 4 &amp; 6 \end{bmatrix}
+</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Row reduce to: <span class="math inline">\begin{bmatrix} 1 &amp; 2 &amp; 3 \\ 0 &amp; 0 &amp; 0 \end{bmatrix}</span></li>
+<li>Free variables: <span class="math inline">y, z</span></li>
+<li>Express <span class="math inline">x</span>: <span class="math inline">x = -2y - 3z</span></li>
+<li>Basis: <span class="math inline">\left\{\begin{bmatrix} -2 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} -3 \\ 0 \\ 1 \end{bmatrix}\right\}</span></li>
+</ol>
+</div>
+</div>
+</div>
 
 
+</section>
 </section>
 </section>
 

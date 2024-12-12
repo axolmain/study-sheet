@@ -15,12 +15,20 @@ website:
     left:
     - href: index.qmd
       text: Concept Connections
+    - href: class.qmd
+      text: Class Schedule 
     - text: Exam 4
       menu: 
         - href: exam4/chapter5_3.qmd
           text: Chapter 5.3 (Diagonality)
         - href: exam4/chapter6_1.qmd
-          text: Chapter 5.1 (Orthogonality)
+          text: Chapter 6.1 (Orthogonality)
+        - href: exam4/chapter6_2.qmd
+          text: Chapter 6.2 (Orthogonal Sets)
+        - href: exam4/chapter6_3.qmd
+          text: Chapter 6.3 (Orthogonal Projections)
+        - href: exam4/chapter6_5.qmd
+          text: Chapter 6.5 (Least squares problem)
     - text: Exam 3
       menu:
         - href: exam3/notecard_topics.qmd
@@ -33,23 +41,23 @@ website:
           text: Exam 3 - Supporting Topics
     - text: Topics
       menu:
-        - href: vector_spaces_and_dimensions.qmd
+        - href: general_topics/vector_spaces_and_dimensions.qmd
           text: Vector Spaces and Dimensions
-        - href: null_spaces_col_spaces.qmd
+        - href: general_topics/null_spaces_col_spaces.qmd
           text: Null Space and Column Space
-        - href: eigenvalues_eigenvectors.qmd
+        - href: general_topics/eigenvalues_eigenvectors.qmd
           text: Eigenvalues and Eigenvectors
-        - href: linear_independence_and_span.qmd
+        - href: general_topics/linear_independence_and_span.qmd
           text: Linear Independence and Span
-        - href: matrix_transformations.qmd
+        - href: general_topics/matrix_transformations.qmd
           text: Matrix Transformations
-        - href: linear_equations.qmd
+        - href: general_topics/linear_equations.qmd
           text: Basic Linear Equations
-        - href: determinants.qmd
+        - href: general_topics/determinants.qmd
           text: Determinants
-        - href: rank.qmd
+        - href: general_topics/rank.qmd
           text: Rank
-        - href: predicting_the_future.qmd
+        - href: general_topics/predicting_the_future.qmd
           text: Predicting the Future
 
             

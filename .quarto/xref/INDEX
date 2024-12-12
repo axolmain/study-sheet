@@ -59,5 +59,47 @@
   },
   "exam4/chapter6_1.qmd": {
     "chapter6_1.html": "8f5704d5"
+  },
+  "exam4/chapter6_3.qmd": {
+    "chapter6_3.html": "0af83790"
+  },
+  "general_topics/determinants.qmd": {
+    "determinants.html": "c00a1a18"
+  },
+  "general_topics/eigenvalues_eigenvectors.qmd": {
+    "eigenvalues_eigenvectors.html": "9c28edc0"
+  },
+  "general_topics/linear_equations.qmd": {
+    "linear_equations.html": "08f5b7c3"
+  },
+  "general_topics/linear_independence_and_span.qmd": {
+    "linear_independence_and_span.html": "848f78f2"
+  },
+  "general_topics/matrix_transformations.qmd": {
+    "matrix_transformations.html": "e8f3f3be"
+  },
+  "general_topics/null_spaces_col_spaces.qmd": {
+    "null_spaces_col_spaces.html": "a892d0bc"
+  },
+  "general_topics/predicting_the_future.qmd": {
+    "predicting_the_future.html": "bf7d6ed2"
+  },
+  "general_topics/rank.qmd": {
+    "rank.html": "e59dca40"
+  },
+  "general_topics/vector_spaces_and_dimensions.qmd": {
+    "vector_spaces_and_dimensions.html": "a94f194d"
+  },
+  "class.qmd": {
+    "class.html": "02c59bf9"
+  },
+  "exam4/chapter6_2.qmd": {
+    "chapter6_2.html": "80dff2f1"
+  },
+  "exam4/chapter6_5.qmd": {
+    "chapter6_5.html": "7b64b819"
+  },
+  "exam4/chapter6_5_v2.qmd": {
+    "chapter6_5_v2.html": "fe97ea1b"
   }
 }

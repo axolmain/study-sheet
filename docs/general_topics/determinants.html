@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Matrix Transformations – Study-Sheet: Linear Algebra</title>
+<title>Determinants and Invertibility in Linear Algebra – Study-Sheet: Linear Algebra</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +23,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -113,7 +113,7 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-sidebar floating nav-fixed">
@@ -123,7 +123,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Study-Sheet: Linear Algebra</span>
     </a>
   </div>
@@ -134,8 +134,12 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Concept Connections</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../class.html"> 
+<span class="menu-text">Class Schedule</span></a>
   </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-exam-4" role="link" data-bs-toggle="dropdown" aria-expanded="false">
@@ -143,12 +147,24 @@ window.Quarto = {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-exam-4">    
         <li>
-    <a class="dropdown-item" href="./exam4/chapter5_3.html">
+    <a class="dropdown-item" href="../exam4/chapter5_3.html">
  <span class="dropdown-text">Chapter 5.3 (Diagonality)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./exam4/chapter6_1.html">
- <span class="dropdown-text">Chapter 5.1 (Orthogonality)</span></a>
+    <a class="dropdown-item" href="../exam4/chapter6_1.html">
+ <span class="dropdown-text">Chapter 6.1 (Orthogonality)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../exam4/chapter6_2.html">
+ <span class="dropdown-text">Chapter 6.2 (Orthogonal Sets)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../exam4/chapter6_3.html">
+ <span class="dropdown-text">Chapter 6.3 (Orthogonal Projections)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../exam4/chapter6_5.html">
+ <span class="dropdown-text">Chapter 6.5 (Least squares problem)</span></a>
   </li>  
     </ul>
   </li>
@@ -158,19 +174,19 @@ window.Quarto = {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-exam-3">    
         <li>
-    <a class="dropdown-item" href="./exam3/notecard_topics.html">
+    <a class="dropdown-item" href="../exam3/notecard_topics.html">
  <span class="dropdown-text">Exam 3 - Notecard</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./exam3/daily_review.html">
+    <a class="dropdown-item" href="../exam3/daily_review.html">
  <span class="dropdown-text">Exam 3 - Critical Foundations</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./exam3/semi_daily_review.html">
+    <a class="dropdown-item" href="../exam3/semi_daily_review.html">
  <span class="dropdown-text">Exam 3 - Important Applications</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./exam3/every_three_days_review.html">
+    <a class="dropdown-item" href="../exam3/every_three_days_review.html">
  <span class="dropdown-text">Exam 3 - Supporting Topics</span></a>
   </li>  
     </ul>
@@ -181,39 +197,39 @@ window.Quarto = {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-topics">    
         <li>
-    <a class="dropdown-item" href="./vector_spaces_and_dimensions.html">
+    <a class="dropdown-item" href="../general_topics/vector_spaces_and_dimensions.html">
  <span class="dropdown-text">Vector Spaces and Dimensions</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./null_spaces_col_spaces.html">
+    <a class="dropdown-item" href="../general_topics/null_spaces_col_spaces.html">
  <span class="dropdown-text">Null Space and Column Space</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./eigenvalues_eigenvectors.html">
+    <a class="dropdown-item" href="../general_topics/eigenvalues_eigenvectors.html">
  <span class="dropdown-text">Eigenvalues and Eigenvectors</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./linear_independence_and_span.html">
+    <a class="dropdown-item" href="../general_topics/linear_independence_and_span.html">
  <span class="dropdown-text">Linear Independence and Span</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./matrix_transformations.html">
+    <a class="dropdown-item" href="../general_topics/matrix_transformations.html">
  <span class="dropdown-text">Matrix Transformations</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./linear_equations.html">
+    <a class="dropdown-item" href="../general_topics/linear_equations.html">
  <span class="dropdown-text">Basic Linear Equations</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./determinants.html">
+    <a class="dropdown-item" href="../general_topics/determinants.html">
  <span class="dropdown-text">Determinants</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./rank.html">
+    <a class="dropdown-item" href="../general_topics/rank.html">
  <span class="dropdown-text">Rank</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./predicting_the_future.html">
+    <a class="dropdown-item" href="../general_topics/predicting_the_future.html">
  <span class="dropdown-text">Predicting the Future</span></a>
   </li>  
     </ul>
@@ -230,7 +246,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Matrix Transformations</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Determinants and Invertibility in Linear Algebra</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -259,13 +275,36 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#concepts-and-questions-on-matrix-transformations" id="toc-concepts-and-questions-on-matrix-transformations" class="nav-link active" data-scroll-target="#concepts-and-questions-on-matrix-transformations"><span class="header-section-number">1</span> Concepts and Questions on Matrix Transformations</a>
+  <li><a href="#determinants-and-invertibility-in-linear-algebra" id="toc-determinants-and-invertibility-in-linear-algebra" class="nav-link active" data-scroll-target="#determinants-and-invertibility-in-linear-algebra"><span class="header-section-number">1</span> Determinants and Invertibility in Linear Algebra</a>
   <ul class="collapse">
-  <li><a href="#properties-for-a-transformation-to-be-a-linear-transformation" id="toc-properties-for-a-transformation-to-be-a-linear-transformation" class="nav-link" data-scroll-target="#properties-for-a-transformation-to-be-a-linear-transformation"><span class="header-section-number">1.1</span> Properties for a Transformation to be a Linear Transformation</a></li>
-  <li><a href="#definitions-of-onto-and-one-to-one-transformations" id="toc-definitions-of-onto-and-one-to-one-transformations" class="nav-link" data-scroll-target="#definitions-of-onto-and-one-to-one-transformations"><span class="header-section-number">1.2</span> Definitions of “Onto” and “One-to-One” Transformations</a></li>
-  <li><a href="#markov-chain-and-steady-state-solution" id="toc-markov-chain-and-steady-state-solution" class="nav-link" data-scroll-target="#markov-chain-and-steady-state-solution"><span class="header-section-number">1.3</span> Markov Chain and Steady State Solution</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">1.1</span> Introduction</a></li>
+  <li><a href="#key-concepts-and-definitions" id="toc-key-concepts-and-definitions" class="nav-link" data-scroll-target="#key-concepts-and-definitions"><span class="header-section-number">1.2</span> Key Concepts and Definitions</a>
+  <ul class="collapse">
+  <li><a href="#determinants-of-square-matrices" id="toc-determinants-of-square-matrices" class="nav-link" data-scroll-target="#determinants-of-square-matrices"><span class="header-section-number">1.2.1</span> Determinants of Square Matrices</a></li>
+  <li><a href="#basic-properties-of-determinants" id="toc-basic-properties-of-determinants" class="nav-link" data-scroll-target="#basic-properties-of-determinants"><span class="header-section-number">1.2.2</span> Basic Properties of Determinants</a></li>
   </ul></li>
-  <li><a href="#summary-of-matrix-transformations-concepts" id="toc-summary-of-matrix-transformations-concepts" class="nav-link" data-scroll-target="#summary-of-matrix-transformations-concepts"><span class="header-section-number">2</span> Summary of Matrix Transformations Concepts</a></li>
+  <li><a href="#effects-of-row-operations-on-determinants" id="toc-effects-of-row-operations-on-determinants" class="nav-link" data-scroll-target="#effects-of-row-operations-on-determinants"><span class="header-section-number">1.3</span> Effects of Row Operations on Determinants</a>
+  <ul class="collapse">
+  <li><a href="#row-operations-and-determinant-effects" id="toc-row-operations-and-determinant-effects" class="nav-link" data-scroll-target="#row-operations-and-determinant-effects"><span class="header-section-number">1.3.1</span> Row Operations and Determinant Effects</a></li>
+  <li><a href="#calculating-determinants-using-row-operations" id="toc-calculating-determinants-using-row-operations" class="nav-link" data-scroll-target="#calculating-determinants-using-row-operations"><span class="header-section-number">1.3.2</span> Calculating Determinants Using Row Operations</a></li>
+  </ul></li>
+  <li><a href="#important-theorems" id="toc-important-theorems" class="nav-link" data-scroll-target="#important-theorems"><span class="header-section-number">1.4</span> Important Theorems</a></li>
+  <li><a href="#relationship-between-invertibility-and-determinants" id="toc-relationship-between-invertibility-and-determinants" class="nav-link" data-scroll-target="#relationship-between-invertibility-and-determinants"><span class="header-section-number">1.5</span> Relationship Between Invertibility and Determinants</a>
+  <ul class="collapse">
+  <li><a href="#determinants-as-an-invertibility-criterion" id="toc-determinants-as-an-invertibility-criterion" class="nav-link" data-scroll-target="#determinants-as-an-invertibility-criterion"><span class="header-section-number">1.5.1</span> Determinants as an Invertibility Criterion</a></li>
+  </ul></li>
+  <li><a href="#special-cases-or-applications" id="toc-special-cases-or-applications" class="nav-link" data-scroll-target="#special-cases-or-applications"><span class="header-section-number">1.6</span> Special Cases or Applications</a>
+  <ul class="collapse">
+  <li><a href="#determinants-in-geometric-interpretation" id="toc-determinants-in-geometric-interpretation" class="nav-link" data-scroll-target="#determinants-in-geometric-interpretation"><span class="header-section-number">1.6.1</span> Determinants in Geometric Interpretation</a></li>
+  <li><a href="#determinant-of-triangular-matrices" id="toc-determinant-of-triangular-matrices" class="nav-link" data-scroll-target="#determinant-of-triangular-matrices"><span class="header-section-number">1.6.2</span> Determinant of Triangular Matrices</a></li>
+  </ul></li>
+  <li><a href="#practice-problems" id="toc-practice-problems" class="nav-link" data-scroll-target="#practice-problems"><span class="header-section-number">1.7</span> Practice Problems</a>
+  <ul class="collapse">
+  <li><a href="#problem-1" id="toc-problem-1" class="nav-link" data-scroll-target="#problem-1"><span class="header-section-number">1.7.1</span> Problem 1</a></li>
+  <li><a href="#problem-2" id="toc-problem-2" class="nav-link" data-scroll-target="#problem-2"><span class="header-section-number">1.7.2</span> Problem 2</a></li>
+  </ul></li>
+  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources"><span class="header-section-number">1.8</span> Additional Resources</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -274,7 +313,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Matrix Transformations</h1>
+<h1 class="title">Determinants and Invertibility in Linear Algebra</h1>
 </div>
 
 
@@ -291,58 +330,167 @@ window.Quarto = {
 </header>
 
 
-<section id="concepts-and-questions-on-matrix-transformations" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Concepts and Questions on Matrix Transformations</h1>
-<section id="properties-for-a-transformation-to-be-a-linear-transformation" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="properties-for-a-transformation-to-be-a-linear-transformation"><span class="header-section-number">1.1</span> Properties for a Transformation to be a Linear Transformation</h2>
-<ul>
-<li><p><strong>Reference</strong>: Section 1.8</p></li>
-<li><p><strong>Definition</strong>: A transformation <span class="math inline">T: \mathbb{R}^n \rightarrow \mathbb{R}^m</span> is linear if it satisfies two properties:</p>
+<section id="determinants-and-invertibility-in-linear-algebra" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Determinants and Invertibility in Linear Algebra</h1>
+<section id="introduction" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1.1</span> Introduction</h2>
+<p>This study guide covers essential concepts about determinants in linear algebra, focusing on the effects of row operations on determinants and the relationship between a matrix’s invertibility and its determinant.</p>
+</section>
+<section id="key-concepts-and-definitions" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="key-concepts-and-definitions"><span class="header-section-number">1.2</span> Key Concepts and Definitions</h2>
+<section id="determinants-of-square-matrices" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="determinants-of-square-matrices"><span class="header-section-number">1.2.1</span> Determinants of Square Matrices</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Definition</strong>: The <strong>determinant</strong> of a square matrix <span class="math inline">A</span> is a scalar that provides information about the matrix’s properties, such as invertibility and volume scaling factor. For a 2x2 matrix, the determinant is calculated as: <span class="math inline">\text{det}(A) = ad - bc \quad \text{for} \quad A = \begin{bmatrix} a &amp; b \\ c &amp; d \end{bmatrix}.</span></p>
+</div>
+</div>
+<section id="example" class="level4" data-number="1.2.1.1">
+<h4 data-number="1.2.1.1" class="anchored" data-anchor-id="example"><span class="header-section-number">1.2.1.1</span> Example</h4>
+<p>For <span class="math inline">A = \begin{bmatrix} 3 &amp; 4 \\ 2 &amp; 5 \end{bmatrix}</span>, the determinant is: <span class="math inline">\text{det}(A) = (3 \times 5) - (4 \times 2) = 15 - 8 = 7.</span></p>
+</section>
+</section>
+<section id="basic-properties-of-determinants" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="basic-properties-of-determinants"><span class="header-section-number">1.2.2</span> Basic Properties of Determinants</h3>
+<p>The determinant of a matrix <span class="math inline">A</span> is: - <strong>Zero</strong> if <span class="math inline">A</span> is not invertible. - <strong>Nonzero</strong> if <span class="math inline">A</span> is invertible.</p>
+<p>The determinant also changes in predictable ways with row operations, as detailed below.</p>
+</section>
+</section>
+<section id="effects-of-row-operations-on-determinants" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="effects-of-row-operations-on-determinants"><span class="header-section-number">1.3</span> Effects of Row Operations on Determinants</h2>
+<section id="row-operations-and-determinant-effects" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="row-operations-and-determinant-effects"><span class="header-section-number">1.3.1</span> Row Operations and Determinant Effects</h3>
 <ol type="1">
-<li><strong>Additivity</strong>: <span class="math inline">T(\mathbf{u} + \mathbf{v}) = T(\mathbf{u}) + T(\mathbf{v})</span> for all vectors <span class="math inline">\mathbf{u}, \mathbf{v} \in \mathbb{R}^n</span>.</li>
-<li><strong>Scalar Multiplication</strong>: <span class="math inline">T(c \mathbf{u}) = c T(\mathbf{u})</span> for any scalar <span class="math inline">c</span> and vector <span class="math inline">\mathbf{u} \in \mathbb{R}^n</span>.</li>
-</ol></li>
-<li><p><strong>Explanation</strong>: These properties mean that linear transformations preserve the structure of vector spaces. For instance, a scaling transformation will uniformly stretch all vectors by the same factor, maintaining the direction of the vectors.</p></li>
-<li><p><strong>Example</strong>: If <span class="math inline">T(\mathbf{x}) = A \mathbf{x}</span>, where <span class="math inline">A</span> is a matrix, then <span class="math inline">T</span> is a linear transformation because matrix multiplication inherently satisfies both additivity and scalar multiplication.</p></li>
-</ul>
-</section>
-<section id="definitions-of-onto-and-one-to-one-transformations" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="definitions-of-onto-and-one-to-one-transformations"><span class="header-section-number">1.2</span> Definitions of “Onto” and “One-to-One” Transformations</h2>
-<ul>
-<li><p><strong>Reference</strong>: Sections 1.9 and 2.4</p></li>
-<li><p><strong>“Onto” Transformation (Surjective)</strong>: A transformation <span class="math inline">T: \mathbb{R}^n \rightarrow \mathbb{R}^m</span> is “onto” if every vector in <span class="math inline">\mathbb{R}^m</span> is the image of at least one vector in <span class="math inline">\mathbb{R}^n</span>. This implies that the range of <span class="math inline">T</span> spans <span class="math inline">\mathbb{R}^m</span>.</p></li>
-<li><p><strong>“One-to-One” Transformation (Injective)</strong>: A transformation <span class="math inline">T: \mathbb{R}^n \rightarrow \mathbb{R}^m</span> is “one-to-one” if different vectors in <span class="math inline">\mathbb{R}^n</span> map to different vectors in <span class="math inline">\mathbb{R}^m</span>. This means that <span class="math inline">T(\mathbf{u}) = T(\mathbf{v})</span> implies <span class="math inline">\mathbf{u} = \mathbf{v}</span>.</p></li>
-<li><p><strong>Example and Explanation</strong>: If <span class="math inline">T(\mathbf{x}) = A \mathbf{x}</span> and <span class="math inline">A</span> is an <span class="math inline">m \times n</span> matrix:</p>
-<ul>
-<li><strong>Onto</strong>: <span class="math inline">T</span> is onto if the columns of <span class="math inline">A</span> span <span class="math inline">\mathbb{R}^m</span>.</li>
-<li><strong>One-to-One</strong>: <span class="math inline">T</span> is one-to-one if the columns of <span class="math inline">A</span> are linearly independent, which holds if <span class="math inline">A</span> has a pivot in every column.</li>
-</ul></li>
-</ul>
-</section>
-<section id="markov-chain-and-steady-state-solution" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="markov-chain-and-steady-state-solution"><span class="header-section-number">1.3</span> Markov Chain and Steady State Solution</h2>
-<ul>
-<li><p><strong>Reference</strong>: Section 4.9</p></li>
-<li><p><strong>Definition</strong>: A <strong>Markov Chain</strong> is a sequence of states where the probability of moving to the next state depends only on the current state. This process can be represented with a <strong>transition matrix</strong> <span class="math inline">P</span>, where each entry <span class="math inline">P_{ij}</span> denotes the probability of transitioning from state <span class="math inline">i</span> to state <span class="math inline">j</span>.</p></li>
-<li><p><strong>Steady State Solution</strong>: The steady state of a Markov Chain is a vector <span class="math inline">\mathbf{s}</span> such that <span class="math inline">P \mathbf{s} = \mathbf{s}</span>. This vector represents a stable distribution of probabilities across states that no longer changes after transitions.</p></li>
-<li><p><strong>Explanation</strong>: To find the steady state vector <span class="math inline">\mathbf{s}</span>, solve <span class="math inline">(P - I) \mathbf{s} = 0</span>, ensuring that the sum of the entries in <span class="math inline">\mathbf{s}</span> is 1 (since they represent probabilities).</p></li>
-<li><p><strong>Example</strong>: For a transition matrix $ P =</p>
-<span class="math display">\begin{bmatrix} 0.9 &amp; 0.1 \\ 0.5 &amp; 0.5 \end{bmatrix}</span>
-<p>, ] the steady state vector <span class="math inline">\mathbf{s} = \begin{bmatrix} s_1 \\ s_2 \end{bmatrix}</span> satisfies: $ P = . ] Solving this system, we can find the steady state probabilities for long-term behavior.</p></li>
-</ul>
-<hr>
+<li><strong>Row Replacement</strong>: Replacing one row with itself plus a multiple of another row leaves the determinant unchanged.</li>
+<li><strong>Row Interchange</strong>: Interchanging two rows of a matrix multiplies the determinant by (-1).</li>
+<li><strong>Row Scaling</strong>: Multiplying a row by a scalar <span class="math inline">k</span> scales the determinant by <span class="math inline">k</span>.</li>
+</ol>
+<section id="example-1" class="level4" data-number="1.3.1.1">
+<h4 data-number="1.3.1.1" class="anchored" data-anchor-id="example-1"><span class="header-section-number">1.3.1.1</span> Example</h4>
+<p>Consider <span class="math inline">A = \begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{bmatrix}</span> with <span class="math inline">\text{det}(A) = -2</span>. - <strong>Row Replacement</strong>: Replacing row 1 with <span class="math inline">\text{row 1} + 3 \times \text{row 2}</span> does not alter the determinant. - <strong>Row Interchange</strong>: Swapping rows 1 and 2 changes the determinant to <span class="math inline">2</span>. - <strong>Row Scaling</strong>: Multiplying row 1 by <span class="math inline">3</span> changes the determinant to <span class="math inline">-6</span>.</p>
 </section>
 </section>
-<section id="summary-of-matrix-transformations-concepts" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Summary of Matrix Transformations Concepts</h1>
+<section id="calculating-determinants-using-row-operations" class="level3" data-number="1.3.2">
+<h3 data-number="1.3.2" class="anchored" data-anchor-id="calculating-determinants-using-row-operations"><span class="header-section-number">1.3.2</span> Calculating Determinants Using Row Operations</h3>
+<p>Determinants can be computed by transforming the matrix to an upper triangular form via row operations. The determinant is then the product of the diagonal entries.</p>
+</section>
+</section>
+<section id="important-theorems" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="important-theorems"><span class="header-section-number">1.4</span> Important Theorems</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Determinant Multiplication Theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For matrices <span class="math inline">A</span> and <span class="math inline">B</span> of the same size, <span class="math inline">\text{det}(AB) = \text{det}(A) \times \text{det}(B)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Invertibility and Determinants
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A matrix <span class="math inline">A</span> is invertible if and only if <span class="math inline">\text{det}(A) \neq 0</span>.</p>
+</div>
+</div>
+</section>
+<section id="relationship-between-invertibility-and-determinants" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="relationship-between-invertibility-and-determinants"><span class="header-section-number">1.5</span> Relationship Between Invertibility and Determinants</h2>
+<section id="determinants-as-an-invertibility-criterion" class="level3" data-number="1.5.1">
+<h3 data-number="1.5.1" class="anchored" data-anchor-id="determinants-as-an-invertibility-criterion"><span class="header-section-number">1.5.1</span> Determinants as an Invertibility Criterion</h3>
+<p>If <span class="math inline">\text{det}(A) = 0</span>, then: - <span class="math inline">A</span> is <strong>not invertible</strong>. - <span class="math inline">A</span> has linearly dependent rows or columns. - The matrix <span class="math inline">A</span> maps volumes to zero, indicating a lack of full rank.</p>
+<p>Conversely, if <span class="math inline">\text{det}(A) \neq 0</span>, then <span class="math inline">A</span> is invertible, has linearly independent columns, and the transformation represented by <span class="math inline">A</span> is volume-preserving (up to a scaling factor).</p>
+<section id="example-2" class="level4" data-number="1.5.1.1">
+<h4 data-number="1.5.1.1" class="anchored" data-anchor-id="example-2"><span class="header-section-number">1.5.1.1</span> Example</h4>
+<p>For <span class="math inline">A = \begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 6 \end{bmatrix}</span>, <span class="math inline">\text{det}(A) = (1)(6) - (2)(3) = 0</span>. Thus, <span class="math inline">A</span> is not invertible due to linearly dependent columns.</p>
+</section>
+</section>
+</section>
+<section id="special-cases-or-applications" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="special-cases-or-applications"><span class="header-section-number">1.6</span> Special Cases or Applications</h2>
+<section id="determinants-in-geometric-interpretation" class="level3" data-number="1.6.1">
+<h3 data-number="1.6.1" class="anchored" data-anchor-id="determinants-in-geometric-interpretation"><span class="header-section-number">1.6.1</span> Determinants in Geometric Interpretation</h3>
+<p>The determinant of a transformation matrix represents the scaling factor for areas (in 2D) or volumes (in 3D) under the transformation. A determinant of zero implies that the transformation collapses the space into a lower dimension.</p>
+</section>
+<section id="determinant-of-triangular-matrices" class="level3" data-number="1.6.2">
+<h3 data-number="1.6.2" class="anchored" data-anchor-id="determinant-of-triangular-matrices"><span class="header-section-number">1.6.2</span> Determinant of Triangular Matrices</h3>
+<p>For a triangular matrix, the determinant is the product of its diagonal entries. This property simplifies determinant calculations, especially after transforming a matrix to echelon form.</p>
+</section>
+</section>
+<section id="practice-problems" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="practice-problems"><span class="header-section-number">1.7</span> Practice Problems</h2>
+<section id="problem-1" class="level3" data-number="1.7.1">
+<h3 data-number="1.7.1" class="anchored" data-anchor-id="problem-1"><span class="header-section-number">1.7.1</span> Problem 1</h3>
+<p>Calculate the determinant of the matrix</p>
+<p><span class="math inline">A = \begin{bmatrix} 2 &amp; 5 \\ 1 &amp; 3 \end{bmatrix}</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Using the formula <span class="math inline">\text{det}(A) = ad - bc</span>:</p>
+<p><span class="math inline">\text{det}(A) = (2 \times 3) - (5 \times 1) = 6 - 5 = 1</span></p>
+<p>Since <span class="math inline">\text{det}(A) \neq 0</span>, <span class="math inline">A</span> is invertible.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="problem-2" class="level3" data-number="1.7.2">
+<h3 data-number="1.7.2" class="anchored" data-anchor-id="problem-2"><span class="header-section-number">1.7.2</span> Problem 2</h3>
+<p>Determine if the matrix <span class="math inline">B = \begin{bmatrix} 0 &amp; 1 \\ 4 &amp; 0 \end{bmatrix}</span> is invertible using its determinant.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\text{det}(B) = (0 \times 0) - (1 \times 4) = -4.</span> Since <span class="math inline">\text{det}(B) \neq 0</span>, <span class="math inline">B</span> is invertible.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="additional-resources" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="additional-resources"><span class="header-section-number">1.8</span> Additional Resources</h2>
 <ul>
-<li><strong>Linear Transformation</strong>: Defined by additivity and scalar multiplication, ensuring the transformation is consistent with vector space structure.</li>
-<li><strong>“Onto” and “One-to-One”</strong>: Key properties for transformations, indicating whether every output has a corresponding input (“onto”) and whether each input maps uniquely (“one-to-one”).</li>
-<li><strong>Markov Chains and Steady State</strong>: Used for modeling probabilistic systems that evolve over time, where the steady state represents stable, long-term probabilities.</li>
+<li><a href="https://example.com">Linear Algebra Done Right by Sheldon Axler</a></li>
+<li><a href="https://example.com">Introduction to Linear Algebra by Gilbert Strang</a></li>
+<li><a href="https://www.youtube.com/watch?v=kjBOesZCoqc">3Blue1Brown - Essence of Linear Algebra (YouTube)</a></li>
 </ul>
-<p>This expanded section on matrix transformations connects linear algebra concepts with practical examples and applications, reinforcing understanding of these fundamental transformations.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Vector Spaces and Dimension – Study-Sheet: Linear Algebra</title>
+<title>Linear Independence and Span – Study-Sheet: Linear Algebra</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +23,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -113,7 +113,7 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-sidebar floating nav-fixed">
@@ -123,7 +123,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Study-Sheet: Linear Algebra</span>
     </a>
   </div>
@@ -134,8 +134,12 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Concept Connections</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../class.html"> 
+<span class="menu-text">Class Schedule</span></a>
   </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-exam-4" role="link" data-bs-toggle="dropdown" aria-expanded="false">
@@ -143,12 +147,24 @@ window.Quarto = {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-exam-4">    
         <li>
-    <a class="dropdown-item" href="./exam4/chapter5_3.html">
+    <a class="dropdown-item" href="../exam4/chapter5_3.html">
  <span class="dropdown-text">Chapter 5.3 (Diagonality)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./exam4/chapter6_1.html">
- <span class="dropdown-text">Chapter 5.1 (Orthogonality)</span></a>
+    <a class="dropdown-item" href="../exam4/chapter6_1.html">
+ <span class="dropdown-text">Chapter 6.1 (Orthogonality)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../exam4/chapter6_2.html">
+ <span class="dropdown-text">Chapter 6.2 (Orthogonal Sets)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../exam4/chapter6_3.html">
+ <span class="dropdown-text">Chapter 6.3 (Orthogonal Projections)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../exam4/chapter6_5.html">
+ <span class="dropdown-text">Chapter 6.5 (Least squares problem)</span></a>
   </li>  
     </ul>
   </li>
@@ -158,19 +174,19 @@ window.Quarto = {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-exam-3">    
         <li>
-    <a class="dropdown-item" href="./exam3/notecard_topics.html">
+    <a class="dropdown-item" href="../exam3/notecard_topics.html">
  <span class="dropdown-text">Exam 3 - Notecard</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./exam3/daily_review.html">
+    <a class="dropdown-item" href="../exam3/daily_review.html">
  <span class="dropdown-text">Exam 3 - Critical Foundations</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./exam3/semi_daily_review.html">
+    <a class="dropdown-item" href="../exam3/semi_daily_review.html">
  <span class="dropdown-text">Exam 3 - Important Applications</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./exam3/every_three_days_review.html">
+    <a class="dropdown-item" href="../exam3/every_three_days_review.html">
  <span class="dropdown-text">Exam 3 - Supporting Topics</span></a>
   </li>  
     </ul>
@@ -181,39 +197,39 @@ window.Quarto = {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-topics">    
         <li>
-    <a class="dropdown-item" href="./vector_spaces_and_dimensions.html">
+    <a class="dropdown-item" href="../general_topics/vector_spaces_and_dimensions.html">
  <span class="dropdown-text">Vector Spaces and Dimensions</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./null_spaces_col_spaces.html">
+    <a class="dropdown-item" href="../general_topics/null_spaces_col_spaces.html">
  <span class="dropdown-text">Null Space and Column Space</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./eigenvalues_eigenvectors.html">
+    <a class="dropdown-item" href="../general_topics/eigenvalues_eigenvectors.html">
  <span class="dropdown-text">Eigenvalues and Eigenvectors</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./linear_independence_and_span.html">
+    <a class="dropdown-item" href="../general_topics/linear_independence_and_span.html">
  <span class="dropdown-text">Linear Independence and Span</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./matrix_transformations.html">
+    <a class="dropdown-item" href="../general_topics/matrix_transformations.html">
  <span class="dropdown-text">Matrix Transformations</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./linear_equations.html">
+    <a class="dropdown-item" href="../general_topics/linear_equations.html">
  <span class="dropdown-text">Basic Linear Equations</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./determinants.html">
+    <a class="dropdown-item" href="../general_topics/determinants.html">
  <span class="dropdown-text">Determinants</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./rank.html">
+    <a class="dropdown-item" href="../general_topics/rank.html">
  <span class="dropdown-text">Rank</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./predicting_the_future.html">
+    <a class="dropdown-item" href="../general_topics/predicting_the_future.html">
  <span class="dropdown-text">Predicting the Future</span></a>
   </li>  
     </ul>
@@ -230,7 +246,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Vector Spaces and Dimension</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Linear Independence and Span</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -259,23 +275,27 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#vector-spaces-and-dimension" id="toc-vector-spaces-and-dimension" class="nav-link active" data-scroll-target="#vector-spaces-and-dimension"><span class="header-section-number">1</span> Vector Spaces and Dimension</a>
+  <li><a href="#conceptual-overview" id="toc-conceptual-overview" class="nav-link active" data-scroll-target="#conceptual-overview"><span class="header-section-number">1</span> Conceptual Overview</a>
   <ul class="collapse">
-  <li><a href="#definition" id="toc-definition" class="nav-link" data-scroll-target="#definition"><span class="header-section-number">1.0.1</span> Definition</a></li>
-  <li><a href="#special-cases" id="toc-special-cases" class="nav-link" data-scroll-target="#special-cases"><span class="header-section-number">1.0.2</span> Special Cases</a></li>
-  <li><a href="#key-concepts-and-definitions" id="toc-key-concepts-and-definitions" class="nav-link" data-scroll-target="#key-concepts-and-definitions"><span class="header-section-number">1.1</span> Key Concepts and Definitions</a>
+  <li><a href="#linear-independence" id="toc-linear-independence" class="nav-link" data-scroll-target="#linear-independence"><span class="header-section-number">1.1</span> Linear Independence</a></li>
+  <li><a href="#span-of-a-set-of-vectors" id="toc-span-of-a-set-of-vectors" class="nav-link" data-scroll-target="#span-of-a-set-of-vectors"><span class="header-section-number">1.2</span> Span of a Set of Vectors</a></li>
+  </ul></li>
+  <li><a href="#common-misconceptions" id="toc-common-misconceptions" class="nav-link" data-scroll-target="#common-misconceptions"><span class="header-section-number">2</span> Common Misconceptions</a></li>
+  <li><a href="#worked-examples" id="toc-worked-examples" class="nav-link" data-scroll-target="#worked-examples"><span class="header-section-number">3</span> Worked Examples</a>
   <ul class="collapse">
-  <li><a href="#span" id="toc-span" class="nav-link" data-scroll-target="#span"><span class="header-section-number">1.1.1</span> Span</a></li>
-  <li><a href="#linear-independence" id="toc-linear-independence" class="nav-link" data-scroll-target="#linear-independence"><span class="header-section-number">1.1.2</span> Linear Independence</a></li>
-  <li><a href="#important-theorems" id="toc-important-theorems" class="nav-link" data-scroll-target="#important-theorems"><span class="header-section-number">1.1.3</span> Important Theorems</a></li>
-  </ul></li>
-  <li><a href="#practice-problems" id="toc-practice-problems" class="nav-link" data-scroll-target="#practice-problems"><span class="header-section-number">1.2</span> Practice Problems</a>
+  <li><a href="#basic-examples" id="toc-basic-examples" class="nav-link" data-scroll-target="#basic-examples"><span class="header-section-number">3.1</span> Basic Examples</a>
   <ul class="collapse">
-  <li><a href="#problem-1-homogeneous-systems" id="toc-problem-1-homogeneous-systems" class="nav-link" data-scroll-target="#problem-1-homogeneous-systems"><span class="header-section-number">1.2.1</span> Problem 1: Homogeneous Systems</a></li>
-  <li><a href="#problem-2-basis-and-dimension" id="toc-problem-2-basis-and-dimension" class="nav-link" data-scroll-target="#problem-2-basis-and-dimension"><span class="header-section-number">1.2.2</span> Problem 2: Basis and Dimension</a></li>
-  <li><a href="#problem-3-null-space-basis" id="toc-problem-3-null-space-basis" class="nav-link" data-scroll-target="#problem-3-null-space-basis"><span class="header-section-number">1.2.3</span> Problem 3: Null Space Basis</a></li>
+  <li><a href="#testing-for-linear-independence" id="toc-testing-for-linear-independence" class="nav-link" data-scroll-target="#testing-for-linear-independence"><span class="header-section-number">3.1.1</span> Testing for Linear Independence</a></li>
+  <li><a href="#finding-the-span" id="toc-finding-the-span" class="nav-link" data-scroll-target="#finding-the-span"><span class="header-section-number">3.1.2</span> Finding the Span</a></li>
+  </ul></li>
+  <li><a href="#advanced-examples" id="toc-advanced-examples" class="nav-link" data-scroll-target="#advanced-examples"><span class="header-section-number">3.2</span> Advanced Examples</a>
+  <ul class="collapse">
+  <li><a href="#basis-selection" id="toc-basis-selection" class="nav-link" data-scroll-target="#basis-selection"><span class="header-section-number">3.2.1</span> Basis Selection</a></li>
   </ul></li>
   </ul></li>
+  <li><a href="#interactive-elements" id="toc-interactive-elements" class="nav-link" data-scroll-target="#interactive-elements"><span class="header-section-number">4</span> Interactive Elements</a></li>
+  <li><a href="#connections-to-other-topics" id="toc-connections-to-other-topics" class="nav-link" data-scroll-target="#connections-to-other-topics"><span class="header-section-number">5</span> Connections to Other Topics</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">6</span> Summary</a></li>
   </ul>
 </nav>
     </div>
@@ -284,7 +304,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Vector Spaces and Dimension</h1>
+<h1 class="title">Linear Independence and Span</h1>
 </div>
 
 
@@ -301,246 +321,75 @@ window.Quarto = {
 </header>
 
 
-<section id="vector-spaces-and-dimension" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Vector Spaces and Dimension</h1>
-<section id="definition" class="level3" data-number="1.0.1">
-<h3 data-number="1.0.1" class="anchored" data-anchor-id="definition"><span class="header-section-number">1.0.1</span> Definition</h3>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A vector space <span class="math inline">V</span> is finite-dimensional if it can be spanned by a finite set of vectors. The dimension of <span class="math inline">V</span>, denoted <span class="math inline">\dim V</span>, is the number of vectors in any basis for <span class="math inline">V</span>.</p>
-</div>
-</div>
-<section id="example-standard-basis" class="level4" data-number="1.0.1.1">
-<h4 data-number="1.0.1.1" class="anchored" data-anchor-id="example-standard-basis"><span class="header-section-number">1.0.1.1</span> Example: Standard Basis</h4>
-<p>The standard basis for <span class="math inline">\mathbb{R}^3</span> consists of: <span class="math display">
-\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix},
-\begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix},
-\begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}
-</span> Therefore, <span class="math inline">\dim \mathbb{R}^3 = 3</span></p>
-</section>
-</section>
-<section id="special-cases" class="level3" data-number="1.0.2">
-<h3 data-number="1.0.2" class="anchored" data-anchor-id="special-cases"><span class="header-section-number">1.0.2</span> Special Cases</h3>
+<section id="conceptual-overview" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Conceptual Overview</h1>
+<section id="linear-independence" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="linear-independence"><span class="header-section-number">1.1</span> Linear Independence</h2>
 <ul>
-<li>Zero vector space: <span class="math inline">\dim \{\mathbf{0}\} = 0</span></li>
-<li>Infinite-dimensional spaces: The space of all polynomials <span class="math inline">P</span> has no finite basis</li>
+<li><strong>Definition</strong>: A set of vectors is linearly independent if no vector in the set can be written as a linear combination of the others. Mathematically, vectors <span class="math inline">\mathbf{v}_1, \mathbf{v}_2, \ldots, \mathbf{v}_n</span> are independent if the equation <span class="math inline">c_1\mathbf{v}_1 + c_2\mathbf{v}_2 + \cdots + c_n\mathbf{v}_n = 0</span> only has the trivial solution <span class="math inline">c_1 = c_2 = \cdots = c_n = 0</span>.</li>
+<li><strong>Importance</strong>: Independence is crucial for defining bases, understanding dimension, and ensuring minimality in spanning sets.</li>
+<li><strong>Geometric Interpretation</strong>: In <span class="math inline">\mathbb{R}^3</span>, three linearly independent vectors span the entire space, while fewer vectors (e.g., two) only span a subspace (e.g., a plane).</li>
 </ul>
 </section>
-<section id="key-concepts-and-definitions" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="key-concepts-and-definitions"><span class="header-section-number">1.1</span> Key Concepts and Definitions</h2>
-<section id="span" class="level3" data-number="1.1.1">
-<h3 data-number="1.1.1" class="anchored" data-anchor-id="span"><span class="header-section-number">1.1.1</span> Span</h3>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The <strong>definition of Span</strong>: The span of a set of vectors is the set of all linear combinations of those vectors. For a set of vectors <span class="math inline">\{\mathbf{v}_1, \mathbf{v}_2, \dots, \mathbf{v}_n\}</span>, the span is denoted <span class="math inline">\text{span}\{\mathbf{v}_1, \mathbf{v}_2, \dots, \mathbf{v}_n\}</span>.</p>
-</div>
-</div>
-</section>
-<section id="linear-independence" class="level3" data-number="1.1.2">
-<h3 data-number="1.1.2" class="anchored" data-anchor-id="linear-independence"><span class="header-section-number">1.1.2</span> Linear Independence</h3>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Definition of Linear Independence and Dependence</strong>: A set of vectors is linearly independent if no vector in the set is a linear combination of the others; otherwise, the set is linearly dependent.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Homogeneous System Form
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A homogeneous system has the form <span class="math inline">A\mathbf{x} = \mathbf{0}</span></p>
-</div>
-</div>
-<section id="example-system" class="level4" data-number="1.1.2.1">
-<h4 data-number="1.1.2.1" class="anchored" data-anchor-id="example-system"><span class="header-section-number">1.1.2.1</span> Example System</h4>
-<p><span class="math display">
-\begin{aligned}
-2x + 3y - z &amp;= 0 \\
-4x - 2y + 2z &amp;= 0
-\end{aligned}
-</span></p>
-<p>In matrix form: <span class="math display">
-\begin{bmatrix}
-2 &amp; 3 &amp; -1 \\
-4 &amp; -2 &amp; 2
-\end{bmatrix}
-\begin{bmatrix}
-x \\ y \\ z
-\end{bmatrix}
-= \begin{bmatrix}
-0 \\ 0
-\end{bmatrix}
-</span></p>
+<section id="span-of-a-set-of-vectors" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="span-of-a-set-of-vectors"><span class="header-section-number">1.2</span> Span of a Set of Vectors</h2>
+<ul>
+<li><strong>Definition</strong>: The span of a set of vectors is the collection of all linear combinations of those vectors. If vectors <span class="math inline">\mathbf{v}_1, \mathbf{v}_2, \ldots, \mathbf{v}_n</span> span a space <span class="math inline">V</span>, then any vector in <span class="math inline">V</span> can be expressed as <span class="math inline">c_1\mathbf{v}_1 + c_2\mathbf{v}_2 + \cdots + c_n\mathbf{v}_n</span> for some scalars <span class="math inline">c_1, c_2, \ldots, c_n</span>.</li>
+<li><strong>Relation to Vector Spaces</strong>: A spanning set that is also linearly independent forms a <strong>basis</strong> for the space, providing both coverage and minimality.</li>
+</ul>
 </section>
 </section>
-<section id="important-theorems" class="level3" data-number="1.1.3">
-<h3 data-number="1.1.3" class="anchored" data-anchor-id="important-theorems"><span class="header-section-number">1.1.3</span> Important Theorems</h3>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Theorem 9
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If a vector space <span class="math inline">V</span> has a basis <span class="math inline">\mathcal{B} = \{ \mathbf{b}_1, \dots, \mathbf{b}_n \}</span>, then any set in <span class="math inline">V</span> containing more than <span class="math inline">n</span> vectors must be linearly dependent.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Theorem 10
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If a vector space <span class="math inline">V</span> has a basis of <span class="math inline">n</span> vectors, then every basis of <span class="math inline">V</span> must consist of exactly <span class="math inline">n</span> vectors.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Theorem 11
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let <span class="math inline">H</span> be a subspace of a finite-dimensional vector space <span class="math inline">V</span>. Any linearly independent set in <span class="math inline">H</span> can be expanded, if necessary, to a basis for <span class="math inline">H</span>. Also, <span class="math inline">H</span> is finite-dimensional and</p>
-<p><span class="math inline">\dim H \leq \dim V</span></p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-The Basis Theorem (Theorem 12)
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let <span class="math inline">V</span> be a <span class="math inline">p</span>-dimensional vector space, <span class="math inline">p \geq 1</span>. Any linearly independent set of exactly <span class="math inline">p</span> elements in <span class="math inline">V</span> is automatically a basis for <span class="math inline">V</span>.</p>
-</div>
-</div>
+<section id="common-misconceptions" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Common Misconceptions</h1>
+<ul>
+<li><strong>Confusing Linear Independence with Span</strong>: Students often assume that spanning implies independence, but a spanning set can contain redundant (dependent) vectors.</li>
+<li><strong>Interpreting Basis Properties</strong>: Not every spanning set is a basis. A basis must also be linearly independent, meaning it has no “extra” vectors that could be written as combinations of others.</li>
+</ul>
+</section>
+<section id="worked-examples" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Worked Examples</h1>
+<section id="basic-examples" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="basic-examples"><span class="header-section-number">3.1</span> Basic Examples</h2>
+<section id="testing-for-linear-independence" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="testing-for-linear-independence"><span class="header-section-number">3.1.1</span> Testing for Linear Independence</h3>
+<p>Consider vectors <span class="math inline">\mathbf{v}_1 = \begin{bmatrix} 1 \\ 2 \end{bmatrix}</span> and <span class="math inline">\mathbf{v}_2 = \begin{bmatrix} 2 \\ 4 \end{bmatrix}</span>. To check independence, we solve for scalars <span class="math inline">c_1</span> and <span class="math inline">c_2</span> such that: <span class="math inline">c_1\mathbf{v}_1 + c_2\mathbf{v}_2 = \mathbf{0}.</span> Substituting values, we get: <span class="math inline">c_1 \begin{bmatrix} 1 \\ 2 \end{bmatrix} + c_2 \begin{bmatrix} 2 \\ 4 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix},</span> leading to <span class="math inline">c_1 + 2c_2 = 0</span> and <span class="math inline">2c_1 + 4c_2 = 0</span>. These equations imply <span class="math inline">c_1 = -2c_2</span>, meaning the only solution is trivial if <span class="math inline">c_1 = c_2 = 0</span>, proving the vectors are dependent.</p>
+</section>
+<section id="finding-the-span" class="level3" data-number="3.1.2">
+<h3 data-number="3.1.2" class="anchored" data-anchor-id="finding-the-span"><span class="header-section-number">3.1.2</span> Finding the Span</h3>
+<p>For vectors <span class="math inline">\mathbf{v}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}</span> and <span class="math inline">\mathbf{v}_2 = \begin{bmatrix} 0 \\ 1 \end{bmatrix}</span>, their span is all of <span class="math inline">\mathbb{R}^2</span> since any vector <span class="math inline">\mathbf{x} = \begin{bmatrix} x \\ y \end{bmatrix}</span> can be written as <span class="math inline">x\mathbf{v}_1 + y\mathbf{v}_2</span>.</p>
 </section>
 </section>
-<section id="practice-problems" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="practice-problems"><span class="header-section-number">1.2</span> Practice Problems</h2>
-<section id="problem-1-homogeneous-systems" class="level3" data-number="1.2.1">
-<h3 data-number="1.2.1" class="anchored" data-anchor-id="problem-1-homogeneous-systems"><span class="header-section-number">1.2.1</span> Problem 1: Homogeneous Systems</h3>
-<p>Solve the system: <span class="math display">
-\begin{aligned}
-x + y + z &amp;= 0 \\
-2x + 2y + 2z &amp;= 0
-\end{aligned}
-</span></p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Solution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<ol type="1">
-<li>Notice the second equation is a multiple of the first</li>
-<li>System reduces to <span class="math inline">x + y + z = 0</span></li>
-<li>General solution: <span class="math inline">\begin{bmatrix} x \\ y \\ -(x+y) \end{bmatrix}</span> for any <span class="math inline">x, y</span></li>
-<li>Basis: <span class="math inline">\text{span}\left(\begin{bmatrix} 1 \\ 0 \\ -1 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \\ -1 \end{bmatrix}\right)</span></li>
-</ol>
-</div>
-</div>
-</div>
+<section id="advanced-examples" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="advanced-examples"><span class="header-section-number">3.2</span> Advanced Examples</h2>
+<section id="basis-selection" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="basis-selection"><span class="header-section-number">3.2.1</span> Basis Selection</h3>
+<p>In <span class="math inline">\mathbb{R}^3</span>, find a basis for the subspace spanned by <span class="math inline">\begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}</span>, <span class="math inline">\begin{bmatrix} 2 \\ 4 \\ 6 \end{bmatrix}</span>, and <span class="math inline">\begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}</span>. Notice that the first two vectors are linearly dependent, so a basis can be <span class="math inline">\left\{ \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} \right\}</span>.</p>
 </section>
-<section id="problem-2-basis-and-dimension" class="level3" data-number="1.2.2">
-<h3 data-number="1.2.2" class="anchored" data-anchor-id="problem-2-basis-and-dimension"><span class="header-section-number">1.2.2</span> Problem 2: Basis and Dimension</h3>
-<p>Explain why the standard basis for <span class="math inline">\mathbb{R}^3</span> has exactly three vectors.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Solution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>The space <span class="math inline">\mathbb{R}^3</span> requires three linearly independent vectors to span it fully. Since the standard basis <span class="math inline">\{\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}\}</span> spans <span class="math inline">\mathbb{R}^3</span> and no subset of these vectors can do so, they form a basis, making <span class="math inline">\dim \mathbb{R}^3 = 3</span>.</p>
-</div>
-</div>
-</div>
 </section>
-<section id="problem-3-null-space-basis" class="level3" data-number="1.2.3">
-<h3 data-number="1.2.3" class="anchored" data-anchor-id="problem-3-null-space-basis"><span class="header-section-number">1.2.3</span> Problem 3: Null Space Basis</h3>
-<p>Find a basis for the null space of: <span class="math display">
-A = \begin{bmatrix} 1 &amp; 2 &amp; 3 \\ 2 &amp; 4 &amp; 6 \end{bmatrix}
-</span></p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Solution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<ol type="1">
-<li>Row reduce to: <span class="math inline">\begin{bmatrix} 1 &amp; 2 &amp; 3 \\ 0 &amp; 0 &amp; 0 \end{bmatrix}</span></li>
-<li>Free variables: <span class="math inline">y, z</span></li>
-<li>Express <span class="math inline">x</span>: <span class="math inline">x = -2y - 3z</span></li>
-<li>Basis: <span class="math inline">\left\{\begin{bmatrix} -2 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} -3 \\ 0 \\ 1 \end{bmatrix}\right\}</span></li>
-</ol>
-</div>
-</div>
-</div>
+</section>
+<section id="interactive-elements" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Interactive Elements</h1>
+<ul>
+<li><strong>Self-Check Questions</strong>: Practice with determining independence and span.</li>
+<li><strong>Visualization</strong>: Use visuals of vector span in R²/R³ to show spanning planes and independent directions.</li>
+</ul>
+</section>
+<section id="connections-to-other-topics" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Connections to Other Topics</h1>
+<ul>
+<li><strong>Basis and Dimension</strong>: Understanding independence and span is foundational for defining bases.</li>
+<li><strong>Eigenvalues and Eigenvectors</strong>: Eigenvectors associated with distinct eigenvalues are linearly independent.</li>
+</ul>
+</section>
+<section id="summary" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Summary</h1>
+<ul>
+<li><strong>Linear Independence</strong>: No vector in the set can be written as a linear combination of others.</li>
+<li><strong>Span</strong>: All possible combinations of a set of vectors; if they span the space and are independent, they form a basis.</li>
+<li><strong>Key Formula</strong>: Independence implies the number of vectors in a basis is the dimension of the space.</li>
+</ul>
 
 
-</section>
-</section>
 </section>
 
 </main> <!-- /main -->

@@ -1,0 +1,294 @@
+---
+title: "Chapter 6.3"
+description: "*Orthogonal Projections*"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    html-math-method: katex
+---
+
+# Terms & Definitions
+
+## Orthogonal Projections
+
+**Definition (Orthogonal Projection):**  
+An **orthogonal projection** onto a subspace $W$ of an inner product space $V$ is a linear transformation $P: V \to V$ such that:
+
+1. $P^2 = P$ (idempotent property).
+2. $P = P^*$, i.e., $P$ is self-adjoint (or Hermitian if over $\mathbb{C}$), meaning $\langle P(x), y \rangle = \langle x, P(y) \rangle$.
+
+In more intuitive terms, given a subspace $W \subseteq V$, the orthogonal projection of a vector $v \in V$ onto $W$ is the "closest point" in $W$ to $v$. Formally, if $w \in W$ is chosen such that $v - w$ is orthogonal to every vector in $W$, then $P(v) = w$.
+
+**Notation:**  
+If $W$ is spanned by an orthonormal set $\{u_1, u_2, \ldots, u_k\}$, the orthogonal projection of any $v \in V$ onto $W$ is given by:
+$$
+P_W(v) = \sum_{i=1}^{k} \langle v, u_i \rangle u_i.
+$$
+
+### Formula 1: Orthogonal Projection onto a Vector
+For vectors $u, v \in V$, the projection of $u$ onto $v$ is given by:
+$$
+P_v(u) = \frac{\langle u, v \rangle}{\|v\|^2} v, \quad \text{provided } v \neq 0.
+$$
+
+# Key Properties
+
+- **Idempotence:** $P_W^2 = P_W$.
+- **Self-Adjointness:** $P_W = P_W^*$.
+- **Minimal Distance Property:** For $v \in V$, $P_W(v)$ is the unique vector in $W$ that minimizes $\|v - w\|$ over all $w \in W$.
+- **Orthogonality of Error Vector:** The vector $v - P_W(v)$ is orthogonal to every vector in $W$.
+
+### Additional Orthogonal Projection Properties
+- $\text{range}(P_W) = W$
+- $\text{null}(P_W) = W^\perp$
+- For all $v \in V$, $v - P_W(v) \in W^\perp$
+- $\|P_W(v)\| \leq \|v\|$ for all $v \in V$
+
+**Example (Orthogonal Projection onto a Line):**  
+If $W = \text{span}\{u\}$ with $u$ normalized (i.e. $\|u\|=1$), then for any $v \in V$:
+$$
+P_W(v) = \langle v, u \rangle u.
+$$
+
+This formula is a special case of the more general formula for projecting onto a single vector.
+
+# Theorems and Propositions
+
+## Theorem 1: Characterization of Orthogonal Projections
+
+**Statement:**  
+A linear operator $P: V \to V$ is an orthogonal projection onto some subspace $W \subseteq V$ if and only if $P$ is idempotent ($P^2 = P$) and self-adjoint ($P = P^*$).
+
+**Proof Outline:**  
+1. *(Necessity)* If $P$ is an orthogonal projection onto $W$, by definition $P_W^2 = P_W$ and $P_W$ is its own adjoint.  
+2. *(Sufficiency)* If $P$ is idempotent and self-adjoint, let $W = \text{Im}(P)$. For any $v$, $P(v) \in W$ and $v - P(v)$ is orthogonal to $W$. Thus, $P$ is the orthogonal projection onto $W$.
+
+## Theorem 8: Orthogonal Decomposition Theorem
+
+**Statement:**  
+For any subspace $W \subseteq V$, each $y \in V$ can be uniquely written as:
+$$
+y = \hat{y} + z,
+$$
+where $\hat{y} \in W$ and $z \in W^\perp$. If $\{u_1, \ldots, u_p\}$ is an orthogonal basis for $W$, then:
+$$
+\hat{y} = \frac{\langle y, u_1 \rangle}{\langle u_1, u_1 \rangle} u_1 + \cdots + \frac{\langle y, u_p \rangle}{\langle u_p, u_p \rangle} u_p, \quad z = y - \hat{y}.
+$$
+
+If $\{e_1, \ldots, e_m\}$ is an orthonormal basis for $W$, then:
+$$
+P_W(y) = \langle y, e_1 \rangle e_1 + \cdots + \langle y, e_m \rangle e_m.
+$$
+
+## Theorem 9: Best Approximation Theorem
+
+**Statement:**  
+For a subspace $U \subseteq V$ and $v \in V$:
+$$
+\|v - P_U(v)\| \leq \|v - u\| \quad \text{for all } u \in U.
+$$
+Equality holds if and only if $u = P_U(v)$. This underscores the idea that $P_U(v)$ is the "closest" vector in $U$ to $v$.
+
+## Theorem 10: Matrix Representation of Orthogonal Projection
+
+**Statement:**  
+If $\{u_1, \ldots, u_p\}$ is an orthonormal basis for a subspace $W \subseteq \mathbb{R}^n$, and $U = [u_1 \cdots u_p]$, then for all $y \in \mathbb{R}^n$:
+$$
+P_W(y) = U U^T y.
+$$
+
+This coincides with the matrix representation previously discussed.
+
+## Proposition 1: Matrix Representation of Orthogonal Projections
+
+**Statement:**  
+If $U = [u_1 \ u_2 \ \cdots \ u_k]$ is a matrix whose columns form an orthonormal basis for $W \subseteq \mathbb{R}^n$, then the orthogonal projection onto $W$ is given by:
+$$
+P_W = U U^T.
+$$
+
+**Explanation:**  
+Since each $u_i$ is orthonormal, $U^T U = I_k$. Then $P_W$ acts on a vector $v$ as:
+$$
+P_W(v) = U (U^T v) = \sum_{i=1}^{k} \langle v, u_i \rangle u_i.
+$$
+
+**Proof Sketch:**  
+- Idempotent: $(U U^T)(U U^T) = U (U^T U) U^T = U I_k U^T = U U^T$.
+- Symmetric: $(U U^T)^T = U U^T$.
+
+Thus, $P_W$ represents an orthogonal projection.
+
+# Examples
+
+## Example 1: Orthogonal Projection onto a Given Line in $\mathbb{R}^2$
+
+**Set-up:**  
+Let $V = \mathbb{R}^2$ and consider $W = \text{span}\{u\}$ where $u = \frac{1}{\sqrt{2}}\begin{bmatrix} 1 \\ 1 \end{bmatrix}$. For $v = \begin{bmatrix} 2 \\ 1 \end{bmatrix}$, find $P_W(v)$.
+
+**Solution Steps:**
+1. Since $u$ is normalized, $P_W(v) = \langle v, u \rangle u$.
+2. Compute $\langle v, u \rangle = [2 \ 1]\begin{bmatrix} 1/\sqrt{2} \\ 1/\sqrt{2} \end{bmatrix} = \frac{3}{\sqrt{2}}$.
+3. Therefore:
+   $$
+   P_W(v) = \frac{3}{\sqrt{2}} \cdot \frac{1}{\sqrt{2}}\begin{bmatrix} 1 \\ 1 \end{bmatrix} = \frac{3}{2}\begin{bmatrix} 1 \\ 1 \end{bmatrix} = \begin{bmatrix} 1.5 \\ 1.5 \end{bmatrix}.
+   $$
+
+**Python Computation:**
+
+```{python}
+import numpy as np
+
+v = np.array([2, 1])
+u = (1/np.sqrt(2)) * np.array([1, 1])
+proj_v_on_u = (v @ u) * u
+proj_v_on_u
+```
+
+## Example 2: Orthogonal Projection onto a 2D Subspace in $\mathbb{R}^3$
+
+**Set-up:**  
+Let $W = \text{span}\{u_1, u_2\}$ in $\mathbb{R}^3$ where:
+$$
+u_1 = \frac{1}{\sqrt{5}}\begin{bmatrix} 1 \\ 2 \\ 0 \end{bmatrix}, \quad
+u_2 = \frac{1}{\sqrt{2}}\begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix}.
+$$
+For $v = \begin{bmatrix} 3 \\ 3 \\ 1 \end{bmatrix}$, find $P_W(v)$.
+
+**Solution Steps:**
+1. Compute $\langle v, u_1 \rangle$ and $\langle v, u_2 \rangle$.
+2. Then:
+   $$
+   P_W(v) = \langle v, u_1 \rangle u_1 + \langle v, u_2 \rangle u_2.
+   $$
+
+**Python Computation:**
+
+```{python}
+v = np.array([3, 3, 1])
+u1 = (1/np.sqrt(5)) * np.array([1, 2, 0])
+u2 = (1/np.sqrt(2)) * np.array([0, 1, 1])
+
+coeff_u1 = v @ u1
+coeff_u2 = v @ u2
+
+P_v = coeff_u1 * u1 + coeff_u2 * u2
+P_v
+```
+
+# Visualization
+
+Consider the $\mathbb{R}^2$ example (Example 1). We can visualize the vector $v$, the line spanned by $u$, and the projection $P_W(v)$.
+
+**Visualization Steps:**
+- Draw the vector $v$
+- Draw the subspace $W$ (a line)
+- Draw $P_W(v)$ as the "foot" of the perpendicular from $v$ onto $W$
+
+**Python Visualization:**
+
+```{python}
+import matplotlib.pyplot as plt
+
+v = np.array([2, 1])
+u = (1/np.sqrt(2))*np.array([1, 1])
+proj_v_on_u = (v @ u)*u
+
+fig, ax = plt.subplots(figsize=(5,5))
+ax.set_aspect('equal', 'box')
+ax.axhline(0, color='black', linewidth=1)
+ax.axvline(0, color='black', linewidth=1)
+
+# Plot vector v
+ax.quiver(0, 0, v[0], v[1], angles='xy', scale_units='xy', scale=1, color='r', label='v')
+
+# Plot line spanned by u
+line_x = np.linspace(-2, 3, 100)
+line_y = line_x
+ax.plot(line_x, line_y, 'k--', label='Line: span{u}')
+
+# Plot projection
+ax.quiver(0, 0, proj_v_on_u[0], proj_v_on_u[1], angles='xy', scale_units='xy', scale=1, color='g', label='P_W(v)')
+
+# Draw a line from v to its projection
+ax.plot([v[0], proj_v_on_u[0]], [v[1], proj_v_on_u[1]], 'b:', label='Orthogonal segment')
+
+ax.set_xlim(-1, 3)
+ax.set_ylim(-1, 3)
+ax.set_xlabel('x')
+ax.set_ylabel('y')
+ax.legend()
+plt.title('Orthogonal Projection onto a Line in $\mathbb{R}^2$')
+plt.grid(True)
+plt.show()
+```
+
+# Practice Problems
+
+1. **Projection onto a One-Dimensional Subspace:**
+   Given $W = \text{span}\{w\}$ in $\mathbb{R}^2$ with $w = \begin{bmatrix}2 \\ 2\end{bmatrix}$, find the orthogonal projection $P_W(v)$ for $v = \begin{bmatrix}3 \\ 1\end{bmatrix}$.
+
+2. **Matrix Representation:**
+   Let $u_1 = \frac{1}{\sqrt{5}}\begin{bmatrix}1 \\ 2\end{bmatrix}$ be an orthonormal basis for $W \subseteq \mathbb{R}^2$. Write the matrix form of $P_W$ and apply it to $v = \begin{bmatrix}4 \\ 0\end{bmatrix}$.
+
+3. **Projection onto a Plane in $\mathbb{R}^3$:**
+   Consider $W = \text{span}\{u_1, u_2\}$ with 
+   $$
+   u_1 = \frac{1}{\sqrt{2}}\begin{bmatrix}1 \\ 1 \\ 0\end{bmatrix}, \quad u_2 = \frac{1}{\sqrt{2}}\begin{bmatrix}0 \\ 1 \\ 1\end{bmatrix}.
+   $$
+   Find $P_W(v)$ for $v = \begin{bmatrix}1 \\ 2 \\ 3\end{bmatrix}$.
+
+4. **Uniqueness of Orthogonal Projection:**
+   Prove that an orthogonal projection $P_W$ is uniquely defined by the subspace $W$ and does not depend on the particular orthonormal basis chosen for $W$.
+
+5. **Idempotent and Self-Adjoint Condition:**
+   Show that if a linear operator $P$ on an inner product space $V$ satisfies $P^2 = P$ and $P = P^*$, then it must be an orthogonal projection onto its image.
+
+# Practice Problem Solutions
+
+**Solution to Problem 1:**
+
+- **Step-by-Step Reasoning:**
+  1. Normalize $w$: $\|w\| = \sqrt{2^2 + 2^2} = 2\sqrt{2}$. Thus, $\hat{w} = \frac{1}{2\sqrt{2}}\begin{bmatrix}2 \\ 2\end{bmatrix} = \frac{1}{\sqrt{2}}\begin{bmatrix}1 \\ 1\end{bmatrix}.$
+  2. Compute $\langle v, \hat{w} \rangle = [3 \ 1]\begin{bmatrix}1/\sqrt{2} \\ 1/\sqrt{2}\end{bmatrix} = \frac{4}{\sqrt{2}} = 2\sqrt{2}$.
+  3. Thus $P_W(v) = (2\sqrt{2})\hat{w} = (2\sqrt{2})\frac{1}{\sqrt{2}}\begin{bmatrix}1 \\ 1\end{bmatrix} = 2\begin{bmatrix}1 \\ 1\end{bmatrix} = \begin{bmatrix}2 \\ 2\end{bmatrix}.$
+
+**Python Check:**
+
+```{python}
+import numpy as np
+v = np.array([3,1])
+w = np.array([2,2])
+what = w / np.linalg.norm(w)
+proj = (v @ what) * what
+proj
+```
+
+**Solution to Problem 2 (Sketch):**
+
+- With $u_1 = \frac{1}{\sqrt{5}}\begin{bmatrix}1 \\ 2\end{bmatrix}$:
+  $$
+  P_W = u_1 u_1^T = \frac{1}{5}\begin{bmatrix}1 & 2 \\ 2 & 4\end{bmatrix}.
+  $$
+- Applying this to $v = \begin{bmatrix}4 \\ 0\end{bmatrix}$:
+  $$
+  P_W(v) = \frac{1}{5}\begin{bmatrix}1 & 2 \\ 2 & 4\end{bmatrix}\begin{bmatrix}4 \\ 0\end{bmatrix} = \frac{1}{5}\begin{bmatrix}4 \\ 8\end{bmatrix} = \begin{bmatrix} \frac{4}{5} \\ \frac{8}{5} \end{bmatrix}.
+  $$
+
+**Solution to Problem 3 (Sketch):**
+
+- Given $u_1, u_2$ are orthonormal, 
+  $$
+  P_W(v) = \langle v, u_1 \rangle u_1 + \langle v, u_2 \rangle u_2.
+  $$
+- Compute these inner products accordingly and sum.
+
+**Solution to Problem 4:**
+
+- Any orthonormal basis of $W$ is related by a unitary (orthogonal) transformation. Such transformations preserve inner products and projections, ensuring $P_W$ is invariant under the choice of orthonormal basis.
+
+**Solution to Problem 5:**
+
+- Given $P^2 = P$ and $P = P^*$, define $W = \text{Im}(P)$. Show that for any $v$, $P(v) \in W$ and $v - P(v)$ is orthogonal to $W$. Thus, $P$ is the orthogonal projection onto $W$.

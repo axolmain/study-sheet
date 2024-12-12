@@ -1,0 +1,425 @@
+---
+title: "Chapter 6.5"
+description: "*Least squares problem*"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    html-math-method: katex
+---
+
+# Definitions
+
+## Least Squares Problems
+
+::: {.callout}
+If $A$ is $m \times n$ and **b** is in $\mathbb{R}^m$, a **least-squares solution** of $A\mathbf{x}=\mathbf{b}$ is an $\hat{\mathbf{x}}$ in $\mathbb{R}^n$ such that:
+
+$$
+\|\mathbf{b}-A\hat{\mathbf{x}}\| \le \|\mathbf{b} - A\mathbf{x}\|
+$$
+
+for all **x** in $\mathbb{R}^n$.
+:::
+
+## Normal Equations
+
+::: {.callout}
+Given a system of linear equations $A\mathbf{x} = \mathbf{b}$, the **normal equations** are given by:
+
+$$
+A^TA\mathbf{x} = A^T\mathbf{b}
+$$
+
+where $A^T$ is the transpose of matrix $A$.
+:::
+
+# Theorems
+
+## Theorem 13: The Least-Squares Theorem
+
+::: {.callout}
+**Statement:** The set of least-squares solutions of $A\mathbf{x} = \mathbf{b}$ coincides with the nonempty set of solutions of the normal equations $A^TA\mathbf{x} = A^T\mathbf{b}$.
+
+**Layman's Explanation:** Imagine you have a system of linear equations, $A\mathbf{x} = \mathbf{b}$, that might not have an exact solution. This often happens when you have more equations than unknowns (an overdetermined system). In such cases, you can't find an $\mathbf{x}$ that perfectly satisfies the equation.
+
+The "least-squares solution" is the best approximation you can get. It's the $\mathbf{x}$ that minimizes the distance between $A\mathbf{x}$ and $\mathbf{b}$. Think of it like trying to fit a line to a set of points that don't perfectly align. The least-squares line is the one that comes closest to all the points, minimizing the overall error.
+
+This theorem says that finding this best approximation (the least-squares solution) is the same as solving a different set of equations called the "normal equations," which are given by $A^TA\mathbf{x} = A^T\mathbf{b}$. Importantly, the normal equations *always* have at least one solution, even if the original system doesn't.
+
+**Example:** Let's say you're trying to find the best-fit line $y = mx + c$ for the following data points: (1, 2), (2, 3), (3, 5).
+
+You can represent this as a system of equations:
+
+$$
+\begin{aligned}
+m + c &= 2 \\
+2m + c &= 3 \\
+3m + c &= 5
+\end{aligned}
+$$
+
+This can be written in matrix form as $A\mathbf{x} = \mathbf{b}$, where:
+
+$A = \begin{bmatrix} 1 & 1 \\ 2 & 1 \\ 3 & 1 \end{bmatrix}$, $\mathbf{x} = \begin{bmatrix} m \\ c \end{bmatrix}$, and $\mathbf{b} = \begin{bmatrix} 2 \\ 3 \\ 5 \end{bmatrix}$.
+
+This system has no exact solution (the points don't lie on a perfect line). To find the least-squares solution (the best-fit line), you would solve the normal equations:
+
+$A^TA\mathbf{x} = A^T\mathbf{b}$
+
+$\begin{bmatrix} 1 & 2 & 3 \\ 1 & 1 & 1 \end{bmatrix} \begin{bmatrix} 1 & 1 \\ 2 & 1 \\ 3 & 1 \end{bmatrix} \begin{bmatrix} m \\ c \end{bmatrix} = \begin{bmatrix} 1 & 2 & 3 \\ 1 & 1 & 1 \end{bmatrix} \begin{bmatrix} 2 \\ 3 \\ 5 \end{bmatrix}$
+
+Solving this system will give you the values of $m$ and $c$ that define the best-fit line.
+
+**Proof Explanation:** The proof has two main parts:
+
+1.  **Showing that a least-squares solution satisfies the normal equations:** It's already been shown (in a previous part of the text, referred to as "above") that if $\hat{\mathbf{x}}$ is a least-squares solution, then it must satisfy the normal equations $A^TA\hat{\mathbf{x}} = A^T\mathbf{b}$.
+
+2.  **Showing that a solution to the normal equations is a least-squares solution:** Now, let's assume $\hat{\mathbf{x}}$ satisfies the normal equations: $A^TA\hat{\mathbf{x}} = A^T\mathbf{b}$.
+    *   This implies that $A^T(\mathbf{b} - A\hat{\mathbf{x}}) = \mathbf{0}$.
+    *   This means that the vector $\mathbf{b} - A\hat{\mathbf{x}}$ is orthogonal (perpendicular) to the rows of $A^T$, and therefore orthogonal to the columns of $A$.
+    *   Since the columns of $A$ span the column space of $A$ (denoted as Col $A$), the vector $\mathbf{b} - A\hat{\mathbf{x}}$ is orthogonal to every vector in Col $A$.
+    *   We can decompose $\mathbf{b}$ into two parts: $\mathbf{b} = A\hat{\mathbf{x}} + (\mathbf{b} - A\hat{\mathbf{x}})$. The first part, $A\hat{\mathbf{x}}$, lies in Col $A$, and the second part, $(\mathbf{b} - A\hat{\mathbf{x}})$, is orthogonal to Col $A$.
+    *   By the Pythagorean Theorem, $\|\mathbf{b}\|^2 = \|A\hat{\mathbf{x}}\|^2 + \|\mathbf{b} - A\hat{\mathbf{x}}\|^2$.
+    *   For any other vector $\mathbf{x}$ in $\mathbb{R}^n$, $\mathbf{b} - A\mathbf{x}$ can also be decomposed into a part in Col $A$ and a part orthogonal to Col $A$.
+    *   Again, by the Pythagorean Theorem, $\|\mathbf{b}\|^2 = \|A\mathbf{x}\|^2 + \|\mathbf{b} - A\mathbf{x}\|^2$.
+    *   Since $\|\mathbf{b} - A\hat{\mathbf{x}}\|^2$ is the squared distance from $\mathbf{b}$ to Col $A$, and this distance is minimized when $\mathbf{x} = \hat{\mathbf{x}}$, we have $\|\mathbf{b} - A\hat{\mathbf{x}}\|^2 \le \|\mathbf{b} - A\mathbf{x}\|^2$.
+    *   Therefore, $\hat{\mathbf{x}}$ is a least-squares solution.
+:::
+
+## Theorem 14
+
+::: {.callout}
+Let $A$ be an $m \times n$ matrix. The following statements are logically equivalent:
+
+a. The equation $A\mathbf{x} = \mathbf{b}$ has a unique least-squares solution for each $\mathbf{b} \in \mathbb{R}^m$.
+b. The columns of $A$ are linearly independent.
+c. The matrix $A^T A$ is invertible.
+
+When these statements are true, the least-squares solution $\hat{\mathbf{x}}$ is given by:
+
+$$
+\hat{\mathbf{x}} = (A^T A)^{-1} A^T \mathbf{b}
+$$
+:::
+
+## Theorem 15
+
+::: {.callout}
+Given an $m \times n$ matrix $A$ with linearly independent columns, let $A = QR$ be a QR factorization of $A$ (as defined in Theorem 12). For every $\mathbf{b}$ in $\mathbb{R}^m$, the equation $A\mathbf{x} = \mathbf{b}$ has a **unique least-squares solution**, which is given by:
+
+$$
+\hat{\mathbf{x}} = R^{-1}Q^T\mathbf{b}
+$$
+
+**Proof (in simple terms)**
+
+1. Start with the formula for $\hat{\mathbf{x}}$:
+   $$
+   \hat{\mathbf{x}} = R^{-1}Q^T\mathbf{b}
+   $$
+
+2. Substitute $A = QR$ into the equation $A\mathbf{x}$:
+   $$
+   A\hat{\mathbf{x}} = QR\hat{\mathbf{x}}
+   $$
+
+3. Replace $\hat{\mathbf{x}}$ with $R^{-1}Q^T\mathbf{b}$:
+   $$
+   A\hat{\mathbf{x}} = QRR^{-1}Q^T\mathbf{b}
+   $$
+
+4. Simplify $RR^{-1}$ (which equals the identity matrix $I$):
+   $$
+   A\hat{\mathbf{x}} = QQ^T\mathbf{b}
+   $$
+
+5. By Theorem 12, the columns of $Q$ form an orthonormal basis for the column space of $A$. Therefore, $QQ^T\mathbf{b}$ is the projection of $\mathbf{b}$ onto the column space of $A$.
+
+6. This shows that $\hat{\mathbf{x}}$ minimizes the error (i.e., the difference between $A\mathbf{x}$ and $\mathbf{b}$), meaning $\hat{\mathbf{x}}$ is the least-squares solution.
+
+7. Since $R$ is invertible and $Q$ is orthonormal, $\hat{\mathbf{x}}$ is unique.
+
+**Numerical Note**
+
+1. Since $R$ is an upper triangular matrix, it's computationally efficient to solve the equation:
+   $$
+   R\mathbf{x} = Q^T\mathbf{b}
+   $$
+
+2. This avoids directly calculating $R^{-1}$, which can be slow and error-prone. Instead, use **back-substitution** or row operations to solve for $\mathbf{x}$ efficiently.
+:::
+
+# Examples
+
+## Example 1: Finding the Least-Squares Solution
+
+Find the least-squares solution of the inconsistent system $A\mathbf{x} = \mathbf{b}$ for
+
+$A = \begin{bmatrix} 1 & 1 \\ 2 & 1 \\ 3 & 1 \end{bmatrix}$, $\mathbf{b} = \begin{bmatrix} 2 \\ 3 \\ 5 \end{bmatrix}$.
+
+### Solution
+
+1.  **Calculate** $A^TA$ and $A^T\mathbf{b}$:
+
+    $A^TA = \begin{bmatrix} 1 & 2 & 3 \\ 1 & 1 & 1 \end{bmatrix} \begin{bmatrix} 1 & 1 \\ 2 & 1 \\ 3 & 1 \end{bmatrix} = \begin{bmatrix} 14 & 6 \\ 6 & 3 \end{bmatrix}$
+
+    $A^T\mathbf{b} = \begin{bmatrix} 1 & 2 & 3 \\ 1 & 1 & 1 \end{bmatrix} \begin{bmatrix} 2 \\ 3 \\ 5 \end{bmatrix} = \begin{bmatrix} 23 \\ 10 \end{bmatrix}$
+
+2.  **Solve** the normal equations $A^TA\mathbf{x} = A^T\mathbf{b}$:
+
+    $\begin{bmatrix} 14 & 6 \\ 6 & 3 \end{bmatrix} \mathbf{x} = \begin{bmatrix} 23 \\ 10 \end{bmatrix}$
+
+    Solving this system gives $\mathbf{x} = \begin{bmatrix} 1.3 \\ 0.4 \end{bmatrix}$.
+
+```{python}
+import numpy as np
+
+# Define A and b
+A = np.array([[1, 1], [2, 1], [3, 1]])
+b = np.array([2, 3, 5])
+
+# Calculate A^T * A and A^T * b
+ATA = A.T @ A
+ATb = A.T @ b
+
+# Solve the normal equations
+x = np.linalg.solve(ATA, ATb)
+
+print("Least-squares solution:", x)
+```
+
+## Example 2: Using QR Factorization
+
+Find the least-squares solution of the system in Example 1 using a QR factorization of $A$.
+
+### Solution
+
+1.  **Find** the QR factorization of $A$:
+
+    Using the Gram-Schmidt process (or a software package), we can find $A = QR$, where
+
+    $Q = \begin{bmatrix} 1/\sqrt{14} & 1/\sqrt{3} \\ 2/\sqrt{14} & 0 \\ 3/\sqrt{14} & -1/\sqrt{3} \end{bmatrix}$, $R = \begin{bmatrix} \sqrt{14} & \sqrt{14}/\sqrt{3} \\ 0 & \sqrt{3} \end{bmatrix}$.
+
+2.  **Calculate** $Q^T\mathbf{b}$:
+
+    $Q^T\mathbf{b} = \begin{bmatrix} 1/\sqrt{14} & 2/\sqrt{14} & 3/\sqrt{14} \\ 1/\sqrt{3} & 0 & -1/\sqrt{3} \end{bmatrix} \begin{bmatrix} 2 \\ 3 \\ 5 \end{bmatrix} = \begin{bmatrix} 23/\sqrt{14} \\ -3/\sqrt{3} \end{bmatrix}$
+
+3.  **Solve** $R\mathbf{x} = Q^T\mathbf{b}$:
+
+    $\begin{bmatrix} \sqrt{14} & \sqrt{14}/\sqrt{3} \\ 0 & \sqrt{3} \end{bmatrix} \mathbf{x} = \begin{bmatrix} 23/\sqrt{14} \\ -3/\sqrt{3} \end{bmatrix}$
+
+    Solving this system (using back-substitution) gives $\mathbf{x} = \begin{bmatrix} 1.3 \\ 0.4 \end{bmatrix}$, which matches the solution from Example 1.
+
+```{python}
+import numpy as np
+
+# Define A and b
+A = np.array([[1, 1], [2, 1], [3, 1]])
+b = np.array([2, 3, 5])
+
+# Calculate QR factorization
+Q, R = np.linalg.qr(A)
+
+# Calculate Q^T * b
+QTb = Q.T @ b
+
+# Solve Rx = Q^T * b
+x = np.linalg.solve(R, QTb)
+
+print("Least-squares solution:", x)
+```
+
+# Visualization
+
+## Visualizing the Least-Squares Solution
+
+The following plot shows the data points from Example 1 and the least-squares line:
+
+```{python}
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Data points
+x_data = np.array([1, 2, 3])
+y_data = np.array([2, 3, 5])
+
+# Least-squares solution from Example 1
+m = 1.3
+c = 0.4
+
+# Generate points for the line
+x_line = np.linspace(0, 4, 100)
+y_line = m * x_line + c
+
+# Plot the data and the line
+plt.scatter(x_data, y_data, label="Data points")
+plt.plot(x_line, y_line, label="Least-squares line", color="red")
+plt.xlabel("x")
+plt.ylabel("y")
+plt.title("Least-Squares Line")
+plt.legend()
+plt.show()
+```
+
+**Explanation:**
+
+*   The blue dots represent the original data points.
+*   The red line is the least-squares line, which is the best-fit line that minimizes the sum of the squared vertical distances between the points and the line.
+
+
+# Practice Problems
+
+1.  Find the least-squares solution of $A\mathbf{x} = \mathbf{b}$ for $A = \begin{bmatrix} 1 & 3 \\ 1 & -1 \\ 1 & 1 \end{bmatrix}$, $\mathbf{b} = \begin{bmatrix} 5 \\ 1 \\ 0 \end{bmatrix}$.
+
+    ::: {.callout-tip collapse="true"}
+    ## Solution
+
+    **Calculate** $A^TA$ and $A^T\mathbf{b}$:
+
+    $A^TA = \begin{bmatrix} 1 & 1 & 1 \\ 3 & -1 & 1 \end{bmatrix} \begin{bmatrix} 1 & 3 \\ 1 & -1 \\ 1 & 1 \end{bmatrix} = \begin{bmatrix} 3 & 3 \\ 3 & 11 \end{bmatrix}$
+
+    $A^T\mathbf{b} = \begin{bmatrix} 1 & 1 & 1 \\ 3 & -1 & 1 \end{bmatrix} \begin{bmatrix} 5 \\ 1 \\ 0 \end{bmatrix} = \begin{bmatrix} 6 \\ 14 \end{bmatrix}$
+
+    **Solve** the normal equations $A^TA\mathbf{x} = A^T\mathbf{b}$:
+
+    $\begin{bmatrix} 3 & 3 \\ 3 & 11 \end{bmatrix} \mathbf{x} = \begin{bmatrix} 6 \\ 14 \end{bmatrix}$
+
+    Solving this system gives $\mathbf{x} = \begin{bmatrix} 1 \\ 1 \end{bmatrix}$.
+    :::
+
+2.  Find the least-squares solution of the system in Problem 1 using a QR factorization of $A$.
+
+    ::: {.callout-tip collapse="true"}
+    ## Solution
+
+    **Find** the QR factorization of $A$:
+
+    Using the Gram-Schmidt process (or a software package), we can find $A = QR$, where
+
+    $Q = \begin{bmatrix} 1/\sqrt{3} & 2/\sqrt{6} \\ 1/\sqrt{3} & -1/\sqrt{6} \\ 1/\sqrt{3} & 1/\sqrt{6} \end{bmatrix}$, $R = \begin{bmatrix} \sqrt{3} & \sqrt{3} \\ 0 & \sqrt{6} \end{bmatrix}$.
+
+    **Calculate** $Q^T\mathbf{b}$:
+
+    $Q^T\mathbf{b} = \begin{bmatrix} 1/\sqrt{3} & 1/\sqrt{3} & 1/\sqrt{3} \\ 2/\sqrt{6} & -1/\sqrt{6} & 1/\sqrt{6} \end{bmatrix} \begin{bmatrix} 5 \\ 1 \\ 0 \end{bmatrix} = \begin{bmatrix} 6/\sqrt{3} \\ 9/\sqrt{6} \end{bmatrix}$
+
+    **Solve** $R\mathbf{x} = Q^T\mathbf{b}$:
+
+    $\begin{bmatrix} \sqrt{3} & \sqrt{3} \\ 0 & \sqrt{6} \end{bmatrix} \mathbf{x} = \begin{bmatrix} 6/\sqrt{3} \\ 9/\sqrt{6} \end{bmatrix}$
+
+    Solving this system (using back-substitution) gives $\mathbf{x} = \begin{bmatrix} 1 \\ 1 \end{bmatrix}$, which matches the solution from Problem 1.
+    :::
+
+3.  Let $A = \begin{bmatrix} 1 & -3 & 2 \\ -3 & 9 & -6 \\ 2 & -6 & 4 \end{bmatrix}$, $\mathbf{b} = \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}$. Find all least-squares solutions of $A\mathbf{x} = \mathbf{b}$.
+
+    ::: {.callout-tip collapse="true"}
+    ## Solution
+
+    **Reduce** the augmented matrix $[A \ \mathbf{b}]$ to echelon form:
+
+    $\begin{bmatrix} 1 & -3 & 2 & 1 \\ -3 & 9 & -6 & 1 \\ 2 & -6 & 4 & 1 \end{bmatrix} \sim \begin{bmatrix} 1 & -3 & 2 & 1 \\ 0 & 0 & 0 & 4 \\ 0 & 0 & 0 & -1 \end{bmatrix}$
+
+    The system is inconsistent, but the normal equations are still consistent.
+
+    **Calculate** $A^TA$ and $A^T\mathbf{b}$:
+
+    $A^TA = \begin{bmatrix} 1 & -3 & 2 \\ -3 & 9 & -6 \\ 2 & -6 & 4 \end{bmatrix} \begin{bmatrix} 1 & -3 & 2 \\ -3 & 9 & -6 \\ 2 & -6 & 4 \end{bmatrix} = \begin{bmatrix} 14 & -42 & 28 \\ -42 & 126 & -84 \\ 28 & -84 & 56 \end{bmatrix}$
+
+    $A^T\mathbf{b} = \begin{bmatrix} 1 & -3 & 2 \\ -3 & 9 & -6 \\ 2 & -6 & 4 \end{bmatrix} \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}$
+
+    **Solve** the normal equations $A^TA\mathbf{x} = A^T\mathbf{b}$:
+
+    $\begin{bmatrix} 14 & -42 & 28 \\ -42 & 126 & -84 \\ 28 & -84 & 56 \end{bmatrix} \mathbf{x} = \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}$
+
+    The general solution is $\mathbf{x} = \begin{bmatrix} 3s - 2t \\ s \\ t \end{bmatrix} = s \begin{bmatrix} 3 \\ 1 \\ 0 \end{bmatrix} + t \begin{bmatrix} -2 \\ 0 \\ 1 \end{bmatrix}$, where $s$ and $t$ are free parameters.
+    :::
+
+4.  Find a formula for the least-squares solution of $A\mathbf{x} = \mathbf{b}$ when the columns of $A$ are orthonormal.
+
+    ::: {.callout-tip collapse="true"}
+    ## Solution
+
+    If the columns of $A$ are orthonormal, then $A^TA = I$. Therefore, the normal equations become $I\mathbf{x} = A^T\mathbf{b}$, and the least-squares solution is $\hat{\mathbf{x}} = A^T\mathbf{b}$.
+    :::
+
+5.  Let $\mathbf{v}_1 = \begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix}$, $\mathbf{v}_2 = \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix}$, $\mathbf{y} = \begin{bmatrix} 2 \\ 1 \\ 1 \end{bmatrix}$. Find the closest point to $\mathbf{y}$ in the subspace $W$ spanned by $\mathbf{v}_1$ and $\mathbf{v}_2$.
+
+    ::: {.callout-tip collapse="true"}
+    ## Solution
+
+    **Find** the orthogonal projection of $\mathbf{y}$ onto $W$:
+
+    $\text{proj}_W (\mathbf{y}) = \frac{\mathbf{y} \cdot \mathbf{v}_1}{\mathbf{v}_1 \cdot \mathbf{v}_1} \mathbf{v}_1 + \frac{\mathbf{y} \cdot \mathbf{v}_2}{\mathbf{v}_2 \cdot \mathbf{v}_2} \mathbf{v}_2$
+
+    $= \frac{3}{2} \begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix} + \frac{3}{2} \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} = \begin{bmatrix} 3 \\ 3/2 \\ 3/2 \end{bmatrix}$
+
+    This is the closest point to $\mathbf{y}$ in $W$.
+    :::
+
+6.  Find the least-squares solution $\hat{\mathbf{x}}$ to the equation $A \mathbf{x} = \mathbf{b}$, where:
+$$
+ A = \begin{bmatrix} 1 & 2 \\ 2 & 4 \\ 1 & 1 \end{bmatrix}, \quad \mathbf{b} = \begin{bmatrix} 2 \\ 5 \\ 3 \end{bmatrix}$$
+ 
+    After finding $\hat{\mathbf{x}}$, compute the least-squares error, given by $\|\mathbf{b} - A\hat{\mathbf{x}}\|^2$.
+
+    ::: {.callout-tip collapse="true"}
+    ## Solution
+
+    1. **Calculate** $A^TA$ and $A^T\mathbf{b}$:
+
+    First, note that:
+    $$
+    A^T = \begin{bmatrix} 1 & 2 & 1 \\ 2 & 4 & 1 \end{bmatrix}.
+    $$
+
+    Thus,
+    $$
+    A^TA = \begin{bmatrix} 1 & 2 & 1 \\ 2 & 4 & 1 \end{bmatrix}\begin{bmatrix} 1 & 2 \\ 2 & 4 \\ 1 & 1 \end{bmatrix} = \begin{bmatrix} 6 & 11 \\ 11 & 21 \end{bmatrix}.
+    $$
+
+    And
+    $$
+    A^T\mathbf{b} = \begin{bmatrix} 1 & 2 & 1 \\ 2 & 4 & 1 \end{bmatrix}\begin{bmatrix} 2 \\ 5 \\ 3 \end{bmatrix} = \begin{bmatrix} 15 \\ 27 \end{bmatrix}.
+    $$
+
+    2. **Solve** the normal equations $A^TA\hat{\mathbf{x}} = A^T\mathbf{b}$:
+    $$
+    \begin{bmatrix} 6 & 11 \\ 11 & 21 \end{bmatrix} \hat{\mathbf{x}} = \begin{bmatrix} 15 \\ 27 \end{bmatrix}.
+    $$
+
+    Solving this system:
+    - From the first equation: $6x_1 + 11x_2 = 15$.
+    - From the second equation: $11x_1 + 21x_2 = 27$.
+
+    By substitution or elimination, we find:
+    $x_2 = -0.6$, and $x_1 = 3.6$.
+
+    Therefore,
+    $$
+    \hat{\mathbf{x}} = \begin{bmatrix} 3.6 \\ -0.6 \end{bmatrix}.
+    $$
+
+    3. **Compute** the least-squares error $\|\mathbf{b} - A\hat{\mathbf{x}}\|^2$:
+
+    First, find $A\hat{\mathbf{x}}$:
+    $$
+    A\hat{\mathbf{x}} = \begin{bmatrix} 1 & 2 \\ 2 & 4 \\ 1 & 1 \end{bmatrix}\begin{bmatrix} 3.6 \\ -0.6 \end{bmatrix}
+    = \begin{bmatrix} 1 \cdot 3.6 + 2 \cdot (-0.6) \\ 2 \cdot 3.6 + 4 \cdot (-0.6) \\ 1 \cdot 3.6 + 1 \cdot (-0.6) \end{bmatrix}
+    = \begin{bmatrix} 2.4 \\ 4.8 \\ 3.0 \end{bmatrix}.
+    $$
+
+    Thus,
+    $$
+    \mathbf{b} - A\hat{\mathbf{x}} = \begin{bmatrix} 2 \\ 5 \\ 3 \end{bmatrix} - \begin{bmatrix} 2.4 \\ 4.8 \\ 3.0 \end{bmatrix}
+    = \begin{bmatrix} -0.4 \\ 0.2 \\ 0 \end{bmatrix}.
+    $$
+
+    The squared norm is:
+    $$
+    \| \mathbf{b} - A\hat{\mathbf{x}} \|^2 = (-0.4)^2 + (0.2)^2 + 0^2 = 0.16 + 0.04 = 0.20.
+    $$
+
+    **Answer:**
+    The least-squares solution is $\hat{\mathbf{x}} = \begin{bmatrix} 3.6 \\ -0.6 \end{bmatrix}$, and the least-squares error is $0.20$.
+    :::

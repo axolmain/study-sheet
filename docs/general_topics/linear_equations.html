@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3 X 5 - Notecard – Study-Sheet: Linear Algebra</title>
+<title>Linear Algebra Essentials: Systems, Row Reduction, and Invertibility – Study-Sheet: Linear Algebra</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -246,7 +246,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">3 X 5 - Notecard</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Linear Algebra Essentials: Systems, Row Reduction, and Invertibility</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -275,21 +275,37 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#vector-spaces-quick-reference" id="toc-vector-spaces-quick-reference" class="nav-link active" data-scroll-target="#vector-spaces-quick-reference"><span class="header-section-number">1</span> Vector Spaces Quick Reference</a>
+  <li><a href="#linear-algebra-essentials-systems-row-reduction-and-invertibility" id="toc-linear-algebra-essentials-systems-row-reduction-and-invertibility" class="nav-link active" data-scroll-target="#linear-algebra-essentials-systems-row-reduction-and-invertibility"><span class="header-section-number">1</span> Linear Algebra Essentials: Systems, Row Reduction, and Invertibility</a>
   <ul class="collapse">
-  <li><a href="#key-definitions" id="toc-key-definitions" class="nav-link" data-scroll-target="#key-definitions"><span class="header-section-number">1.1</span> Key Definitions</a></li>
-  <li><a href="#core-concepts" id="toc-core-concepts" class="nav-link" data-scroll-target="#core-concepts"><span class="header-section-number">1.2</span> Core Concepts</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">1.1</span> Introduction</a></li>
+  <li><a href="#key-concepts-and-definitions" id="toc-key-concepts-and-definitions" class="nav-link" data-scroll-target="#key-concepts-and-definitions"><span class="header-section-number">1.2</span> Key Concepts and Definitions</a>
   <ul class="collapse">
-  <li><a href="#linear-independence" id="toc-linear-independence" class="nav-link" data-scroll-target="#linear-independence"><span class="header-section-number">1.2.1</span> Linear Independence</a></li>
-  <li><a href="#matrices" id="toc-matrices" class="nav-link" data-scroll-target="#matrices"><span class="header-section-number">1.2.2</span> Matrices</a></li>
+  <li><a href="#systems-of-linear-equations" id="toc-systems-of-linear-equations" class="nav-link" data-scroll-target="#systems-of-linear-equations"><span class="header-section-number">1.2.1</span> Systems of Linear Equations</a></li>
+  <li><a href="#solutions-to-systems" id="toc-solutions-to-systems" class="nav-link" data-scroll-target="#solutions-to-systems"><span class="header-section-number">1.2.2</span> Solutions to Systems</a></li>
+  <li><a href="#elementary-row-operations" id="toc-elementary-row-operations" class="nav-link" data-scroll-target="#elementary-row-operations"><span class="header-section-number">1.2.3</span> Elementary Row Operations</a></li>
   </ul></li>
-  <li><a href="#fundamental-theorems" id="toc-fundamental-theorems" class="nav-link" data-scroll-target="#fundamental-theorems"><span class="header-section-number">1.3</span> Fundamental Theorems</a></li>
-  <li><a href="#invertibility-criteria" id="toc-invertibility-criteria" class="nav-link" data-scroll-target="#invertibility-criteria"><span class="header-section-number">1.4</span> Invertibility Criteria</a></li>
-  <li><a href="#critical-relationships" id="toc-critical-relationships" class="nav-link" data-scroll-target="#critical-relationships"><span class="header-section-number">1.5</span> Critical Relationships</a></li>
-  <li><a href="#transformations" id="toc-transformations" class="nav-link" data-scroll-target="#transformations"><span class="header-section-number">1.6</span> Transformations</a></li>
-  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways"><span class="header-section-number">1.7</span> Key Takeaways</a></li>
+  <li><a href="#row-reduction-and-echelon-forms-section-1.2" id="toc-row-reduction-and-echelon-forms-section-1.2" class="nav-link" data-scroll-target="#row-reduction-and-echelon-forms-section-1.2"><span class="header-section-number">1.3</span> Row Reduction and Echelon Forms (Section 1.2)</a>
+  <ul class="collapse">
+  <li><a href="#echelon-and-reduced-echelon-forms" id="toc-echelon-and-reduced-echelon-forms" class="nav-link" data-scroll-target="#echelon-and-reduced-echelon-forms"><span class="header-section-number">1.3.1</span> Echelon and Reduced Echelon Forms</a></li>
+  <li><a href="#pivot-positions-and-row-reduction-algorithm" id="toc-pivot-positions-and-row-reduction-algorithm" class="nav-link" data-scroll-target="#pivot-positions-and-row-reduction-algorithm"><span class="header-section-number">1.3.2</span> Pivot Positions and Row Reduction Algorithm</a></li>
   </ul></li>
-  <li><a href="#backside" id="toc-backside" class="nav-link" data-scroll-target="#backside"><span class="header-section-number">2</span> Backside</a></li>
+  <li><a href="#important-theorems" id="toc-important-theorems" class="nav-link" data-scroll-target="#important-theorems"><span class="header-section-number">1.4</span> Important Theorems</a></li>
+  <li><a href="#invertible-matrices-and-the-invertible-matrix-theorem-section-2.3" id="toc-invertible-matrices-and-the-invertible-matrix-theorem-section-2.3" class="nav-link" data-scroll-target="#invertible-matrices-and-the-invertible-matrix-theorem-section-2.3"><span class="header-section-number">1.5</span> Invertible Matrices and the Invertible Matrix Theorem (Section 2.3)</a>
+  <ul class="collapse">
+  <li><a href="#the-invertible-matrix-theorem" id="toc-the-invertible-matrix-theorem" class="nav-link" data-scroll-target="#the-invertible-matrix-theorem"><span class="header-section-number">1.5.1</span> The Invertible Matrix Theorem</a></li>
+  </ul></li>
+  <li><a href="#special-cases-or-applications" id="toc-special-cases-or-applications" class="nav-link" data-scroll-target="#special-cases-or-applications"><span class="header-section-number">1.6</span> Special Cases or Applications</a>
+  <ul class="collapse">
+  <li><a href="#free-variables-in-solutions" id="toc-free-variables-in-solutions" class="nav-link" data-scroll-target="#free-variables-in-solutions"><span class="header-section-number">1.6.1</span> Free Variables in Solutions</a></li>
+  <li><a href="#determining-invertibility" id="toc-determining-invertibility" class="nav-link" data-scroll-target="#determining-invertibility"><span class="header-section-number">1.6.2</span> Determining Invertibility</a></li>
+  </ul></li>
+  <li><a href="#practice-problems" id="toc-practice-problems" class="nav-link" data-scroll-target="#practice-problems"><span class="header-section-number">1.7</span> Practice Problems</a>
+  <ul class="collapse">
+  <li><a href="#problem-1" id="toc-problem-1" class="nav-link" data-scroll-target="#problem-1"><span class="header-section-number">1.7.1</span> Problem 1</a></li>
+  <li><a href="#problem-2" id="toc-problem-2" class="nav-link" data-scroll-target="#problem-2"><span class="header-section-number">1.7.2</span> Problem 2</a></li>
+  </ul></li>
+  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources"><span class="header-section-number">1.8</span> Additional Resources</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -298,7 +314,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">3 X 5 - Notecard</h1>
+<h1 class="title">Linear Algebra Essentials: Systems, Row Reduction, and Invertibility</h1>
 </div>
 
 
@@ -315,151 +331,198 @@ window.Quarto = {
 </header>
 
 
-<section id="vector-spaces-quick-reference" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Vector Spaces Quick Reference</h1>
-<section id="key-definitions" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="key-definitions"><span class="header-section-number">1.1</span> Key Definitions</h2>
-<ul>
-<li><strong>Vector Space</strong>: Set <span class="math inline">V</span> with addition and scalar multiplication</li>
-<li><strong>Subspace</strong>: Subset closed under operations, contains zero vector</li>
-<li><strong>Basis</strong>: Linearly independent set spanning <span class="math inline">V</span></li>
-<li><strong>Dimension</strong>: Number of basis vectors</li>
-</ul>
+<section id="linear-algebra-essentials-systems-row-reduction-and-invertibility" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Linear Algebra Essentials: Systems, Row Reduction, and Invertibility</h1>
+<section id="introduction" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1.1</span> Introduction</h2>
+<p>This guide outlines foundational topics in linear algebra related to systems of linear equations, row reduction methods, and matrix invertibility. It includes solutions to linear equations, elementary row operations, pivot positions, and the Invertible Matrix Theorem, equipping readers with core principles for understanding matrix theory.</p>
 </section>
-<section id="core-concepts" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="core-concepts"><span class="header-section-number">1.2</span> Core Concepts</h2>
-<section id="linear-independence" class="level3" data-number="1.2.1">
-<h3 data-number="1.2.1" class="anchored" data-anchor-id="linear-independence"><span class="header-section-number">1.2.1</span> Linear Independence</h3>
-<ul>
-<li>Vectors with no linear combinations of each other</li>
-<li>Minimal set that spans vector space</li>
-</ul>
-</section>
-<section id="matrices" class="level3" data-number="1.2.2">
-<h3 data-number="1.2.2" class="anchored" data-anchor-id="matrices"><span class="header-section-number">1.2.2</span> Matrices</h3>
-<ul>
-<li><strong>Row Space</strong>: Span of row vectors</li>
-<li><strong>Column Space</strong>: Span of column vectors</li>
-<li><strong>Null Space</strong>: Solutions to <span class="math inline">A\mathbf{x} = \mathbf{0}</span></li>
-</ul>
-</section>
-</section>
-<section id="fundamental-theorems" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="fundamental-theorems"><span class="header-section-number">1.3</span> Fundamental Theorems</h2>
-<ul>
-<li><strong>Rank-Nullity</strong>: <span class="math inline">\text{rank} + \text{nullity} = n</span></li>
-<li><strong>Rank</strong> = <span class="math inline">\dim(\text{row space}) = \dim(\text{column space})</span></li>
-<li><strong>Nullity</strong> = <span class="math inline">\dim(\text{null space})</span></li>
-</ul>
-</section>
-<section id="invertibility-criteria" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="invertibility-criteria"><span class="header-section-number">1.4</span> Invertibility Criteria</h2>
-<ul>
-<li><span class="math inline">\det A \ne 0</span></li>
-<li>Linearly independent columns</li>
-<li><span class="math inline">\text{Rank} = n</span></li>
-</ul>
-</section>
-<section id="critical-relationships" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="critical-relationships"><span class="header-section-number">1.5</span> Critical Relationships</h2>
-<ul>
-<li>Basis spans entire vector space</li>
-<li>Zero vector in all vector spaces</li>
-<li>Empty set ≠ vector space</li>
-</ul>
-</section>
-<section id="transformations" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="transformations"><span class="header-section-number">1.6</span> Transformations</h2>
-<ul>
-<li><strong>One-to-One</strong>: Injective</li>
-<li><strong>Onto</strong>: Surjective</li>
-<li>Preserves linear combinations</li>
-</ul>
-</section>
-<section id="key-takeaways" class="level2" data-number="1.7">
-<h2 data-number="1.7" class="anchored" data-anchor-id="key-takeaways"><span class="header-section-number">1.7</span> Key Takeaways</h2>
-<ul>
-<li><strong>Rank</strong>: Image space dimension</li>
-<li><strong>Nullity</strong>: Kernel space dimension</li>
-<li>Row operations preserve row space</li>
-</ul>
-<p><span class="math inline">\det</span> (determinant) is a scalar value computed for square matrices that provides critical information about the matrix’s properties:</p>
-<p>Key Determinant Insights:</p>
-<ul>
-<li>Indicates linear transformation’s volume scaling factor</li>
-<li><span class="math inline">\det A = 0</span> means columns/rows are linearly dependent</li>
-<li>Signifies matrix invertibility</li>
-<li>Measures matrix’s “stretching” or “compressing” effect</li>
-</ul>
-<p>Practical Implications:</p>
-<ul>
-<li><span class="math inline">\det = 0</span>: Non-invertible matrix</li>
-<li><span class="math inline">\det \ne 0</span>: Invertible matrix</li>
-<li>Larger absolute value means more significant volume transformation</li>
-</ul>
-<p>In vector spaces, determinant helps assess:</p>
-<ul>
-<li>Linear independence</li>
-<li>Transformation characteristics</li>
-<li>Matrix invertibility</li>
-</ul>
+<section id="key-concepts-and-definitions" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="key-concepts-and-definitions"><span class="header-section-number">1.2</span> Key Concepts and Definitions</h2>
+<section id="systems-of-linear-equations" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="systems-of-linear-equations"><span class="header-section-number">1.2.1</span> Systems of Linear Equations</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Definition</strong>: A linear equation in variables <span class="math inline">x_1, \dots, x_n</span> has the form <span class="math inline">a_1x_1 + a_2x_2 + \dots + a_nx_n = b</span>, where <span class="math inline">b</span> and each <span class="math inline">a_i</span> are constants.</p>
+</div>
+</div>
+<section id="example" class="level4" data-number="1.2.1.1">
+<h4 data-number="1.2.1.1" class="anchored" data-anchor-id="example"><span class="header-section-number">1.2.1.1</span> Example</h4>
+<p>The equation <span class="math inline">x_2 = 2(\sqrt{6} - x_1) + x_3</span> is linear, whereas <span class="math inline">4x_1 - 5x_2 = x_1x_2</span> is nonlinear due to the term <span class="math inline">x_1x_2</span>.</p>
 </section>
 </section>
-<section id="backside" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Backside</h1>
-<p>Parametric Vector Key Notes:</p>
+<section id="solutions-to-systems" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="solutions-to-systems"><span class="header-section-number">1.2.2</span> Solutions to Systems</h3>
+<p>A system of linear equations may have: 1. No solution (inconsistent). 2. A unique solution. 3. Infinitely many solutions.</p>
+<p>A system is <strong>consistent</strong> if it has at least one solution; otherwise, it is <strong>inconsistent</strong>.</p>
+</section>
+<section id="elementary-row-operations" class="level3" data-number="1.2.3">
+<h3 data-number="1.2.3" class="anchored" data-anchor-id="elementary-row-operations"><span class="header-section-number">1.2.3</span> Elementary Row Operations</h3>
+<p>To solve linear systems using matrices, we apply these operations: 1. <strong>Replacement</strong>: Replace one row by the sum of itself and a multiple of another row. 2. <strong>Interchange</strong>: Swap two rows. 3. <strong>Scaling</strong>: Multiply all entries in a row by a nonzero constant.</p>
+</section>
+</section>
+<section id="row-reduction-and-echelon-forms-section-1.2" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="row-reduction-and-echelon-forms-section-1.2"><span class="header-section-number">1.3</span> Row Reduction and Echelon Forms (Section 1.2)</h2>
+<section id="echelon-and-reduced-echelon-forms" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="echelon-and-reduced-echelon-forms"><span class="header-section-number">1.3.1</span> Echelon and Reduced Echelon Forms</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Definition</strong>: A matrix is in <strong>echelon form</strong> if: 1. All nonzero rows are above rows of all zeros. 2. Each leading entry is to the right of the leading entry in the row above it. 3. Entries below each leading entry are zeros.</p>
+</div>
+</div>
+<p>If, in addition, each leading entry is 1 and is the only nonzero entry in its column, the matrix is in <strong>reduced echelon form</strong>.</p>
+</section>
+<section id="pivot-positions-and-row-reduction-algorithm" class="level3" data-number="1.3.2">
+<h3 data-number="1.3.2" class="anchored" data-anchor-id="pivot-positions-and-row-reduction-algorithm"><span class="header-section-number">1.3.2</span> Pivot Positions and Row Reduction Algorithm</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Definition</strong>: A <strong>pivot position</strong> is the location of a leading 1 in a matrix’s reduced echelon form. The corresponding column is a <strong>pivot column</strong>.</p>
+</div>
+</div>
+<section id="row-reduction-algorithm" class="level4" data-number="1.3.2.1">
+<h4 data-number="1.3.2.1" class="anchored" data-anchor-id="row-reduction-algorithm"><span class="header-section-number">1.3.2.1</span> Row Reduction Algorithm</h4>
 <ol type="1">
-<li>Basic Structure</li>
+<li>Begin with the leftmost nonzero column (a pivot column) and move the pivot to the top row.</li>
+<li>Create zeros below the pivot using row operations.</li>
+<li>Cover the row containing the pivot and repeat with the submatrix formed by the rows below it.</li>
+<li>To obtain the <strong>reduced echelon form</strong>, create zeros above each pivot by moving from the rightmost pivot up and left.</li>
 </ol>
-<ul>
-<li>Express vector as linear combination</li>
-<li>Form: <span class="math inline">\mathbf{x} = \mathbf{x}_p + t\mathbf{v}</span></li>
-<li><span class="math inline">\mathbf{x}_p</span>: Particular solution</li>
-<li><span class="math inline">t</span>: Free variable</li>
-<li><span class="math inline">\mathbf{v}</span>: Direction vector</li>
-</ul>
-<ol start="2" type="1">
-<li>Null Space Representation</li>
+</section>
+<section id="example-1" class="level4" data-number="1.3.2.2">
+<h4 data-number="1.3.2.2" class="anchored" data-anchor-id="example-1"><span class="header-section-number">1.3.2.2</span> Example</h4>
+<p>Transform the matrix <span class="math inline">A = \begin{bmatrix} 0 &amp; -3 &amp; -6 &amp; 4 &amp; 9 \\ -1 &amp; -2 &amp; -1 &amp; 3 &amp; 1 \\ -2 &amp; -3 &amp; 0 &amp; 3 &amp; -1 \\ 1 &amp; 4 &amp; 5 &amp; -9 &amp; -7 \end{bmatrix}</span> into echelon and then reduced echelon form. Identify pivot positions and columns.</p>
+</section>
+</section>
+</section>
+<section id="important-theorems" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="important-theorems"><span class="header-section-number">1.4</span> Important Theorems</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The Uniqueness of the Reduced Echelon Form
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Every matrix is row equivalent to a unique reduced echelon matrix, regardless of the row operations used.</p>
+</div>
+</div>
+</section>
+<section id="invertible-matrices-and-the-invertible-matrix-theorem-section-2.3" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="invertible-matrices-and-the-invertible-matrix-theorem-section-2.3"><span class="header-section-number">1.5</span> Invertible Matrices and the Invertible Matrix Theorem (Section 2.3)</h2>
+<section id="the-invertible-matrix-theorem" class="level3" data-number="1.5.1">
+<h3 data-number="1.5.1" class="anchored" data-anchor-id="the-invertible-matrix-theorem"><span class="header-section-number">1.5.1</span> The Invertible Matrix Theorem</h3>
+<p>The <strong>Invertible Matrix Theorem</strong> states that for an <span class="math inline">n \times n</span> matrix <span class="math inline">A</span>, the following statements are equivalent:</p>
+<ol type="1">
+<li><span class="math inline">A</span> is invertible.</li>
+<li><span class="math inline">A</span> is row equivalent to the identity matrix.</li>
+<li><span class="math inline">A</span> has <span class="math inline">n</span> pivot positions.</li>
+<li>The equation <span class="math inline">Ax = 0</span> has only the trivial solution.</li>
+<li>The columns of <span class="math inline">A</span> are linearly independent.</li>
+<li>The transformation <span class="math inline">x \to Ax</span> is one-to-one.</li>
+<li>The equation <span class="math inline">Ax = b</span> has at least one solution for each <span class="math inline">b \in \mathbb{R}^n</span>.</li>
+<li>The columns of <span class="math inline">A</span> span <span class="math inline">\mathbb{R}^n</span>.</li>
+<li>The transformation <span class="math inline">x \to Ax</span> maps <span class="math inline">\mathbb{R}^n</span> onto <span class="math inline">\mathbb{R}^n</span>.</li>
+<li>There exists a matrix <span class="math inline">C</span> such that <span class="math inline">CA = I</span>.</li>
+<li>There exists a matrix <span class="math inline">D</span> such that <span class="math inline">AD = I</span>.</li>
+<li><span class="math inline">A^T</span> is invertible.</li>
 </ol>
+<section id="fact" class="level4" data-number="1.5.1.1">
+<h4 data-number="1.5.1.1" class="anchored" data-anchor-id="fact"><span class="header-section-number">1.5.1.1</span> Fact</h4>
+<p>If matrices <span class="math inline">A</span> and <span class="math inline">B</span> satisfy <span class="math inline">AB = I</span>, then both <span class="math inline">A</span> and <span class="math inline">B</span> are invertible with <span class="math inline">B = A^{-1}</span> and <span class="math inline">A = B^{-1}</span>.</p>
+</section>
+</section>
+</section>
+<section id="special-cases-or-applications" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="special-cases-or-applications"><span class="header-section-number">1.6</span> Special Cases or Applications</h2>
+<section id="free-variables-in-solutions" class="level3" data-number="1.6.1">
+<h3 data-number="1.6.1" class="anchored" data-anchor-id="free-variables-in-solutions"><span class="header-section-number">1.6.1</span> Free Variables in Solutions</h3>
+<p>In consistent systems with free variables, the solution set can be expressed parametrically, using free variables to define the set.</p>
+</section>
+<section id="determining-invertibility" class="level3" data-number="1.6.2">
+<h3 data-number="1.6.2" class="anchored" data-anchor-id="determining-invertibility"><span class="header-section-number">1.6.2</span> Determining Invertibility</h3>
+<p>To test if a matrix is invertible, check for full pivot positions, or equivalently, attempt to reduce it to the identity matrix using row operations.</p>
+</section>
+</section>
+<section id="practice-problems" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="practice-problems"><span class="header-section-number">1.7</span> Practice Problems</h2>
+<section id="problem-1" class="level3" data-number="1.7.1">
+<h3 data-number="1.7.1" class="anchored" data-anchor-id="problem-1"><span class="header-section-number">1.7.1</span> Problem 1</h3>
+<p>Is the system <span class="math inline">x_2 - 4x_3 = 8</span> <span class="math inline">2x_1 - 3x_2 + 2x_3 = 1</span> <span class="math inline">5x_1 - 8x_2 + 7x_3 = 1</span> consistent?</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Formulate the augmented matrix and row reduce to echelon form. Check if there is a row that implies inconsistency.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="problem-2" class="level3" data-number="1.7.2">
+<h3 data-number="1.7.2" class="anchored" data-anchor-id="problem-2"><span class="header-section-number">1.7.2</span> Problem 2</h3>
+<p>Verify the invertibility of the matrix <span class="math inline">\begin{bmatrix} -4 &amp; 6 \\ 6 &amp; -9 \end{bmatrix}.</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Calculate the determinant. A nonzero result confirms invertibility. Alternatively, apply row reduction to check if it’s row equivalent to the identity matrix.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="additional-resources" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="additional-resources"><span class="header-section-number">1.8</span> Additional Resources</h2>
 <ul>
-<li>Solutions to <span class="math inline">A\mathbf{x} = \mathbf{0}</span></li>
-<li>Parametric form shows all solutions</li>
-<li>Number of free variables = nullity</li>
-</ul>
-<ol start="3" type="1">
-<li>Solution Set Characteristics</li>
-</ol>
-<ul>
-<li>Zero solution always included</li>
-<li>Entire solution space described</li>
-<li>Linear independence of direction vectors</li>
-</ul>
-<ol start="4" type="1">
-<li>Geometric Interpretation</li>
-</ol>
-<ul>
-<li>Represents line/plane through origin</li>
-<li>Direction vector shows transformation</li>
-<li>Free variable controls position</li>
-</ul>
-<ol start="5" type="1">
-<li>Computational Steps</li>
-</ol>
-<ul>
-<li>Reduce augmented matrix</li>
-<li>Identify pivot/free columns</li>
-<li>Construct parametric vector representation</li>
-</ul>
-<ol start="6" type="1">
-<li>Related Theorems</li>
-</ol>
-<ul>
-<li>Rank-Nullity applies</li>
-<li>Solution space dimension = nullity</li>
-<li>Free variables determine solution complexity</li>
+<li><a href="https://example.com">Linear Algebra and Its Applications by Gilbert Strang</a></li>
+<li><a href="https://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/">MIT OpenCourseWare - Linear Algebra</a></li>
+<li><a href="https://www.khanacademy.org/math/linear-algebra">Khan Academy - Linear Algebra</a></li>
 </ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

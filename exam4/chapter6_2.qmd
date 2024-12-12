@@ -1,0 +1,324 @@
+---
+title: "Chapter 6.2"
+description: "*Orthogonal Sets*"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    html-math-method: katex
+---
+
+# Terms & Definitions
+
+## Orthogonal Sets
+A set of vectors $\{u_1, \ldots, u_p\}$ is an **orthogonal set** if each pair of distinct vectors is orthogonal. Formally:
+$$
+\langle u_i, u_j \rangle = 0 \quad \text{whenever } i \neq j.
+$$
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Define orthogonal vectors
+v1 = np.array([3, 0])
+v2 = np.array([0, 4])
+
+# Plot vectors
+plt.quiver(0, 0, v1[0], v1[1], angles='xy', scale_units='xy', scale=1, color='r', label='v1')
+plt.quiver(0, 0, v2[0], v2[1], angles='xy', scale_units='xy', scale=1, color='b', label='v2')
+
+# Add details
+plt.axhline(0, color='black', linewidth=0.5)
+plt.axvline(0, color='black', linewidth=0.5)
+plt.grid()
+plt.legend()
+plt.xlim(-1, 5)
+plt.ylim(-1, 5)
+plt.title('Orthogonal Vectors')
+plt.show()
+```
+
+
+## Orthonormal Sets
+A set of vectors $\{u_1, \ldots, u_p\}$ is **orthonormal** if the vectors are pairwise orthogonal and have norm 1. Formally:
+$$
+\langle e_j, e_k \rangle =
+\begin{cases} 
+0 & \text{if } j \neq k, \\
+1 & \text{if } j = k.
+\end{cases}
+$$
+**Layman's Terms**: A list of vectors that are all perpendicular to each other and have a length of 1.
+
+
+## Orthonormal Basis
+An **orthonormal basis** is an orthonormal set of vectors that spans the vector space $V$. Every orthonormal list with $\dim V$ elements is an orthonormal basis. For example, the standard basis in $\mathbb{R}^n$ is an orthonormal basis.
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Input vectors
+v1 = np.array([3, 1])
+v2 = np.array([2, 2])
+
+# Compute Gram-Schmidt
+u1 = v1
+u2 = v2 - np.dot(v2, u1) / np.dot(u1, u1) * u1
+
+# Normalize to create orthonormal vectors
+e1 = u1 / np.linalg.norm(u1)
+e2 = u2 / np.linalg.norm(u2)
+
+# Plot original and orthonormal vectors
+plt.quiver(0, 0, v1[0], v1[1], angles='xy', scale_units='xy', scale=1, color='r', label='v1')
+plt.quiver(0, 0, v2[0], v2[1], angles='xy', scale_units='xy', scale=1, color='b', label='v2')
+plt.quiver(0, 0, e1[0], e1[1], angles='xy', scale_units='xy', scale=1, color='g', label='e1 (Orthonormal)')
+plt.quiver(0, 0, e2[0], e2[1], angles='xy', scale_units='xy', scale=1, color='purple', label='e2 (Orthonormal)')
+
+# Add details
+plt.axhline(0, color='black', linewidth=0.5)
+plt.axvline(0, color='black', linewidth=0.5)
+plt.grid()
+plt.legend()
+plt.xlim(-1, 5)
+plt.ylim(-1, 5)
+plt.title('Gram-Schmidt Process')
+plt.show()
+```
+
+## Projections (Applications of Orthogonality)
+To find the projection of a vector $v$ onto a vector $u$:
+
+$$
+\text{proj}_u(v) = \frac{\langle v, u \rangle}{\langle u, u \rangle} u.
+$$
+
+Projections are useful in approximating vectors and decomposing spaces.
+
+```{python}
+import numpy as np
+# Define vectors
+v = np.array([2, 3])
+u = np.array([4, 1])
+
+# Calculate projection of v onto u
+proj_u_v = (np.dot(v, u) / np.dot(u, u)) * u
+
+# Plot the original vectors
+plt.quiver(0, 0, v[0], v[1], angles='xy', scale_units='xy', scale=1, color='r', label='v')
+plt.quiver(0, 0, u[0], u[1], angles='xy', scale_units='xy', scale=1, color='b', label='u')
+
+# Plot the projection using a black dashed line with increased thickness
+plt.plot([0, proj_u_v[0]], [0, proj_u_v[1]], 'k--', linewidth=2, label='proj_u(v)')
+
+# Add details
+plt.axhline(0, color='black', linewidth=0.5)
+plt.axvline(0, color='black', linewidth=0.5)
+plt.grid()
+plt.legend()
+plt.xlim(-1, 5)
+plt.ylim(-1, 5)
+plt.title('Projection of v onto u')
+plt.show()
+```
+
+## Matrix Representation of Orthonormal Sets
+**Key Fact**: An $m \times n$ matrix $U$ has orthonormal columns if and only if:
+
+$$
+U^T U = I.
+$$
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Define an orthonormal matrix
+U = np.array([[1, 0], [0, 1]])
+
+# Define two example vectors
+x = np.array([3, 4])
+y = np.array([4, -3])
+
+# Apply transformation
+Ux = U @ x
+Uy = U @ y
+
+# Plot original vectors
+plt.quiver(0, 0, x[0], x[1], angles='xy', scale_units='xy', scale=1, color='r', label='x')
+plt.quiver(0, 0, y[0], y[1], angles='xy', scale_units='xy', scale=1, color='b', label='y')
+
+# Plot transformed vectors
+plt.quiver(0, 0, Ux[0], Ux[1], angles='xy', scale_units='xy', scale=1, color='g', label='Ux (Transformed)')
+plt.quiver(0, 0, Uy[0], Uy[1], angles='xy', scale_units='xy', scale=1, color='purple', label='Uy (Transformed)')
+
+# Add details
+plt.axhline(0, color='black', linewidth=0.5)
+plt.axvline(0, color='black', linewidth=0.5)
+plt.grid()
+plt.legend()
+plt.xlim(-5, 5)
+plt.ylim(-5, 5)
+plt.title('Orthonormal Transformation')
+plt.show()
+```
+
+# Orthogonal vs Orthonormal sets
+
+```{python}
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Define vectors
+u1 = np.array([1, 0])
+u2 = np.array([0, 1])
+# Scale one of the orthogonal vectors to have a magnitude greater than 1
+v1 = np.array([np.sqrt(2), np.sqrt(2)])
+v2 = np.array([-np.sqrt(2)/2, np.sqrt(2)/2])
+
+
+
+# Recreate the plot with the corrected orthogonal vector
+fig, ax = plt.subplots(figsize=(6, 6))
+
+# Draw unit circle
+circle = plt.Circle((0, 0), 1, color='gray', fill=False, linestyle='dotted', label="Unit Circle")
+ax.add_artist(circle)
+
+# Plot the vectors
+ax.quiver(0, 0, u1[0], u1[1], angles='xy', scale_units='xy', scale=1, color='teal', label='Orthonormal')
+ax.quiver(0, 0, u2[0], u2[1], angles='xy', scale_units='xy', scale=1, color='teal')
+ax.quiver(0, 0, v1[0], v1[1], angles='xy', scale_units='xy', scale=1, color='gold', label='Orthogonal')
+ax.quiver(0, 0, v2[0], v2[1], angles='xy', scale_units='xy', scale=1, color='gold')
+
+# Add 90° angle markers
+ax.text(0.5, 0.05, "90°", fontsize=12, ha='center', color='white', bbox=dict(boxstyle="circle", color="black"))
+ax.text(0.05, 0.5, "90°", fontsize=12, ha='center', color='white', bbox=dict(boxstyle="circle", color="black"))
+
+# Set limits and aspect
+ax.set_xlim(-1.5, 1.5)
+ax.set_ylim(-1.5, 1.5)
+ax.set_aspect('equal')
+
+# Add axes
+ax.axhline(0, color='gray', linewidth=0.5)
+ax.axvline(0, color='gray', linewidth=0.5)
+ax.arrow(0, 0, 1.4, 0, head_width=0.05, head_length=0.1, fc='gray', ec='gray', linewidth=0.5)
+ax.arrow(0, 0, 0, 1.4, head_width=0.05, head_length=0.1, fc='gray', ec='gray', linewidth=0.5)
+ax.arrow(0, 0, -1.4, 0, head_width=0.05, head_length=0.1, fc='gray', ec='gray', linewidth=0.5)
+ax.arrow(0, 0, 0, -1.4, head_width=0.05, head_length=0.1, fc='gray', ec='gray', linewidth=0.5)
+
+# Label vectors
+ax.text(1.05, 0, r'$\mathbf{u}_1$', fontsize=12, color='teal')
+ax.text(0, 1.05, r'$\mathbf{u}_2$', fontsize=12, color='teal')
+ax.text(np.sqrt(2) + 0.2, np.sqrt(2)/2, r'$\mathbf{v}_1$', fontsize=12, color='gold')
+ax.text(-np.sqrt(2)/2 - 0.2, np.sqrt(2)/2, r'$\mathbf{v}_2$', fontsize=12, color='gold')
+
+# Add legend
+ax.legend(loc='upper left', fontsize=10)
+
+# Set grid and remove ticks
+ax.grid(False)
+ax.set_xticks([])
+ax.set_yticks([])
+
+# Show plot
+plt.show()
+```
+
+
+# Theorems and Propositions
+
+## Proposition: Norm Property
+If $\{e_1, \ldots, e_m\}$ is an orthonormal set, then for any scalars $a_1, \ldots, a_m$:
+$$
+\|a_1e_1 + \ldots + a_me_m\|^2 = |a_1|^2 + \ldots + |a_m|^2.
+$$
+**Why This Works**: Orthogonality allows the Pythagorean theorem to hold, letting lengths add independently.
+
+
+## Corollary
+Every orthonormal set is linearly independent.
+
+
+## Theorem 4: Orthogonal Sets are Independent
+An orthogonal set $\{u_1, \ldots, u_p\}$ of nonzero vectors is linearly independent and forms a basis for its span.
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Define three vectors, two orthogonal and one linear combination
+v1 = np.array([2, 0])
+v2 = np.array([0, 3])
+v3 = 2 * v1 + v2  # Linearly dependent
+
+# Plot vectors
+plt.quiver(0, 0, v1[0], v1[1], angles='xy', scale_units='xy', scale=1, color='r', label='v1')
+plt.quiver(0, 0, v2[0], v2[1], angles='xy', scale_units='xy', scale=1, color='b', label='v2')
+plt.quiver(0, 0, v3[0], v3[1], angles='xy', scale_units='xy', scale=1, color='g', label='v3 (Dependent)')
+
+# Add details
+plt.axhline(0, color='black', linewidth=0.5)
+plt.axvline(0, color='black', linewidth=0.5)
+plt.grid()
+plt.legend()
+plt.xlim(-1, 5)
+plt.ylim(-1, 5)
+plt.title('Linear Dependence and Independence')
+plt.show()
+```
+
+
+## Theorem 5: Expansion with Orthogonal Basis
+For an orthogonal basis $\{u_1, \ldots, u_p\}$, any vector $y$ in the span of the basis can be written as:
+$$
+y = c_1u_1 + \cdots + c_pu_p, \quad \text{where } c_j = \frac{\langle y, u_j \rangle}{\langle u_j, u_j \rangle}.
+$$
+
+
+## Theorem 6: Matrix Properties of Orthonormal Columns
+For a matrix $U$ with orthonormal columns:
+- $\|Ux\| = \|x\|$,
+- $(Ux) \cdot (Uy) = x \cdot y$,
+- Orthogonality is preserved: $(Ux) \cdot (Uy) = 0 \iff x \cdot y = 0$.
+
+
+## Orthonormal Expansion (Theorem)
+If $\{e_1, \ldots, e_n\}$ is an orthonormal basis of $V$, then for any vector $v \in V$:
+$$
+v = \langle v, e_1 \rangle e_1 + \cdots + \langle v, e_n \rangle e_n,
+$$
+and:
+$$
+\|v\|^2 = \sum_{j=1}^n |\langle v, e_j \rangle|^2.
+$$
+
+
+# Examples
+
+## Example 1: Orthonormal Basis in $\mathbb{R}^4$
+Consider the set:
+$$
+\left\{\left(\frac{1}{2}, \frac{1}{2}, \frac{1}{2}, \frac{1}{2}\right), \left(\frac{1}{2}, \frac{1}{2}, -\frac{1}{2}, -\frac{1}{2}\right), \left(\frac{1}{2}, -\frac{1}{2}, -\frac{1}{2}, \frac{1}{2}\right), \left(-\frac{1}{2}, \frac{1}{2}, -\frac{1}{2}, \frac{1}{2}\right)\right\}.
+$$
+This set is orthonormal and forms a basis of $\mathbb{R}^4$.
+
+
+## Example 2: Orthogonal Projections
+Given vectors $u = \begin{bmatrix} 3 \\ -4 \end{bmatrix}$ and $v = \begin{bmatrix} 1 \\ 2 \end{bmatrix}$, find $\text{proj}_u(v)$:
+$$
+\text{proj}_u(v) = \frac{\langle v, u \rangle}{\langle u, u \rangle} u.
+$$
+
+
+# Visualization
+
+- **Orthogonal Set**: Vectors form right angles.
+- **Orthonormal Basis**: Same as orthogonal but scaled to unit length, forming coordinate "axes."
+
+
+Would you like specific illustrations, formulas, or extra examples added?
